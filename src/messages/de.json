@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "HTL Absolvent & Full-Stack Entwickler",
+    "subtitle": "Ich entwickle moderne Webanwendungen mit Fokus auf Performance und UX."
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Bereit für Ihr nächstes Projekt? Lassen Sie uns reden!",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "phone": "Telefon",
+    "email_label": "E-Mail",
+    "location": "Standort"
+  },
+  "about": {
+    "title": "Über mich",
+    "education": {
+      "title": "Bildung",
+      "description": "HTL-Absolvent mit Fokus auf Softwareentwicklung und Full-Stack Webtechnologien."
+    },
+    "experience": {
+      "title": "Erfahrung",
+      "description": "Praktische Erfahrung in der Entwicklung moderner Webanwendungen und REST-APIs."
+    },
+    "focus": {
+      "title": "Fokus",
+      "description": "Performance, UX und skalierbare Architekturen mit modernen Frameworks."
+    }
+  },
+  "projects": {
+    "title": "Projekte",
+    "subtitle": "Eine Auswahl meiner Arbeiten",
+    "view": "Projekt ansehen",
+    "source": "Quellcode",
+    "featured": "Herausragende Projekte",
+    "all": "Alle Projekte"
+  },
+  "cta": {
+    "view_projects": "Projekte ansehen",
+    "get_in_touch": "Kontakt aufnehmen",
+    "available": "Verfügbar für neue Projekte",
+    "discuss_project": "Projekt besprechen"
+  }
+}
