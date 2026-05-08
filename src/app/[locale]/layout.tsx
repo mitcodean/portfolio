@@ -2,8 +2,9 @@ import type { Locale } from "@/lib/i18n";
 import { getMessages } from "@/lib/getMessages";
 import { locales } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+
 
 interface Props {
   children: React.ReactNode;
@@ -19,12 +20,10 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages(typedLocale);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-primary">
-      <div className="flex-grow">
-        <Navbar messages={messages} />
-        <main className="pt-20">{children}</main>
-      </div>
-      <Footer messages={messages.footer} />
-    </div>
+    <>
+      <Navbar />
+      <main className="pt-20">{children}</main>
+      <Footer />
+    </>
   );
 }

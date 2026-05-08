@@ -1,29 +1,43 @@
-"use client";
+"use client"
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button"
 
-
+type Locale = "de" | "en"
 
 export default function LanguageSwitcher() {
-  const pathname = usePathname();
-  const segments = pathname.split("/");
+  const pathname = usePathname()
+  const router = useRouter()
 
-  const switchTo = (locale: string) => {
-    segments[1] = locale;
-    return segments.join("/");
-  };
+  const segments = pathname.split("/")
+  const locale = (segments[1] as Locale) || "en"
+
+  const switchLanguage = (lang: Locale) => {
+  const newSegments = [...segments]   // new array to avoid mutating original
+  newSegments[1] = lang
+
+  router.push(newSegments.join("/"))
+}
 
   return (
-
-    <div className="flex gap-2 text-xs text-neutral">
-      <Link href={switchTo("de")} className="hover:text-accent-rose">
+    <div className="flex overflow-hidden rounded-md border border-brand-steel">
+      
+      <Button
+        variant={locale === "de" ? "default" : "ghost"}
+        className="rounded-none px-3"
+        onClick={() => switchLanguage("de")}
+      >
         DE
-      </Link>
-      <span>|</span>
-      <Link href={switchTo("en")} className="hover:text-accent-rose">
+      </Button>
+
+      <Button
+        variant={locale === "en" ? "default" : "ghost"}
+        className="rounded-none px-3"
+        onClick={() => switchLanguage("en")}
+      >
         EN
-      </Link>
+      </Button>
+
     </div>
-  );
+  )
 }
