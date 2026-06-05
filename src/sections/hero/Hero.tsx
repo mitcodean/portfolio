@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 
+import { MagneticText } from "@/components/ui/morphing-cursor";
+
 export default function Hero() {
     const controls = useAnimation();
   const ref = useRef(null);
@@ -65,14 +67,22 @@ export default function Hero() {
     >
       {/* ── Background image ── */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/Bg-Hero.jpg"
+        {/* <Image
+          src="/cassi.jpg"
           alt=""
           fill
           priority
           className="object-cover object-center"
           quality={90}
-        />
+        /> */}
+
+      <video autoPlay muted loop className="w-full h-full object-cover">
+        <source src="/flow-animation.mp4" />
+        {/* Josh (@cassi_josh) from Unsplash. */}
+      </video>
+
+
+
         {/* Dark overlay so text stays readable — layered for depth */}
         <div className="absolute inset-0 bg-[#0F172A]/20" />
         {/* Extra gradient vignette: darker on left where text lives */}
@@ -86,7 +96,7 @@ export default function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="max-w-4xl"
+          className=""
         >
           
           {/* Headline */}
@@ -94,17 +104,11 @@ export default function Hero() {
             variants={itemVariants}
             className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6"
           >
-            <span className="bg-gradient-to-r from-foreground via-foreground to-support bg-clip-text text-transparent transition-all duration-500 cursor-default">
-              Schaffen Sie eine
+            <span className="text-secondary transition-all duration-500 cursor-default">
+             &quot;<MagneticText text="Entdecke" hoverText="Gestalte" /> das Potenzial hinter jedem <MagneticText text="Prozess" hoverText="Erfolg" />.&quot;
+             {/* "Automation is cost-cutting by tightening the corners and not cutting them." */}
             </span>
-            <br />
-            <span className="text-primary transition-colors duration-300 cursor-default inline-block origin-left">
-              digitale Präsenz,
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-foreground to-support bg-clip-text text-transparent transition-all duration-500 cursor-default">
-              die tatsächlich funktioniert.
-            </span>
+            
           </motion.h1>
           
           {/* Sub-copy */}
@@ -112,12 +116,22 @@ export default function Hero() {
             variants={itemVariants}
             className="text-neutral/80 text-lg sm:text-xl max-w-2xl mt-6 leading-relaxed transition-colors duration-300 cursor-default"
           >
-            We design and develop solutions that turn visitors into customers.
+            {/* Wir entwerfen und entwickeln Lösungen, die Besucher zu Kunden machen. */}
+            Wir entwerfen und entwickeln Lösungen, die den Unternehmen Zeit sparen.
             <br />
             <span className="text-support text-base hover:text-primary/80 transition-colors duration-300">
-              Innovative Strategien. Maßgeschneiderte Technologie. Messbare Ergebnisse.
+              {/* Innovative Strategien. Maßgeschneiderte Technologie. Messbare Ergebnisse. */}
             </span>
+            <br />
           </motion.p>
+
+          <motion.h3>
+            <br />
+            <span className="text-support text-4xl sm:text-5xl duration-300 cursor-default inline-block origin-left">
+              Wo Vision keine Grenzen kennt.
+            </span>
+            <br />
+          </motion.h3>
           
           {/* Buttons */}
           <motion.div
@@ -131,7 +145,7 @@ export default function Hero() {
             >
               <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
                 <span className="relative z-10 transition-all duration-500">
-                  Let's Collaborate
+                  Let&apos;s Collaborate
                 </span>
                 <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                   <ArrowUpRight size={16} />

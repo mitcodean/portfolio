@@ -116,6 +116,35 @@ const ADDONS = [
   { icon: Shield,     label: "DSGVO Paket",       price: "ab 149 €",  desc: "Cookie-Banner, Datenschutz-Check und rechtssichere Texte." },
 ];
 
+const addons = [
+  { icon: ShoppingCart, label: "E-Shop", sub: "Ab 1.200 €", href: "/services/eshop", featured: true },
+  { icon: Calendar,     label: "Terminbuchung", sub: "Ab 290 €", href: null, featured: false },
+  { icon: Languages,    label: "Mehrsprachig", sub: "Ab 190 €", href: null, featured: false },
+  { icon: Search,       label: "SEO Paket", sub: "Ab 290 €", href: null, featured: false },
+  { icon: MapPin,       label: "Google Business", sub: "Ab 149 €", href: null, featured: false },
+];
+
+const maintenance = [
+  {
+    name: "Basic",
+    price: "29 €",
+    per: "/Monat",
+    includes: ["Updates", "Backup", "Sicherheit"],
+  },
+  {
+    name: "Business",
+    price: "49 €",
+    per: "/Monat",
+    includes: ["Updates", "Backup", "Security", "Kleine Änderungen"],
+  },
+  {
+    name: "Premium",
+    price: "99 €",
+    per: "/Monat",
+    includes: ["SEO", "Google Profil", "Kleine Änderungen", "Website Optimierung"],
+  },
+];
+
 const ESHOP_TIERS = [
   {
     label: "Mini Shop",
@@ -200,6 +229,9 @@ export default function ServicesPage() {
   const addonsInView  = useInView(addonsRef,  { once: true, margin: "-60px" });
   const maintInView   = useInView(maintRef,   { once: true, margin: "-60px" });
   const faqInView     = useInView(faqRef,     { once: true, margin: "-60px" });
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <main className="bg-background min-h-screen overflow-x-hidden">
@@ -356,6 +388,126 @@ export default function ServicesPage() {
           </motion.p>
         </div>
       </section>
+      
+            <section>
+              {/* ── 4. Add-ons ── */}
+        <motion.div 
+        variants={fadeUp(0.2)} 
+        initial="hidden" 
+        animate={inView ? "visible" : "hidden"}>
+          <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-2">
+            Erweiterungen
+            </p>
+          <h3 className="text-2xl font-bold text-foreground mb-6">
+            Noch mehr aus deiner Website holen.
+            </h3>
+
+          {/* E-Shop hero card */}
+          <Link href="/services/eshop" className="group block mb-4">
+            <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 rounded-2xl border border-primary/40 bg-primary/5 hover:border-primary hover:bg-primary/10 transition-all duration-200 overflow-hidden">
+              {/* Background glow */}
+              <div className="absolute right-0 top-0 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
+                <ShoppingCart size={22} className="text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-base font-bold text-foreground">E-Shop</p>
+                  <span className="text-[10px] font-bold uppercase tracking-widest bg-primary/20 text-primary px-2 py-0.5 rounded-full">
+                    Add-on
+                  </span>
+                </div>
+                <p className="text-sm text-support">
+                  Vollständiger Online-Shop mit Zahlungsabwicklung, Produktverwaltung & mehr. Ab 1.200 €.
+                </p>
+              </div>
+              <div className="shrink-0 flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-200">
+                Mehr erfahren
+                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Other add-ons — responsive grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {addons.filter(a => !a.featured).map(({ icon: Icon, label, sub }) => (
+              <div
+                key={label}
+                className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border bg-muted hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 cursor-default"
+              >
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Icon size={14} className="text-primary" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold text-foreground truncate">{label}</p>
+                  <p className="text-[11px] text-support">{sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── 5. Maintenance ── */}
+        <motion.div 
+        variants={fadeUp(0.25)} 
+        initial="hidden" 
+        animate={inView ? "visible" : "hidden"}>
+          <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-2">
+            Website Wartung
+            </p>
+          <h3 className="text-2xl font-bold text-foreground mb-2">
+            Deine Website in sicheren Händen.
+            </h3>
+          <p className="text-support text-sm mb-8 max-w-lg">
+            Updates, Backups und Sicherheit — damit du dich auf dein Geschäft konzentrieren kannst.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
+            {maintenance.map((m, i) => (
+              <motion.div
+                key={m.name}
+                whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+                className="flex flex-col rounded-2xl border border-border bg-muted p-5 cursor-default hover:border-primary/30 transition-colors duration-200"
+              >
+                <p className="text-xs text-support uppercase tracking-widest mb-1">{m.name}</p>
+                <p className="text-2xl font-bold text-foreground">
+                  {m.price}
+                  <span className="text-sm font-normal text-support">{m.per}</span>
+                </p>
+                <div className="h-px bg-border my-3" />
+                <ul className="space-y-2 flex-1">
+                  {m.includes.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-neutral">
+                      <Check size={12} className="shrink-0 text-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+              {/* 6. CTA*/}
+        <motion.div
+          variants={fadeUp(0.3)}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="text-center"
+        >
+          <p className="text-support text-sm mb-4">
+            Keine Website? Einfach melden — kostenlos und unverbindlich.
+          </p>
+          <Link
+            href="#contact"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-foreground text-sm font-semibold hover:bg-accent transition-colors duration-200 group"
+          >
+            Kostenlose Website Analyse
+            <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+        </motion.div>
+            </section>
+
 
       {/* ══════════════════════════════════════════════════════════════════
           E-SHOP — detailed
@@ -435,6 +587,10 @@ export default function ServicesPage() {
           </motion.div>
         </div>
       </section>
+
+
+
+
 
       {/* ══════════════════════════════════════════════════════════════════
           ADD-ONS

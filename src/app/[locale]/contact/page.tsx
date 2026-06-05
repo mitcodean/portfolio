@@ -7,6 +7,7 @@ import {
   Github, Linkedin, Instagram, Twitter, Clock,
   ArrowUpRight, MessageSquare, Zap,
 } from "lucide-react";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 const fadeUp = (delay = 0) => ({
@@ -386,7 +387,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
+      <SmoothCursor />
     </main>
   );
 }

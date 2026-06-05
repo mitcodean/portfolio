@@ -32,7 +32,7 @@ const VALUES = [
   {
     number: "03",
     title: "Ehrlichkeit über Buzzwords",
-    body: "\"SEO-optimiert\", \"Performance-fokussiert\" — das bedeutet uns etwas Konkretes. Wir erklären was wir tun und warum, keine leeren Versprechen.",
+    body: "“SEO-optimiert”, “Performance-fokussiert” — das bedeutet uns etwas Konkretes. Wir erklären was wir tun und warum, keine leeren Versprechen.",
   },
   {
     number: "04",
@@ -354,7 +354,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Aufgewachsen in Oberösterreich, entwickle ich seit meiner Jugend leidenschaftlich Software.
-                  Was als Neugier begann — „wie funktioniert das eigentlich?" — ist heute mein Beruf und
+                  Was als Neugier begann — „wie funktioniert das eigentlich?“ — ist heute mein Beruf und
                   meine tägliche Motivation. Die Technologien ändern sich, die Faszination bleibt.
                 </p>
                 <p>

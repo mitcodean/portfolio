@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
@@ -54,12 +55,20 @@ export default function Navbar() {
               scrolled ? "h-14" : "h-20"
             }`}
           >
-            {/* Logo – clean, original style */}
+            {/* Logo*/}
             <Link
               href={`/${locale}`}
               className="text-lg font-semibold text-foreground hover:text-accent transition"
             >
-              RIVE
+              <Image
+                                src="/logo-diovis.svg"
+                                alt="Diovis logo"
+                                width={50}
+                                height={50}
+                                className="object-contain inline-block mr-2"
+                                style={{ mixBlendMode: "screen" }}
+                              />
+              DIOVIS
             </Link>
 
             {/* Desktop nav */}

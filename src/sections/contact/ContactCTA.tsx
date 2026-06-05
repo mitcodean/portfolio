@@ -51,8 +51,6 @@ export default function ContactCTA() {
 
   return (
     <section ref={ref} id="contact" className="bg-background py-24 relative overflow-hidden">
-      {/* Subtle glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 

@@ -25,8 +25,8 @@ export default function AGBPage() {
             <p>
               Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen
               <strong className="text-foreground"> Mitco Dean Digital Solutions, Dean-Silviu Mitco</strong>,
-              Eisenstraße 13, 4460 Losenstein (nachfolgend „Auftragnehmer") und seinen Auftraggebern
-              (nachfolgend „Auftraggeber") über IT-Dienstleistungen, Webentwicklung, digitales Marketing
+              Eisenstraße 13, 4460 Losenstein (nachfolgend „Auftragnehmer“) und seinen Auftraggebern
+              (nachfolgend „Auftraggeber“) über IT-Dienstleistungen, Webentwicklung, digitales Marketing
               und damit verbundene Leistungen.
             </p>
             <p className="mt-3">
@@ -180,7 +180,7 @@ export default function AGBPage() {
               Beide Parteien verpflichten sich zur Einhaltung der datenschutzrechtlichen Bestimmungen,
               insbesondere der DSGVO (EU) 2016/679 und des österreichischen Datenschutzgesetzes (DSG).
               Die Datenschutzerklärung des Auftragnehmers ist unter{" "}
-              <a href="/datenschutz" className="text-primary hover:underline">www.mitcodean.com/datenschutz</a>{" "}
+              <Link href="/datenschutz" className="text-primary hover:underline">www.mitcodean.com/datenschutz</Link>{" "}
               abrufbar.
             </p>
           </Section>

@@ -68,15 +68,15 @@ const pathname = usePathname();
             <div className="flex items-center gap-3">
               <div className="relative w-12 h-12 shrink-0">
                 <Image
-                  src="/Mitco_Dean_Stand.png"
-                  alt="Mitco Dean logo"
+                  src="/logo-diovis.svg"
+                  alt="Diovis logo"
                   fill
                   className="object-contain"
                   style={{ mixBlendMode: "screen" }}
                 />
               </div>
               <div>
-                <p className="text-sm font-semibold text-foreground leading-tight">RIVE</p>
+                <p className="text-sm font-semibold text-foreground leading-tight">Diovis</p>
               </div>
             </div>
 
