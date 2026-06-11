@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowUpRight, Send, CheckCircle2, Loader2, MapPin, Phone, Mail } from "lucide-react";
+import Link from "next/link";
 
 const fadeUp = (delay = 0) => ({
   hidden:  { opacity: 0, y: 24 },
@@ -50,6 +51,7 @@ export default function ContactCTA() {
     `${inputBase} ${focused === name ? "border-primary ring-1 ring-primary/30 bg-muted" : "border-border hover:border-primary/30"}`;
 
   return (
+    
     <section ref={ref} id="contact" className="bg-background py-24 relative overflow-hidden">
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -62,6 +64,8 @@ export default function ContactCTA() {
             <span className="text-primary">Schreib uns.</span>
           </h2>
         </motion.div>
+
+        
 
         <div className="grid lg:grid-cols-2 gap-8">
 

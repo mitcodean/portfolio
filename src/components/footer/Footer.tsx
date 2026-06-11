@@ -12,9 +12,9 @@ const pathname = usePathname();
   const locale = segments[1] || "en";
 
   const legalItems = [
-    { label: "Impressum", href: `/${locale}/legal-notice` },
-    { label: "Datenschutzerklärung", href: `/${locale}/privacy-policy` },
-    { label: "AGB", href: `/${locale}/terms-and-conditions` },
+    { label: "Impressum", href: `/${locale}/legal-compliance/legal-notice` },
+    { label: "Datenschutzerklärung", href: `/${locale}/legal-compliance/privacy-policy` },
+    { label: "AGB", href: `/${locale}/legal-compliance/terms-and-conditions` },
   ];
 
   const socials = [
@@ -39,7 +39,7 @@ const pathname = usePathname();
       instagram: true,
     },
     {
-      href: "https://twitter.com/deanmitco",
+      href: "https://x.com/dean_mitco",
       label: "X / Twitter",
       icon: Twitter,
       hoverClass: "hover:text-[#e7e9ea] hover:border-[#e7e9ea]/30 hover:bg-white/5",
@@ -88,7 +88,7 @@ const pathname = usePathname();
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-foreground text-sm font-semibold hover:bg-accent transition-colors duration-200"
             >
-              Get in touch
+              Kontaktieren Sie uns
             </a>
           </div>
 
@@ -207,11 +207,18 @@ const pathname = usePathname();
 
           <div className="flex items-center gap-6">
             <div className="flex gap-4 text-xs text-support items-center">
-              <a href="#impressum" className="hover:text-primary transition-colors">Impressum</a>
+
+              {legalItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
               <span className="w-1 h-1 rounded-full bg-border inline-block" />
-              <a href="#datenschutz" className="hover:text-primary transition-colors">Datenschutz</a>
-              <span className="w-1 h-1 rounded-full bg-border inline-block" />
-              <a href="#agb" className="hover:text-primary transition-colors">AGB</a>
+              
             </div>
 
             <button

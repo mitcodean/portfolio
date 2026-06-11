@@ -11,7 +11,7 @@ export default async function HomePage() {
     <main>
       <Hero />
       <Services />
-      {/* <PortfolioPreview /> */}
+       <PortfolioPreview />
       <AboutPreview />
       <ContactCTA />
     </main>

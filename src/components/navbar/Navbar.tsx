@@ -18,10 +18,9 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Home", href: `/${locale}` },
-    { label: "Services", href: `/${locale}/services` },
+    { label: "Leistungen", href: `/${locale}/services` },
     // { label: "Portfolio", href: `/${locale}/portfolio` },
-    { label: "About", href: `/${locale}/about` },
-    { label: "Contact", href: `/${locale}/contact` },
+    { label: "Über uns", href: `/${locale}/about` },
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -96,7 +95,7 @@ export default function Navbar() {
                   whileTap={{ scale: 0.97 }}
                   className="px-4 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
                 >
-                  Get in touch
+                  Kontakt
                 </motion.button>
               </Link>
             </nav>
