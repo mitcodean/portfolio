@@ -1,29 +1,19 @@
-import type { Locale } from "@/lib/i18n";
-import { getMessages } from "@/lib/getMessages";
-import { locales } from "@/lib/i18n";
-import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar/Navbar";
+import "../globals.css";
+
+import {NextIntlClientProvider} from "next-intl";
+import {getMessages} from "next-intl/server";
 import Footer from "@/components/footer/Footer";
 
+export default async function LocaleLayout({ children }: { children: React.ReactNode; }) {
 
-interface Props {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}
-
-export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
-  const typedLocale = locale as Locale;
-  
-  if (!locales.includes(typedLocale)) notFound();
-
-  const messages = await getMessages(typedLocale);
+  const messages = await getMessages();
 
   return (
-    <>
-      <Navbar />
-      <main className="pt-20">{children}</main>
-      <Footer />
-    </>
+    <NextIntlClientProvider messages={messages}>
+      <Navbar/>
+      {children}
+      <Footer/>
+    </NextIntlClientProvider>
   );
 }

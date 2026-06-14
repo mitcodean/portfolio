@@ -2,28 +2,33 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {useTranslations} from "next-intl";
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
+
+
 export default function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations();
+
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  const segments = pathname.split("/");
-  const locale = segments[1] || "en";
-
-  const navItems = [
-    { label: "Home", href: `/${locale}` },
-    { label: "Leistungen", href: `/${locale}/services` },
-    // { label: "Portfolio", href: `/${locale}/portfolio` },
-    { label: "Über uns", href: `/${locale}/about` },
-  ];
 
   const isActive = (href: string) => pathname === href;
+
+  const [scrolled, setScrolled] = useState(false);
+
+  
+
+  const navItems = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.services"), href: "/#services" },
+    { label: t("nav.about"), href: "/#about" }
+  ];
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -56,7 +61,7 @@ export default function Navbar() {
           >
             {/* Logo*/}
             <Link
-              href={`/${locale}`}
+              href={`/`}
               className="text-lg font-semibold text-foreground hover:text-accent transition"
             >
               <Image
@@ -89,7 +94,7 @@ export default function Navbar() {
               <LanguageSwitcher />
 
               {/* CTA button */}
-              <Link href={`/${locale}/contact`}>
+              <Link href={`/#contact`}>
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -167,7 +172,7 @@ export default function Navbar() {
                   >
                     {item.label}
                     {isActive(item.href) && (
-                      <span className="text-sm font-normal text-primary/60">Current</span>
+                      <span className="text-sm font-normal text-primary/60">{t("common.current")}</span>
                     )}
                   </Link>
                 </motion.div>
@@ -189,11 +194,11 @@ export default function Navbar() {
                 className="mt-auto"
               >
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/#contact`}
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center justify-center w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  Get in touch
+                  {t("common.getInTouch")}
                 </Link>
               </motion.div>
             </div>

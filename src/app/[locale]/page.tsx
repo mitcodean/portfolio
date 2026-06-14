@@ -8,12 +8,12 @@ import ContactCTA from "@/sections/contact/ContactCTA"
 export default async function HomePage() {
 
   return (
-    <main>
-      <Hero />
-      <Services />
-       <PortfolioPreview />
-      <AboutPreview />
-      <ContactCTA />
-    </main>
+        <main>
+          <Hero />
+          <Services />
+          {/* <PortfolioPreview /> */}
+          <AboutPreview />
+          <ContactCTA />
+        </main>
   )
 }

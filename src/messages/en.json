@@ -1,57 +1,25 @@
 {
-  "nav": {
-    "about": "About",
-    "projects": "Projects",
-    "contact": "Contact"
-  },
-  "hero": {
-    "title": "HTL Graduate & Full-Stack Developer",
-    "subtitle": "I build modern web applications with focus on performance and UX."
-  },
-  "footer": {
-    "contact": "Contact",
-    "phone": "Phone",
-    "email": "Email",
-    "rights": "All rights reserved."
-  },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Ready for your next project? Let's talk!",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send Message",
-    "phone": "Phone",
-    "email_label": "Email",
-    "location": "Location"
-  },
-  "about": {
-    "title": "About Me",
-    "education": {
-      "title": "Education",
-      "description": "HTL graduate with focus on software development and full-stack web technologies."
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
+        "contact": "Contact"
     },
-    "experience": {
-      "title": "Experience",
-      "description": "Hands-on experience developing modern web applications and REST APIs."
+
+    "common": {
+        "current": "Current",
+        "getInTouch": "Get in touch"
     },
-    "focus": {
-      "title": "Focus",
-      "description": "Performance, UX, and scalable architectures with modern frameworks."
-    }
-  },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "A selection of my work",
-    "view": "View Project",
-    "source": "Source Code",
-    "featured": "Featured Projects",
-    "all": "All Projects"
-  },
-  "cta": {
-    "view_projects": "View Projects",
-    "get_in_touch": "Get in Touch",
-    "available": "Available for new projects",
-    "discuss_project": "Discuss Project"
-  }
+
+"hero": {},
+
+"about": {},
+
+"services": {},
+
+"contact": {},
+
+"cta": {},
+
+"footer": {}
 }

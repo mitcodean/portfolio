@@ -1,43 +1,46 @@
-"use client"
+"use client";
 
-import { usePathname, useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
+import {usePathname, useRouter} from "next/navigation";
 
-type Locale = "de" | "en"
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem
+} from "@/components/ui/dropdown-menu";
+
+type Locale = "de" | "en";
 
 export default function LanguageSwitcher() {
-  const pathname = usePathname()
-  const router = useRouter()
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const segments = pathname.split("/")
-  const locale = (segments[1] as Locale) || "en"
+  const switchLanguage = (locale: Locale) => {
+    const segments = pathname.split("/");
 
-  const switchLanguage = (lang: Locale) => {
-  const newSegments = [...segments]   // new array to avoid mutating original
-  newSegments[1] = lang
+    // replace locale segment ("/de/..." -> "/en/...")
+    segments[1] = locale;
 
-  router.push(newSegments.join("/"))
-}
+    const newPath = segments.join("/");
+
+    router.push(newPath);
+  };
 
   return (
-    <div className="flex overflow-hidden rounded-md border border-brand-steel">
-      
-      <Button
-        variant={locale === "de" ? "default" : "ghost"}
-        className="rounded-none px-3"
-        onClick={() => switchLanguage("de")}
-      >
-        DE
-      </Button>
+    <DropdownMenu>
+      <DropdownMenuTrigger className="px-3 py-2 border rounded-md text-sm">
+        🌍 Language
+      </DropdownMenuTrigger>
 
-      <Button
-        variant={locale === "en" ? "default" : "ghost"}
-        className="rounded-none px-3"
-        onClick={() => switchLanguage("en")}
-      >
-        EN
-      </Button>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => switchLanguage("de")}>
+          🇩🇪 Deutsch
+        </DropdownMenuItem>
 
-    </div>
-  )
+        <DropdownMenuItem onClick={() => switchLanguage("en")}>
+          🇬🇧 English
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 }

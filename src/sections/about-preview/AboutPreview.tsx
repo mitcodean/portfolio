@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView} from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight, Code2, Lightbulb, Heart, MapPin } from "lucide-react";
+import { ArrowUpRight,TrendingUp, ShieldCheck, Users, Compass,BadgeCheck,Gauge,Building2,Target,Sparkles,Layers3, Gem, Handshake} from "lucide-react";
 import Image from "next/image";
 
 import TiltCard from "@/components/ui/tilt-card";
@@ -18,10 +18,26 @@ const fadeUp = (delay = 0) => ({
 });
 
 const traits = [
-  { icon: Code2,     title: "Technik & Ästhetik",     text: "Websites die nicht nur funktionieren — sondern begeistern. Jede Zeile Code ist durchdacht, jedes Detail bewusst gesetzt." },
-  { icon: MapPin,    title: "Lokal & persönlich",      text: "" },
-  { icon: Lightbulb, title: "Strategie zuerst",        text: "Bevor wir designen, denken wir. Welches Ziel steht im Fokus? Erst dann bauen wir." },
-  { icon: Heart,     title: "Leidenschaft für Details", text: "Ladezeiten, Schriftgrößen, Abstände, Farben sind" },
+  {
+    icon: Compass,
+    title: "Klare Lösungen statt Komplexität",
+    text: "Wir glauben an digitale Lösungen, die verständlich, effizient und langfristig wartbar sind."
+    },
+  {
+    icon: Users,
+    title: "Persönliche Zusammenarbeit",
+    text: "Direkte Ansprechpartner und ehrliche Kommunikation. Wir begleiten Projekte partnerschaftlich und denken langfristig statt nur bis zum Launch."
+    },
+  {
+    icon: ShieldCheck,
+    title: "Qualität bis ins Detail",
+    text: "Von Performance und Sicherheit bis zur Benutzerführung – jedes Detail wird bewusst geplant, getestet und kontinuierlich verbessert."
+    },
+  {
+    icon: TrendingUp,
+    title: "Mit Blick auf Wachstum",
+    text: "Wir entwickeln Lösungen, die nicht nur heute funktionieren, sondern auch morgen mit Ihrem Unternehmen wachsen können."
+    },
 ];
 
 // Triangle SVG mark — brand motif
