@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import {useTranslations} from "next-intl";
+import { usePathname } from "@/i18n/navigation";
+import { useTranslations, useLocale } from "next-intl";
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -10,24 +10,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-
-
 export default function Navbar() {
   const pathname = usePathname();
   const t = useTranslations();
+  const locale = useLocale();
 
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const isActive = (href: string) => pathname === href;
-
   const [scrolled, setScrolled] = useState(false);
 
-  
+  const isActive = (href: string) => {
+    // Handle hash links
+    if (href.includes("#")) {
+      const [path, hash] = href.split("#");
+      return pathname === path;
+    }
+    return pathname === href;
+  };
 
   const navItems = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.services"), href: "/#services" },
-    { label: t("nav.about"), href: "/#about" }
+    { label: t("nav.home"), href: `/${locale}` },
+    { label: t("nav.services"), href: `/${locale}/#services` },
+    { label: t("nav.about"), href: `/${locale}/#about` },
+    { label: t("nav.portfolio"), href: `/${locale}/portfolio` },
   ];
 
   useEffect(() => {
@@ -59,19 +63,19 @@ export default function Navbar() {
               scrolled ? "h-14" : "h-20"
             }`}
           >
-            {/* Logo*/}
+            {/* Logo */}
             <Link
-              href={`/`}
-              className="text-lg font-semibold text-foreground hover:text-accent transition"
+              href={`/${locale}`}
+              className="text-lg font-semibold text-foreground hover:text-accent transition flex items-center gap-2"
             >
               <Image
-                                src="/logo-diovis.svg"
-                                alt="Diovis logo"
-                                width={50}
-                                height={50}
-                                className="object-contain inline-block mr-2"
-                                style={{ mixBlendMode: "screen" }}
-                              />
+                src="/logo-diovis.svg"
+                alt="Diovis logo"
+                width={40}
+                height={40}
+                className="object-contain"
+                style={{ mixBlendMode: "screen" }}
+              />
               DIOVIS
             </Link>
 
@@ -94,13 +98,13 @@ export default function Navbar() {
               <LanguageSwitcher />
 
               {/* CTA button */}
-              <Link href={`/#contact`}>
+              <Link href={`/${locale}/#contact`}>
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="px-4 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
                 >
-                  Kontakt
+                  {t("common.getInTouch")}
                 </motion.button>
               </Link>
             </nav>
@@ -172,7 +176,9 @@ export default function Navbar() {
                   >
                     {item.label}
                     {isActive(item.href) && (
-                      <span className="text-sm font-normal text-primary/60">{t("common.current")}</span>
+                      <span className="text-sm font-normal text-primary/60">
+                        {t("common.current")}
+                      </span>
                     )}
                   </Link>
                 </motion.div>
@@ -194,7 +200,7 @@ export default function Navbar() {
                 className="mt-auto"
               >
                 <Link
-                  href={`/#contact`}
+                  href={`/${locale}/#contact`}
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center justify-center w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >

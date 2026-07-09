@@ -1,46 +1,18 @@
-"use client";
+import {useLocale, useTranslations} from 'next-intl';
+import {routing} from '@/i18n/routing';
+import LocaleSwitcherSelect from './LanguageSwitcherSelect';
 
-import {usePathname, useRouter} from "next/navigation";
-
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem
-} from "@/components/ui/dropdown-menu";
-
-type Locale = "de" | "en";
-
-export default function LanguageSwitcher() {
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const switchLanguage = (locale: Locale) => {
-    const segments = pathname.split("/");
-
-    // replace locale segment ("/de/..." -> "/en/...")
-    segments[1] = locale;
-
-    const newPath = segments.join("/");
-
-    router.push(newPath);
-  };
+export default function LocaleSwitcher() {
+  const t = useTranslations('LocaleSwitcher');
+  const locale = useLocale();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="px-3 py-2 border rounded-md text-sm">
-        🌍 Language
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => switchLanguage("de")}>
-          🇩🇪 Deutsch
-        </DropdownMenuItem>
-
-        <DropdownMenuItem onClick={() => switchLanguage("en")}>
-          🇬🇧 English
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <LocaleSwitcherSelect defaultValue={locale} label={t('label')}>
+      {routing.locales.map((cur) => (
+        <option key={cur} value={cur}>
+          {t('locale', {locale: cur})}
+        </option>
+      ))}
+    </LocaleSwitcherSelect>
   );
 }

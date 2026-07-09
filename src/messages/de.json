@@ -3,23 +3,147 @@
         "home": "Startseite",
         "services": "Leistungen",
         "about": "Über uns",
-        "contact": "Kontakt"
+        "contact": "Kontakt",
+        "portfolio": "Portfolio",
+        "projects": "Projekte"
     },
-
     "common": {
         "current": "Aktuell",
-        "getInTouch": "Kontakt aufnehmen"
+        "getInTouch": "Kontakt aufnehmen",
+        "learnMore": "Mehr erfahren",
+        "viewProject": "Projekt ansehen",
+        "sourceCode": "Quellcode"
     },
-
-"hero": {},
-
-"about": {},
-
-"services": {},
-
-"contact": {},
-
-"cta": {},
-
-"footer": {}
+    "LocaleSwitcher": {
+        "locale": "Deutsch",
+        "label": "Sprache"
+    },
+    "hero": {
+        "title": "Entdecke das Potenzial hinter jedem Prozess.",
+        "subtitle": "Wir entwerfen und entwickeln Lösungen, die Unternehmen Zeit sparen.",
+        "cta": "Projekt starten",
+        "projects": "Projekte"
+    },
+    "about": {
+        "title": "Über uns",
+        "subtitle": "Wir bauen, Sie profitieren.",
+        "description": "Diovis ist eine Ein-Mann-Agentur, gegründet mit einer klaren Überzeugung: Jedes Unternehmen hat das Recht auf eine individuelle Softwarelösung.",
+        "description2": "Wir bauen Werkzeuge, die Zeit freisetzen — damit Sie sich auf das konzentrieren können, was wirklich zählt.",
+        "cta": "Mehr über uns erfahren",
+        "traits": {
+            "simple": "Klare Lösungen statt Komplexität",
+            "personal": "Persönliche Zusammenarbeit",
+            "quality": "Qualität bis ins Detail",
+            "growth": "Mit Blick auf Wachstum"
+        }
+    },
+    "services": {
+        "title": "Leistungen",
+        "subtitle": "Digitale Lösungen für Unternehmen",
+        "process": "Prozessoptimierung",
+        "web": "Webentwicklung & Websites",
+        "processDesc": "Unterstützt Unternehmen dabei, Prozesse zu digitalisieren und Arbeitsabläufe effizienter zu gestalten. Durch individuelle Softwarelösungen und Automatisierungen reduzieren wir manuelle Arbeit und schaffen mehr Zeit für das Wesentliche.",
+        "webDesc": "Eine professionelle Website ist heute mehr als nur eine digitale Visitenkarte. Sie schafft Vertrauen, macht Ihr Unternehmen online sichtbar und hilft dabei, neue Kunden zu gewinnen.",
+        "cta": "Alle Leistungen ansehen",
+        "automation": {
+            "title": "Prozesse automatisieren — statt Zeit zu verlieren.",
+            "body": "Viele Abläufe im Unternehmen laufen noch manuell ab – von Anfragen über Terminvereinbarungen bis zur Dokumentation. Wir automatisieren wiederkehrende Prozesse und schaffen Strukturen, die Zeit sparen und Fehler reduzieren.",
+            "items": {
+                "booking": "Terminbuchung",
+                "bookingSub": "Automatische Kalender-Sync. Kunden buchen selbst.",
+                "internal": "Interne Abläufe",
+                "internalSub": "Regelbasierte Abläufe ohne manuelles Eingreifen.",
+                "reminders": "Automatische Erinnerungen",
+                "remindersSub": "E-Mail, SMS, Slack — zur richtigen Zeit.",
+                "analytics": "Auswertungen & Kennzahlen",
+                "analyticsSub": "KPIs und Prozessstatus live auf einem Dashboard."
+            }
+        },
+        "webDev": {
+            "title": "Mehr als nur eine Website — ein digitaler Vertriebskanal.",
+            "body": "Eine Website entscheidet oft über den ersten Eindruck. Wir entwickeln moderne Unternehmenswebsites und Online-Shops, die professionell auftreten und bei Google & KI gefunden werden.",
+            "items": {
+                "seo": "SEO & lokale Sichtbarkeit",
+                "seoSub": "Google My Business, Core Web Vitals, strukturierte Daten.",
+                "mobile": "Mobile-First Design",
+                "mobileSub": "65 % der Nutzer browsen mobil. Jedes Detail stimmt.",
+                "ecommerce": "E-Commerce & Online-Shop",
+                "ecommerceSub": "Von einfachem Katalog bis vollautomatisiertem Shop.",
+                "marketing": "Digitales Marketing",
+                "marketingSub": "SEO, Google Ads, E-Mail — messbar und strategisch."
+            }
+        }
+    },
+    "contact": {
+        "title": "Kontakt",
+        "subtitle": "Bereit loszulegen? Schreib uns.",
+        "form": {
+            "name": "Name",
+            "namePlaceholder": "Max Mustermann",
+            "email": "E-Mail",
+            "emailPlaceholder": "max@beispiel.at",
+            "phone": "Telefon",
+            "phonePlaceholder": "+43 664 …",
+            "subject": "Betreff",
+            "message": "Nachricht",
+            "messagePlaceholder": "Beschreibe dein Projekt, deine Idee oder deine Frage…",
+            "send": "Nachricht senden",
+            "sending": "Wird gesendet…",
+            "success": "Nachricht gesendet!",
+            "successMessage": "Vielen Dank. Wir melden uns innerhalb von 24 Stunden bei dir — versprochen.",
+            "newMessage": "Neue Nachricht senden",
+            "error": "Fehler beim Senden. Bitte versuche es erneut oder schreib uns direkt."
+        },
+        "info": {
+            "address": "Adresse",
+            "phone": "Telefon",
+            "email": "E-Mail",
+            "hours": "Erreichbar",
+            "hoursValue": "Mo – Fr, 16:30 – 21:00 Uhr, Sa. So. 10:00 – 19:30 Uhr"
+        },
+        "faq": {
+            "title": "Häufige Fragen.",
+            "q1": "Wie lange dauert eine Website?",
+            "a1": "Eine Starter-Website ist in 1–2 Wochen fertig. Business und Premium Projekte dauern je nach Umfang 3–6 Wochen. Wir besprechen den genauen Zeitrahmen beim ersten Gespräch.",
+            "q2": "Was brauche ich um zu starten?",
+            "a2": "Nichts außer einer Idee. Wir führen dich durch den gesamten Prozess — von der Konzeption über den Content bis zum Go-Live.",
+            "q3": "Gibt es laufende Kosten?",
+            "a3": "Hosting und Domain kosten ca. 10–20 €/Monat. Unsere Wartungspakete ab 29 €/Monat sind optional, aber empfohlen.",
+            "q4": "Was wenn ich später Änderungen will?",
+            "a4": "Kein Problem. Mit einem Wartungspaket sind kleine Änderungen inklusive. Größere Anpassungen werden als Einzelleistung abgerechnet.",
+            "q5": "Kann ich meine Website selbst bearbeiten?",
+            "a5": "Ja. Bei Bedarf integrieren wir ein CMS (z.B. Sanity oder Contentful) damit du Texte und Bilder selbst aktualisieren kannst.",
+            "q6": "Macht ihr auch E-Shops?",
+            "a6": "Ja — ab 1.200 € bauen wir vollständige Online-Shops mit Zahlungsabwicklung, Produktverwaltung und mehr."
+        }
+    },
+    "cta": {
+        "title": "Bereit loszulegen?",
+        "subtitle": "Lass uns dein Projekt zum Leben erwecken.",
+        "description": "Kostenlose Erstberatung, kein Kleingedrucktes. Erzähl mir von deiner Idee — ich höre zu.",
+        "button": "Kostenlose Beratung"
+    },
+    "footer": {
+        "description": "Erstellen moderner Webanwendungen mit Fokus auf Performance und Benutzererfahrung.",
+        "contact": "Kontaktieren Sie uns",
+        "navigation": "Navigation",
+        "contactTitle": "Kontakt",
+        "connect": "Connect",
+        "rights": "Alle Rechte vorbehalten."
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "subtitle": "Eine Auswahl meiner Arbeiten",
+        "featured": "Herausragende Projekte",
+        "allProjects": "Alle Projekte",
+        "view": "Projekt ansehen",
+        "source": "Quellcode",
+        "cta": "Haben Sie ein Projekt im Sinn?",
+        "ctaSub": "Lassen Sie uns gemeinsam etwas Großartiges schaffen!",
+        "ctaButton": "Projekt besprechen"
+    },
+    "projects": {
+        "title": "Projekte",
+        "subtitle": "Eine Auswahl meiner Arbeiten"
+    }
 }

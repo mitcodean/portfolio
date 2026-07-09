@@ -3,23 +3,147 @@
         "home": "Home",
         "services": "Services",
         "about": "About",
-        "contact": "Contact"
+        "contact": "Contact",
+        "portfolio": "Portfolio",
+        "projects": "Projects"
     },
-
     "common": {
         "current": "Current",
-        "getInTouch": "Get in touch"
+        "getInTouch": "Get in touch",
+        "learnMore": "Learn more",
+        "viewProject": "View project",
+        "sourceCode": "Source code"
     },
-
-"hero": {},
-
-"about": {},
-
-"services": {},
-
-"contact": {},
-
-"cta": {},
-
-"footer": {}
+    "LocaleSwitcher": {
+        "locale": "English",
+        "label": "Language"
+    },
+    "hero": {
+        "title": "Discover the potential behind every process.",
+        "subtitle": "We design and develop solutions that save businesses time.",
+        "cta": "Start project",
+        "projects": "Projects"
+    },
+    "about": {
+        "title": "About us",
+        "subtitle": "We build, you benefit.",
+        "description": "Diovis is a one-man agency founded with a clear conviction: Every business deserves an individual software solution.",
+        "description2": "We build tools that free up time — so you can focus on what really matters.",
+        "cta": "Learn more about us",
+        "traits": {
+            "simple": "Clear solutions instead of complexity",
+            "personal": "Personal collaboration",
+            "quality": "Quality down to the last detail",
+            "growth": "Focused on growth"
+        }
+    },
+    "services": {
+        "title": "Services",
+        "subtitle": "Digital solutions for businesses",
+        "process": "Process optimization",
+        "web": "Web development & Websites",
+        "processDesc": "Helps businesses digitize processes and make workflows more efficient. Through custom software solutions and automations, we reduce manual work and create more time for what matters.",
+        "webDesc": "A professional website is more than just a digital business card today. It builds trust, makes your business visible online, and helps attract new customers.",
+        "cta": "View all services",
+        "automation": {
+            "title": "Automate processes — instead of wasting time.",
+            "body": "Many processes in companies are still manual – from inquiries to appointment bookings to documentation. We automate recurring processes and create structures that save time and reduce errors.",
+            "items": {
+                "booking": "Appointment booking",
+                "bookingSub": "Automatic calendar sync. Customers book themselves.",
+                "internal": "Internal workflows",
+                "internalSub": "Rule-based processes without manual intervention.",
+                "reminders": "Automatic reminders",
+                "remindersSub": "Email, SMS, Slack — at the right time.",
+                "analytics": "Analytics & KPIs",
+                "analyticsSub": "KPIs and process status live on a dashboard."
+            }
+        },
+        "webDev": {
+            "title": "More than just a website — a digital sales channel.",
+            "body": "A website often decides the first impression. We develop modern business websites and online shops that appear professional and are found on Google & AI.",
+            "items": {
+                "seo": "SEO & local visibility",
+                "seoSub": "Google My Business, Core Web Vitals, structured data.",
+                "mobile": "Mobile-First Design",
+                "mobileSub": "65% of users browse mobile. Every detail matters.",
+                "ecommerce": "E-Commerce & Online Shop",
+                "ecommerceSub": "From simple catalog to fully automated shop.",
+                "marketing": "Digital Marketing",
+                "marketingSub": "SEO, Google Ads, Email — measurable and strategic."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Ready to get started? Write us.",
+        "form": {
+            "name": "Name",
+            "namePlaceholder": "John Doe",
+            "email": "Email",
+            "emailPlaceholder": "john@example.com",
+            "phone": "Phone",
+            "phonePlaceholder": "+43 664 …",
+            "subject": "Subject",
+            "message": "Message",
+            "messagePlaceholder": "Describe your project, idea or question…",
+            "send": "Send message",
+            "sending": "Sending…",
+            "success": "Message sent!",
+            "successMessage": "Thank you. We will get back to you within 24 hours — promised.",
+            "newMessage": "Send new message",
+            "error": "Error sending. Please try again or write us directly."
+        },
+        "info": {
+            "address": "Address",
+            "phone": "Phone",
+            "email": "Email",
+            "hours": "Hours",
+            "hoursValue": "Mon – Fri, 4:30 – 9:00 PM, Sat. Sun. 10:00 – 7:30 PM"
+        },
+        "faq": {
+            "title": "Frequently asked questions.",
+            "q1": "How long does a website take?",
+            "a1": "A starter website is ready in 1–2 weeks. Business and Premium projects take 3–6 weeks depending on scope. We discuss the exact timeline in the first meeting.",
+            "q2": "What do I need to get started?",
+            "a2": "Nothing but an idea. We guide you through the entire process — from conception through content to go-live.",
+            "q3": "Are there ongoing costs?",
+            "a3": "Hosting and domain cost about 10–20 €/month. Our maintenance packages from 29 €/month are optional but recommended.",
+            "q4": "What if I want changes later?",
+            "a4": "No problem. With a maintenance package, small changes are included. Larger adjustments are billed as individual services.",
+            "q5": "Can I edit my website myself?",
+            "a5": "Yes. If needed, we integrate a CMS (e.g., Sanity or Contentful) so you can update text and images yourself.",
+            "q6": "Do you also build E-Shops?",
+            "a6": "Yes — from 1,200 € we build complete online shops with payment processing, product management, and more."
+        }
+    },
+    "cta": {
+        "title": "Ready to get started?",
+        "subtitle": "Let's bring your project to life.",
+        "description": "Free initial consultation, no fine print. Tell me about your idea — I listen.",
+        "button": "Free consultation"
+    },
+    "footer": {
+        "description": "Creating modern web applications with focus on performance and user experience.",
+        "contact": "Contact us",
+        "navigation": "Navigation",
+        "contactTitle": "Contact",
+        "connect": "Connect",
+        "rights": "All rights reserved."
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "subtitle": "A selection of my work",
+        "featured": "Featured projects",
+        "allProjects": "All projects",
+        "view": "View project",
+        "source": "Source code",
+        "cta": "Have a project in mind?",
+        "ctaSub": "Let's build something amazing together!",
+        "ctaButton": "Discuss project"
+    },
+    "projects": {
+        "title": "Projects",
+        "subtitle": "A selection of my work"
+    }
 }

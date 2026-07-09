@@ -1,8 +1,8 @@
-import Hero from "@/sections/hero/Hero"
-import Services from "@/sections/services-preview/ServicesPreview"
-import PortfolioPreview from "@/sections/portfolio-preview/PortfolioPreview"
-import AboutPreview from "@/sections/about-preview/AboutPreview"
-import ContactCTA from "@/sections/contact/ContactCTA"
+import Hero from "./sections/hero/Hero"
+import Services from "./sections/services-preview/ServicesPreview"
+import PortfolioPreview from "@/app/[locale]/sections/portfolio-preview/PortfolioPreview"
+import AboutPreview from "./sections/about-preview/AboutPreview"
+import ContactCTA from "./sections/contact/ContactCTA"
 
 
 export default async function HomePage() {
