@@ -9,13 +9,12 @@ export const routing = defineRouting({
       de: '/home'
     },
     '/leistungen': {
-      de: '/services'
-    },
-    '/leistungen': {
-      de: '/services'
+      de: '/services',
+      en: '/services'
     },
     '/contact': {
-      de: '/kontakt'
+      de: '/kontakt',
+      en: '/contact'
     }
   }
 });
