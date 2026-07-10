@@ -1,15 +1,27 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
-const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay } },
+const fadeUp = (delay = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+      delay,
+    },
+  },
 });
 
 export default function PortfolioPage() {

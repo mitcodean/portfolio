@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowUpRight, Zap, Globe, Check,
@@ -9,16 +9,26 @@ import {
   Search, Smartphone, ShoppingCart, Mail,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { motion, type Variants } from "framer-motion";
 
 const FONT_STYLE = `
   @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap');
 `;
 
-const ease = [0.22, 1, 0.36, 1] as const;
-
-const fadeUp = (delay = 0) => ({
-  hidden:  { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay } },
+const fadeUp = (delay = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      delay,
+    },
+  },
 });
 
 // Triangle brand mark
@@ -49,7 +59,7 @@ function ServiceCard({
       ref={ref}
       initial={{ opacity: 0, x: fromLeft ? -64 : 64, y: 24 }}
       animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.85, ease }}
+      transition={{ duration: 0.85, ease: "easeInOut" }}
       className="group relative flex flex-col rounded-2xl border border-white/8 bg-white/[0.025] backdrop-blur-sm overflow-hidden"
       style={{ boxShadow: "0 2px 60px rgba(0,0,0,0.3)" }}
     >

@@ -1,15 +1,29 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { ArrowUpRight, Send, CheckCircle2, Loader2, MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { motion, type Variants } from "framer-motion";
 
-const fadeUp = (delay = 0) => ({
-  hidden:  { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94], delay } },
+const fadeUp = (delay = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+      delay,
+    },
+  },
 });
+
+
 
 type Status = "idle" | "loading" | "success" | "error";
 

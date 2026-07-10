@@ -1,18 +1,29 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useInView, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import {
   Send, CheckCircle2, Loader2, MapPin, Phone, Mail,
   Github, Linkedin, Instagram, Twitter, Clock,
   ArrowUpRight, Zap,
 } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
-// ─── helpers ────────────────────────────────────────────────────────────────
-const fadeUp = (delay = 0) => ({
-  hidden:  { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay } },
+const fadeUp = (delay = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+      delay,
+    },
+  },
 });
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -100,7 +111,7 @@ export default function ContactPage() {
             <motion.h1
               initial={{ y: "110%" }}
               animate={heroInView ? { y: 0 } : {}}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+              transition={{ duration: 0.9, ease: "easeInOut", delay: 0.08 }}
               className="text-[clamp(3.2rem,9vw,8rem)] font-black tracking-tight leading-[0.88] text-foreground"
             >
               Let's
@@ -110,7 +121,7 @@ export default function ContactPage() {
             <motion.h1
               initial={{ y: "110%" }}
               animate={heroInView ? { y: 0 } : {}}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
+              transition={{ duration: 0.9, ease: "easeInOut", delay: 0.18 }}
               className="text-[clamp(3.2rem,9vw,8rem)] font-black tracking-tight leading-[0.88] text-primary"
             >
               talk.

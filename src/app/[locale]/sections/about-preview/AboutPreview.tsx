@@ -1,11 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView} from "framer-motion";
+import { useInView} from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight,TrendingUp, ShieldCheck, Users, Compass} from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { motion, type Variants } from "framer-motion";
 
 import TiltCard from "@/components/ui/tilt-card";
 
@@ -13,9 +14,20 @@ const FONT_STYLE = `
   @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap');
 `;
 
-const fadeUp = (delay = 0) => ({
-  hidden:  { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay } },
+const fadeUp = (delay = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.65,
+      ease: "easeOut",
+      delay,
+    },
+  },
 });
 
 export default function AboutPreview() {

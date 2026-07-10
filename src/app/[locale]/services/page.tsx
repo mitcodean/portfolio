@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useInView, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowUpRight, Check, X, ShoppingCart, Globe, Search,
@@ -9,14 +9,25 @@ import {
   ChevronDown, Star, Package, Cpu, CreditCard, Truck,
   LayoutDashboard, Headphones, RefreshCw,
 } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
-// ─── helpers ────────────────────────────────────────────────────────────────
-const fadeUp = (delay = 0) => ({
-  hidden:  { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay } },
+
+const fadeUp = (delay = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+      delay,
+    },
+  },
 });
 
-// ─── data ───────────────────────────────────────────────────────────────────
 const PLANS = [
   {
     id: "starter",
@@ -203,7 +214,7 @@ function FAQ({ q, a }: { q: string; a: string }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="text-sm text-support pb-5 leading-relaxed overflow-hidden"
           >
             {a}
@@ -250,21 +261,21 @@ export default function ServicesPage() {
             <div>
               <div className="overflow-hidden mb-3">
                 <motion.h1 initial={{ y: "110%" }} animate={heroInView ? { y: 0 } : {}}
-                  transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.07 }}
+                  transition={{ duration: 0.85, ease: "easeInOut", delay: 0.07 }}
                   className="text-[clamp(3rem,8vw,7rem)] font-black tracking-tight leading-[0.9] text-foreground">
                   Websites.
                 </motion.h1>
               </div>
               <div className="overflow-hidden mb-3">
                 <motion.h1 initial={{ y: "110%" }} animate={heroInView ? { y: 0 } : {}}
-                  transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.17 }}
+                  transition={{ duration: 0.85, ease: "easeInOut", delay: 0.17 }}
                   className="text-[clamp(3rem,8vw,7rem)] font-black tracking-tight leading-[0.9] text-primary">
                   Marketing.
                 </motion.h1>
               </div>
               <div className="overflow-hidden">
                 <motion.h1 initial={{ y: "110%" }} animate={heroInView ? { y: 0 } : {}}
-                  transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.27 }}
+                  transition={{ duration: 0.85, ease: "easeInOut", delay: 0.27 }}
                   className="text-[clamp(3rem,8vw,7rem)] font-black tracking-tight leading-[0.9] text-foreground/30">
                   Wachstum.
                 </motion.h1>
