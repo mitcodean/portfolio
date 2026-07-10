@@ -7,6 +7,7 @@ import {
   ArrowUpRight, Zap, Globe, Check,
   Calendar, GitBranch, Bell, BarChart2,
   Search, Smartphone, ShoppingCart, Mail,
+  LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { motion, type Variants } from "framer-motion";
@@ -31,6 +32,28 @@ const fadeUp = (delay = 0): Variants => ({
   },
 });
 
+// Typdefinition für Card Items
+type CardItem = {
+  icon: LucideIcon;
+  label: string;
+  sub: string;
+};
+
+// Typdefinition für Card
+type Card = {
+  icon: LucideIcon;
+  eyebrow: string;
+  headline: string;
+  subline: string;
+  body: string;
+  items: CardItem[];
+  example1: string;
+  example2: string;
+  example3: string;
+  cta: string;
+  href: string;
+};
+
 // Triangle brand mark
 function TriangleMark({ size = 40, opacity = 0.08 }: { size?: number; opacity?: number }) {
   return (
@@ -45,9 +68,8 @@ function ServiceCard({
   card,
   fromLeft,
 }: {
-  card: any;
+  card: Card;
   fromLeft: boolean;
-  t: any;
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -122,7 +144,7 @@ function ServiceCard({
 
         {/* Feature rows */}
         <div className="space-y-3">
-          {card.items.map(({ icon: FIcon, label, sub }) => (
+          {card.items.map(({ icon: FIcon, label, sub }: CardItem) => (
             <div
               key={label}
               className="flex items-start gap-3 p-3 rounded-xl border border-white/5 bg-white/[0.02] hover:border-white/10 transition-colors duration-200 group/item cursor-default"
@@ -205,7 +227,7 @@ export default function ServicesPreview() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const t = useTranslations("services");
 
-  const CARD_AUTO = {
+  const CARD_AUTO: Card = {
     icon: Zap,
     eyebrow: t("automation.title").split("—")[0].trim() || "Prozessautomatisierung",
     headline: t("automation.title").split("—")[0]?.trim() + " —",
@@ -220,12 +242,11 @@ export default function ServicesPreview() {
     example1: t("automation.example1"),
     example2: t("automation.example2"),
     example3: t("automation.example3"),
-
     cta: t("automation.cta"),
     href: "/contact",
   };
 
-  const CARD_WEB = {
+  const CARD_WEB: Card = {
     icon: Globe,
     eyebrow: t("webDev.title").split("—")[0].trim() || "Websites & Online-Präsenz",
     headline: t("webDev.title").split("—")[0]?.trim() + " —",
@@ -288,59 +309,58 @@ export default function ServicesPreview() {
                   {t("web")}
                 </h4>
               </div>
-              
             </motion.div>
-          <motion.div className="mt-6 flex flex-col lg:flex-row gap-10" variants={fadeUp(0.15)} initial="hidden" animate={inView ? "visible" : "hidden"}>
-            <div>
-              <motion.p
-              variants={fadeUp(0.1)}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className="text-support text-[15px] leading-relaxed max-w-lg mt-5"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                {t("processDesc")}
-              </motion.p>
-            </div>
-            <div>
-              <motion.p
-              variants={fadeUp(0.1)}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className="text-support text-[15px] leading-relaxed max-w-lg mt-5"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                {t("webDesc")}
-              </motion.p>
-            </div>
             
-          </motion.div>
-          {/* Footer link */}
-          <motion.div
-            variants={fadeUp(0.45)}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            className="mt-10 flex items-center gap-6"
-          >
-            <Link
-              href="/services"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors duration-200"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            <motion.div className="mt-6 flex flex-col lg:flex-row gap-10" variants={fadeUp(0.15)} initial="hidden" animate={inView ? "visible" : "hidden"}>
+              <div>
+                <motion.p
+                  variants={fadeUp(0.1)}
+                  initial="hidden"
+                  animate={inView ? "visible" : "hidden"}
+                  className="text-support text-[15px] leading-relaxed max-w-lg mt-5"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {t("processDesc")}
+                </motion.p>
+              </div>
+              <div>
+                <motion.p
+                  variants={fadeUp(0.1)}
+                  initial="hidden"
+                  animate={inView ? "visible" : "hidden"}
+                  className="text-support text-[15px] leading-relaxed max-w-lg mt-5"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {t("webDesc")}
+                </motion.p>
+              </div>
+            </motion.div>
+            
+            {/* Footer link */}
+            <motion.div
+              variants={fadeUp(0.45)}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              className="mt-10 flex items-center gap-6"
             >
+              <Link
+                href="/services"
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors duration-200"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
                 {t("cta")}
-              <ArrowUpRight
-                size={15}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
-              />
-            </Link>
-          </motion.div>
-            
+                <ArrowUpRight
+                  size={15}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
+                />
+              </Link>
+            </motion.div>
           </div>
 
           {/* Two cards */}
           <div className="grid lg:grid-cols-2 gap-5">
             <ServiceCard card={CARD_AUTO} fromLeft={true} />
-            <ServiceCard card={CARD_WEB}  fromLeft={false} />
+            <ServiceCard card={CARD_WEB} fromLeft={false} />
           </div>
         </div>
       </section>
