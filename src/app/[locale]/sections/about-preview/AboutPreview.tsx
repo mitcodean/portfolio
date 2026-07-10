@@ -66,7 +66,7 @@ export default function AboutPreview() {
       <section
         ref={ref}
         id="about"
-        className="bg-background py-28 relative overflow-hidden"
+        className="bg-background py-16 sm:py-20 lg:py-28 relative overflow-hidden"
       >
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -75,15 +75,15 @@ export default function AboutPreview() {
             variants={fadeUp(0)}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="mb-14 relative"
+            className="mb-10 sm:mb-14 relative overflow-hidden rounded-xl"
           >
-            {/* Decorative triangle marks */}
+            {/* Decorative triangle marks — hidden on mobile to avoid overflow/clutter */}
             <div className="w-full h-full bg-primary absolute pointer-events-none rounded-xl"/>
-            <div className="w-0 h-0 border-solid border-t-0 border-r-[350px] border-l-0 border-b-[350px] border-l-transparent border-r-primary border-t-transparent border-b-transparent right-0 top-0 absolute pointer-events-none rounded-xl"/>
-            
-            <div className="relative inline-block">
+            <div className="hidden sm:block w-0 h-0 border-solid border-t-0 border-r-[350px] border-l-0 border-b-[350px] border-l-transparent border-r-primary border-t-transparent border-b-transparent right-0 top-0 absolute pointer-events-none rounded-xl"/>
+
+            <div className="relative inline-block px-1 py-1">
               <h2
-                className="relative text-4xl sm:text-5xl font-bold uppercase tracking-[0.2em]"
+                className="relative text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] break-words"
                 style={{ fontFamily: "'DM Sans', sans-serif", zIndex: 1 }}
               >
                 <span className="text-secondary">{t("title")}</span>
@@ -92,22 +92,22 @@ export default function AboutPreview() {
           </motion.div>
 
           {/* Main grid */}
-          <div ref={scrollRef} className="grid lg:grid-cols-2 gap-16 items-start">
+          <div ref={scrollRef} className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
             {/* LEFT — copy */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
 
               {/* subheadline */}
               <motion.h2
                 variants={fadeUp(0.05)}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="leading-[1.1]"
+                className="leading-[1.15] sm:leading-[1.1]"
                 style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
               >
-                <span className="block text-2xl sm:text-4xl font-light text-foreground">{t("subtitle").split(",")[0]}</span>
-                <span className="block text-2xl sm:text-4xl font-light italic">
-                  
+                <span className="block text-xl sm:text-2xl lg:text-4xl font-light text-foreground">{t("subtitle").split(",")[0]}</span>
+                <span className="block text-xl sm:text-2xl lg:text-4xl font-light italic">
+
                   <span className="relative inline-block text-primary">
                     {t("subtitle").split(",")[1]?.trim() || t("subtitle")}
                     <motion.span
@@ -124,21 +124,21 @@ export default function AboutPreview() {
                 variants={fadeUp(0.12)}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="space-y-5 leading-relaxed"
+                className="space-y-4 sm:space-y-5 leading-relaxed"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
-                <p className="text-lg text-neutral/90">
+                <p className="text-base sm:text-lg text-neutral/90">
                   {t("description")}
                 </p>
-                <p className="text-support">
+                <p className="text-sm sm:text-base text-support">
                   {t("description2")}
                 </p>
                 {/* Editorial quote — Source Serif 4 italic */}
                 <blockquote
-                  className="border-l-2 border-primary/40 pl-5 py-1 mt-2"
+                  className="border-l-2 border-primary/40 pl-4 sm:pl-5 py-1 mt-2"
                   style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
                 >
-                  <p className="text-xl font-light italic text-foreground/60 leading-snug">
+                  <p className="text-lg sm:text-xl font-light italic text-foreground/60 leading-snug">
                     &quot;{t("quote")}&quot;
                   </p>
                   <footer className="mt-2 text-xs uppercase tracking-widest text-support/50"
@@ -152,7 +152,7 @@ export default function AboutPreview() {
               <motion.div variants={fadeUp(0.18)} initial="hidden" animate={inView ? "visible" : "hidden"}>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors duration-200"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors duration-200 py-2 -my-2"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
                   {t("cta")}
@@ -165,12 +165,12 @@ export default function AboutPreview() {
                 variants={fadeUp(0.22)}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="grid sm:grid-cols-2 gap-4 pt-4"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4"
               >
                 {traits.map(({ icon: Icon, title, text }) => (
                   <div
                     key={title}
-                    className="group p-5 rounded-xl border border-border bg-muted/40 hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 cursor-default relative overflow-hidden"
+                    className="group p-4 sm:p-5 rounded-xl border border-border bg-muted/40 active:border-primary/30 active:bg-primary/5 hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 cursor-default relative overflow-hidden"
                   >
                     {/* Tiny triangle accent on hover */}
                     <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -178,7 +178,7 @@ export default function AboutPreview() {
                         <polygon points="28,0 28,28 0,0" fill="#B22222" opacity="0.15" />
                       </svg>
                     </div>
-                    <div className="flex items-center gap-2.5 mb-3">
+                    <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
                       <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                         <Icon size={15} className="text-primary" />
                       </div>
@@ -192,16 +192,16 @@ export default function AboutPreview() {
               </motion.div>
             </div>
 
+            {/* RIGHT — photo (now visible on all breakpoints, not just lg) */}
             <motion.div
               variants={fadeUp(0.1)}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              className="relative hidden lg:block"
-              style={{ height: 580 }}
+              className="relative w-full h-[340px] xs:h-[400px] sm:h-[460px] lg:h-[580px]"
             >
               {/* Photo frame */}
               <motion.div
-                className="absolute left-4 top-0 w-[78%]"
+                className="absolute inset-x-0 mx-auto w-[80%] sm:w-[65%] top-0 lg:left-4 lg:inset-x-auto lg:mx-0 lg:w-[78%]"
               >
                 <TiltCard>
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 aspect-[3/4] bg-muted">
@@ -209,13 +209,14 @@ export default function AboutPreview() {
                       src="/dean.jpg"
                       alt="Dean Silviu Mitco"
                       fill
+                      sizes="(max-width: 1024px) 65vw, 40vw"
                       className="object-cover object-top rounded-2xl overflow-hidden"
                     />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent" />
 
-                    
-                    <div className="absolute bottom-4 left-4 right-4 px-4 py-3 rounded-xl bg-[#0F172A]/80 border border-white/10 backdrop-blur-sm">
+
+                    <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#0F172A]/80 border border-white/10 backdrop-blur-sm">
                       <p
                         className="text-xs font-bold text-foreground"
                         style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -237,9 +238,9 @@ export default function AboutPreview() {
                   </div>
                 </TiltCard>
               </motion.div>
-              
+
             </motion.div>
-            
+
           </div>
         </div>
       </section>
