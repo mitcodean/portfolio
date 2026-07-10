@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowUpRight, Send, CheckCircle2, Loader2, MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const fadeUp = (delay = 0) => ({
   hidden:  { opacity: 0, y: 24 },
@@ -15,6 +16,8 @@ type Status = "idle" | "loading" | "success" | "error";
 export default function ContactCTA() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const t = useTranslations("contact");
+  const ctaT = useTranslations("cta");
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<Status>("idle");
@@ -58,10 +61,10 @@ export default function ContactCTA() {
 
         {/* Header */}
         <motion.div variants={fadeUp(0)} initial="hidden" animate={inView ? "visible" : "hidden"} className="mb-12">
-          <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-3">Kontakt</p>
+          <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-3">{t("title")}</p>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">
-            Bereit loszulegen?<br />
-            <span className="text-primary">Schreib uns.</span>
+            {ctaT("title")}<br />
+            <span className="text-primary">{t("subtitle")}</span>
           </h2>
         </motion.div>
 
@@ -69,7 +72,7 @@ export default function ContactCTA() {
 
         <div className="grid lg:grid-cols-2 gap-8">
 
-          {/* ── LEFT: Form ── */}
+          {/* Form */}
           <motion.div
             variants={fadeUp(0.1)}
             initial="hidden"
@@ -89,15 +92,15 @@ export default function ContactCTA() {
                 >
                   <CheckCircle2 size={52} className="text-primary mx-auto" />
                 </motion.div>
-                <h3 className="text-xl font-bold text-foreground">Nachricht gesendet!</h3>
+                <h3 className="text-xl font-bold text-foreground">{t("form.success")}</h3>
                 <p className="text-support text-sm max-w-xs">
-                  Vielen Dank. Wir melden uns so schnell wie möglich bei dir.
+                  {t("form.successMessage")}
                 </p>
                 <button
                   onClick={() => { setStatus("idle"); setForm({ name: "", email: "", message: "" }); }}
                   className="mt-2 text-xs text-primary hover:text-accent underline underline-offset-4 transition-colors"
                 >
-                  Neue Nachricht senden
+                  {t("form.newMessage")}
                 </button>
               </motion.div>
             ) : (
@@ -151,7 +154,7 @@ export default function ContactCTA() {
                 {/* Error */}
                 {status === "error" && (
                   <p className="text-xs text-destructive">
-                    Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt an contact@mitcodean.com
+                    {t("form.error")}
                   </p>
                 )}
 
@@ -162,30 +165,30 @@ export default function ContactCTA() {
                   className="group w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-primary text-foreground text-sm font-semibold hover:bg-accent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {status === "loading" ? (
-                    <><Loader2 size={16} className="animate-spin" /> Wird gesendet…</>
+                    <><Loader2 size={16} className="animate-spin" /> {t("form.sending")}</>
                   ) : (
-                    <><Send size={15} /> Nachricht senden</>
+                    <><Send size={15} /> {t("form.send")}</>
                   )}
                 </button>
 
                 <p className="text-center text-[11px] text-support/50">
-                  Oder direkt: <a href="mailto:contact@mitcodean.com" className="text-primary hover:underline">contact@mitcodean.com</a>
+                  {t("form.direct")} <a href="mailto:contact@mitcodean.com" className="text-primary hover:underline">contact@mitcodean.com</a>
                 </p>
               </div>
             )}
           </motion.div>
 
-          {/* ── RIGHT: Map + Info ── */}
+          {/* Map + Info */}
           <motion.div
             variants={fadeUp(0.18)}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             className="flex flex-col gap-5"
           >
-            {/* Map embed — smaller */}
+            {/* Map embed */}
             <div className="relative rounded-2xl overflow-hidden border border-borderflex-1 min-h-[260px]">
               <iframe
-                title="Mitco Dean Standort"
+                title={t("map.title")}
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.0!2d14.4167!3d47.9167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477397c2e3b3e3e3%3A0x1234567890abcdef!2sEisenstra%C3%9Fe%2013%2C%204460%20Losenstein!5e0!3m2!1sde!2sat!4v1234567890"
                 width="100%"
                 height="100%"
@@ -197,16 +200,16 @@ export default function ContactCTA() {
               />
               <div className="absolute bottom-3 left-3 flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0F172A]/90 border border-border backdrop-blur-sm text-xs text-foreground">
                 <MapPin size={12} className="text-primary shrink-0" />
-                Losenstein, Österreich
+                  {t("info.address")}: Eisenstraße 13, 4460 Losenstein
               </div>
             </div>
 
             {/* Quick info strip */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
-                { icon: MapPin, label: "Adresse",  value: "Eisenstraße 13, 4460 Losenstein" },
-                { icon: Phone,  label: "Telefon",  value: "+43 664 9494891" },
-                { icon: Mail,   label: "E-Mail",   value: "contact@mitcodean.com" },
+                { icon: MapPin, label: t("info.address"),  value: "Eisenstraße 13, 4460 Losenstein" },
+                { icon: Phone,  label: t("info.phone"),  value: "+43 664 9494891" },
+                { icon: Mail,   label: t("info.email"),   value: "contact@mitcodean.com" },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex flex-col gap-2 p-4 rounded-xl border border-border bg-muted">
                   <div className="flex items-center gap-2 text-[10px] text-support uppercase tracking-widest">

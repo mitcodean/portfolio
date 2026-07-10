@@ -3,8 +3,9 @@
 import { useRef } from "react";
 import { motion, useInView} from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight,TrendingUp, ShieldCheck, Users, Compass,BadgeCheck,Gauge,Building2,Target,Sparkles,Layers3, Gem, Handshake} from "lucide-react";
+import { ArrowUpRight,TrendingUp, ShieldCheck, Users, Compass} from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import TiltCard from "@/components/ui/tilt-card";
 
@@ -17,42 +18,35 @@ const fadeUp = (delay = 0) => ({
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay } },
 });
 
-const traits = [
-  {
-    icon: Compass,
-    title: "Klare Lösungen statt Komplexität",
-    text: "Wir glauben an digitale Lösungen, die verständlich, effizient und langfristig wartbar sind."
-    },
-  {
-    icon: Users,
-    title: "Persönliche Zusammenarbeit",
-    text: "Direkte Ansprechpartner und ehrliche Kommunikation. Wir begleiten Projekte partnerschaftlich und denken langfristig statt nur bis zum Launch."
-    },
-  {
-    icon: ShieldCheck,
-    title: "Qualität bis ins Detail",
-    text: "Von Performance und Sicherheit bis zur Benutzerführung – jedes Detail wird bewusst geplant, getestet und kontinuierlich verbessert."
-    },
-  {
-    icon: TrendingUp,
-    title: "Mit Blick auf Wachstum",
-    text: "Wir entwickeln Lösungen, die nicht nur heute funktionieren, sondern auch morgen mit Ihrem Unternehmen wachsen können."
-    },
-];
-
-// Triangle SVG mark — brand motif
-function TriangleMark({ size = 40, opacity = 0.08 }: { size?: number; opacity?: number }) {
-  return (
-    <svg width={size} height={size * 1.15} viewBox="0 0 40 46" fill="none" style={{ opacity }}>
-      <polygon points="20,2 38,44 2,44" fill="#B22222" />
-    </svg>
-  );
-}
-
 export default function AboutPreview() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const scrollRef = useRef(null);
+
+  const t = useTranslations("about");
+
+  const traits = [
+    {
+      icon: Compass,
+      title: t("traits.simple"),
+      text: t("traits.simpleDesc"),
+    },
+    {
+      icon: Users,
+      title: t("traits.personal"),
+      text: t("traits.personalDesc"),
+    },
+    {
+      icon: ShieldCheck,
+      title: t("traits.quality"),
+      text: t("traits.qualityDesc"),
+    },
+    {
+      icon: TrendingUp,
+      title: t("traits.growth"),
+      text: t("traits.growthDesc"),
+    },
+  ];
 
   return (
     <>
@@ -64,7 +58,7 @@ export default function AboutPreview() {
       >
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          {/* Section label — large, uppercase, editorial */}
+          {/* Section label */}
           <motion.div
             variants={fadeUp(0)}
             initial="hidden"
@@ -80,7 +74,7 @@ export default function AboutPreview() {
                 className="relative text-4xl sm:text-5xl font-bold uppercase tracking-[0.2em]"
                 style={{ fontFamily: "'DM Sans', sans-serif", zIndex: 1 }}
               >
-                <span className="text-secondary">Über uns</span>
+                <span className="text-secondary">{t("title")}</span>
               </h2>
             </div>
           </motion.div>
@@ -91,7 +85,7 @@ export default function AboutPreview() {
             {/* LEFT — copy */}
             <div className="space-y-8">
 
-              {/* Editorial subheadline — Source Serif 4 */}
+              {/* subheadline */}
               <motion.h2
                 variants={fadeUp(0.05)}
                 initial="hidden"
@@ -99,11 +93,11 @@ export default function AboutPreview() {
                 className="leading-[1.1]"
                 style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
               >
-                <span className="block text-2xl sm:text-4xl font-light text-foreground">Wir bauen,</span>
+                <span className="block text-2xl sm:text-4xl font-light text-foreground">{t("subtitle").split(",")[0]}</span>
                 <span className="block text-2xl sm:text-4xl font-light italic">
-                  sie{" "}
+                  
                   <span className="relative inline-block text-primary">
-                    profitieren.
+                    {t("subtitle").split(",")[1]?.trim() || t("subtitle")}
                     <motion.span
                       initial={{ scaleX: 0 }}
                       animate={inView ? { scaleX: 1 } : {}}
@@ -122,13 +116,10 @@ export default function AboutPreview() {
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
                 <p className="text-lg text-neutral/90">
-                  Diovis ist eine Ein-Mann-Agentur, gegründet mit einer klaren Überzeugung:{" "}
-                  <span className="text-foreground font-medium">
-                    jedes Unternehmen hat das Recht auf eine individuelle Softwarelösung.
-                  </span>
+                  {t("description")}
                 </p>
                 <p className="text-support">
-                  Wir bauen Werkzeuge, die Zeit freisetzen — damit du dich auf das konzentrieren kannst, was wirklich zählt.
+                  {t("description2")}
                 </p>
                 {/* Editorial quote — Source Serif 4 italic */}
                 <blockquote
@@ -136,11 +127,11 @@ export default function AboutPreview() {
                   style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
                 >
                   <p className="text-xl font-light italic text-foreground/60 leading-snug">
-                    „Man kann keine neuen Ozeane entdecken, wenn man nicht den Mut hat, die Küste aus den Augen zu verlieren."
+                    &quot;{t("quote")}&quot;
                   </p>
                   <footer className="mt-2 text-xs uppercase tracking-widest text-support/50"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    André Gide
+                      {t("quoteAuthor")}
                   </footer>
                 </blockquote>
               </motion.div>
@@ -152,7 +143,7 @@ export default function AboutPreview() {
                   className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors duration-200"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
-                  Mehr über uns erfahren
+                  {t("cta")}
                   <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                 </Link>
               </motion.div>

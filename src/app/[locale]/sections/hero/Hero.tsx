@@ -7,6 +7,8 @@ import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 import { MagneticText } from "@/components/ui/morphing-cursor";
 
@@ -14,6 +16,9 @@ export default function Hero() {
     const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.1 });
+
+    const t = useTranslations("hero");
+    const locale = useLocale();
 
   useEffect(() => {
     if (isInView) {
@@ -59,13 +64,15 @@ export default function Hero() {
     }
   };
 
+  const isGerman = locale === "de";
+
   return (
     <section
       ref={ref}
       className="relative min-h-screen w-full bg-background flex items-center"
       style={{ background: "#0F172A" }}
     >
-      {/* ── Background image ── */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
         {/* <Image
           src="/cassi.jpg"
@@ -85,8 +92,6 @@ export default function Hero() {
 
         {/* Dark overlay so text stays readable — layered for depth */}
         <div className="absolute inset-0 bg-[#0F172A]/20" />
-        {/* Extra gradient vignette: darker on left where text lives */}
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/80 via-[#0F172A]/40 to-transparent" /> */}
         {/* Bottom fade into next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0F172A] to-transparent" />
       </div>
@@ -105,7 +110,18 @@ export default function Hero() {
             className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6"
           >
             <span className="text-secondary transition-all duration-500 cursor-default">
-             &quot;<MagneticText text="Entdecke" hoverText="Gestalte" /> das Potenzial hinter jedem <MagneticText text="Prozess" hoverText="Erfolg" />.&quot;
+              &quot;
+              <MagneticText 
+                text={isGerman ? "Entdecke" : "Discover"} 
+                hoverText={isGerman ? "Gestalte" : "Create"} 
+              /> 
+              {isGerman ? " das Potenzial hinter jedem " : " the potential behind every "}
+              <MagneticText 
+                text={isGerman ? "Prozess" : "process"} 
+                hoverText={isGerman ? "Erfolg" : "success"} 
+              />
+              .&quot;
+             {/* &quot;<MagneticText text="Entdecke" hoverText="Gestalte" /> das Potenzial hinter jedem <MagneticText text="Prozess" hoverText="Erfolg" />.&quot; */}
              {/* "Automation is cost-cutting by tightening the corners and not cutting them." */}
             </span>
             
@@ -116,8 +132,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-neutral/80 text-lg sm:text-xl max-w-2xl mt-6 leading-relaxed transition-colors duration-300 cursor-default"
           >
-            {/* Wir entwerfen und entwickeln Lösungen, die Besucher zu Kunden machen. */}
-            Wir entwerfen und entwickeln Lösungen, die den Unternehmen Zeit sparen.
+            {t("subtitle")}
             <br />
             <span className="text-support text-base hover:text-primary/80 transition-colors duration-300">
               {/* Innovative Strategien. Maßgeschneiderte Technologie. Messbare Ergebnisse. */}
@@ -128,7 +143,7 @@ export default function Hero() {
           <motion.h3>
             <br />
             <span className="text-support text-4xl sm:text-5xl duration-300 cursor-default inline-block origin-left">
-              Wo Vision keine Grenzen kennt.
+              {t("vision")}
             </span>
             <br />
           </motion.h3>
@@ -145,7 +160,7 @@ export default function Hero() {
             >
               <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
                 <span className="relative z-10 transition-all duration-500">
-                  Let&apos;s Collaborate
+                  {t("cta")}
                 </span>
                 <div className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
                   <ArrowUpRight size={16} />
@@ -176,7 +191,7 @@ export default function Hero() {
                   }}
                 />
                 <span className="relative z-10 transition-colors duration-500 pointer-events-none group-hover:text-primary-foreground">
-                  Projects
+                  {t("projects")}
                 </span>
               </Button>
             </Link>

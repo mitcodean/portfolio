@@ -3,24 +3,6 @@
 import { motion, useTransform, useScroll } from "motion/react";
 import { useRef } from "react";
 
-const Example = () => {
-  return (
-    <div className="bg-neutral-800">
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span>
-      </div>
-      <HorizontalScrollCarousel />
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll up
-        </span>
-      </div>
-    </div>
-  );
-};
-
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -55,7 +37,7 @@ const Card = ({ card }) => {
           backgroundPosition: "center",
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
+      />
       <div className="absolute inset-0 z-10 grid place-content-center">
         <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
           {card.title}
@@ -65,7 +47,7 @@ const Card = ({ card }) => {
   );
 };
 
-export default Example;
+export default HorizontalScrollCarousel;
 
 const cards = [
   {

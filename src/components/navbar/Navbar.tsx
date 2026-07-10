@@ -10,6 +10,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
+
+
 export default function Navbar() {
   const pathname = usePathname();
   const t = useTranslations();
@@ -31,7 +33,7 @@ export default function Navbar() {
     { label: t("nav.home"), href: `/${locale}` },
     { label: t("nav.services"), href: `/${locale}/#services` },
     { label: t("nav.about"), href: `/${locale}/#about` },
-    { label: t("nav.portfolio"), href: `/${locale}/portfolio` },
+    // { label: t("nav.portfolio"), href: `/${locale}/portfolio` },
   ];
 
   useEffect(() => {

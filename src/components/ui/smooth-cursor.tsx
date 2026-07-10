@@ -206,3 +206,5 @@ export function SmoothCursor({
     </motion.div>
   );
 }
+
+export default SmoothCursor;

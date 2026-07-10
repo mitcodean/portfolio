@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Github, Linkedin, Mail, Instagram, Twitter, ChevronRight, ArrowUp } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -7,14 +8,18 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
 
 const pathname = usePathname();
+  const t = useTranslations();
+  const tLegalNotice = useTranslations("legal.notice");
+  const tLegalPrivacy = useTranslations("legal.privacy");
+  const tLegalTerms = useTranslations("legal.terms");
 
   const segments = pathname.split("/");
   const locale = segments[1] || "en";
 
-  const legalItems = [
-    { label: "Impressum", href: `/${locale}/legal-compliance/legal-notice` },
-    { label: "Datenschutzerklärung", href: `/${locale}/legal-compliance/privacy-policy` },
-    { label: "AGB", href: `/${locale}/legal-compliance/terms-and-conditions` },
+    const legalItems = [
+    { label: tLegalNotice("title"), href: `/${locale}/legal-compliance/legal-notice` },
+    { label: tLegalPrivacy("title"), href: `/${locale}/legal-compliance/privacy-policy` },
+    { label: tLegalTerms("title"), href: `/${locale}/legal-compliance/terms-and-conditions` },
   ];
 
   const socials = [
@@ -52,6 +57,12 @@ const pathname = usePathname();
     },
   ];
 
+    const navLinks = [
+    { label: t("nav.about"), href: `/${locale}/#about` },
+    { label: t("nav.services"), href: `/${locale}/#services` },
+    // { label: t("nav.portfolio"), href: `/${locale}/portfolio` },
+    { label: t("nav.contact"), href: `/${locale}/#contact` },
+  ];
 
 
   return (
@@ -59,7 +70,7 @@ const pathname = usePathname();
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-8">
 
-        {/* ── Main Grid ── */}
+        {/* Main Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand Column */}
@@ -81,30 +92,24 @@ const pathname = usePathname();
             </div>
 
             <p className="text-support text-sm leading-relaxed">
-              Creating modern web applications with focus on performance and user experience.
+              {t("footer.description")}
             </p>
 
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-foreground text-sm font-semibold hover:bg-accent transition-colors duration-200"
             >
-              Kontaktieren Sie uns
+              {t("footer.contact")}
             </a>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-5">
-              Navigation
+              {t("footer.navigation")}
             </h3>
             <ul className="space-y-3">
-              {[
-                { label: "About Me", href: "#about" },
-                { label: "Services", href: "#services" },
-                { label: "Portfolio", href: "#projects" },
-                { label: "Contact", href: "#contact" },
-                { label: "FAQ", href: "#faq" },
-              ].map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -124,11 +129,11 @@ const pathname = usePathname();
           {/* Contact Info */}
           <div>
             <h3 className="text-xs font-semibold text-foreground uppercase tracking-widest mb-5">
-              Kontakt
+              {t("footer.contactTitle")}
             </h3>
             <address className="not-italic space-y-4">
               <div>
-                <p className="text-xs text-support/60 uppercase tracking-wider mb-1">Phone</p>
+                <p className="text-xs text-support/60 uppercase tracking-wider mb-1">{t("contact.info.phone")}</p>
                 <a
                   href="tel:+436649494891"
                   className="text-sm text-neutral hover:text-primary transition-colors"
@@ -137,7 +142,7 @@ const pathname = usePathname();
                 </a>
               </div>
               <div>
-                <p className="text-xs text-support/60 uppercase tracking-wider mb-1">Email</p>
+                <p className="text-xs text-support/60 uppercase tracking-wider mb-1">{t("contact.info.email")}</p>
                 <a
                   href="mailto:contact@mitcodean.com"
                   className="text-sm text-neutral hover:text-primary transition-colors break-all"
@@ -146,7 +151,7 @@ const pathname = usePathname();
                 </a>
               </div>
               <div>
-                <p className="text-xs text-support/60 uppercase tracking-wider mb-1">Address</p>
+                <p className="text-xs text-support/60 uppercase tracking-wider mb-1">{t("contact.info.address")}</p>
                 <p className="text-sm text-neutral leading-relaxed">
                   Eisenstraße 13<br />
                   4460 Losenstein, Austria
@@ -199,10 +204,10 @@ const pathname = usePathname();
           </div>
         </div>
 
-        {/* ── Bottom Bar ── */}
+        {/* Bottom Bar */}
         <div className="mt-14 pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-support">
-            © {new Date().getFullYear()} Dean-Silviu Mitco. All rights reserved.
+            © {new Date().getFullYear()} Dean-Silviu Mitco. {t("footer.rights")}
           </p>
 
           <div className="flex items-center gap-6">

@@ -1,21 +1,31 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight, Code2, Music, Globe, Layers, Terminal,
   Sparkles, Bike, Dumbbell, BookOpen, Award, Calendar,
 } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
 
-// ─── helpers ────────────────────────────────────────────────────────────────
-const fadeUp = (delay = 0) => ({
-  hidden:  { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay } },
+const fadeUp = (delay = 0): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 36,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+      delay,
+    },
+  },
 });
 
-// ─── data ───────────────────────────────────────────────────────────────────
 const MISSION_WORDS = ["modern.", "schnell.", "messbar.", "lokal.", "persönlich."];
 
 const VALUES = [
@@ -108,7 +118,6 @@ const TIMELINE = [
   },
 ];
 
-// ─── Animated cycling word ───────────────────────────────────────────────────
 function CyclingWord() {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -123,7 +132,7 @@ function CyclingWord() {
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0,  opacity: 1 }}
           exit={{   y: -40, opacity: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.45, ease: "easeInOut" }}
           className="text-primary block"
         >
           {MISSION_WORDS[idx]}
@@ -133,7 +142,6 @@ function CyclingWord() {
   );
 }
 
-// ─── Magnetic button ─────────────────────────────────────────────────────────
 function MagneticCTA({ href, children }: { href: string; children: React.ReactNode }) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const el = useRef<HTMLAnchorElement>(null);
@@ -158,7 +166,6 @@ function MagneticCTA({ href, children }: { href: string; children: React.ReactNo
   );
 }
 
-// ─── Page ────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   const heroRef = useRef(null);
   const valuesRef = useRef(null);
@@ -314,10 +321,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-      {/*PART 2 — THE PERSON/}
-
-      {/* ── Person intro ─────────────────────────────────────────────────── */}
+      {/*Person intro */}
       <section ref={personRef} className="py-28 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -443,7 +447,7 @@ export default function AboutPage() {
                 key={tech}
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={techInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.08 + i * 0.04, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.08 + i * 0.04, duration: 0.4, ease: "easeInOut" }}
                 whileHover={{ scale: 1.06, y: -2 }}
                 className="px-4 py-2 rounded-full border border-border bg-muted text-sm font-medium text-neutral hover:border-primary/40 hover:text-foreground hover:bg-primary/5 transition-colors duration-200 cursor-default"
               >
@@ -570,7 +574,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
           >
             <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-4">
               Bereit loszulegen?

@@ -12,17 +12,19 @@
         "getInTouch": "Kontakt aufnehmen",
         "learnMore": "Mehr erfahren",
         "viewProject": "Projekt ansehen",
-        "sourceCode": "Quellcode"
+        "sourceCode": "Quellcode",
+        "backToHome": "Zurück zur Startseite"
     },
     "LocaleSwitcher": {
-        "locale": "Deutsch",
+        "de": "Deutsch",
+        "en": "Englisch",
         "label": "Sprache"
     },
     "hero": {
-        "title": "Entdecke das Potenzial hinter jedem Prozess.",
         "subtitle": "Wir entwerfen und entwickeln Lösungen, die Unternehmen Zeit sparen.",
-        "cta": "Projekt starten",
-        "projects": "Projekte"
+        "vision": "Wo Vision keine Grenzen kennt.",
+        "cta": "Let's Collaborate",
+        "projects": "Projects"
     },
     "about": {
         "title": "Über uns",
@@ -30,11 +32,17 @@
         "description": "Diovis ist eine Ein-Mann-Agentur, gegründet mit einer klaren Überzeugung: Jedes Unternehmen hat das Recht auf eine individuelle Softwarelösung.",
         "description2": "Wir bauen Werkzeuge, die Zeit freisetzen — damit Sie sich auf das konzentrieren können, was wirklich zählt.",
         "cta": "Mehr über uns erfahren",
+        "quote": "Man kann keine neuen Ozeane entdecken, wenn man nicht den Mut hat, die Küste aus den Augen zu verlieren.",
+        "quoteAuthor": "André Gide",
         "traits": {
             "simple": "Klare Lösungen statt Komplexität",
+            "simpleDesc": "Wir glauben an digitale Lösungen, die verständlich, effizient und langfristig wartbar sind.",
             "personal": "Persönliche Zusammenarbeit",
+            "personalDesc": "Direkte Ansprechpartner und ehrliche Kommunikation. Wir begleiten Projekte partnerschaftlich.",
             "quality": "Qualität bis ins Detail",
-            "growth": "Mit Blick auf Wachstum"
+            "qualityDesc": "Von Performance und Sicherheit bis zur Benutzerführung – jedes Detail wird bewusst geplant.",
+            "growth": "Mit Blick auf Wachstum",
+            "growthDesc": "Wir entwickeln Lösungen, die nicht nur heute funktionieren, sondern auch morgen mit Ihrem Unternehmen wachsen."
         }
     },
     "services": {
@@ -45,6 +53,7 @@
         "processDesc": "Unterstützt Unternehmen dabei, Prozesse zu digitalisieren und Arbeitsabläufe effizienter zu gestalten. Durch individuelle Softwarelösungen und Automatisierungen reduzieren wir manuelle Arbeit und schaffen mehr Zeit für das Wesentliche.",
         "webDesc": "Eine professionelle Website ist heute mehr als nur eine digitale Visitenkarte. Sie schafft Vertrauen, macht Ihr Unternehmen online sichtbar und hilft dabei, neue Kunden zu gewinnen.",
         "cta": "Alle Leistungen ansehen",
+        "examples": "Beispiele",
         "automation": {
             "title": "Prozesse automatisieren — statt Zeit zu verlieren.",
             "body": "Viele Abläufe im Unternehmen laufen noch manuell ab – von Anfragen über Terminvereinbarungen bis zur Dokumentation. Wir automatisieren wiederkehrende Prozesse und schaffen Strukturen, die Zeit sparen und Fehler reduzieren.",
@@ -57,7 +66,11 @@
                 "remindersSub": "E-Mail, SMS, Slack — zur richtigen Zeit.",
                 "analytics": "Auswertungen & Kennzahlen",
                 "analyticsSub": "KPIs und Prozessstatus live auf einem Dashboard."
-            }
+            },
+            "example1": "Anfrage → CRM → Angebot",
+            "example2": "Terminbuchung ohne Telefonate",
+            "example3": "Rechnungserstellung automatisieren",
+            "cta": "Prozess analysieren"
         },
         "webDev": {
             "title": "Mehr als nur eine Website — ein digitaler Vertriebskanal.",
@@ -71,12 +84,17 @@
                 "ecommerceSub": "Von einfachem Katalog bis vollautomatisiertem Shop.",
                 "marketing": "Digitales Marketing",
                 "marketingSub": "SEO, Google Ads, E-Mail — messbar und strategisch."
-            }
+            },
+            "example1": "Website für Handwerksbetriebe",
+            "example2": "Unternehmensauftritt für KMU",
+            "example3": "Online-Shop mit Bestellsystem",
+            "cta": "Website anfragen"
         }
     },
     "contact": {
         "title": "Kontakt",
         "subtitle": "Bereit loszulegen? Schreib uns.",
+        "heroSub": "Kostenlose Erstberatung. Kein Druck, keine versteckten Absichten. Erzähl uns von deiner Idee.",
         "form": {
             "name": "Name",
             "namePlaceholder": "Max Mustermann",
@@ -92,7 +110,8 @@
             "success": "Nachricht gesendet!",
             "successMessage": "Vielen Dank. Wir melden uns innerhalb von 24 Stunden bei dir — versprochen.",
             "newMessage": "Neue Nachricht senden",
-            "error": "Fehler beim Senden. Bitte versuche es erneut oder schreib uns direkt."
+            "error": "Fehler beim Senden. Bitte versuche es erneut oder schreib uns direkt.",
+            "direct": "Oder direkt:"
         },
         "info": {
             "address": "Adresse",
@@ -115,6 +134,9 @@
             "a5": "Ja. Bei Bedarf integrieren wir ein CMS (z.B. Sanity oder Contentful) damit du Texte und Bilder selbst aktualisieren kannst.",
             "q6": "Macht ihr auch E-Shops?",
             "a6": "Ja — ab 1.200 € bauen wir vollständige Online-Shops mit Zahlungsabwicklung, Produktverwaltung und mehr."
+        },
+        "map": {
+            "title": "Mitco Dean Standort"
         }
     },
     "cta": {
@@ -129,7 +151,8 @@
         "navigation": "Navigation",
         "contactTitle": "Kontakt",
         "connect": "Connect",
-        "rights": "Alle Rechte vorbehalten."
+        "rights": "Alle Rechte vorbehalten.",
+        "backToTop": "Nach oben"
     },
     "portfolio": {
         "title": "Portfolio",
@@ -145,5 +168,165 @@
     "projects": {
         "title": "Projekte",
         "subtitle": "Eine Auswahl meiner Arbeiten"
+    },
+    "legal": {
+    "title": "Rechtliches",
+    "notice": {
+        "title": "Impressum",
+        "updated": "Stand: Jänner 2026",
+        "companyInfo": "Informationen gemäß § 5 ECG / § 63 GewO",
+        "companyName": "Unternehmensname",
+        "owner": "Inhaber",
+        "legalForm": "Unternehmensform",
+        "legalFormValue": "Einzelunternehmen (e.U.)",
+        "address": "Adresse",
+        "addressValue": "Eisenstraße 13, 4460 Losenstein, Österreich",
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "website": "Website",
+        "uid": "UID-Nummer",
+        "uidValue": "[wird nach Gewerbeanmeldung ergänzt]",
+        "gisa": "GISA-Nummer",
+        "authority": "Gewerbebehörde",
+        "authorityValue": "Bezirkshauptmannschaft Steyr-Land",
+        "member": "Mitglied bei",
+        "memberValue": "Wirtschaftskammer Österreich (WKO), Sparte Information & Consulting",
+        "authorityAddress": "Bezirkshauptmannschaft Steyr-Land",
+        "authorityStreet": "Spitalskystraße 10a",
+        "authorityCity": "4400 Steyr",
+        "authorityLink": "Website der Behörde",
+        "businessPurpose": "Unternehmensgegenstand",
+        "businessPurposeDesc": "Werbeagentur und IT-Dienstleistungen mit Fokus auf Softwareentwicklung. Gegenstand des Unternehmens ist die Erbringung von Dienstleistungen im Bereich der Informationstechnologie, insbesondere:",
+        "purpose1": "Konzeption, Entwicklung und Wartung von Websites und Webanwendungen",
+        "purpose2": "Entwicklung und Betrieb von Online-Shops (E-Commerce)",
+        "purpose3": "Digitale Marketingdienstleistungen (SEO, Ads, Social Media, E-Mail)",
+        "purpose4": "Softwareentwicklung & Automatisierung von Geschäftsprozessen",
+        "purpose5": "ERP- & Buchungssystem-Integrationen",
+        "purpose6": "Entwicklung mobiler Applikationen",
+        "purpose7": "Beratung zu digitalen Strategien & Branding",
+        "legalBasis": "Anwendbare Rechtsvorschriften",
+        "legalBasisDesc": "Die Tätigkeit unterliegt der österreichischen Gewerbeordnung (GewO 1994) sowie den einschlägigen Bestimmungen des IT-Dienstleistungsgewerbes. Berufsrechtliche Regelungen sind abrufbar unter",
+        "liability": "Haftungsausschluss",
+        "liabilityDesc": "Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Für externe Links wird keine Haftung übernommen.",
+        "copyright": "Urheberrecht",
+        "copyrightDesc": "Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht. Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.",
+        "privacyResponsibility": "Datenschutz & Verantwortung",
+        "responsible": "Verantwortlicher",
+        "contentResponsible": "Inhaltlich verantwortlich",
+        "professionalTitle": "Berufsbezeichnung",
+        "professionalTitleValue": "Software-Entwickler",
+        "countryOfAward": "Verleihungsstaat",
+        "countryOfAwardValue": "Österreich",
+        "editorial": "Blattlinie",
+        "editorialDesc": "Bereitstellung von Informationen, Analysen und Fachbeiträgen zu Individualsoftware, IT-Infrastruktur, IT-Sicherheit und digitalen Geschäftsprozessen. Referenzen und Case Studies dienen als Social Proof.",
+        "imageCredits": "Bildernachweis",
+        "imageCreditsDesc": "Alle Bilder, Fotos und Grafiken sind urheberrechtlich geschützt. Die Bildrechte liegen bei Dean-Silviu Mitco.",
+        "socials": "Weitere Onlineauftritte, wo dieses Impressum gilt.",
+        "backTo": "Zurück zu"
+    },
+    "privacy": {
+        "title": "Datenschutzerklärung",
+        "updated": "Stand: Jänner 2025 · gemäß DSGVO (EU) 2016/679 und DSG (Österreich)",
+        "section1": "1. Verantwortlicher",
+        "section1Desc": "Verantwortlicher im Sinne der DSGVO für die Verarbeitung personenbezogener Daten auf dieser Website ist:",
+        "company": "Mitco Dean Digital Solutions",
+        "section2": "2. Welche Daten wir erheben",
+        "section2Desc": "Wir erheben und verarbeiten folgende Kategorien personenbezogener Daten:",
+        "data1": "Kontaktdaten: Name, E-Mail-Adresse, Telefonnummer (bei Kontaktaufnahme)",
+        "data2": "Kommunikationsdaten: Inhalt von Nachrichten über unser Kontaktformular",
+        "data3": "Nutzungsdaten: IP-Adresse, Browser, Betriebssystem, Seitenaufrufe (bei Verwendung von Analytics)",
+        "data4": "Technische Daten: Cookies, Session-Daten (technisch notwendig)",
+        "section3": "3. Zwecke und Rechtsgrundlagen der Verarbeitung",
+        "section3Contact": "Kontaktformular & Anfragen",
+        "section3ContactDesc": "Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, verarbeiten wir Ihre Daten zur Bearbeitung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Daten werden nicht an Dritte weitergegeben.",
+        "section3Cookies": "Website-Betrieb (technisch notwendige Cookies)",
+        "section3CookiesDesc": "Technisch notwendige Cookies werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gesetzt. Sie sind für den ordnungsgemäßen Betrieb der Website erforderlich und können nicht deaktiviert werden.",
+        "section3Analytics": "Google Analytics (nur mit Einwilligung)",
+        "section3AnalyticsDesc": "Mit Ihrer Einwilligung verwenden wir Google Analytics 4 (Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland) zur Analyse des Nutzerverhaltens. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO. IP-Anonymisierung ist aktiviert. Daten werden auf Servern in der EU gespeichert. Sie können Ihre Einwilligung jederzeit widerrufen (Cookie-Einstellungen).",
+        "section4": "4. Speicherdauer",
+        "section4Desc": "Kontaktanfragen werden nach Abschluss der Bearbeitung gelöscht, spätestens nach 3 Jahren, sofern keine gesetzliche Aufbewahrungspflicht besteht. Für steuerrechtlich relevante Unterlagen gilt eine Aufbewahrungspflicht von 7 Jahren gemäß österreichischem Steuerrecht. Analytics-Daten werden nach 14 Monaten automatisch gelöscht.",
+        "section5": "5. Weitergabe von Daten",
+        "section5Desc": "Eine Weitergabe Ihrer personenbezogenen Daten an Dritte erfolgt nur, wenn:",
+        "section5Item1": "Sie ausdrücklich eingewilligt haben (Art. 6 Abs. 1 lit. a DSGVO)",
+        "section5Item2": "dies zur Vertragserfüllung erforderlich ist (Art. 6 Abs. 1 lit. b DSGVO)",
+        "section5Item3": "eine rechtliche Verpflichtung besteht (Art. 6 Abs. 1 lit. c DSGVO)",
+        "section5Processors": "Eingesetzte Auftragsverarbeiter: Vercel Inc. (Hosting, USA — Standardvertragsklauseln), Google LLC (Analytics, USA — Standardvertragsklauseln).",
+        "section6": "6. Ihre Rechte nach DSGVO",
+        "section6Desc": "Sie haben folgende Rechte gegenüber uns als Verantwortlichem:",
+        "section6Item1": "Auskunftsrecht (Art. 15 DSGVO): Auskunft über gespeicherte Daten",
+        "section6Item2": "Berichtigungsrecht (Art. 16 DSGVO): Korrektur unrichtiger Daten",
+        "section6Item3": "Löschungsrecht (Art. 17 DSGVO): Löschung Ihrer Daten",
+        "section6Item4": "Einschränkungsrecht (Art. 18 DSGVO): Einschränkung der Verarbeitung",
+        "section6Item5": "Widerspruchsrecht (Art. 21 DSGVO): Widerspruch gegen Verarbeitung",
+        "section6Item6": "Datenübertragbarkeit (Art. 20 DSGVO): Erhalt Ihrer Daten in maschinenlesbarem Format",
+        "section6Item7": "Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO): Jederzeit ohne Angabe von Gründen",
+        "section6Contact": "Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:",
+        "section7": "7. Beschwerderecht",
+        "section7Desc": "Sie haben das Recht, sich bei der österreichischen Datenschutzbehörde zu beschweren:",
+        "authorityName": "Österreichische Datenschutzbehörde",
+        "authorityAddress": "Barichgasse 40–42, 1030 Wien",
+        "authorityPhone": "Tel.: +43 1 52 152-0",
+        "section8": "8. Cookies",
+        "section8Desc": "Wir verwenden Cookies und ähnliche Technologien. Details zu eingesetzten Cookies, Zwecken und Ihrer Widerspruchsmöglichkeit entnehmen Sie bitte unserem Cookie-Banner beim ersten Besuch sowie den Cookie-Einstellungen (jederzeit aufrufbar über den Link im Footer).",
+        "cookieTitle": "Eingesetzte Cookies",
+        "cookie1": "Speichert Ihre Cookie-Einstellungen (1 Jahr)",
+        "cookie2": "Google Analytics (nur mit Einwilligung, 14 Monate)",
+        "section9": "9. Aktualität dieser Erklärung",
+        "section9Desc": "Diese Datenschutzerklärung wird bei Änderungen unserer Verarbeitungstätigkeiten oder bei Änderungen der Rechtslage aktualisiert. Die aktuelle Version ist stets unter www.mitcodean.com/datenschutz abrufbar."
+    },
+    "terms": {
+        "title": "Allgemeine Geschäftsbedingungen",
+        "updated": "Stand: Jänner 2025 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
+        "notice": "Diese AGB wurden nach dem Muster der WKO Österreich für IT-Dienstleistungsunternehmen erstellt. Sie ersetzen keine individuelle Rechtsberatung. Bei Fragen stehen wir unter contact@mitcodean.com zur Verfügung.",
+        "section1": "§ 1 Geltungsbereich und Vertragspartner",
+        "section1Desc": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen Mitco Dean Digital Solutions, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (nachfolgend \"Auftragnehmer\") und seinen Auftraggebern (nachfolgend \"Auftraggeber\") über IT-Dienstleistungen, Webentwicklung, digitales Marketing und damit verbundene Leistungen.",
+        "section1Desc2": "Abweichende Bedingungen des Auftraggebers werden nicht anerkannt, es sei denn, der Auftragnehmer stimmt ihrer Geltung ausdrücklich schriftlich zu. Individualvereinbarungen gehen diesen AGB vor.",
+        "section2": "§ 2 Vertragsschluss und Angebote",
+        "section2Desc": "Angebote des Auftragnehmers sind freibleibend und unverbindlich. Ein Vertrag kommt erst durch schriftliche Auftragsbestätigung des Auftragnehmers oder durch Beginn der Leistungserbringung zustande. Mündliche Nebenabreden bedürfen zu ihrer Wirksamkeit der schriftlichen Bestätigung.",
+        "section2Desc2": "Kostenvoranschläge werden nach bestem Wissen und Gewissen erstellt. Überschreitungen von bis zu 15 % gelten als vereinbart und werden dem Auftraggeber nicht gesondert mitgeteilt. Bei darüber hinausgehenden Überschreitungen erfolgt unverzüglich Information und Einholung der Zustimmung.",
+        "section3": "§ 3 Leistungsumfang",
+        "section3Desc": "Der Leistungsumfang ergibt sich aus der schriftlichen Auftragsbestätigung sowie allfälligen Leistungsbeschreibungen. Zu den Leistungen des Auftragnehmers gehören insbesondere:",
+        "section3Item1": "Konzeption, Gestaltung und Entwicklung von Websites und Webanwendungen",
+        "section3Item2": "Entwicklung von E-Commerce-Lösungen und Online-Shops",
+        "section3Item3": "Suchmaschinenoptimierung (SEO) und digitales Marketing",
+        "section3Item4": "Softwareentwicklung, Prozessautomatisierung und ERP-Integration",
+        "section3Item5": "Entwicklung mobiler Applikationen",
+        "section3Item6": "Laufende Wartung und technischer Support",
+        "section3Item7": "Beratungsleistungen im Bereich Digitalisierung und Branding",
+        "section3Desc2": "Änderungen oder Erweiterungen des vereinbarten Leistungsumfangs (Change Requests) bedürfen einer schriftlichen Vereinbarung und können zu einer Anpassung von Preis und Lieferzeit führen.",
+        "section4": "§ 4 Pflichten des Auftraggebers",
+        "section4Desc": "Der Auftraggeber verpflichtet sich zur rechtzeitigen Bereitstellung aller für die Leistungserbringung erforderlichen Unterlagen, Zugangsdaten, Inhalte und Informationen. Verzögerungen, die durch verspätete Mitwirkung entstehen, gehen zu Lasten des Auftraggebers und berechtigen den Auftragnehmer zur angemessenen Verlängerung der Lieferfrist.",
+        "section4Desc2": "Der Auftraggeber stellt sicher, dass bereitgestellte Inhalte (Texte, Bilder, Logos) frei von Rechten Dritter sind und deren Nutzung keine gesetzlichen Vorschriften verletzt. Er stellt den Auftragnehmer von allen Ansprüchen Dritter frei, die aus einer Verletzung dieser Pflicht entstehen.",
+        "section5": "§ 5 Preise, Zahlung und Fälligkeit",
+        "section5Desc": "Alle Preise verstehen sich in Euro, netto, zuzüglich der gesetzlichen Umsatzsteuer (20 %), sofern nicht ausdrücklich anders vereinbart.",
+        "section5Item1": "Projektarbeiten: 50 % bei Auftragserteilung, 50 % bei Projektabnahme. Bei Projekten über 2.000 € netto sind 3-Phasen-Zahlungen möglich (nach Vereinbarung).",
+        "section5Item2": "Wartungsverträge: monatliche Abrechnung, fällig jeweils am 1. des Monats.",
+        "section5Item3": "Stundensätze: nach gesonderter Vereinbarung.",
+        "section5Desc2": "Bei Zahlungsverzug werden Verzugszinsen in Höhe von 8 % über dem Basiszinssatz p.a. sowie eine Mahngebühr von 15 € je Mahnung verrechnet. Der Auftragnehmer behält sich vor, bei Zahlungsverzug die weitere Leistungserbringung bis zur vollständigen Zahlung auszusetzen.",
+        "section6": "§ 6 Lieferzeiten und Termine",
+        "section6Desc": "Vereinbarte Lieferzeiten gelten nur dann als verbindlich, wenn sie schriftlich als \"verbindlich\" bezeichnet wurden. Lieferverzögerungen durch höhere Gewalt, Streik oder verspätete Mitwirkung des Auftraggebers entbinden den Auftragnehmer von der Einhaltung vereinbarter Termine.",
+        "section7": "§ 7 Abnahme und Mängelbehebung",
+        "section7Desc": "Nach Fertigstellung wird die Leistung dem Auftraggeber zur Abnahme vorgelegt. Die Abnahme gilt als erteilt, wenn der Auftraggeber nicht innerhalb von 14 Tagen schriftlich begründete Mängel rügt.",
+        "section7Desc2": "Mängel, die auf fehlerhaften oder unvollständigen Angaben des Auftraggebers beruhen, begründen keine Gewährleistungsansprüche. Die Gewährleistungsfrist beträgt 2 Jahre ab Abnahme, eingeschränkt auf unentgeltliche Nachbesserung oder Ersatzlieferung.",
+        "section8": "§ 8 Urheberrecht und Nutzungsrechte",
+        "section8Desc": "Alle im Rahmen des Auftrags erstellten Werke (Code, Designs, Texte, Konzepte) bleiben bis zur vollständigen Bezahlung Eigentum des Auftragnehmers.",
+        "section8Desc2": "Mit vollständiger Bezahlung überträgt der Auftragnehmer dem Auftraggeber ein einfaches, nicht übertragbares Nutzungsrecht für den vereinbarten Verwendungszweck. Eine Weiterveräußerung oder Übertragung an Dritte bedarf der schriftlichen Zustimmung des Auftragnehmers.",
+        "section8Desc3": "Der Auftragnehmer behält das Recht, die erbrachten Arbeiten zu Referenzzwecken (Portfolio, Marketing) zu verwenden, sofern nicht ausdrücklich anders vereinbart.",
+        "section9": "§ 9 Vertraulichkeit",
+        "section9Desc": "Beide Parteien verpflichten sich, alle im Rahmen der Zusammenarbeit erhaltenen vertraulichen Informationen streng geheim zu halten und nicht an Dritte weiterzugeben. Diese Verpflichtung gilt auch nach Beendigung des Vertragsverhältnisses fort.",
+        "section10": "§ 10 Haftungsbeschränkung",
+        "section10Desc": "Der Auftragnehmer haftet für Schäden nur bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit ist die Haftung auf den Auftragswert begrenzt. Eine Haftung für entgangenen Gewinn, mittelbare Schäden und Folgeschäden ist ausgeschlossen, soweit gesetzlich zulässig.",
+        "section10Desc2": "Der Auftragnehmer übernimmt keine Haftung für die Erreichung bestimmter Platzierungen in Suchmaschinen (SEO) oder bestimmter Werbeerfolge (Marketing), da diese von Faktoren abhängen, die außerhalb seines Einflussbereichs liegen.",
+        "section11": "§ 11 Laufzeit und Kündigung",
+        "section11Desc": "Projektverträge enden mit der Abnahme der vereinbarten Leistung. Wartungsverträge werden auf unbestimmte Zeit geschlossen und können von beiden Seiten mit einer Frist von 4 Wochen zum Monatsende schriftlich gekündigt werden.",
+        "section11Desc2": "Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere bei Zahlungsverzug von mehr als 30 Tagen vor.",
+        "section12": "§ 12 Datenschutz",
+        "section12Desc": "Beide Parteien verpflichten sich zur Einhaltung der datenschutzrechtlichen Bestimmungen, insbesondere der DSGVO (EU) 2016/679 und des österreichischen Datenschutzgesetzes (DSG). Die Datenschutzerklärung des Auftragnehmers ist unter www.mitcodean.com/datenschutz abrufbar.",
+        "section13": "§ 13 Anwendbares Recht und Gerichtsstand",
+        "section13Desc": "Es gilt ausschließlich österreichisches Recht unter Ausschluss der Kollisionsnormen und des UN-Kaufrechts (CISG).",
+        "section13Desc2": "Für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag wird Steyr als Gerichtsstand vereinbart, soweit gesetzlich zulässig. Bei Verbraucherverträgen gelten die gesetzlichen Zuständigkeitsregeln.",
+        "section14": "§ 14 Salvatorische Klausel",
+        "section14Desc": "Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, so bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung möglichst nahekommt."
     }
+}
 }

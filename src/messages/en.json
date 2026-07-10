@@ -12,16 +12,18 @@
         "getInTouch": "Get in touch",
         "learnMore": "Learn more",
         "viewProject": "View project",
-        "sourceCode": "Source code"
+        "sourceCode": "Source code",
+        "backToHome": "Back to home"
     },
     "LocaleSwitcher": {
-        "locale": "English",
+        "de": "German",
+        "en": "English",
         "label": "Language"
     },
     "hero": {
-        "title": "Discover the potential behind every process.",
         "subtitle": "We design and develop solutions that save businesses time.",
-        "cta": "Start project",
+        "vision": "Where vision knows no limits.",
+        "cta": "Let's Collaborate",
         "projects": "Projects"
     },
     "about": {
@@ -30,11 +32,17 @@
         "description": "Diovis is a one-man agency founded with a clear conviction: Every business deserves an individual software solution.",
         "description2": "We build tools that free up time — so you can focus on what really matters.",
         "cta": "Learn more about us",
+        "quote": "You can't discover new oceans unless you have the courage to lose sight of the shore.",
+        "quoteAuthor": "André Gide",
         "traits": {
             "simple": "Clear solutions instead of complexity",
+            "simpleDesc": "We believe in digital solutions that are understandable, efficient, and maintainable in the long term.",
             "personal": "Personal collaboration",
+            "personalDesc": "Direct contacts and honest communication. We accompany projects as partners.",
             "quality": "Quality down to the last detail",
-            "growth": "Focused on growth"
+            "qualityDesc": "From performance and security to user guidance – every detail is carefully planned.",
+            "growth": "Focused on growth",
+            "growthDesc": "We develop solutions that work not only today but also grow with your business tomorrow."
         }
     },
     "services": {
@@ -45,6 +53,7 @@
         "processDesc": "Helps businesses digitize processes and make workflows more efficient. Through custom software solutions and automations, we reduce manual work and create more time for what matters.",
         "webDesc": "A professional website is more than just a digital business card today. It builds trust, makes your business visible online, and helps attract new customers.",
         "cta": "View all services",
+        "examples": "Examples",
         "automation": {
             "title": "Automate processes — instead of wasting time.",
             "body": "Many processes in companies are still manual – from inquiries to appointment bookings to documentation. We automate recurring processes and create structures that save time and reduce errors.",
@@ -57,7 +66,11 @@
                 "remindersSub": "Email, SMS, Slack — at the right time.",
                 "analytics": "Analytics & KPIs",
                 "analyticsSub": "KPIs and process status live on a dashboard."
-            }
+            },
+            "example1": "Inquiry → CRM → Quote",
+            "example2": "Appointment booking without phone calls",
+            "example3": "Automate invoice generation",
+            "cta": "Analyze process"
         },
         "webDev": {
             "title": "More than just a website — a digital sales channel.",
@@ -71,12 +84,17 @@
                 "ecommerceSub": "From simple catalog to fully automated shop.",
                 "marketing": "Digital Marketing",
                 "marketingSub": "SEO, Google Ads, Email — measurable and strategic."
-            }
+            },
+            "example1": "Website for tradespeople",
+            "example2": "Corporate presence for SMEs",
+            "example3": "Online shop with ordering system",
+            "cta": "Request website"
         }
     },
     "contact": {
         "title": "Contact",
         "subtitle": "Ready to get started? Write us.",
+        "heroSub": "Free initial consultation. No pressure, no hidden agenda. Tell us about your idea.",
         "form": {
             "name": "Name",
             "namePlaceholder": "John Doe",
@@ -92,7 +110,8 @@
             "success": "Message sent!",
             "successMessage": "Thank you. We will get back to you within 24 hours — promised.",
             "newMessage": "Send new message",
-            "error": "Error sending. Please try again or write us directly."
+            "error": "Error sending. Please try again or write us directly.",
+            "direct": "Or directly:"
         },
         "info": {
             "address": "Address",
@@ -115,6 +134,9 @@
             "a5": "Yes. If needed, we integrate a CMS (e.g., Sanity or Contentful) so you can update text and images yourself.",
             "q6": "Do you also build E-Shops?",
             "a6": "Yes — from 1,200 € we build complete online shops with payment processing, product management, and more."
+        },
+        "map": {
+            "title": "Mitco Dean Location"
         }
     },
     "cta": {
@@ -129,7 +151,8 @@
         "navigation": "Navigation",
         "contactTitle": "Contact",
         "connect": "Connect",
-        "rights": "All rights reserved."
+        "rights": "All rights reserved.",
+        "backToTop": "Back to top"
     },
     "portfolio": {
         "title": "Portfolio",
@@ -145,5 +168,165 @@
     "projects": {
         "title": "Projects",
         "subtitle": "A selection of my work"
+    },
+    "legal": {
+    "title": "Legal",
+    "notice": {
+        "title": "Legal Notice",
+        "updated": "Last updated: January 2026",
+        "companyInfo": "Company Information according to § 5 ECG / § 63 GewO",
+        "companyName": "Company Name",
+        "owner": "Owner",
+        "legalForm": "Legal Form",
+        "legalFormValue": "Sole Proprietorship (e.U.)",
+        "address": "Address",
+        "addressValue": "Eisenstraße 13, 4460 Losenstein, Austria",
+        "phone": "Phone",
+        "email": "Email",
+        "website": "Website",
+        "uid": "VAT ID",
+        "uidValue": "[to be added after business registration]",
+        "gisa": "GISA Number",
+        "authority": "Trade Authority",
+        "authorityValue": "District Commission Steyr-Land",
+        "member": "Member of",
+        "memberValue": "Austrian Chamber of Commerce (WKO), Information & Consulting",
+        "authorityAddress": "District Commission Steyr-Land",
+        "authorityStreet": "Spitalskystraße 10a",
+        "authorityCity": "4400 Steyr",
+        "authorityLink": "Authority Website",
+        "businessPurpose": "Business Purpose",
+        "businessPurposeDesc": "Advertising agency and IT services with a focus on software development. The company provides services in the field of information technology, in particular:",
+        "purpose1": "Concept, development and maintenance of websites and web applications",
+        "purpose2": "Development and operation of online shops (E-Commerce)",
+        "purpose3": "Digital marketing services (SEO, Ads, Social Media, Email)",
+        "purpose4": "Software development & business process automation",
+        "purpose5": "ERP & booking system integrations",
+        "purpose6": "Mobile application development",
+        "purpose7": "Consulting on digital strategies & branding",
+        "legalBasis": "Applicable Legal Provisions",
+        "legalBasisDesc": "The activity is subject to the Austrian Trade Regulations (GewO 1994) and the relevant provisions of the IT services sector. Professional regulations can be accessed at",
+        "liability": "Liability Disclaimer",
+        "liabilityDesc": "The contents of this website have been created with the greatest possible care. No guarantee is given for accuracy, completeness or timeliness. No liability is accepted for external links.",
+        "copyright": "Copyright",
+        "copyrightDesc": "Content and works on this website are subject to Austrian copyright law. Any use beyond the limits of copyright requires written permission.",
+        "privacyResponsibility": "Privacy & Responsibility",
+        "responsible": "Responsible Person",
+        "contentResponsible": "Content Responsible",
+        "professionalTitle": "Professional Title",
+        "professionalTitleValue": "Software Developer",
+        "countryOfAward": "Country of Award",
+        "countryOfAwardValue": "Austria",
+        "editorial": "Editorial Policy",
+        "editorialDesc": "Provision of information, analyses and expert articles on custom software, IT infrastructure, IT security and digital business processes. References and case studies serve as social proof.",
+        "imageCredits": "Image Credits",
+        "imageCreditsDesc": "All images, photos and graphics are copyrighted. The image rights belong to Dean-Silviu Mitco.",
+        "socials": "Other online presences where this legal notice applies.",
+        "backTo": "Back to"
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "updated": "Last updated: January 2025 · in accordance with GDPR (EU) 2016/679 and Austrian Data Protection Act",
+        "section1": "1. Responsible Party",
+        "section1Desc": "The responsible party within the meaning of the GDPR for the processing of personal data on this website is:",
+        "company": "Mitco Dean Digital Solutions",
+        "section2": "2. What data we collect",
+        "section2Desc": "We collect and process the following categories of personal data:",
+        "data1": "Contact details: Name, email address, phone number (when contacting us)",
+        "data2": "Communication data: Content of messages via our contact form",
+        "data3": "Usage data: IP address, browser, operating system, page views (when using analytics)",
+        "data4": "Technical data: Cookies, session data (technically necessary)",
+        "section3": "3. Purposes and legal bases of processing",
+        "section3Contact": "Contact form & inquiries",
+        "section3ContactDesc": "If you contact us via the contact form or by email, we process your data to handle your inquiry on the basis of Art. 6 para. 1 lit. b GDPR (contract initiation) or Art. 6 para. 1 lit. f GDPR (legitimate interest in responding to inquiries). Data is not passed on to third parties.",
+        "section3Cookies": "Website operation (technically necessary cookies)",
+        "section3CookiesDesc": "Technically necessary cookies are set on the basis of Art. 6 para. 1 lit. f GDPR. They are required for the proper operation of the website and cannot be deactivated.",
+        "section3Analytics": "Google Analytics (only with consent)",
+        "section3AnalyticsDesc": "With your consent, we use Google Analytics 4 (Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland) to analyze user behavior. Legal basis: Art. 6 para. 1 lit. a GDPR. IP anonymization is activated. Data is stored on servers in the EU. You can revoke your consent at any time (cookie settings).",
+        "section4": "4. Storage duration",
+        "section4Desc": "Contact inquiries are deleted after completion of processing, at the latest after 3 years, unless there is a legal retention obligation. For tax-relevant documents, a retention period of 7 years applies according to Austrian tax law. Analytics data is automatically deleted after 14 months.",
+        "section5": "5. Transfer of data",
+        "section5Desc": "Your personal data will only be passed on to third parties if:",
+        "section5Item1": "you have given your explicit consent (Art. 6 para. 1 lit. a GDPR)",
+        "section5Item2": "this is necessary for the performance of a contract (Art. 6 para. 1 lit. b GDPR)",
+        "section5Item3": "there is a legal obligation (Art. 6 para. 1 lit. c GDPR)",
+        "section5Processors": "Processors used: Vercel Inc. (Hosting, USA — Standard Contractual Clauses), Google LLC (Analytics, USA — Standard Contractual Clauses).",
+        "section6": "6. Your rights under the GDPR",
+        "section6Desc": "You have the following rights against us as the responsible party:",
+        "section6Item1": "Right of access (Art. 15 GDPR): Information about stored data",
+        "section6Item2": "Right to rectification (Art. 16 GDPR): Correction of incorrect data",
+        "section6Item3": "Right to erasure (Art. 17 GDPR): Deletion of your data",
+        "section6Item4": "Right to restriction (Art. 18 GDPR): Restriction of processing",
+        "section6Item5": "Right to object (Art. 21 GDPR): Objection to processing",
+        "section6Item6": "Right to data portability (Art. 20 GDPR): Receive your data in a machine-readable format",
+        "section6Item7": "Right to withdraw consent (Art. 7 para. 3 GDPR): At any time without giving reasons",
+        "section6Contact": "To exercise your rights, please contact:",
+        "section7": "7. Right to lodge a complaint",
+        "section7Desc": "You have the right to lodge a complaint with the Austrian Data Protection Authority:",
+        "authorityName": "Austrian Data Protection Authority",
+        "authorityAddress": "Barichgasse 40–42, 1030 Vienna",
+        "authorityPhone": "Tel.: +43 1 52 152-0",
+        "section8": "8. Cookies",
+        "section8Desc": "We use cookies and similar technologies. Details on the cookies used, purposes and your opt-out options can be found in our cookie banner on the first visit and in the cookie settings (accessible at any time via the link in the footer).",
+        "cookieTitle": "Cookies used",
+        "cookie1": "Stores your cookie settings (1 year)",
+        "cookie2": "Google Analytics (only with consent, 14 months)",
+        "section9": "9. Timeliness of this declaration",
+        "section9Desc": "This privacy policy is updated when our processing activities change or when the legal situation changes. The current version is always available at www.mitcodean.com/privacy."
+    },
+    "terms": {
+        "title": "Terms & Conditions",
+        "updated": "Last updated: January 2025 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
+        "notice": "These T&C were created based on the template of the Austrian Chamber of Commerce for IT service companies. They do not replace individual legal advice. For questions, please contact us at contact@mitcodean.com.",
+        "section1": "§ 1 Scope and Contractual Partners",
+        "section1Desc": "These General Terms and Conditions (T&C) apply to all contracts between Mitco Dean Digital Solutions, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (hereinafter \"Contractor\") and its clients (hereinafter \"Client\") regarding IT services, web development, digital marketing and related services.",
+        "section1Desc2": "Deviationg terms of the Client are not recognized unless the Contractor expressly agrees to their validity in writing. Individual agreements take precedence over these T&C.",
+        "section2": "§ 2 Conclusion of Contract and Offers",
+        "section2Desc": "Offers from the Contractor are non-binding and subject to change. A contract is only concluded upon written order confirmation from the Contractor or upon commencement of service provision. Oral side agreements require written confirmation to be valid.",
+        "section2Desc2": "Cost estimates are prepared to the best of knowledge and belief. Exceedances of up to 15 % are deemed agreed and will not be communicated separately to the Client. For exceedances beyond this, immediate information and consent will be obtained.",
+        "section3": "§ 3 Scope of Services",
+        "section3Desc": "The scope of services is based on the written order confirmation and any service descriptions. The Contractor's services include in particular:",
+        "section3Item1": "Concept, design and development of websites and web applications",
+        "section3Item2": "Development of E-Commerce solutions and online shops",
+        "section3Item3": "Search engine optimization (SEO) and digital marketing",
+        "section3Item4": "Software development, process automation and ERP integration",
+        "section3Item5": "Mobile application development",
+        "section3Item6": "Ongoing maintenance and technical support",
+        "section3Item7": "Consulting services in the area of digitalization and branding",
+        "section3Desc2": "Changes or extensions to the agreed scope of services (Change Requests) require a written agreement and may lead to an adjustment of price and delivery time.",
+        "section4": "§ 4 Client's Obligations",
+        "section4Desc": "The Client undertakes to provide all documents, access data, content and information required for the provision of services in a timely manner. Delays caused by late cooperation are at the Client's expense and entitle the Contractor to an appropriate extension of the delivery deadline.",
+        "section4Desc2": "The Client ensures that provided content (texts, images, logos) is free of third-party rights and that their use does not violate any legal provisions. The Client indemnifies the Contractor from all claims by third parties arising from a violation of this obligation.",
+        "section5": "§ 5 Prices, Payment and Due Date",
+        "section5Desc": "All prices are in Euro, net, plus statutory VAT (20 %), unless expressly agreed otherwise.",
+        "section5Item1": "Project work: 50 % upon order placement, 50 % upon project acceptance. For projects over €2,000 net, 3-phase payments are possible (by agreement).",
+        "section5Item2": "Maintenance contracts: monthly billing, due on the 1st of each month.",
+        "section5Item3": "Hourly rates: by separate agreement.",
+        "section5Desc2": "In case of default, default interest of 8 % above the base rate p.a. and a reminder fee of €15 per reminder will be charged. The Contractor reserves the right to suspend further service provision until full payment is made in case of default.",
+        "section6": "§ 6 Delivery Times and Deadlines",
+        "section6Desc": "Agreed delivery times are only binding if they have been designated as \"binding\" in writing. Delivery delays due to force majeure, strike or delayed cooperation by the Client release the Contractor from compliance with agreed deadlines.",
+        "section7": "§ 7 Acceptance and Defect Remediation",
+        "section7Desc": "After completion, the service is presented to the Client for acceptance. Acceptance is deemed to have been granted if the Client does not notify substantiated defects in writing within 14 days.",
+        "section7Desc2": "Defects based on incorrect or incomplete information provided by the Client do not justify warranty claims. The warranty period is 2 years from acceptance, limited to free rectification or replacement delivery.",
+        "section8": "§ 8 Copyright and Usage Rights",
+        "section8Desc": "All works created as part of the order (code, designs, texts, concepts) remain the property of the Contractor until full payment.",
+        "section8Desc2": "Upon full payment, the Contractor grants the Client a simple, non-transferable usage right for the agreed purpose. Resale or transfer to third parties requires the written consent of the Contractor.",
+        "section8Desc3": "The Contractor reserves the right to use the work performed for reference purposes (portfolio, marketing), unless expressly agreed otherwise.",
+        "section9": "§ 9 Confidentiality",
+        "section9Desc": "Both parties undertake to keep all confidential information received during the collaboration strictly confidential and not to disclose it to third parties. This obligation continues after the termination of the contractual relationship.",
+        "section10": "§ 10 Limitation of Liability",
+        "section10Desc": "The Contractor is only liable for damages in cases of intent and gross negligence. In cases of slight negligence, liability is limited to the contract value. Liability for lost profits, indirect damages and consequential damages is excluded to the extent permitted by law.",
+        "section10Desc2": "The Contractor assumes no liability for achieving specific placements in search engines (SEO) or specific advertising results (marketing), as these depend on factors beyond its control.",
+        "section11": "§ 11 Term and Termination",
+        "section11Desc": "Project contracts end with the acceptance of the agreed service. Maintenance contracts are concluded for an indefinite period and can be terminated by either party in writing with a notice period of 4 weeks to the end of the month.",
+        "section11Desc2": "The right to extraordinary termination for good cause remains unaffected. Good cause exists in particular in the event of default of payment of more than 30 days.",
+        "section12": "§ 12 Data Protection",
+        "section12Desc": "Both parties undertake to comply with data protection regulations, in particular the GDPR (EU) 2016/679 and the Austrian Data Protection Act (DSG). The Contractor's privacy policy is available at www.mitcodean.com/privacy.",
+        "section13": "§ 13 Applicable Law and Jurisdiction",
+        "section13Desc": "Austrian law applies exclusively, excluding conflict of law provisions and the UN Convention on Contracts for the International Sale of Goods (CISG).",
+        "section13Desc2": "For all disputes arising from or in connection with this contract, Steyr is agreed as the place of jurisdiction, insofar as legally permissible. For consumer contracts, the statutory jurisdiction rules apply.",
+        "section14": "§ 14 Severability Clause",
+        "section14Desc": "Should individual provisions of these T&C be ineffective or unenforceable, the effectiveness of the remaining provisions remains unaffected. The ineffective provision is to be replaced by an effective provision that comes as close as possible to the economic purpose of the ineffective provision."
     }
+}
 }

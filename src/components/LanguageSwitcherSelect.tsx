@@ -2,16 +2,9 @@
 
 import clsx from 'clsx';
 import { useParams} from "next/navigation";
-import {Locale} from 'next-intl';
-import {ChangeEvent, ReactNode, useTransition} from 'react';
+import { Locale} from 'next-intl';
+import { ChangeEvent, ReactNode, useTransition } from 'react';
 import { usePathname, useRouter } from "@/i18n/navigation";
-
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem
-} from "@/components/ui/dropdown-menu";
 
 type Props = {
   children: ReactNode;
