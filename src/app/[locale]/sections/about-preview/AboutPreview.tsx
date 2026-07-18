@@ -213,8 +213,10 @@ export default function AboutPreview() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent" />
                     <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#0F172A]/80 border border-white/10 backdrop-blur-sm">
                       <p className="text-xs font-bold text-foreground" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                      <p className="text-xs font-bold text-foreground" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                         Dean-Silviu Mitco
                       </p>
+                      <p className="text-[10px] text-primary mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.1em" }}>
                       <p className="text-[10px] text-primary mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.1em" }}>
                         FOUNDER & DEVELOPER
                       </p>
