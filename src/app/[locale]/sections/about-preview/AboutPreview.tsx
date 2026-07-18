@@ -207,7 +207,7 @@ export default function AboutPreview() {
                   <div className="absolute inset-x-0 mx-auto w-[80%] sm:w-[65%] top-0 lg:left-4 lg:inset-x-auto lg:mx-0 lg:w-[78%]">
                     <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 aspect-[3/4] bg-muted">
                       <img
-                        src="/dean.jpg"
+                        src="/Dean.jpg"
                         alt="Dean Silviu Mitco"
                         className="w-full h-full object-cover object-top"
                       />

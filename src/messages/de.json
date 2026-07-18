@@ -93,7 +93,7 @@
     },
     "contact": {
         "title": "Kontakt",
-        "subtitle": "Bereit loszulegen? Schreib uns.",
+        "subtitle": "Schreib uns.",
         "heroSub": "Kostenlose Erstberatung. Kein Druck, keine versteckten Absichten. Erzähl uns von deiner Idee.",
         "form": {
             "name": "Name",
@@ -173,7 +173,7 @@
     "title": "Rechtliches",
     "notice": {
         "title": "Impressum",
-        "updated": "Stand: Jänner 2026",
+        "updated": "Stand: 2026",
         "companyInfo": "Informationen gemäß § 5 ECG / § 63 GewO",
         "companyName": "Unternehmensname",
         "owner": "Inhaber",
@@ -226,7 +226,7 @@
     },
     "privacy": {
         "title": "Datenschutzerklärung",
-        "updated": "Stand: Jänner 2025 · gemäß DSGVO (EU) 2016/679 und DSG (Österreich)",
+        "updated": "Stand: 2026 · gemäß DSGVO (EU) 2016/679 und DSG (Österreich)",
         "section1": "1. Verantwortlicher",
         "section1Desc": "Verantwortlicher im Sinne der DSGVO für die Verarbeitung personenbezogener Daten auf dieser Website ist:",
         "company": "Mitco Dean Digital Solutions",
@@ -276,7 +276,7 @@
     },
     "terms": {
         "title": "Allgemeine Geschäftsbedingungen",
-        "updated": "Stand: Jänner 2025 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
+        "updated": "Stand: 2026 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
         "notice": "Diese AGB wurden nach dem Muster der WKO Österreich für IT-Dienstleistungsunternehmen erstellt. Sie ersetzen keine individuelle Rechtsberatung. Bei Fragen stehen wir unter contact@mitcodean.com zur Verfügung.",
         "section1": "§ 1 Geltungsbereich und Vertragspartner",
         "section1Desc": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen Mitco Dean Digital Solutions, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (nachfolgend \"Auftragnehmer\") und seinen Auftraggebern (nachfolgend \"Auftraggeber\") über IT-Dienstleistungen, Webentwicklung, digitales Marketing und damit verbundene Leistungen.",

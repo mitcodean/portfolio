@@ -93,7 +93,7 @@
     },
     "contact": {
         "title": "Contact",
-        "subtitle": "Ready to get started? Write us.",
+        "subtitle": "Write us.",
         "heroSub": "Free initial consultation. No pressure, no hidden agenda. Tell us about your idea.",
         "form": {
             "name": "Name",
@@ -173,7 +173,7 @@
     "title": "Legal",
     "notice": {
         "title": "Legal Notice",
-        "updated": "Last updated: January 2026",
+        "updated": "Last updated: 2026",
         "companyInfo": "Company Information according to § 5 ECG / § 63 GewO",
         "companyName": "Company Name",
         "owner": "Owner",
@@ -226,7 +226,7 @@
     },
     "privacy": {
         "title": "Privacy Policy",
-        "updated": "Last updated: January 2025 · in accordance with GDPR (EU) 2016/679 and Austrian Data Protection Act",
+        "updated": "Last updated: 2026 · in accordance with GDPR (EU) 2016/679 and Austrian Data Protection Act",
         "section1": "1. Responsible Party",
         "section1Desc": "The responsible party within the meaning of the GDPR for the processing of personal data on this website is:",
         "company": "Mitco Dean Digital Solutions",
@@ -276,7 +276,7 @@
     },
     "terms": {
         "title": "Terms & Conditions",
-        "updated": "Last updated: January 2025 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
+        "updated": "Last updated: 2026 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
         "notice": "These T&C were created based on the template of the Austrian Chamber of Commerce for IT service companies. They do not replace individual legal advice. For questions, please contact us at contact@mitcodean.com.",
         "section1": "§ 1 Scope and Contractual Partners",
         "section1Desc": "These General Terms and Conditions (T&C) apply to all contracts between Mitco Dean Digital Solutions, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (hereinafter \"Contractor\") and its clients (hereinafter \"Client\") regarding IT services, web development, digital marketing and related services.",
