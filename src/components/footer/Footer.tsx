@@ -61,7 +61,7 @@ const pathname = usePathname();
     { label: t("nav.about"), href: `/${locale}/#about` },
     { label: t("nav.services"), href: `/${locale}/#services` },
     // { label: t("nav.portfolio"), href: `/${locale}/portfolio` },
-    { label: t("nav.contact"), href: `/${locale}/#contact` },
+    { label: t("nav.contact"), href: `/${locale}/contact` },
   ];
 
 
@@ -96,7 +96,7 @@ const pathname = usePathname();
             </p>
 
             <a
-              href="#contact"
+              href={`/${locale}/contact`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-foreground text-sm font-semibold hover:bg-accent transition-colors duration-200"
             >
               {t("footer.contact")}

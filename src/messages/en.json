@@ -94,25 +94,36 @@
     "contact": {
         "title": "Contact",
         "subtitle": "Write us.",
-        "heroSub": "Free initial consultation. No pressure, no hidden agenda. Tell us about your idea.",
+        "heroSub": "Free initial consultation.",
         "form": {
             "name": "Name",
             "namePlaceholder": "John Doe",
             "email": "Email",
-            "emailPlaceholder": "john@example.com",
+            "emailPlaceholder": "your@email.com",
             "phone": "Phone",
             "phonePlaceholder": "+43 664 …",
             "subject": "Subject",
+            "subjects": {
+                "newWebsite": "New Website",
+                "eshop": "E-Shop",
+                "seo": "SEO / Marketing",
+                "maintenance": "Maintenance Package",
+                "app": "App Development",
+                "consulting": "Consulting",
+                "other": "Other"
+            },
             "message": "Message",
             "messagePlaceholder": "Describe your project, idea or question…",
             "send": "Send message",
             "sending": "Sending…",
             "success": "Message sent!",
-            "successMessage": "Thank you. We will get back to you within 24 hours — promised.",
+            "successMessage": "Thank you. We will get back to you as soon as possible.",
             "newMessage": "Send new message",
             "error": "Error sending. Please try again or write us directly.",
-            "direct": "Or directly:"
+            "direct": "Or directly:",
+            "privacyNote": "Your data will only be used to process your request and will not be shared."
         },
+        "information": "Information",
         "info": {
             "address": "Address",
             "phone": "Phone",
@@ -123,17 +134,17 @@
         "faq": {
             "title": "Frequently asked questions.",
             "q1": "How long does a website take?",
-            "a1": "A starter website is ready in 1–2 weeks. Business and Premium projects take 3–6 weeks depending on scope. We discuss the exact timeline in the first meeting.",
+            "a1": "A starter website is ready in 3–4 weeks. Business and Premium projects take additional weeks depending on scope. We discuss the exact timeline in the first meeting.",
             "q2": "What do I need to get started?",
             "a2": "Nothing but an idea. We guide you through the entire process — from conception through content to go-live.",
             "q3": "Are there ongoing costs?",
-            "a3": "Hosting and domain cost about 10–20 €/month. Our maintenance packages from 29 €/month are optional but recommended.",
+            "a3": "Hosting and domain costs can vary. Our maintenance packages are optional but recommended.",
             "q4": "What if I want changes later?",
             "a4": "No problem. With a maintenance package, small changes are included. Larger adjustments are billed as individual services.",
             "q5": "Can I edit my website myself?",
             "a5": "Yes. If needed, we integrate a CMS (e.g., Sanity or Contentful) so you can update text and images yourself.",
             "q6": "Do you also build E-Shops?",
-            "a6": "Yes — from 1,200 € we build complete online shops with payment processing, product management, and more."
+            "a6": "Yes, we build complete online shops with payment processing, product management, and more."
         },
         "map": {
             "title": "Mitco Dean Location"
@@ -142,7 +153,7 @@
     "cta": {
         "title": "Ready to get started?",
         "subtitle": "Let's bring your project to life.",
-        "description": "Free initial consultation, no fine print. Tell me about your idea — I listen.",
+        "description": "Free initial consultation.",
         "button": "Free consultation"
     },
     "footer": {

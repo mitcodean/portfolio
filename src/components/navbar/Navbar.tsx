@@ -33,6 +33,7 @@ export default function Navbar() {
     { label: t("nav.home"), href: `/${locale}` },
     { label: t("nav.services"), href: `/${locale}/#services` },
     { label: t("nav.about"), href: `/${locale}/#about` },
+    { label: t("nav.contact"), href: `/${locale}/contact` },
     // { label: t("nav.portfolio"), href: `/${locale}/portfolio` },
   ];
 
@@ -100,7 +101,7 @@ export default function Navbar() {
               <LanguageSwitcher />
 
               {/* CTA button */}
-              <Link href={`/${locale}/#contact`}>
+              <Link href={`/${locale}/contact`}>
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -202,7 +203,7 @@ export default function Navbar() {
                 className="mt-auto"
               >
                 <Link
-                  href={`/${locale}/#contact`}
+                  href={`/${locale}/contact`}
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center justify-center w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >

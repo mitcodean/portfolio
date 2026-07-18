@@ -36,16 +36,6 @@ const socials = [
   { icon: Mail,      label: "E-Mail",      href: "mailto:contact@mitcodean.com",        hoverColor: "#EA4335" },
 ];
 
-const SUBJECTS = [
-  "Neue Website",
-  "E-Shop",
-  "SEO / Marketing",
-  "Wartungspaket",
-  "App Entwicklung",
-  "Beratung",
-  "Sonstiges",
-];
-
 export default function ContactPage() {
   const t = useTranslations("contact");
   const heroRef  = useRef(null);
@@ -58,6 +48,9 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [status, setStatus] = useState<Status>("idle");
   const [focused, setFocused] = useState<string | null>(null);
+
+  const subjectKeys = ["newWebsite", "eshop", "seo", "maintenance", "app", "consulting", "other"];
+  const subjects = subjectKeys.map(key => t(`form.subjects.${key}`));
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -97,53 +90,45 @@ export default function ContactPage() {
     <main className="bg-background min-h-screen overflow-x-hidden">
 
       {/* HERO */}
-      <section ref={heroRef} className="relative min-h-[72vh] flex flex-col justify-end pb-20 pt-40 overflow-hidden">
-        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-primary/7 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
-
+      <section ref={heroRef} className="relative min-h-[20vh] sm:min-h-[30vh] flex flex-col justify-center pt-12 sm:pt-16 overflow-hidden">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-          <motion.p variants={fadeUp(0)} initial="hidden" animate={heroInView ? "visible" : "hidden"}
-            className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-6">
-            Mitco Dean Digital Solutions — {t("title")}
+          <motion.p
+            variants={fadeUp(0)}
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+            className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-2 sm:mb-3"
+          >
+            {t("title")}
           </motion.p>
 
-          <div className="overflow-hidden mb-4">
+          <div className="overflow-hidden mb-2 sm:mb-4">
             <motion.h1
               initial={{ y: "110%" }}
               animate={heroInView ? { y: 0 } : {}}
-              transition={{ duration: 0.9, ease: "easeInOut", delay: 0.08 }}
-              className="text-[clamp(3.2rem,9vw,8rem)] font-black tracking-tight leading-[0.88] text-foreground"
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.08 }}
+              className="text-[clamp(3rem,8vw,7rem)] font-black tracking-tight leading-[0.88] text-center sm:text-left"
             >
-              Let's
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden mb-8">
-            <motion.h1
-              initial={{ y: "110%" }}
-              animate={heroInView ? { y: 0 } : {}}
-              transition={{ duration: 0.9, ease: "easeInOut", delay: 0.18 }}
-              className="text-[clamp(3.2rem,9vw,8rem)] font-black tracking-tight leading-[0.88] text-primary"
-            >
-              talk.
+              <span className="text-foreground">Let&apos;s </span>
+              <span className="text-primary">talk.</span>
             </motion.h1>
           </div>
 
-          <motion.div variants={fadeUp(0.32)} initial="hidden" animate={heroInView ? "visible" : "hidden"}
-            className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8 max-w-4xl">
-            <p className="text-support text-lg max-w-md leading-relaxed">
-              Free initial consultation. No pressure, no hidden agenda.
-              Tell us about your idea.
-            </p>
+          <motion.div
+            variants={fadeUp(0.32)}
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+            className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-2 sm:gap-4 max-w-3xl mx-auto sm:mx-0 mb-0"
+          >
           </motion.div>
         </div>
       </section>
 
       {/* FORM + SIDEBAR */}
-      <section className="py-24">
+      <section className="py-0 -mt-2 sm:-mt-4">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1fr_400px] gap-10 items-start">
 
-            {/* LEFT: Form */}
+            {/* Form */}
             <motion.div ref={formRef} variants={fadeUp(0)} initial="hidden" animate={formInView ? "visible" : "hidden"}>
               <AnimatePresence mode="wait">
                 {status === "success" ? (
@@ -175,7 +160,7 @@ export default function ContactPage() {
                         {t("form.subject")}
                       </label>
                       <div className="flex flex-wrap gap-2">
-                        {SUBJECTS.map(s => (
+                        {subjects.map((s) => (
                           <button
                             key={s}
                             type="button"
@@ -244,21 +229,21 @@ export default function ContactPage() {
                     </button>
 
                     <p className="text-center text-[11px] text-support/35 leading-relaxed">
-                      Your data will only be used to process your request and will not be shared.
+                      {t("form.privacyNote")}
                     </p>
                   </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>
 
-            {/* RIGHT: Info sidebar */}
+            {/* Info sidebar */}
             <div ref={infoRef} className="flex flex-col gap-5">
 
               {/* Map */}
               <motion.div variants={fadeUp(0.08)} initial="hidden" animate={infoInView ? "visible" : "hidden"}
                 className="relative rounded-2xl overflow-hidden border border-border" style={{ height: 200 }}>
                 <iframe
-                  title="Mitco Dean Location"
+                  title={t("map.title")}
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.0!2d14.4167!3d47.9167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477397c2e3b3e3e3%3A0x1234567890abcdef!2sEisenstra%C3%9Fe%2013%2C%204460%20Losenstein!5e0!3m2!1sde!2sat!4v1234567890"
                   width="100%" height="100%"
                   style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85)" }}
@@ -273,7 +258,7 @@ export default function ContactPage() {
               {/* Contact details */}
               <motion.div variants={fadeUp(0.14)} initial="hidden" animate={infoInView ? "visible" : "hidden"}
                 className="rounded-2xl border border-border bg-muted/20 p-6 space-y-4">
-                <p className="text-xs font-semibold text-foreground uppercase tracking-widest">{t("info.phone")}</p>
+                <p className="text-xs font-semibold text-foreground uppercase tracking-widest">{t("information")}</p>
                 {[
                   { icon: MapPin, label: t("info.address"),    value: "Eisenstraße 13, 4460 Losenstein", href: "https://maps.google.com/?q=Eisenstraße+13,+4460+Losenstein" },
                   { icon: Phone,  label: t("info.phone"),    value: "+43 664 9494891",                  href: "tel:+436649494891" },

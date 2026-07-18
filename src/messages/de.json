@@ -94,25 +94,36 @@
     "contact": {
         "title": "Kontakt",
         "subtitle": "Schreib uns.",
-        "heroSub": "Kostenlose Erstberatung. Kein Druck, keine versteckten Absichten. Erzähl uns von deiner Idee.",
+        "heroSub": "Kostenlose Erstberatung.",
         "form": {
             "name": "Name",
             "namePlaceholder": "Max Mustermann",
             "email": "E-Mail",
-            "emailPlaceholder": "max@beispiel.at",
+            "emailPlaceholder": "deine@email.at",
             "phone": "Telefon",
             "phonePlaceholder": "+43 664 …",
             "subject": "Betreff",
+            "subjects": {
+                "newWebsite": "Neue Website",
+                "eshop": "E-Shop",
+                "seo": "SEO / Marketing",
+                "maintenance": "Wartungspaket",
+                "app": "App Entwicklung",
+                "consulting": "Beratung",
+                "other": "Sonstiges"
+            },
             "message": "Nachricht",
             "messagePlaceholder": "Beschreibe dein Projekt, deine Idee oder deine Frage…",
             "send": "Nachricht senden",
             "sending": "Wird gesendet…",
             "success": "Nachricht gesendet!",
-            "successMessage": "Vielen Dank. Wir melden uns innerhalb von 24 Stunden bei dir — versprochen.",
+            "successMessage": "Vielen Dank. Wir melden uns bei dir so schnell wie möglich.",
             "newMessage": "Neue Nachricht senden",
             "error": "Fehler beim Senden. Bitte versuche es erneut oder schreib uns direkt.",
-            "direct": "Oder direkt:"
+            "direct": "Oder direkt:",
+        "privacyNote": "Deine Daten werden ausschließlich zur Bearbeitung deiner Anfrage genutzt und nicht weitergegeben."
         },
+        "information": "Informationen",
         "info": {
             "address": "Adresse",
             "phone": "Telefon",
@@ -123,17 +134,17 @@
         "faq": {
             "title": "Häufige Fragen.",
             "q1": "Wie lange dauert eine Website?",
-            "a1": "Eine Starter-Website ist in 1–2 Wochen fertig. Business und Premium Projekte dauern je nach Umfang 3–6 Wochen. Wir besprechen den genauen Zeitrahmen beim ersten Gespräch.",
+            "a1": "Eine Starter-Website ist in 3-4 Wochen fertig. Business und Premium Projekte dauern je nach Umfang ein paar Wochen mehr. Wir besprechen den genauen Zeitrahmen beim ersten Gespräch.",
             "q2": "Was brauche ich um zu starten?",
             "a2": "Nichts außer einer Idee. Wir führen dich durch den gesamten Prozess — von der Konzeption über den Content bis zum Go-Live.",
             "q3": "Gibt es laufende Kosten?",
-            "a3": "Hosting und Domain kosten ca. 10–20 €/Monat. Unsere Wartungspakete ab 29 €/Monat sind optional, aber empfohlen.",
+            "a3": "Hosting und Domain kosten können variieren. Unsere Wartungspakete sind optional, aber empfohlen.",
             "q4": "Was wenn ich später Änderungen will?",
             "a4": "Kein Problem. Mit einem Wartungspaket sind kleine Änderungen inklusive. Größere Anpassungen werden als Einzelleistung abgerechnet.",
             "q5": "Kann ich meine Website selbst bearbeiten?",
             "a5": "Ja. Bei Bedarf integrieren wir ein CMS (z.B. Sanity oder Contentful) damit du Texte und Bilder selbst aktualisieren kannst.",
             "q6": "Macht ihr auch E-Shops?",
-            "a6": "Ja — ab 1.200 € bauen wir vollständige Online-Shops mit Zahlungsabwicklung, Produktverwaltung und mehr."
+            "a6": "Ja, wir bauen wir vollständige Online-Shops mit Zahlungsabwicklung, Produktverwaltung und mehr."
         },
         "map": {
             "title": "Mitco Dean Standort"
