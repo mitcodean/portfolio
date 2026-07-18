@@ -204,37 +204,24 @@ export default function AboutPreview() {
                 className="absolute inset-x-0 mx-auto w-[80%] sm:w-[65%] top-0 lg:left-4 lg:inset-x-auto lg:mx-0 lg:w-[78%]"
               >
                 <TiltCard>
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 aspect-[3/4] bg-muted">
+                  <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 bg-muted">
                     <Image
                       src="/dean.jpg"
                       alt="Dean Silviu Mitco"
-                      fill
-                      sizes="(max-width: 1024px) 65vw, 40vw"
-                      className="object-cover object-top rounded-2xl overflow-hidden"
+                      width={400}
+                      height={533}
+                      className="object-cover object-top w-full h-full rounded-2xl overflow-hidden"
+                      priority
                     />
-
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent" />
-
-
                     <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#0F172A]/80 border border-white/10 backdrop-blur-sm">
-                      <p
-                        className="text-xs font-bold text-foreground"
-                        style={{ fontFamily: "'DM Sans', sans-serif" }}
-                      >
+                      <p className="text-xs font-bold text-foreground" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                         Dean-Silviu Mitco
                       </p>
-
-                      <p
-                        className="text-[10px] text-primary mt-0.5"
-                        style={{
-                          fontFamily: "'DM Sans', sans-serif",
-                          letterSpacing: "0.1em",
-                        }}
-                      >
+                      <p className="text-[10px] text-primary mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.1em" }}>
                         FOUNDER & DEVELOPER
                       </p>
                     </div>
-
                   </div>
                 </TiltCard>
               </motion.div>
