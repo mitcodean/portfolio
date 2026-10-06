@@ -254,7 +254,7 @@ export default function ServicesPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           <motion.p variants={fadeUp(0)} initial="hidden" animate={heroInView ? "visible" : "hidden"}
             className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-6">
-            Mitco Dean Digital Solutions — Leistungen
+            Diovis — Leistungen
           </motion.p>
 
           <div className="grid lg:grid-cols-2 gap-12 items-end">

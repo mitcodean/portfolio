@@ -176,6 +176,96 @@
         "ctaSub": "Let's build something amazing together!",
         "ctaButton": "Discuss project"
     },
+    "aboutPage": {
+    "hero": {
+        "label": "About us",
+        "headline": "Our fate lies not in the stars, but in ourselves.",
+        "quote": "We must make our dreams come true, even though obstacles and challenges lie along the way.",
+        "cta": "Start a project"
+    },
+    "person": {
+        "label": "Who am I?",
+        "intro1": "I want to learn, build and explore new things, that's what defines me. Solving complex problems and simplifying them has always been my passion. Making things efficient and optimizing them is a must for me, otherwise I feel uneasy. I'm someone who likes to question things.",
+        "intro2": "Growing up in Upper Austria, I was introduced to programming as a little boy through my brother. What started as curiosity is now my profession and my daily motivation.",
+        "intro3": "My approach is pragmatic: no unnecessary complexity. If something can be done more simply, it should be. And if something has to be complex, then it should at least be beautifully complex.",
+        "cards": {
+            "practical": {
+                "title": "Hands-on",
+                "text": "I learn best by building. Trying beats studying."
+            },
+            "architect": {
+                "title": "Architect",
+                "text": "Architecture matters, which is why decisions have to be made correctly before implementing."
+            },
+            "aesthetics": {
+                "title": "Aesthetics meets function",
+                "text": "Functionality and aesthetics are not opposites. I strive for both, not just one."
+            },
+            "learning": {
+                "title": "Always learning",
+                "text": "New tools, new frameworks, new possibilities."
+            }
+        }
+    },
+    "tech": {
+        "label": "Tech Stack",
+        "title": "The tools I use every day.",
+        "hint": "A good overview of my technologies"
+    },
+    "timeline": {
+        "label": "Career",
+        "title1": "The path",
+        "title2": "so far.",
+        "sub": "HTL graduate, Software Developer",
+        "items": {
+            "diovis": {
+                "year": "2025 – Present",
+                "title": "Diovis",
+                "sub": "Founder & Developer",
+                "desc": "Building an IT/software company with a focus on process optimization and web development."
+            },
+            "developer": {
+                "year": "2025 – Present",
+                "title": "Software Developer",
+                "sub": "Full-time employment",
+                "desc": "Development of warehouse logistics systems and automation of mills."
+            },
+            "htl": {
+                "year": "2020 – 2025",
+                "title": "HTL Steyr",
+                "sub": "Diploma in Information Technology",
+                "desc": "Specialization in network technology and software development. A solid foundation for working life."
+            }
+        }
+    },
+    "hobbies": {
+        "label": "When I'm not coding",
+        "title": "Hobbies",
+        "items": {
+            "motorcycle": {
+                "label": "Motorcycling",
+                "text": "My passion besides programming. Freedom, focus and adrenaline. It's not a hobby, it's a way of life."
+            },
+            "fitness": {
+                "label": "Fitness & Sports",
+                "text": "Regular training at the gym is a balance for me. Physical training helps me switch off from my thoughts and clear my head."
+            },
+            "music": {
+                "label": "Own music",
+                "text": "I produce my own music, from the first beat to the final mix. It helps me preserve my creativity."
+            },
+            "philosophy": {
+                "label": "Philosophy",
+                "text": "Why do things exist the way they are? Stoicism, existentialism and epistemology. Thinking about thinking gives me a deeper framework."
+            }
+        }
+    },
+    "cta": {
+        "label": "Let's chat",
+        "title1": "Has my story",
+        "title2": "sparked your interest?",
+        "button": "I love to talk, even when it's not about projects"
+    },
     "projects": {
         "title": "Projects",
         "subtitle": "A selection of my work"
@@ -240,7 +330,7 @@
         "updated": "Last updated: 2026 · in accordance with GDPR (EU) 2016/679 and Austrian Data Protection Act",
         "section1": "1. Responsible Party",
         "section1Desc": "The responsible party within the meaning of the GDPR for the processing of personal data on this website is:",
-        "company": "Mitco Dean Digital Solutions",
+        "company": "Diovis",
         "section2": "2. What data we collect",
         "section2Desc": "We collect and process the following categories of personal data:",
         "data1": "Contact details: Name, email address, phone number (when contacting us)",
@@ -287,10 +377,10 @@
     },
     "terms": {
         "title": "Terms & Conditions",
-        "updated": "Last updated: 2026 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
+        "updated": "Last updated: 2026 · Diovis, Dean-Silviu Mitco",
         "notice": "These T&C were created based on the template of the Austrian Chamber of Commerce for IT service companies. They do not replace individual legal advice. For questions, please contact us at contact@mitcodean.com.",
         "section1": "§ 1 Scope and Contractual Partners",
-        "section1Desc": "These General Terms and Conditions (T&C) apply to all contracts between Mitco Dean Digital Solutions, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (hereinafter \"Contractor\") and its clients (hereinafter \"Client\") regarding IT services, web development, digital marketing and related services.",
+        "section1Desc": "These General Terms and Conditions (T&C) apply to all contracts between Diovis, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (hereinafter \"Contractor\") and its clients (hereinafter \"Client\") regarding IT services, web development, digital marketing and related services.",
         "section1Desc2": "Deviationg terms of the Client are not recognized unless the Contractor expressly agrees to their validity in writing. Individual agreements take precedence over these T&C.",
         "section2": "§ 2 Conclusion of Contract and Offers",
         "section2Desc": "Offers from the Contractor are non-binding and subject to change. A contract is only concluded upon written order confirmation from the Contractor or upon commencement of service provision. Oral side agreements require written confirmation to be valid.",
@@ -328,16 +418,17 @@
         "section10": "§ 10 Limitation of Liability",
         "section10Desc": "The Contractor is only liable for damages in cases of intent and gross negligence. In cases of slight negligence, liability is limited to the contract value. Liability for lost profits, indirect damages and consequential damages is excluded to the extent permitted by law.",
         "section10Desc2": "The Contractor assumes no liability for achieving specific placements in search engines (SEO) or specific advertising results (marketing), as these depend on factors beyond its control.",
-        "section11": "§ 11 Term and Termination",
-        "section11Desc": "Project contracts end with the acceptance of the agreed service. Maintenance contracts are concluded for an indefinite period and can be terminated by either party in writing with a notice period of 4 weeks to the end of the month.",
-        "section11Desc2": "The right to extraordinary termination for good cause remains unaffected. Good cause exists in particular in the event of default of payment of more than 30 days.",
-        "section12": "§ 12 Data Protection",
-        "section12Desc": "Both parties undertake to comply with data protection regulations, in particular the GDPR (EU) 2016/679 and the Austrian Data Protection Act (DSG). The Contractor's privacy policy is available at www.mitcodean.com/privacy.",
-        "section13": "§ 13 Applicable Law and Jurisdiction",
-        "section13Desc": "Austrian law applies exclusively, excluding conflict of law provisions and the UN Convention on Contracts for the International Sale of Goods (CISG).",
-        "section13Desc2": "For all disputes arising from or in connection with this contract, Steyr is agreed as the place of jurisdiction, insofar as legally permissible. For consumer contracts, the statutory jurisdiction rules apply.",
+        "section11": "§ 11 Legal texts for client projects",
+        "section11Desc": "If the contractor provides drafts or templates for legal notices, privacy policies, terms and conditions, cookie banners, or other legal texts as part of a project, these serve solely as non-binding samples and do not constitute legal advice. The contractor is not a lawyer and assumes no liability for their accuracy, completeness, or currency.",
+        "section11Desc2": "The client is solely responsible for reviewing these texts prior to publication—consulting a lawyer or the Chamber of Commerce if necessary—to ensure they align with their specific circumstances, the services actually used, and the applicable legal situation, as well as for keeping them up to date. The contractor is not liable for damages, formal warnings, or penalties arising from the use of these texts or from missing, incomplete, or incorrect legal texts.",
+        "section12": "§ 12 Term and Termination",
+        "section12Desc": "Project contracts end with the acceptance of the agreed service. Maintenance contracts are concluded for an indefinite period and can be terminated by either party in writing with a notice period of 4 weeks to the end of the month.",
+        "section12Desc2": "The right to extraordinary termination for good cause remains unaffected. Good cause exists in particular in the event of default of payment of more than 30 days.",
+        "section13": "§ 13 Data Protection",
+        "section13Desc": "Both parties undertake to comply with data protection regulations, in particular the GDPR (EU) 2016/679 and the Austrian Data Protection Act (DSG). The Contractor's privacy policy is available at www.mitcodean.com/privacy.",
         "section14": "§ 14 Severability Clause",
         "section14Desc": "Should individual provisions of these T&C be ineffective or unenforceable, the effectiveness of the remaining provisions remains unaffected. The ineffective provision is to be replaced by an effective provision that comes as close as possible to the economic purpose of the ineffective provision."
     }
+}
 }
 }

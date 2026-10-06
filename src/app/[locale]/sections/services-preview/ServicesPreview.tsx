@@ -335,8 +335,8 @@ export default function ServicesPreview() {
                 </motion.p>
               </div>
             </motion.div>
+            {/*}
             
-            {/* Footer link */}
             <motion.div
               variants={fadeUp(0.45)}
               initial="hidden"
@@ -355,6 +355,7 @@ export default function ServicesPreview() {
                 />
               </Link>
             </motion.div>
+            */}
           </div>
 
           {/* Two cards */}

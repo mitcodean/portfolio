@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowUpRight, Code2, Music, Globe, Layers, Terminal,
   Sparkles, Bike, Dumbbell, BookOpen, Award, Calendar,
@@ -32,66 +33,23 @@ const TECH_STACK = [
 ];
 
 const HOBBIES = [
-  {
-    icon: Bike,
-    label: "Motorrad",
-    text: "Meine Leidenschaft neben dem Programmieren. Freiheit, Fokus und Adrenalin. Es ist kein Hobby, es ist ein Lebensgefühl.",
-  },
-  {
-    icon: Dumbbell,
-    label: "Fitness & Sport",
-    text: "Regelmäßiges Training im Fitnessstudio ist für mich ein Ausgleich. Das körperliche Training hilft mir mal von meinen Gedanken abzuschalten und den Kopf frei zu bekommen.",
-  },
-  {
-    icon: Music,
-    label: "Eigene Musik",
-    text: "Ich produziere meine eigene Musik. Das heißt vom ersten Beat bis zum finalen Mix. Es hilft mir Kreativität zu bewahren.",
-  },
-  {
-    icon: BookOpen,
-    label: "Philosophie",
-    text: "Warum existieren Dinge so wie sie sind? Stoizismus, Existenzialismus und Erkenntnistheorie. Das Denken über das Denken gibt mir einen tieferen Rahmen.",
-  },
+  { icon: Bike, key: "motorcycle" },
+  { icon: Dumbbell, key: "fitness" },
+  { icon: Music, key: "music" },
+  { icon: BookOpen, key: "philosophy" },
 ];
 
+const MINDSET = [
+  { icon: Terminal, key: "practical" },
+  { icon: Layers, key: "architect" },
+  { icon: Sparkles, key: "aesthetics" },
+  { icon: Globe, key: "learning" },
+];
 
 const TIMELINE = [
-  {
-    year: "2025 – Heute",
-    title: "Mitco Dean Digital Solutions",
-    sub: "Gründer & Entwickler",
-    desc: "Aufbau einer IT/Software Firma mit fokus auf Prozessoptimierung und Webentwicklung.",
-    active: true,
-  },
-  {
-    year: "2025 – Heute",
-    title: "Software Developer",
-    sub: "Festanstellung",
-    desc: "Entwicklung von Lagerlogistiksystemen und Automatisierung von Mühlen.",
-    active: true,
-  },
-  {
-    year: "2020 – 2025",
-    title: "HTL Steyr",
-    sub: "Abschluss Informationstechnologie",
-    desc: "Spezialisierung auf Netzwerktechnik und Softwareentwicklung. Gutes Fundament für das Arbeitsleben.",
-    active: false,
-  },
-  {
-    year: "2023",
-    title: "Praktikum bei ISW GmbH",
-    sub: "Internship",
-    desc: "MAUI-App zur Auswertung von Reisezeiten, Integration von Odoo-Zeitstempeln via API.",
-    active: false,
-  },
-  {
-    year: "2023",
-    title: "Praktikum bei ENGEL AUSTRIA GmbH",
-    sub: "Internship",
-    desc: "Robotertechnik und Toolsprogrammierung in einem internationalen Industrieumfeld.",
-    active: false,
-  },
-  
+  { key: "diovis", active: true },
+  { key: "developer", active: true },
+  { key: "htl", active: false },
 ];
 
 function MagneticCTA({ href, children }: { href: string; children: React.ReactNode }) {
@@ -119,6 +77,9 @@ function MagneticCTA({ href, children }: { href: string; children: React.ReactNo
 }
 
 export default function AboutPage() {
+  const t = useTranslations("aboutPage");
+  const tc = useTranslations("common");
+
   const heroRef = useRef(null);
   const personRef = useRef(null);
   const techRef = useRef(null);
@@ -149,13 +110,13 @@ export default function AboutPage() {
           {/* Label */}
           <motion.p variants={fadeUp(0)} initial="hidden" animate={heroInView ? "visible" : "hidden"}
             className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-8">
-            Über uns
+            {t("hero.label")}
           </motion.p>
 
           {/* Giant headline */}
           <motion.h1 variants={fadeUp(0.08)} initial="hidden" animate={heroInView ? "visible" : "hidden"}
             className="text-[clamp(3rem,8vw,7.5rem)] font-black tracking-tight leading-[0.92] text-foreground mb-8 max-w-5xl">
-            Nicht in den Sternen liegt unser Schicksal, sondern in uns selbst.<br />
+            {t("hero.headline")}<br />
           </motion.h1>
 
           {/* Sub + CTA row */}
@@ -164,9 +125,9 @@ export default function AboutPage() {
             <p className="text-support text-lg max-w-md leading-relaxed">
               &quot;William Shakespeare&quot; <br/><br/>
               <br/>
-              Wir müssen unsere träume verwirklichen, obwohl Hindernisse und Herausforderungen auf dem Weg liegen.
+              {t("hero.quote")}
             </p>
-            <MagneticCTA href="/contact">Projekt starten</MagneticCTA>
+            <MagneticCTA href="/contact">{t("hero.cta")}</MagneticCTA>
           </motion.div>
         </div>
       </section>
@@ -176,17 +137,19 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex gap-6 items-center justify-center flex-col sm:flex-row">
             
-
-            
-
-            
+              <Image
+                src="/milky-way.jpg"
+                alt="Milky Way in red"
+                fill
+                sizes="width: 100% height: auto"
+                className="object-cover"
+              />
           </div>
         </div>
       </section>
 
       {/*Person intro */}
       <section ref={personRef} className="py-28 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Big divider label */}
@@ -194,7 +157,7 @@ export default function AboutPage() {
             className="flex items-center gap-6 mb-20">
             <div className="h-px flex-1 bg-border" />
             <span className="text-xs font-semibold text-primary uppercase tracking-[0.25em] shrink-0">
-              Wer bin ich?
+              {t("person.label")}
             </span>
             <div className="h-px flex-1 bg-border" />
           </motion.div>
@@ -212,18 +175,13 @@ export default function AboutPage() {
               <motion.div variants={fadeUp(0.12)} initial="hidden" animate={personInView ? "visible" : "hidden"}
                 className="mt-6 space-y-4 text-support leading-relaxed">
                 <p className="text-lg text-neutral/90">
-                  Ich will neues lernen, bauen und erkunden, das zeichnet mich aus. 
-                  Komplexe Probleme zu lösen und diese zu vereinfachen war schon immer meine Leidenschaft. 
-                  Etwas effizient zu gestalten und zu optimieren ist für mich ein muss, sonst fühle ich mich unwohl. 
-                  Ich bin ein Mensch der gerne die Dinge hinterfragt.
+                  {t("person.intro1")}
                 </p>
                 <p>
-                  Aufgewachsen in Oberösterreich, hatte ich als kleiner Junge einen Kontaktpunkt zum Programmieren durch meinen Bruder.
-                  Was als Neugier begann ist heute mein Beruf und meine tägliche Motivation.
+                  {t("person.intro2")}
                 </p>
                 <p>
-                  Mein Ansatz ist pragmatisch: keine unnötige Komplexität. Wenn etwas einfacher geht, geht es einfacher.
-                  Und wenn etwas komplex sein muss, dann soll es wenigstens schön komplex sein.
+                  {t("person.intro3")}
                 </p>
               </motion.div>
             </div>
@@ -231,30 +189,9 @@ export default function AboutPage() {
             {/* Right — developer mindset cards */}
             <motion.div variants={fadeUp(0.15)} initial="hidden" animate={personInView ? "visible" : "hidden"}
               className="space-y-4">
-              {[
-                {
-                  icon: Terminal,
-                  title: "Praktisch orientiert",
-                  text: "Ich lerne am besten durch Bauen. Probieren geht über Studieren.",
-                },
-                {
-                  icon: Layers,
-                  title: "Architekt",
-                  text: "Architektur ist wichtig, deswegen muss man entscheidungen vor dem implementieren richtig treffen.",
-                },
-                {
-                  icon: Sparkles,
-                  title: "Ästhetik trifft Funktion",
-                  text: "Funktionalität und Ästhetik sind keine Gegensätze. Ich strebe nach beidem, nicht nur nach einem.",
-                },
-                {
-                  icon: Globe,
-                  title: "Immer am Lernen",
-                  text: "Neue Tools, neue Frameworks, neue Möglichkeiten.",
-                },
-              ].map(({ icon: Icon, title, text }, i) => (
+              {MINDSET.map(({ icon: Icon, key }) => (
                 <motion.div
-                  key={title}
+                  key={key}
                   whileHover={{ x: 6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
                   className="group flex gap-4 p-5 rounded-xl border border-border bg-muted/30 hover:border-primary/30 hover:bg-primary/4 transition-colors duration-200 cursor-default"
@@ -263,8 +200,8 @@ export default function AboutPage() {
                     <Icon size={16} className="text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-foreground mb-1">{title}</p>
-                    <p className="text-xs text-support leading-relaxed">{text}</p>
+                    <p className="text-sm font-semibold text-foreground mb-1">{t(`person.cards.${key}.title`)}</p>
+                    <p className="text-xs text-support leading-relaxed">{t(`person.cards.${key}.text`)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -279,12 +216,12 @@ export default function AboutPage() {
           <motion.div variants={fadeUp(0)} initial="hidden" animate={techInView ? "visible" : "hidden"}
             className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-1">Tech Stack</p>
-              <h3 className="text-2xl font-bold text-foreground">Die Werkzeuge die ich täglich nutze.</h3>
+              <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-1">{t("tech.label")}</p>
+              <h3 className="text-2xl font-bold text-foreground">{t("tech.title")}</h3>
             </div>
             <div className="flex items-center gap-2 text-xs text-support">
               <Code2 size={13} className="text-primary" />
-              Guter Überblick über meine Technologien
+              {t("tech.hint")}
             </div>
           </motion.div>
 
@@ -315,18 +252,14 @@ export default function AboutPage() {
             {/* Sticky label */}
             <motion.div variants={fadeUp(0)} initial="hidden" animate={timelineInView ? "visible" : "hidden"}
               className="lg:sticky lg:top-32">
-              <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-4">Werdegang</p>
+              <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-4">{t("timeline.label")}</p>
               <h2 className="text-3xl font-bold text-foreground leading-tight">
-                Der Weg<br />
-                <span className="text-primary">bis hierher.</span>
+                {t("timeline.title1")}<br />
+                <span className="text-primary">{t("timeline.title2")}</span>
               </h2>
               <p className="text-support text-sm mt-4 leading-relaxed">
-                HTL-Absolvent, Software Developer
+                {t("timeline.sub")}
               </p>
-              {/* Award icon accent */}
-              <div className="mt-8 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                <Award size={20} className="text-primary" />
-              </div>
             </motion.div>
 
             {/* Timeline items */}
@@ -359,17 +292,17 @@ export default function AboutPage() {
                       <div className="flex flex-wrap items-center gap-3 mb-2">
                         <div className="flex items-center gap-1.5 text-[11px] font-medium text-primary/80 uppercase tracking-widest">
                           <Calendar size={11} />
-                          {item.year}
+                          {t(`timeline.items.${item.key}.year`)}
                         </div>
                         {item.active && (
                           <span className="text-[10px] font-bold uppercase tracking-widest bg-primary text-foreground px-2 py-0.5 rounded-full">
-                            Aktuell
+                            {tc("current")}
                           </span>
                         )}
                       </div>
-                      <h3 className="text-base font-bold text-foreground">{item.title}</h3>
-                      <p className="text-xs font-medium text-support mb-2">{item.sub}</p>
-                      <p className="text-sm text-support/80 leading-relaxed">{item.desc}</p>
+                      <h3 className="text-base font-bold text-foreground">{t(`timeline.items.${item.key}.title`)}</h3>
+                      <p className="text-xs font-medium text-support mb-2">{t(`timeline.items.${item.key}.sub`)}</p>
+                      <p className="text-sm text-support/80 leading-relaxed">{t(`timeline.items.${item.key}.desc`)}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -384,16 +317,16 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div variants={fadeUp(0)} initial="hidden" animate={hobbiesInView ? "visible" : "hidden"}
             className="mb-14">
-            <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-3">Wenn ich nicht code</p>
+            <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-3">{t("hobbies.label")}</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-              Hobbys
+              {t("hobbies.title")}
             </h2>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {HOBBIES.map(({ icon: Icon, label, text }, i) => (
+            {HOBBIES.map(({ icon: Icon, key }, i) => (
               <motion.div
-                key={label}
+                key={key}
                 variants={fadeUp(0.08 + i * 0.07)}
                 initial="hidden"
                 animate={hobbiesInView ? "visible" : "hidden"}
@@ -406,8 +339,8 @@ export default function AboutPage() {
                   <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-5 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
                     <Icon size={20} className="text-primary" />
                   </div>
-                  <h3 className="text-base font-bold text-foreground mb-2">{label}</h3>
-                  <p className="text-sm text-support leading-relaxed">{text}</p>
+                  <h3 className="text-base font-bold text-foreground mb-2">{t(`hobbies.items.${key}.label`)}</h3>
+                  <p className="text-sm text-support leading-relaxed">{t(`hobbies.items.${key}.text`)}</p>
                 </div>
               </motion.div>
             ))}
@@ -425,13 +358,13 @@ export default function AboutPage() {
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
             <p className="text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-4">
-              Lass uns tratschen
+              {t("cta.label")}
             </p>
             <h2 className="text-4xl sm:text-5xl font-black text-foreground mb-6 leading-tight">
-             Hat meine Person <br />
-              <span className="text-primary">deine Interesse geweckt?</span>
+             {t("cta.title1")} <br />
+              <span className="text-primary">{t("cta.title2")}</span>
             </h2>
-            <MagneticCTA href="/contact">Ich rede gerne, auch wenn es nicht um Projekte geht</MagneticCTA>
+            <MagneticCTA href="/contact">{t("cta.button")}</MagneticCTA>
           </motion.div>
         </div>
       </section>

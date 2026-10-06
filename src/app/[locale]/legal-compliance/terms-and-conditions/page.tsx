@@ -98,15 +98,20 @@ export default function AGBPage() {
 
           <Section title={t("section12")}>
             <p>{t("section12Desc")}</p>
+            <p className="mt-3">{t("section12Desc2")}</p>
           </Section>
 
           <Section title={t("section13")}>
             <p>{t("section13Desc")}</p>
-            <p className="mt-3">{t("section13Desc2")}</p>
           </Section>
 
           <Section title={t("section14")}>
             <p>{t("section14Desc")}</p>
+            <p className="mt-3">{t("section14Desc2")}</p>
+          </Section>
+
+          <Section title={t("section15")}>
+            <p>{t("section15Desc")}</p>
           </Section>
 
         </div>

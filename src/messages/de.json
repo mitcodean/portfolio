@@ -176,6 +176,96 @@
         "ctaSub": "Lassen Sie uns gemeinsam etwas Großartiges schaffen!",
         "ctaButton": "Projekt besprechen"
     },
+    "aboutPage": {
+    "hero": {
+        "label": "Über uns",
+        "headline": "Nicht in den Sternen liegt unser Schicksal, sondern in uns selbst.",
+        "quote": "Wir müssen unsere Träume verwirklichen, obwohl Hindernisse und Herausforderungen auf dem Weg liegen.",
+        "cta": "Projekt starten"
+    },
+    "person": {
+        "label": "Wer bin ich?",
+        "intro1": "Ich will Neues lernen, bauen und erkunden, das zeichnet mich aus. Komplexe Probleme zu lösen und diese zu vereinfachen war schon immer meine Leidenschaft. Etwas effizient zu gestalten und zu optimieren ist für mich ein Muss, sonst fühle ich mich unwohl. Ich bin ein Mensch, der gerne die Dinge hinterfragt.",
+        "intro2": "Aufgewachsen in Oberösterreich, hatte ich als kleiner Junge einen Kontaktpunkt zum Programmieren durch meinen Bruder. Was als Neugier begann, ist heute mein Beruf und meine tägliche Motivation.",
+        "intro3": "Mein Ansatz ist pragmatisch: keine unnötige Komplexität. Wenn etwas einfacher geht, geht es einfacher. Und wenn etwas komplex sein muss, dann soll es wenigstens schön komplex sein.",
+        "cards": {
+            "practical": {
+                "title": "Praktisch orientiert",
+                "text": "Ich lerne am besten durch Bauen. Probieren geht über Studieren."
+            },
+            "architect": {
+                "title": "Architekt",
+                "text": "Architektur ist wichtig, deswegen muss man Entscheidungen vor dem Implementieren richtig treffen."
+            },
+            "aesthetics": {
+                "title": "Ästhetik trifft Funktion",
+                "text": "Funktionalität und Ästhetik sind keine Gegensätze. Ich strebe nach beidem, nicht nur nach einem."
+            },
+            "learning": {
+                "title": "Immer am Lernen",
+                "text": "Neue Tools, neue Frameworks, neue Möglichkeiten."
+            }
+        }
+    },
+    "tech": {
+        "label": "Tech Stack",
+        "title": "Die Werkzeuge, die ich täglich nutze.",
+        "hint": "Guter Überblick über meine Technologien"
+    },
+    "timeline": {
+        "label": "Werdegang",
+        "title1": "Der Weg",
+        "title2": "bis hierher.",
+        "sub": "HTL-Absolvent, Software Developer",
+        "items": {
+            "diovis": {
+                "year": "2025 – Heute",
+                "title": "Diovis",
+                "sub": "Gründer & Entwickler",
+                "desc": "Aufbau einer IT-/Softwarefirma mit Fokus auf Prozessoptimierung und Webentwicklung."
+            },
+            "developer": {
+                "year": "2025 – Heute",
+                "title": "Software Developer",
+                "sub": "Festanstellung",
+                "desc": "Entwicklung von Lagerlogistiksystemen und Automatisierung von Mühlen."
+            },
+            "htl": {
+                "year": "2020 – 2025",
+                "title": "HTL Steyr",
+                "sub": "Abschluss Informationstechnologie",
+                "desc": "Spezialisierung auf Netzwerktechnik und Softwareentwicklung. Gutes Fundament für das Arbeitsleben."
+            }
+        }
+    },
+    "hobbies": {
+        "label": "Wenn ich nicht programmiere",
+        "title": "Hobbys",
+        "items": {
+            "motorcycle": {
+                "label": "Motorrad",
+                "text": "Meine Leidenschaft neben dem Programmieren. Freiheit, Fokus und Adrenalin. Es ist kein Hobby, es ist ein Lebensgefühl."
+            },
+            "fitness": {
+                "label": "Fitness & Sport",
+                "text": "Regelmäßiges Training im Fitnessstudio ist für mich ein Ausgleich. Das körperliche Training hilft mir, von meinen Gedanken abzuschalten und den Kopf freizubekommen."
+            },
+            "music": {
+                "label": "Eigene Musik",
+                "text": "Ich produziere meine eigene Musik, vom ersten Beat bis zum finalen Mix. Es hilft mir, meine Kreativität zu bewahren."
+            },
+            "philosophy": {
+                "label": "Philosophie",
+                "text": "Warum existieren Dinge so, wie sie sind? Stoizismus, Existenzialismus und Erkenntnistheorie. Das Denken über das Denken gibt mir einen tieferen Rahmen."
+            }
+        }
+    },
+    "cta": {
+        "label": "Lass uns tratschen",
+        "title1": "Hat meine Person",
+        "title2": "dein Interesse geweckt?",
+        "button": "Ich rede gerne, auch wenn es nicht um Projekte geht"
+    },
     "projects": {
         "title": "Projekte",
         "subtitle": "Eine Auswahl meiner Arbeiten"
@@ -240,7 +330,7 @@
         "updated": "Stand: 2026 · gemäß DSGVO (EU) 2016/679 und DSG (Österreich)",
         "section1": "1. Verantwortlicher",
         "section1Desc": "Verantwortlicher im Sinne der DSGVO für die Verarbeitung personenbezogener Daten auf dieser Website ist:",
-        "company": "Mitco Dean Digital Solutions",
+        "company": "Diovis",
         "section2": "2. Welche Daten wir erheben",
         "section2Desc": "Wir erheben und verarbeiten folgende Kategorien personenbezogener Daten:",
         "data1": "Kontaktdaten: Name, E-Mail-Adresse, Telefonnummer (bei Kontaktaufnahme)",
@@ -287,10 +377,10 @@
     },
     "terms": {
         "title": "Allgemeine Geschäftsbedingungen",
-        "updated": "Stand: 2026 · Mitco Dean Digital Solutions, Dean-Silviu Mitco",
+        "updated": "Stand: 2026 · Diovis, Dean-Silviu Mitco",
         "notice": "Diese AGB wurden nach dem Muster der WKO Österreich für IT-Dienstleistungsunternehmen erstellt. Sie ersetzen keine individuelle Rechtsberatung. Bei Fragen stehen wir unter contact@mitcodean.com zur Verfügung.",
         "section1": "§ 1 Geltungsbereich und Vertragspartner",
-        "section1Desc": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen Mitco Dean Digital Solutions, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (nachfolgend \"Auftragnehmer\") und seinen Auftraggebern (nachfolgend \"Auftraggeber\") über IT-Dienstleistungen, Webentwicklung, digitales Marketing und damit verbundene Leistungen.",
+        "section1Desc": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen Diovis, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (nachfolgend \"Auftragnehmer\") und seinen Auftraggebern (nachfolgend \"Auftraggeber\") über IT-Dienstleistungen, Webentwicklung, digitales Marketing und damit verbundene Leistungen.",
         "section1Desc2": "Abweichende Bedingungen des Auftraggebers werden nicht anerkannt, es sei denn, der Auftragnehmer stimmt ihrer Geltung ausdrücklich schriftlich zu. Individualvereinbarungen gehen diesen AGB vor.",
         "section2": "§ 2 Vertragsschluss und Angebote",
         "section2Desc": "Angebote des Auftragnehmers sind freibleibend und unverbindlich. Ein Vertrag kommt erst durch schriftliche Auftragsbestätigung des Auftragnehmers oder durch Beginn der Leistungserbringung zustande. Mündliche Nebenabreden bedürfen zu ihrer Wirksamkeit der schriftlichen Bestätigung.",
@@ -328,16 +418,20 @@
         "section10": "§ 10 Haftungsbeschränkung",
         "section10Desc": "Der Auftragnehmer haftet für Schäden nur bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit ist die Haftung auf den Auftragswert begrenzt. Eine Haftung für entgangenen Gewinn, mittelbare Schäden und Folgeschäden ist ausgeschlossen, soweit gesetzlich zulässig.",
         "section10Desc2": "Der Auftragnehmer übernimmt keine Haftung für die Erreichung bestimmter Platzierungen in Suchmaschinen (SEO) oder bestimmter Werbeerfolge (Marketing), da diese von Faktoren abhängen, die außerhalb seines Einflussbereichs liegen.",
-        "section11": "§ 11 Laufzeit und Kündigung",
-        "section11Desc": "Projektverträge enden mit der Abnahme der vereinbarten Leistung. Wartungsverträge werden auf unbestimmte Zeit geschlossen und können von beiden Seiten mit einer Frist von 4 Wochen zum Monatsende schriftlich gekündigt werden.",
-        "section11Desc2": "Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere bei Zahlungsverzug von mehr als 30 Tagen vor.",
-        "section12": "§ 12 Datenschutz",
-        "section12Desc": "Beide Parteien verpflichten sich zur Einhaltung der datenschutzrechtlichen Bestimmungen, insbesondere der DSGVO (EU) 2016/679 und des österreichischen Datenschutzgesetzes (DSG). Die Datenschutzerklärung des Auftragnehmers ist unter www.mitcodean.com/datenschutz abrufbar.",
-        "section13": "§ 13 Anwendbares Recht und Gerichtsstand",
-        "section13Desc": "Es gilt ausschließlich österreichisches Recht unter Ausschluss der Kollisionsnormen und des UN-Kaufrechts (CISG).",
-        "section13Desc2": "Für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag wird Steyr als Gerichtsstand vereinbart, soweit gesetzlich zulässig. Bei Verbraucherverträgen gelten die gesetzlichen Zuständigkeitsregeln.",
-        "section14": "§ 14 Salvatorische Klausel",
-        "section14Desc": "Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, so bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung möglichst nahekommt."
+        "section11": "§ 11 Rechtstexte für Kundenprojekte",
+        "section11Desc": "Stellt der Auftragnehmer im Rahmen eines Projekts Entwürfe oder Vorlagen für Impressum, Datenschutzerklärung, AGB, Cookie-Banner oder sonstige Rechtstexte bereit, dienen diese ausschließlich als unverbindliche Muster und stellen keine Rechtsberatung dar. Der Auftragnehmer ist kein Rechtsanwalt und übernimmt keine Gewähr für deren Richtigkeit, Vollständigkeit oder Aktualität.",
+        "section11Desc2": "Der Auftraggeber ist allein dafür verantwortlich, diese Texte vor der Veröffentlichung auf seine individuellen Verhältnisse, seine tatsächlich eingesetzten Dienste und die geltende Rechtslage zu prüfen, bei Bedarf durch einen Rechtsanwalt oder die Wirtschaftskammer, und sie aktuell zu halten. Der Auftragnehmer haftet nicht für Schäden, Abmahnungen oder Strafen, die aus der Verwendung dieser Texte oder aus fehlenden, unvollständigen oder fehlerhaften Rechtstexten entstehen.",
+        "section12": "§ 12 Laufzeit und Kündigung",
+        "section12Desc": "Projektverträge enden mit der Abnahme der vereinbarten Leistung. Wartungsverträge werden auf unbestimmte Zeit geschlossen und können von beiden Seiten mit einer Frist von 4 Wochen zum Monatsende schriftlich gekündigt werden.",
+        "section12Desc2": "Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere bei Zahlungsverzug von mehr als 30 Tagen vor.",
+        "section13": "§ 13 Datenschutz",
+        "section13Desc": "Beide Parteien verpflichten sich zur Einhaltung der datenschutzrechtlichen Bestimmungen, insbesondere der DSGVO (EU) 2016/679 und des österreichischen Datenschutzgesetzes (DSG). Die Datenschutzerklärung des Auftragnehmers ist unter www.mitcodean.com/datenschutz abrufbar.",
+        "section14": "§ 14 Anwendbares Recht und Gerichtsstand",
+        "section14Desc": "Es gilt ausschließlich österreichisches Recht unter Ausschluss der Kollisionsnormen und des UN-Kaufrechts (CISG).",
+        "section14Desc2": "Für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag wird Steyr als Gerichtsstand vereinbart, soweit gesetzlich zulässig. Bei Verbraucherverträgen gelten die gesetzlichen Zuständigkeitsregeln.",
+        "section15": "§ 15 Salvatorische Klausel",
+        "section15Desc": "Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, so bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung möglichst nahekommt."
     }
+}
 }
 }

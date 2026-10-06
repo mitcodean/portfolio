@@ -169,8 +169,8 @@ export default function Hero() {
             </Button>
               
             </Link>
+            {/* TODO: Add text back in when we have a projects page
             
-            {/* Zweiter runder Button - Outline */}
             <Link
               href="#learn"
               className="group relative"
@@ -191,11 +191,16 @@ export default function Hero() {
                     top: pos.y - 20,
                   }}
                 />
+                
+              
                 <span className="relative z-10 transition-colors duration-500 pointer-events-none group-hover:text-primary-foreground">
                   {t("projects")}
                 </span>
+              
               </Button>
+              
             </Link>
+            */}
           </motion.div>
 
         </motion.div>
