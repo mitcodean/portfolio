@@ -12,10 +12,6 @@ import {
 import { useTranslations } from "next-intl";
 import { motion, type Variants } from "framer-motion";
 
-const FONT_STYLE = `
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap');
-`;
-
 const fadeUp = (delay = 0): Variants => ({
   hidden: {
     opacity: 0,
@@ -267,7 +263,6 @@ export default function ServicesPreview() {
 
   return (
     <>
-      <style>{FONT_STYLE}</style>
       <section ref={ref} id="services" className="bg-background py-24 relative overflow-hidden">
 
         {/* Background brand triangles */}

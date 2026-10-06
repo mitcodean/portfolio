@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 import Footer from "@/components/footer/Footer";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { CookieConsentProvider } from "@/components/cookie/CookieConsent";
 
 export default async function LocaleLayout({
   children,
@@ -24,9 +25,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Navbar />
-      {children}
-      <Footer />
+      <CookieConsentProvider>
+        <Navbar />
+        {children}
+        <Footer />
+      </CookieConsentProvider>
     </NextIntlClientProvider>
   );
 }

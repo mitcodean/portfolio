@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Github, Linkedin, Mail, Instagram, Twitter, ChevronRight, ArrowUp } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useCookieConsent } from "@/components/cookie/CookieConsent";
 
 export default function Footer() {
 
@@ -12,6 +13,7 @@ const pathname = usePathname();
   const tLegalNotice = useTranslations("legal.notice");
   const tLegalPrivacy = useTranslations("legal.privacy");
   const tLegalTerms = useTranslations("legal.terms");
+  const { openCookieSettings } = useCookieConsent();
 
   const segments = pathname.split("/");
   const locale = segments[1] || "en";
@@ -222,6 +224,9 @@ const pathname = usePathname();
                   {item.label}
                 </a>
               ))}
+              <button type="button" onClick={openCookieSettings} className="hover:text-primary transition-colors">
+                {t("footer.cookieSettings")}
+              </button>
               <span className="w-1 h-1 rounded-full bg-border inline-block" />
               
             </div>

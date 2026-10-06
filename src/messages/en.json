@@ -163,6 +163,7 @@
         "contactTitle": "Contact",
         "connect": "Connect",
         "rights": "All rights reserved.",
+        "cookieSettings": "Cookie settings",
         "backToTop": "Back to top"
     },
     "portfolio": {
@@ -336,23 +337,23 @@
         "section2Desc": "We collect and process the following categories of personal data:",
         "data1": "Contact details: Name, email address, phone number (when contacting us)",
         "data2": "Communication data: Content of messages via our contact form",
-        "data3": "Usage data: IP address, browser, operating system, page views (when using analytics)",
-        "data4": "Technical data: Cookies, session data (technically necessary)",
+        "data3": "Technical data processed by Google when you choose to load the embedded map",
+        "data4": "Cookie preference: whether optional external media is allowed",
         "section3": "3. Purposes and legal bases of processing",
         "section3Contact": "Contact form & inquiries",
         "section3ContactDesc": "If you contact us via the contact form or by email, we process your data to handle your inquiry on the basis of Art. 6 para. 1 lit. b GDPR (contract initiation) or Art. 6 para. 1 lit. f GDPR (legitimate interest in responding to inquiries). Data is not passed on to third parties.",
         "section3Cookies": "Website operation (technically necessary cookies)",
-        "section3CookiesDesc": "Technically necessary cookies are set on the basis of Art. 6 para. 1 lit. f GDPR. They are required for the proper operation of the website and cannot be deactivated.",
-        "section3Analytics": "Google Analytics (only with consent)",
-        "section3AnalyticsDesc": "With your consent, we use Google Analytics 4 (Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland) to analyze user behavior. Legal basis: Art. 6 para. 1 lit. a GDPR. IP anonymization is activated. Data is stored on servers in the EU. You can revoke your consent at any time (cookie settings).",
+        "section3CookiesDesc": "The site stores your cookie preference so it can remember whether external media is allowed. The preference is stored for one year.",
+        "section3Analytics": "Embedded Google Maps (optional)",
+        "section3AnalyticsDesc": "Google Maps is loaded only after you allow external media in the cookie settings. When loaded, Google may receive technical information such as your IP address and browser data.",
         "section4": "4. Storage duration",
-        "section4Desc": "Contact inquiries are deleted after completion of processing, at the latest after 3 years, unless there is a legal retention obligation. For tax-relevant documents, a retention period of 7 years applies according to Austrian tax law. Analytics data is automatically deleted after 14 months.",
+        "section4Desc": "Contact inquiries are deleted after completion of processing, at the latest after 3 years, unless there is a legal retention obligation. For tax-relevant documents, a retention period of 7 years applies according to Austrian tax law.",
         "section5": "5. Transfer of data",
         "section5Desc": "Your personal data will only be passed on to third parties if:",
         "section5Item1": "you have given your explicit consent (Art. 6 para. 1 lit. a GDPR)",
         "section5Item2": "this is necessary for the performance of a contract (Art. 6 para. 1 lit. b GDPR)",
         "section5Item3": "there is a legal obligation (Art. 6 para. 1 lit. c GDPR)",
-        "section5Processors": "Processors used: Vercel Inc. (Hosting, USA — Standard Contractual Clauses), Google LLC (Analytics, USA — Standard Contractual Clauses).",
+        "section5Processors": "Hosting provider: Vercel Inc. The Google Maps embed is provided by Google and is loaded only after your consent to external media.",
         "section6": "6. Your rights under the GDPR",
         "section6Desc": "You have the following rights against us as the responsible party:",
         "section6Item1": "Right of access (Art. 15 GDPR): Information about stored data",
@@ -372,7 +373,7 @@
         "section8Desc": "We use cookies and similar technologies. Details on the cookies used, purposes and your opt-out options can be found in our cookie banner on the first visit and in the cookie settings (accessible at any time via the link in the footer).",
         "cookieTitle": "Cookies used",
         "cookie1": "Stores your cookie settings (1 year)",
-        "cookie2": "Google Analytics (only with consent, 14 months)",
+        "cookie2": "The map is loaded only after you allow external media; Google may then process technical data.",
         "section9": "9. Timeliness of this declaration",
         "section9Desc": "This privacy policy is updated when our processing activities change or when the legal situation changes. The current version is always available at www.mitcodean.com/privacy."
     },
@@ -430,5 +431,20 @@
         "section14": "§ 14 Severability Clause",
         "section14Desc": "Should individual provisions of these T&C be ineffective or unenforceable, the effectiveness of the remaining provisions remains unaffected. The ineffective provision is to be replaced by an effective provision that comes as close as possible to the economic purpose of the ineffective provision."
     }
-}
+    },
+    "cookieBanner": {
+        "title": "Your privacy choices",
+        "description": "Choose whether this site may load optional external media. You can change your choice at any time in the footer.",
+        "necessaryTitle": "Necessary preference",
+        "necessaryDescription": "Remembers your cookie choice for one year. Always active.",
+        "externalTitle": "External media: Google Maps",
+        "externalDescription": "Loads the Google map on the contact pages. Google may receive technical data, including your IP address.",
+        "acceptAll": "Accept all",
+        "necessaryOnly": "Necessary only",
+        "settings": "Settings",
+        "save": "Save choices",
+        "changeNote": "You can update or withdraw this choice at any time using Cookie settings in the footer.",
+        "mapBlocked": "The map is blocked until you allow optional external media.",
+        "enableMap": "Allow Google Maps"
+    }
 }

@@ -9,6 +9,7 @@ import {
   ArrowUpRight, Zap,
 } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import GoogleMapEmbed from "@/components/cookie/GoogleMapEmbed";
 
 const fadeUp = (delay = 0): Variants => ({
   hidden: {
@@ -242,14 +243,7 @@ export default function ContactPage() {
               {/* Map */}
               <motion.div variants={fadeUp(0.08)} initial="hidden" animate={infoInView ? "visible" : "hidden"}
                 className="relative rounded-2xl overflow-hidden border border-border" style={{ height: 200 }}>
-                <iframe
-                  title={t("map.title")}
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.0!2d14.4167!3d47.9167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477397c2e3b3e3e3%3A0x1234567890abcdef!2sEisenstra%C3%9Fe%2013%2C%204460%20Losenstein!5e0!3m2!1sde!2sat!4v1234567890"
-                  width="100%" height="100%"
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85)" }}
-                  allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 w-full h-full"
-                />
+                <GoogleMapEmbed title={t("map.title")} />
                 <div className="absolute bottom-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0F172A]/90 border border-border text-xs text-foreground">
                   <MapPin size={11} className="text-primary shrink-0" /> Losenstein, Austria
                 </div>

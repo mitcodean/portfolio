@@ -1,5 +1,5 @@
 // Privacy Policy, Datenschutzerklärung
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 export default function DatenschutzPage() {
@@ -96,7 +96,7 @@ export default function DatenschutzPage() {
               <p className="text-foreground font-semibold text-xs uppercase tracking-wider">{t("cookieTitle")}</p>
               <div className="space-y-2 text-xs">
                 <div className="flex gap-3"><span className="text-support/60 min-w-[160px]">mitcodean_cookie_consent</span><span className="text-foreground">{t("cookie1")}</span></div>
-                <div className="flex gap-3"><span className="text-support/60 min-w-[160px]">_ga, _ga_*</span><span className="text-foreground">{t("cookie2")}</span></div>
+                <div className="flex gap-3"><span className="text-support/60 min-w-[160px]">Google Maps</span><span className="text-foreground">{t("cookie2")}</span></div>
               </div>
             </div>
           </Section>
