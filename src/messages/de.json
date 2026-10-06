@@ -265,6 +265,7 @@
         "title1": "Hat meine Person",
         "title2": "dein Interesse geweckt?",
         "button": "Ich rede gerne, auch wenn es nicht um Projekte geht"
+    }
     },
     "projects": {
         "title": "Projekte",
@@ -432,6 +433,5 @@
         "section15": "§ 15 Salvatorische Klausel",
         "section15Desc": "Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, so bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung möglichst nahekommt."
     }
-}
 }
 }

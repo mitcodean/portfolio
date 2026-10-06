@@ -265,6 +265,7 @@
         "title1": "Has my story",
         "title2": "sparked your interest?",
         "button": "I love to talk, even when it's not about projects"
+    }
     },
     "projects": {
         "title": "Projects",
@@ -429,6 +430,5 @@
         "section14": "§ 14 Severability Clause",
         "section14Desc": "Should individual provisions of these T&C be ineffective or unenforceable, the effectiveness of the remaining provisions remains unaffected. The ineffective provision is to be replaced by an effective provision that comes as close as possible to the economic purpose of the ineffective provision."
     }
-}
 }
 }

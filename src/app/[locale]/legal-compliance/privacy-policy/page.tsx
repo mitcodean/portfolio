@@ -1,5 +1,5 @@
 // Privacy Policy, Datenschutzerklärung
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 export default function DatenschutzPage() {
