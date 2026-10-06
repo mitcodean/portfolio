@@ -438,15 +438,16 @@
     "cookieBanner": {
         "title": "Deine Datenschutzeinstellungen",
         "description": "Wähle, ob diese Website optionale externe Inhalte laden darf. Du kannst deine Auswahl jederzeit im Footer ändern.",
-        "necessaryTitle": "Notwendige Auswahl",
-        "necessaryDescription": "Speichert deine Cookie-Auswahl für ein Jahr. Immer aktiv.",
+        "necessaryTitle": "Notwendig: Cookie zur Speicherung deiner Auswahl",
+        "necessaryDescription": "Das Cookie mitcodean_cookie_consent speichert diese Auswahl ein Jahr lang. Immer aktiv.",
         "externalTitle": "Externe Inhalte: Google Maps",
         "externalDescription": "Lädt die Google-Karte auf den Kontaktseiten. Google kann technische Daten einschließlich deiner IP-Adresse erhalten.",
         "acceptAll": "Alle akzeptieren",
-        "necessaryOnly": "Nur notwendige",
+        "necessaryOnly": "Nein, nur notwendige",
         "settings": "Einstellungen",
         "save": "Auswahl speichern",
         "changeNote": "Du kannst diese Auswahl jederzeit über Cookie-Einstellungen im Footer ändern oder widerrufen.",
+        "privacyLink": "Datenschutzerklärung",
         "mapBlocked": "Die Karte ist blockiert, bis du optionale externe Inhalte erlaubst.",
         "enableMap": "Google Maps erlauben"
     }
