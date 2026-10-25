@@ -8,14 +8,15 @@ import {
 } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { findInquiryExample, getInquiryExamples } from "@/data/inquiry-examples";
 import {
-  findInquiryExample, getEmptyMockResult, getInquiryExamples,
-  MAX_INQUIRY_LENGTH, MOCK_DELAY_MS, type InquiryResult,
-} from "./inquiry-mock";
+  DEFAULT_INQUIRY_MODEL, INQUIRY_MODELS, MAX_INQUIRY_LENGTH, VISITOR_ATTEMPTS,
+  inquiryErrorSchema, inquirySuccessSchema, type InquiryModel, type InquiryResult,
+} from "@/lib/inquiry/schema";
 
 const focusStyle = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-background";
 
-export default function AnfrageDemo() {
+export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL }: { defaultModel?: InquiryModel }) {
   const locale = useLocale();
   const t = useTranslations("inquiryDemo");
   const examples = getInquiryExamples(locale);
@@ -23,28 +24,38 @@ export default function AnfrageDemo() {
   const [result, setResult] = useState<InquiryResult | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "ready" | "reviewed">("idle");
   const [error, setError] = useState<string | null>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [model, setModel] = useState<InquiryModel>(defaultModel);
+  const [quota, setQuota] = useState<{ remaining: number; resetAt: number } | null>(null);
+  const [blockedUntil, setBlockedUntil] = useState(0);
+  const controllerRef = useRef<AbortController | null>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const resultRef = useRef<HTMLHeadingElement>(null);
   const selectedExample = findInquiryExample(inquiry, locale);
   const isLoading = status === "loading";
 
   useEffect(() => () => {
-    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+    controllerRef.current?.abort();
+    controllerRef.current = null;
   }, []);
 
+  useEffect(() => {
+    if (!blockedUntil) return;
+    const timer = setTimeout(() => setBlockedUntil(0), Math.min(Math.max(0, blockedUntil - Date.now()), 2_147_483_647));
+    return () => clearTimeout(timer);
+  }, [blockedUntil]);
+
   function changeInquiry(value: string) {
-    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-    timeoutRef.current = null;
+    controllerRef.current?.abort();
+    controllerRef.current = null;
     setInquiry(value);
     setResult(null);
     setStatus("idle");
     setError(null);
   }
 
-  function analyze(event: FormEvent<HTMLFormElement>) {
+  async function analyze(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (isLoading) return;
+    if (isLoading || controllerRef.current || blockedUntil > Date.now()) return;
     if (!inquiry.trim() || inquiry.length > MAX_INQUIRY_LENGTH) {
       setError(t(inquiry.trim() ? "tooLong" : "emptyError"));
       inputRef.current?.focus();
@@ -54,17 +65,42 @@ export default function AnfrageDemo() {
     setResult(null);
     setStatus("loading");
 
-    // UI-only delay: no request, AI processing, persistence or external integration.
-    timeoutRef.current = setTimeout(() => {
-      setResult(selectedExample?.result ?? getEmptyMockResult(
-        t("customSummary"),
-        [t("customMissing")],
-      ));
+    const controller = new AbortController();
+    controllerRef.current = controller;
+    const timeout = setTimeout(() => controller.abort("timeout"), 55_000);
+    try {
+      const response = await fetch("/api/analyze-inquiry/", {
+        method: "POST", credentials: "same-origin", cache: "no-store", signal: controller.signal,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ inquiry, model, locale: locale === "de" ? "de" : "en" }),
+      });
+      const payload: unknown = await response.json();
+      if (controllerRef.current !== controller) return;
+      if (!response.ok) {
+        const parsed = inquiryErrorSchema.safeParse(payload);
+        if (!parsed.success) throw new Error("INVALID_OUTPUT");
+        const failure = parsed.data;
+        if (failure.remainingAttempts !== undefined && failure.resetAt) setQuota({ remaining: failure.remainingAttempts, resetAt: failure.resetAt });
+        if (failure.retryAfterSeconds) setBlockedUntil(Date.now() + failure.retryAfterSeconds * 1000);
+        if (failure.error === "RATE_LIMITED") setQuota({ remaining: 0, resetAt: Date.now() + (failure.retryAfterSeconds ?? 86400) * 1000 });
+        setError(t(`errors.${failure.error}`));
+        setStatus("idle");
+        return;
+      }
+      const parsed = inquirySuccessSchema.safeParse(payload);
+      if (!parsed.success) throw new Error("INVALID_OUTPUT");
+      setResult(parsed.data.result);
+      setQuota({ remaining: parsed.data.remainingAttempts, resetAt: parsed.data.resetAt });
       setStatus("ready");
-      timeoutRef.current = null;
-      // Move keyboard focus to the new content, including on small screens.
       requestAnimationFrame(() => resultRef.current?.focus({ preventScroll: true }));
-    }, MOCK_DELAY_MS);
+    } catch (failure) {
+      if (controllerRef.current !== controller) return;
+      setError(controller.signal.aborted ? t("errors.TIMEOUT") : failure instanceof Error && failure.message === "INVALID_OUTPUT" ? t("errors.INVALID_OUTPUT") : t("networkError"));
+      setStatus("idle");
+    } finally {
+      clearTimeout(timeout);
+      if (controllerRef.current === controller) controllerRef.current = null;
+    }
   }
 
   const fields = result ? [
@@ -122,6 +158,11 @@ export default function AnfrageDemo() {
                   </button>
                 ))}
               </div>
+              <label htmlFor="inquiry-demo-model" className="mb-2 block text-sm font-medium text-neutral">{t("modelLabel")}</label>
+              <select id="inquiry-demo-model" value={model} disabled={isLoading} onChange={event => { changeInquiry(inquiry); setModel(event.target.value as InquiryModel); }}
+                className={cn("mb-5 min-h-11 w-full rounded-xl border border-border bg-background px-3 py-2 text-sm text-foreground disabled:opacity-50", focusStyle)}>
+                {INQUIRY_MODELS.map(value => <option key={value} value={value}>{value}</option>)}
+              </select>
               <label htmlFor="inquiry-demo-text" className="mb-2 block text-sm font-medium text-neutral">{t("inputLabel")}</label>
               <Textarea ref={inputRef} id="inquiry-demo-text" name="inquiry" value={inquiry} onChange={(event) => changeInquiry(event.target.value)} disabled={isLoading}
                 maxLength={MAX_INQUIRY_LENGTH} aria-invalid={Boolean(error)} aria-describedby={`inquiry-demo-hint inquiry-demo-count inquiry-demo-notice${error ? " inquiry-demo-error" : ""}`}
@@ -131,11 +172,14 @@ export default function AnfrageDemo() {
                 <span id="inquiry-demo-count" className="shrink-0 tabular-nums">{t("characters", { count: inquiry.length, max: MAX_INQUIRY_LENGTH })}</span>
               </div>
               {error && <p id="inquiry-demo-error" role="alert" className="mt-3 text-sm text-red-300">{error}</p>}
-              <button type="submit" disabled={isLoading} className={cn("mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent disabled:cursor-wait disabled:opacity-60", focusStyle)}>
+              <button type="submit" disabled={isLoading || blockedUntil > 0} className={cn("mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60", focusStyle)}>
                 {isLoading ? <Loader2 size={17} aria-hidden="true" className="animate-spin motion-reduce:animate-none" /> : <ArrowRight size={17} aria-hidden="true" />}
                 {isLoading ? t("analyzing") : t("analyze")}
               </button>
               <p className="mt-3 text-center text-xs leading-5 text-support">{t("localOnly")}</p>
+              <p role="status" className="mt-3 text-xs leading-5 text-neutral">{quota ? t("attemptsRemaining", { remaining: quota.remaining, max: VISITOR_ATTEMPTS }) : t("attemptsLimit", { max: VISITOR_ATTEMPTS })}</p>
+              {quota && <p className="mt-1 text-xs leading-5 text-support">{t("quotaReset", { date: new Date(quota.resetAt).toLocaleString(locale === "de" ? "de-AT" : "en-GB", { timeZone: "Europe/Vienna" }) })}</p>}
+              {blockedUntil > 0 && <p className="mt-2 text-xs leading-5 text-amber-200">{t("quotaWait", { date: new Date(blockedUntil).toLocaleString(locale === "de" ? "de-AT" : "en-GB", { timeZone: "Europe/Vienna" }) })}</p>}
             </form>
 
             <div aria-busy={isLoading} className="min-w-0 bg-background/30 p-5 sm:p-8">
@@ -158,7 +202,7 @@ export default function AnfrageDemo() {
                 </div>
               ) : (
                 <div className="space-y-5">
-                  <p className="text-xs leading-5 text-support">{selectedExample ? t("preparedResult") : t("customHint")}</p>
+                  <p className="text-xs leading-5 text-support">{t("preparedResult", { model })}</p>
                   <dl className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {fields.map(({ label, value }) => (
                       <div key={label} className="min-w-0 rounded-xl border border-border bg-muted/30 p-3.5">
@@ -174,7 +218,7 @@ export default function AnfrageDemo() {
                   </div>
                   <div className="rounded-xl border border-amber-300/20 bg-amber-300/5 p-4">
                     <h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-amber-200"><CircleAlert size={16} aria-hidden="true" />{t("missingTitle")}</h4>
-                    <ul className="list-disc space-y-1.5 pl-4 text-sm leading-6 text-neutral">{result.missingInformation.map((item) => <li key={item}>{item}</li>)}</ul>
+                    {result.missingInformation.length ? <ul className="list-disc space-y-1.5 pl-4 text-sm leading-6 text-neutral">{result.missingInformation.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}</ul> : <p className="text-sm leading-6 text-neutral">{t("noMissingInformation")}</p>}
                   </div>
                   <div className="border-t border-border pt-5">
                     <h4 className="text-sm font-medium text-neutral">{t("reviewTitle")}</h4>
@@ -200,7 +244,7 @@ export default function AnfrageDemo() {
             <p className="text-base font-medium text-foreground">{t("ctaTitle")}</p>
             <p className="mt-1.5 text-sm leading-6 text-support">{t("ctaDescription")}</p>
           </div>
-          <a href="#contact" className={cn("inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-red-400/40 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-primary/15", focusStyle)}>{t("ctaButton")}<ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a href="https://calendly.com/mitco-deansilviu/30min" target="_blank" rel="noopener noreferrer" className={cn("inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-red-400/40 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-primary/15", focusStyle)}>{t("ctaButton")}<ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
       </div>
     </section>
