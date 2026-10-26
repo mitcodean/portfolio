@@ -46,6 +46,7 @@
         "missingTitle": "Fehlende Informationen / Rückfragen",
         "modelLabel": "KI-Modell",
         "attemptsLimit": "Maximal {max} KI-Versuche pro Besucher und Netzwerk in 24 Stunden.",
+        "unlimitedLocalTests": "Lokaler Testmodus: Versuchslimits vorübergehend ausgeschaltet.",
         "attemptsRemaining": "Noch {remaining} von {max} Versuchen verfügbar. Modellwechsel und Zurücksetzen erneuern das Limit nicht.",
         "quotaReset": "Erster gezählter Versuch läuft ab am {date} (Wien).",
         "quotaWait": "Weitere Aufrufe frühestens ab {date} (Wien).",
@@ -78,9 +79,23 @@
         "reviewedDescription": "Als geprüft markiert (Simulation). Offene Fragen bleiben bestehen. Die Prüfmarkierung wird weder gespeichert noch an Drittsysteme übertragen.",
         "notice": "Demo mit fiktiven Angaben. Keine echten Kunden- oder vertraulichen Daten eingeben. Anhänge werden nicht gelesen.",
         "reset": "Demo zurücksetzen",
-        "ctaTitle": "Welcher Büroablauf kostet Sie Zeit?",
-        "ctaDescription": "In 30 Minuten gemeinsam prüfen, wo eine individuelle Lösung ansetzen könnte. Die Buchung erfolgt über Calendly.",
-        "ctaButton": "30-Minuten-Termin buchen"
+        "ctaEyebrow": "Ihr nächster Schritt",
+        "ctaResultEyebrow": "Demo ausprobiert · jetzt geht es um Ihren Alltag",
+        "ctaTitle": "Welcher Ablauf könnte bei Ihnen einfacher werden?",
+        "ctaResultTitle": "Passt dieser Ablauf auch zu Ihrem Betrieb?",
+        "ctaDescription": "In einem persönlichen Gespräch schauen wir auf Ihren Büroalltag und prüfen, wo eine individuelle Lösung sinnvoll sein könnte.",
+        "ctaResultDescription": "Die Demo ist ein Beispiel. Jetzt schauen wir gemeinsam auf Ihren Anfrageablauf: Welche Informationen brauchen Sie, was kostet manuelle Arbeit und wo könnte eine passende Lösung ansetzen?",
+        "ctaTopics": {
+            "workflow": "Ihren aktuellen Ablauf gemeinsam ansehen",
+            "fit": "Möglichkeiten und Grenzen ehrlich besprechen",
+            "nextStep": "Einen sinnvollen nächsten Schritt klären"
+        },
+        "ctaMeetingLabel": "Persönliches Erstgespräch",
+        "ctaDuration": "30 Minuten",
+        "ctaHost": "Mit Dean-Silviu Mitco · Diovis",
+        "ctaButton": "Meinen Ablauf besprechen",
+        "ctaNewTab": "öffnet in einem neuen Tab",
+        "ctaExternalHint": "Calendly öffnet in einem neuen Tab. Diese Demo bleibt geöffnet."
     },
     "nav": {
         "home": "Startseite",

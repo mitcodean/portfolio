@@ -3,12 +3,13 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
-  ArrowRight, ArrowUpRight, Check, CheckCheck, CircleAlert,
+  ArrowRight, Check, CheckCheck, CircleAlert,
   ClipboardCheck, FileText, FlaskConical, Loader2, Paperclip, RotateCcw,
 } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { findInquiryExample, getInquiryExamples } from "@/data/inquiry-examples";
+import InquiryBookingCTA from "./InquiryBookingCTA";
 import {
   DEFAULT_INQUIRY_MODEL, INQUIRY_MODELS, MAX_INQUIRY_LENGTH, VISITOR_ATTEMPTS,
   inquiryErrorSchema, inquirySuccessSchema, type InquiryModel, type InquiryResult,
@@ -16,7 +17,7 @@ import {
 
 const focusStyle = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-background";
 
-export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL }: { defaultModel?: InquiryModel }) {
+export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unlimitedLocalTests = false }: { defaultModel?: InquiryModel; unlimitedLocalTests?: boolean }) {
   const locale = useLocale();
   const t = useTranslations("inquiryDemo");
   const examples = getInquiryExamples(locale);
@@ -32,6 +33,7 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL }: { 
   const resultRef = useRef<HTMLHeadingElement>(null);
   const selectedExample = findInquiryExample(inquiry, locale);
   const isLoading = status === "loading";
+  const rateLimitDisabled = unlimitedLocalTests;
 
   useEffect(() => () => {
     controllerRef.current?.abort();
@@ -55,7 +57,7 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL }: { 
 
   async function analyze(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (isLoading || controllerRef.current || blockedUntil > Date.now()) return;
+    if (isLoading || controllerRef.current || (!rateLimitDisabled && blockedUntil > Date.now())) return;
     if (!inquiry.trim() || inquiry.length > MAX_INQUIRY_LENGTH) {
       setError(t(inquiry.trim() ? "tooLong" : "emptyError"));
       inputRef.current?.focus();
@@ -90,7 +92,12 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL }: { 
       const parsed = inquirySuccessSchema.safeParse(payload);
       if (!parsed.success) throw new Error("INVALID_OUTPUT");
       setResult(parsed.data.result);
-      setQuota({ remaining: parsed.data.remainingAttempts, resetAt: parsed.data.resetAt });
+      if (parsed.data.rateLimitDisabled) {
+        setQuota(null);
+        setBlockedUntil(0);
+      } else if (parsed.data.remainingAttempts !== null && parsed.data.resetAt !== null) {
+        setQuota({ remaining: parsed.data.remainingAttempts, resetAt: parsed.data.resetAt });
+      }
       setStatus("ready");
       requestAnimationFrame(() => resultRef.current?.focus({ preventScroll: true }));
     } catch (failure) {
@@ -172,14 +179,14 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL }: { 
                 <span id="inquiry-demo-count" className="shrink-0 tabular-nums">{t("characters", { count: inquiry.length, max: MAX_INQUIRY_LENGTH })}</span>
               </div>
               {error && <p id="inquiry-demo-error" role="alert" className="mt-3 text-sm text-red-300">{error}</p>}
-              <button type="submit" disabled={isLoading || blockedUntil > 0} className={cn("mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60", focusStyle)}>
+              <button type="submit" disabled={isLoading || (!rateLimitDisabled && blockedUntil > 0)} className={cn("mt-6 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60", focusStyle)}>
                 {isLoading ? <Loader2 size={17} aria-hidden="true" className="animate-spin motion-reduce:animate-none" /> : <ArrowRight size={17} aria-hidden="true" />}
                 {isLoading ? t("analyzing") : t("analyze")}
               </button>
               <p className="mt-3 text-center text-xs leading-5 text-support">{t("localOnly")}</p>
-              <p role="status" className="mt-3 text-xs leading-5 text-neutral">{quota ? t("attemptsRemaining", { remaining: quota.remaining, max: VISITOR_ATTEMPTS }) : t("attemptsLimit", { max: VISITOR_ATTEMPTS })}</p>
-              {quota && <p className="mt-1 text-xs leading-5 text-support">{t("quotaReset", { date: new Date(quota.resetAt).toLocaleString(locale === "de" ? "de-AT" : "en-GB", { timeZone: "Europe/Vienna" }) })}</p>}
-              {blockedUntil > 0 && <p className="mt-2 text-xs leading-5 text-amber-200">{t("quotaWait", { date: new Date(blockedUntil).toLocaleString(locale === "de" ? "de-AT" : "en-GB", { timeZone: "Europe/Vienna" }) })}</p>}
+              <p role="status" className="mt-3 text-xs leading-5 text-neutral">{rateLimitDisabled ? t("unlimitedLocalTests") : quota ? t("attemptsRemaining", { remaining: quota.remaining, max: VISITOR_ATTEMPTS }) : t("attemptsLimit", { max: VISITOR_ATTEMPTS })}</p>
+              {!rateLimitDisabled && quota && <p className="mt-1 text-xs leading-5 text-support">{t("quotaReset", { date: new Date(quota.resetAt).toLocaleString(locale === "de" ? "de-AT" : "en-GB", { timeZone: "Europe/Vienna" }) })}</p>}
+              {!rateLimitDisabled && blockedUntil > 0 && <p className="mt-2 text-xs leading-5 text-amber-200">{t("quotaWait", { date: new Date(blockedUntil).toLocaleString(locale === "de" ? "de-AT" : "en-GB", { timeZone: "Europe/Vienna" }) })}</p>}
             </form>
 
             <div aria-busy={isLoading} className="min-w-0 bg-background/30 p-5 sm:p-8">
@@ -239,13 +246,7 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL }: { 
           </div>
         </div>
 
-        <div className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl border border-border bg-white/[0.02] p-5 sm:flex-row sm:items-center sm:px-7">
-          <div>
-            <p className="text-base font-medium text-foreground">{t("ctaTitle")}</p>
-            <p className="mt-1.5 text-sm leading-6 text-support">{t("ctaDescription")}</p>
-          </div>
-          <a href="https://calendly.com/mitco-deansilviu/30min" target="_blank" rel="noopener noreferrer" className={cn("inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-red-400/40 px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-primary/15", focusStyle)}>{t("ctaButton")}<ArrowUpRight size={16} aria-hidden="true" /></a>
-        </div>
+        <InquiryBookingCTA hasResult={result !== null} />
       </div>
     </section>
   );

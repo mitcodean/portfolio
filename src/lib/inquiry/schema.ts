@@ -23,7 +23,9 @@ export const inquiryFieldsSchema = z.object({
   thicknessMm: z.number().nonnegative().nullable(),
   deliveryWish: z.string().nullable(),
   attachmentMentioned: z.boolean(),
-  missingInformation: z.array(z.string()),
+  missingInformation: z.array(z.string().regex(/^\S[\s\S]{0,299}$/))
+    .max(15)
+    .describe("Up to 15 separate, concise missing details or follow-up questions. Each item starts with a non-whitespace character and contains at most 300 characters."),
   summary: z.string(),
 }).strict();
 
@@ -42,9 +44,13 @@ export type InquiryResult = z.infer<typeof inquiryResultSchema>;
 export const inquirySuccessSchema = z.object({
   result: inquiryResultSchema,
   model: inquiryModelSchema,
-  remainingAttempts: z.number().int().min(0).max(VISITOR_ATTEMPTS),
-  resetAt: z.number().int().positive(),
-}).strict();
+  rateLimitDisabled: z.boolean().default(false),
+  remainingAttempts: z.number().int().min(0).max(VISITOR_ATTEMPTS).nullable(),
+  resetAt: z.number().int().positive().nullable(),
+}).strict().refine(value => value.rateLimitDisabled
+  ? value.remainingAttempts === null && value.resetAt === null
+  : value.remainingAttempts !== null && value.resetAt !== null,
+{ message: "Quota metadata must match rate-limit mode" });
 
 export const inquiryErrorCodeSchema = z.enum([
   "INVALID_INPUT", "PAYLOAD_TOO_LARGE", "UNSUPPORTED_MEDIA_TYPE", "FORBIDDEN",

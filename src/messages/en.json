@@ -46,6 +46,7 @@
         "missingTitle": "Missing information / questions",
         "modelLabel": "AI model",
         "attemptsLimit": "Up to {max} AI attempts per visitor and network in 24 hours.",
+        "unlimitedLocalTests": "Local testing: attempt limits are temporarily disabled.",
         "attemptsRemaining": "{remaining} of {max} attempts remaining. Switching models or resetting does not renew the quota.",
         "quotaReset": "First counted attempt expires on {date} (Vienna).",
         "quotaWait": "Further calls available no earlier than {date} (Vienna).",
@@ -78,9 +79,23 @@
         "reviewedDescription": "Marked as reviewed (simulation). Open questions remain. The review marker is neither stored nor sent to other systems.",
         "notice": "Demo with fictional information. Do not enter real customer or confidential data. Attachments are not read.",
         "reset": "Reset demo",
-        "ctaTitle": "Which office workflow takes up your time?",
-        "ctaDescription": "Spend 30 minutes exploring where a tailored solution could help. Booking takes place on Calendly.",
-        "ctaButton": "Book a 30-minute call"
+        "ctaEyebrow": "Your next step",
+        "ctaResultEyebrow": "Demo explored · now let’s talk about your workflow",
+        "ctaTitle": "Which part of your workflow could be simpler?",
+        "ctaResultTitle": "Could this workflow fit your business, too?",
+        "ctaDescription": "In a personal conversation, we look at your office workflow and explore where a tailored solution could make sense.",
+        "ctaResultDescription": "The demo is one example. Let’s look at your inquiry workflow: which details do you need, which steps require manual work, and where could a suitable solution help?",
+        "ctaTopics": {
+            "workflow": "Look at your current workflow together",
+            "fit": "Discuss possibilities and limitations openly",
+            "nextStep": "Clarify a sensible next step"
+        },
+        "ctaMeetingLabel": "Personal introductory conversation",
+        "ctaDuration": "30 minutes",
+        "ctaHost": "With Dean-Silviu Mitco · Diovis",
+        "ctaButton": "Discuss my workflow",
+        "ctaNewTab": "opens in a new tab",
+        "ctaExternalHint": "Calendly opens in a new tab. This demo stays open."
     },
     "nav": {
         "home": "Home",

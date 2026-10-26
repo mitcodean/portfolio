@@ -1,6 +1,6 @@
 import "server-only";
 import { analyzeInquiry, createOpenAIClient, OPENAI_TIMEOUT_MS } from "./analyze";
-import { getInquiryConfig, type InquiryConfig } from "./config";
+import { getInquiryConfig, isUnlimitedLocalTesting, type InquiryConfig } from "./config";
 import { InquiryError } from "./errors";
 import { createRateStore, getNetwork, getVisitor, hashIdentity, reserveAttempt, type RateStore, type Reservation } from "./rate-limit";
 import { inquiryRequestSchema, inquiryResultSchema, type InquiryModel, type InquiryRequest, type InquiryResult } from "./schema";
@@ -11,12 +11,14 @@ type Dependencies = {
   store: (config: InquiryConfig) => RateStore;
   analyze: (input: InquiryRequest, model: InquiryModel, config: InquiryConfig, signal: AbortSignal) => Promise<InquiryResult>;
   now: () => number;
+  environment: () => NodeJS.ProcessEnv["NODE_ENV"] | undefined;
 };
 const defaults: Dependencies = {
   config: getInquiryConfig,
   store: createRateStore,
   analyze: (input, model, config, signal) => analyzeInquiry(input, model, createOpenAIClient(config.OPENAI_API_KEY), signal),
   now: Date.now,
+  environment: () => process.env.NODE_ENV,
 };
 
 async function readJson(request: Request) {
@@ -71,23 +73,26 @@ export function createInquiryHandler(overrides: Partial<Dependencies> = {}) {
       const config = deps.config();
       if (config.INQUIRY_LOCAL_ONLY === "true" && !["localhost", "127.0.0.1", "[::1]"].includes(destination.hostname)) throw new InquiryError("FORBIDDEN", 403);
       if (request.signal.aborted) throw new InquiryError("ABORTED", 499);
-      const visitor = getVisitor(request, config.INQUIRY_RATE_LIMIT_SECRET, deps.now());
-      if (visitor.cookie) headers.set("Set-Cookie", visitor.cookie);
-      store = deps.store(config);
-      try {
-        reservation = await store.transaction(state => reserveAttempt(state, hashIdentity(visitor.id, config.INQUIRY_RATE_LIMIT_SECRET), getNetwork(request, config), config.INQUIRY_GLOBAL_DAILY_LIMIT, deps.now()));
-      } catch (error) {
-        if (error instanceof InquiryError) throw error;
-        throw new InquiryError("PROTECTION_UNAVAILABLE", 503);
+      const rateLimitDisabled = isUnlimitedLocalTesting(config, deps.environment());
+      if (!rateLimitDisabled) {
+        const visitor = getVisitor(request, config.INQUIRY_RATE_LIMIT_SECRET, deps.now());
+        if (visitor.cookie) headers.set("Set-Cookie", visitor.cookie);
+        store = deps.store(config);
+        try {
+          reservation = await store.transaction(state => reserveAttempt(state, hashIdentity(visitor.id, config.INQUIRY_RATE_LIMIT_SECRET), getNetwork(request, config), config.INQUIRY_GLOBAL_DAILY_LIMIT, deps.now()));
+        } catch (error) {
+          if (error instanceof InquiryError) throw error;
+          throw new InquiryError("PROTECTION_UNAVAILABLE", 503);
+        }
+        headers.set("X-RateLimit-Limit", "5");
+        headers.set("X-RateLimit-Remaining", String(reservation.remainingAttempts));
+        headers.set("X-RateLimit-Reset", String(Math.ceil(reservation.resetAt / 1000)));
       }
-      headers.set("X-RateLimit-Limit", "5");
-      headers.set("X-RateLimit-Remaining", String(reservation.remainingAttempts));
-      headers.set("X-RateLimit-Reset", String(Math.ceil(reservation.resetAt / 1000)));
       const model = input.data.model ?? config.OPENAI_MODEL;
       const signal = AbortSignal.any([request.signal, AbortSignal.timeout(OPENAI_TIMEOUT_MS)]);
       const parsed = inquiryResultSchema.safeParse(await deps.analyze(input.data, model, config, signal));
       if (!parsed.success) throw new InquiryError("INVALID_OUTPUT", 502);
-      return Response.json({ result: parsed.data, model, remainingAttempts: reservation.remainingAttempts, resetAt: reservation.resetAt }, { headers });
+      return Response.json({ result: parsed.data, model, rateLimitDisabled, remainingAttempts: reservation?.remainingAttempts ?? null, resetAt: reservation?.resetAt ?? null }, { headers });
     } catch (error) {
       const failure = error instanceof InquiryError ? error : new InquiryError("UPSTREAM_UNAVAILABLE", 502);
       if (failure.retryAfterSeconds) headers.set("Retry-After", String(failure.retryAfterSeconds));

@@ -72,6 +72,15 @@ Live-Ergebnisse können variieren und müssen immer fachlich geprüft werden.
 
 ## Kontingentschutz
 
+Für die aktuelle lokale Fehlersuche ist in `.env.local` vorübergehend
+`INQUIRY_UNLIMITED_LOCAL_TESTS=true` gesetzt. Das schaltet ausschließlich unter
+`next dev` bei `INQUIRY_LOCAL_ONLY=true` die lokalen Versuchszähler einschließlich
+Tageskontingent und Wartezeit aus. Die Oberfläche zeigt den Testmodus an.
+Zum Wiedereinschalten den Wert auf `false` setzen, den Dev-Server neu starten und
+die Seite neu laden. Vorhandene Zähler werden nicht gelöscht. Produktionsbuilds
+verwenden immer die regulären Limits; ein öffentlicher Betrieb mit aktiviertem
+Testschalter wird verweigert.
+
 - **Fünf Versuche pro Besucher UND Netzwerk in einem rollierenden 24-Stunden-Fenster.**
   Die erste Freigabe erfolgt, wenn ein gezählter Versuch aus dem Fenster fällt.
 - Signiertes, HttpOnly-/SameSite-Cookie; Netzwerkzähler verhindert zusätzliche Versuche durch

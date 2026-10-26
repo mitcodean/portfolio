@@ -11,7 +11,10 @@ export default async function HomePage() {
   return (
         <main>
           <Hero />
-          <AnfrageDemo defaultModel={process.env.OPENAI_MODEL === "gpt-4.1-nano" ? "gpt-4.1-nano" : "gpt-5-nano"} />
+          <AnfrageDemo
+            defaultModel={process.env.OPENAI_MODEL === "gpt-4.1-nano" ? "gpt-4.1-nano" : "gpt-5-nano"}
+            unlimitedLocalTests={process.env.NODE_ENV === "development" && process.env.INQUIRY_LOCAL_ONLY !== "false" && process.env.INQUIRY_UNLIMITED_LOCAL_TESTS === "true"}
+          />
           <Services />
           {/* <PortfolioPreview /> */}
           <AboutPreview />

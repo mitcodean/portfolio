@@ -9,6 +9,7 @@ const configSchema = z.object({
   INQUIRY_RATE_LIMIT_SECRET: z.string().min(32),
   INQUIRY_GLOBAL_DAILY_LIMIT: z.coerce.number().int().min(5).max(500).default(25),
   INQUIRY_LOCAL_ONLY: z.enum(["true", "false"]).default("true"),
+  INQUIRY_UNLIMITED_LOCAL_TESTS: z.enum(["true", "false"]).default("false"),
   INQUIRY_LIMITER: z.enum(["file", "redis"]).default("file"),
   INQUIRY_TRUSTED_IP_HEADER: z.enum(["cf-connecting-ip", "x-real-ip"]).optional(),
   UPSTASH_REDIS_REST_URL: z.url().startsWith("https://").optional(),
@@ -22,6 +23,9 @@ export function getInquiryConfig(env: Record<string, unknown> = process.env): In
   const parsed = configSchema.safeParse(cleaned);
   if (!parsed.success) throw new InquiryError("NOT_CONFIGURED", 503);
   const config = parsed.data;
+  if (config.INQUIRY_UNLIMITED_LOCAL_TESTS === "true" && config.INQUIRY_LOCAL_ONLY !== "true") {
+    throw new InquiryError("PROTECTION_UNAVAILABLE", 503);
+  }
   if (config.INQUIRY_LIMITER === "redis" && (!config.UPSTASH_REDIS_REST_URL || !config.UPSTASH_REDIS_REST_TOKEN)) {
     throw new InquiryError("PROTECTION_UNAVAILABLE", 503);
   }
@@ -30,4 +34,10 @@ export function getInquiryConfig(env: Record<string, unknown> = process.env): In
     throw new InquiryError("PROTECTION_UNAVAILABLE", 503);
   }
   return config;
+}
+
+export function isUnlimitedLocalTesting(config: InquiryConfig, environment: string | undefined = process.env.NODE_ENV): boolean {
+  return environment === "development"
+    && config.INQUIRY_LOCAL_ONLY === "true"
+    && config.INQUIRY_UNLIMITED_LOCAL_TESTS === "true";
 }

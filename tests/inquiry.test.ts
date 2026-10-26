@@ -6,12 +6,12 @@ import path from "node:path";
 import OpenAI from "openai";
 import { Redis } from "@upstash/redis";
 import { analyzeInquiry, groundExtraction, type Extraction } from "../src/lib/inquiry/analyze";
-import { getInquiryConfig } from "../src/lib/inquiry/config";
+import { getInquiryConfig, isUnlimitedLocalTesting } from "../src/lib/inquiry/config";
 import { InquiryError } from "../src/lib/inquiry/errors";
 import { createInquiryHandler } from "../src/lib/inquiry/handler";
 import { checkResponsesAccess } from "../src/lib/inquiry/check-access";
 import { COOLDOWN_MS, FileRateStore, RedisRateStore, WINDOW_MS, getVisitor, reserveAttempt, type RateState, type RateStore } from "../src/lib/inquiry/rate-limit";
-import { INQUIRY_MODELS, inquiryRequestSchema, inquiryResultSchema } from "../src/lib/inquiry/schema";
+import { INQUIRY_MODELS, inquiryRequestSchema, inquiryResultSchema, inquirySuccessSchema } from "../src/lib/inquiry/schema";
 import { inquiryFixtures } from "./inquiry-fixtures";
 
 const config = () => getInquiryConfig({ OPENAI_API_KEY: "test-key-never-use-for-real-requests", INQUIRY_RATE_LIMIT_SECRET: "a".repeat(64) });
@@ -47,6 +47,11 @@ for (const model of INQUIRY_MODELS) {
         assert.equal(payload.max_output_tokens, 2200);
         assert.equal(payload.text.format.type, "json_schema");
         assert.equal(payload.text.format.strict, true);
+        const missingSchema = payload.text.format.schema.properties.missingInformation;
+        assert.equal(missingSchema.maxItems, 15);
+        const missingPattern = new RegExp(missingSchema.items.pattern);
+        assert.equal(missingPattern.test("x".repeat(300)), true);
+        assert.equal(missingPattern.test("x".repeat(306)), false);
         assert.equal(payload.input[0].content, fixture.inquiry);
         assert.equal(payload.instructions.includes("untrusted DATA"), true);
         assert.deepEqual(payload.reasoning, model === "gpt-5-nano" ? { effort: "minimal" } : undefined);
@@ -283,4 +288,54 @@ test("configuration probe never supplies a model or starts inference", async () 
 test("configuration probe rejects missing write permission without exposing credentials", async () => {
   const client = new OpenAI({ apiKey: "test-only", maxRetries: 0, fetch: async () => Response.json({ error: { message: "Missing scopes: api.responses.write" } }, { status: 401 }) });
   await assert.rejects(() => checkResponsesAccess(client), /api\.responses\.write/);
+});
+
+test("temporary local mode allows repeated attempts without reading or resetting saved quotas", async () => {
+  let calls = 0;
+  const localConfig = () => getInquiryConfig({ ...config(), INQUIRY_UNLIMITED_LOCAL_TESTS: "true" });
+  const handler = createInquiryHandler({
+    config: localConfig, environment: () => "development",
+    store: () => { throw new Error("Local testing must not access saved quotas"); },
+    analyze: async () => { calls++; return goodResult(); },
+  });
+  for (let index = 0; index < 8; index++) {
+    const response = await handler(request({ inquiry: inquiryFixtures[0].inquiry }));
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get("x-ratelimit-limit"), null);
+    const payload = inquirySuccessSchema.parse(await response.json());
+    assert.equal(payload.rateLimitDisabled, true);
+    assert.equal(payload.remainingAttempts, null);
+    assert.equal(payload.resetAt, null);
+  }
+  assert.equal(calls, 8);
+  assert.equal((await handler(request({ inquiry: "test" }, { host: "public.example", origin: "http://public.example" }))).status, 403);
+  assert.equal((await handler(request({ inquiry: "" }))).status, 400);
+  assert.equal(calls, 8);
+});
+
+test("production cannot bypass the five-attempt limit with the local test flag", async () => {
+  const enabled = getInquiryConfig({ ...config(), INQUIRY_UNLIMITED_LOCAL_TESTS: "true" });
+  assert.equal(isUnlimitedLocalTesting(enabled, "development"), true);
+  assert.equal(isUnlimitedLocalTesting(enabled, "production"), false);
+  assert.equal(isUnlimitedLocalTesting(enabled, "test"), false);
+  const store = new MemoryStore();
+  let now = start;
+  const handler = createInquiryHandler({ config: () => enabled, environment: () => "production", store: () => store, now: () => now, analyze: async () => goodResult() });
+  for (let index = 0; index < 6; index++) {
+    assert.equal((await handler(request({ inquiry: "fiktiv" }))).status, index < 5 ? 200 : 429);
+    now += COOLDOWN_MS;
+  }
+  assert.throws(() => getInquiryConfig({ ...enabled, INQUIRY_LOCAL_ONLY: "false", INQUIRY_LIMITER: "redis", INQUIRY_TRUSTED_IP_HEADER: "x-real-ip", UPSTASH_REDIS_REST_URL: "https://example.upstash.io", UPSTASH_REDIS_REST_TOKEN: "test-only" }), InquiryError);
+});
+
+test("unlimited response metadata cannot pretend to have a remaining attempt counter", () => {
+  const payload = { result: goodResult(), model: "gpt-5-nano", rateLimitDisabled: true, remainingAttempts: null, resetAt: null };
+  assert.equal(inquirySuccessSchema.safeParse(payload).success, true);
+  assert.equal(inquirySuccessSchema.safeParse({ ...payload, rateLimitDisabled: false }).success, false);
+  assert.equal(inquirySuccessSchema.safeParse({ ...payload, remainingAttempts: 5 }).success, false);
+});
+
+test("structured output rejects the observed 306-character follow-up before display", async () => {
+  const client = new OpenAI({ apiKey: "test-only", maxRetries: 0, fetch: async () => wireResponse({ ...inquiryFixtures[1].extraction, missingInformation: ["x".repeat(306)] }) });
+  await assert.rejects(() => analyzeInquiry({ inquiry: inquiryFixtures[1].inquiry, locale: "de" }, "gpt-5-nano", client), (error: unknown) => error instanceof InquiryError && error.code === "INVALID_OUTPUT");
 });
