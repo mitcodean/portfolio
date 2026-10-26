@@ -1,5 +1,10 @@
 # Diovis Website-Relaunch – Bestandsaufnahme und Abnahme
 
+Nachfolgende gezielte Wiederherstellung von Hero, Navigation, Sprachschalter und
+Über-uns-Querformatbild: siehe [Diovis_UI_Korrekturen.md](Diovis_UI_Korrekturen.md).
+Dieser Bericht dokumentiert den ursprünglichen Relaunch-Stand; insbesondere die
+Messung ohne Hero-Video ist nach der ausdrücklich gewünschten Wiederherstellung historisch.
+
 Arbeitsbranch: `codex/diovis-website-relaunch`, Ausgangsstand `efd4458b`.
 Keine Veröffentlichung und keine Änderung von Hosting oder produktiven Zugangsdaten.
 

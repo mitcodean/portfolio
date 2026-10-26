@@ -167,10 +167,20 @@
         "label": "Sprache"
     },
     "hero": {
-        "subtitle": "Wir entwerfen und entwickeln Lösungen, die Unternehmen Zeit sparen.",
-        "vision": "Wo Vision keine Grenzen kennt.",
-        "cta": "Let's Collaborate",
-        "projects": "Projects"
+        "subtitle": "Diovis entwickelt individuelle Software, automatisiert wiederkehrende Geschäftsprozesse und unterstützt kleine und mittlere Unternehmen bei ihrer IT-Infrastruktur.",
+        "mobileSubtitle": "Individuelle Software, automatisierte Abläufe und IT für Ihr Unternehmen.",
+        "vision": "Weniger Routinearbeit. Bessere digitale Abläufe.",
+        "cta": "Kostenloses Erstgespräch",
+        "projects": "Projects",
+        "headlineStart": "Entdecke",
+        "headlineStartHover": "Gestalte",
+        "headlineMiddle": " das Potenzial hinter jedem ",
+        "headlineEnd": "Prozess",
+        "headlineEndHover": "Erfolg",
+        "secondary": "Automatisierung live ansehen",
+        "newTab": "öffnet in einem neuen Tab",
+        "pauseVideo": "Hintergrundvideo pausieren",
+        "playVideo": "Hintergrundvideo abspielen"
     },
     "about": {
         "title": "Über uns",
@@ -596,5 +606,379 @@
         "privacyLink": "Datenschutzerklärung",
         "mapBlocked": "Die Karte ist blockiert, bis du optionale externe Inhalte erlaubst.",
         "enableMap": "Google Maps erlauben"
-    }
+    },
+    "site": {
+        "navigation": {
+            "home": "Startseite",
+            "services": "Leistungen",
+            "examples": "Praxisbeispiele",
+            "about": "Über uns",
+            "contact": "Kontakt",
+            "label": "Hauptnavigation",
+            "menu": "Menü",
+            "close": "Menü schließen",
+            "book": "Erstgespräch",
+            "skip": "Zum Inhalt springen"
+        },
+        "common": {
+            "book": "Kostenloses Erstgespräch",
+            "bookLong": "Kostenloses Erstgespräch vereinbaren",
+            "newTab": "öffnet in einem neuen Tab",
+            "details": "Leistungen im Detail",
+            "contact": "Anforderungen besprechen",
+            "back": "Zur Startseite",
+            "home": "Startseite",
+            "examples": "Praxisbeispiele",
+            "more": "Mehr erfahren",
+            "possibleUse": "Mögliche Anwendung",
+            "benefit": "Wofür das hilfreich sein kann"
+        },
+        "home": {
+            "eyebrow": "Diovis · Software, Automatisierung & IT",
+            "title": "Weniger Routinearbeit.",
+            "accent": "Bessere digitale Abläufe.",
+            "description": "Diovis entwickelt individuelle Software, automatisiert wiederkehrende Geschäftsprozesse und unterstützt kleine und mittlere Unternehmen bei ihrer IT-Infrastruktur.",
+            "region": "Persönliche Zusammenarbeit · für Unternehmen in Steyr, Steyr-Land und Umgebung",
+            "secondary": "Automatisierung live ansehen",
+            "diagramLabel": "Ein möglicher Anfrageablauf",
+            "diagramInput": "Kundenanfrage",
+            "diagramInputNote": "Text und vorhandene Angaben",
+            "diagramProcess": "Informationen aufbereiten",
+            "diagramProcessNote": "Software verbindet die Schritte",
+            "diagramReview": "Überblick und Prüfung",
+            "diagramReviewNote": "Sie entscheiden über den nächsten Schritt",
+            "diagramHint": "Individuelle Lösungen beginnen mit Ihrem tatsächlichen Ablauf.",
+            "servicesEyebrow": "Was Diovis für Sie umsetzt",
+            "servicesTitle": "Die passende Technik für Ihren Arbeitsalltag.",
+            "servicesDescription": "Software und Automatisierung stehen im Mittelpunkt. IT-Infrastruktur und digitale Sichtbarkeit ergänzen das Angebot dort, wo Ihr Unternehmen sie braucht.",
+            "focus": "Unser Schwerpunkt",
+            "problemsEyebrow": "Kennen Sie das aus Ihrem Alltag?",
+            "problemsTitle": "Der Ablauf ist der Ausgangspunkt.",
+            "problemsDescription": "Bevor ein neues Werkzeug entsteht, schauen wir darauf, wo Informationen verloren gehen, doppelt erfasst werden oder unnötige Rückfragen auslösen.",
+            "problemLabel": "Im Arbeitsalltag",
+            "solutionLabel": "Ein möglicher Ansatz",
+            "problems": [
+                {
+                    "problem": "Dieselben Daten stehen in mehreren Listen.",
+                    "solution": "Importe und Schnittstellen können wiederkehrende Übertragungen gezielt vereinfachen.",
+                    "service": "automatisierung"
+                },
+                {
+                    "problem": "Anfragen enthalten wichtige Angaben an unterschiedlichen Stellen.",
+                    "solution": "Ein Assistent kann die vorhandenen Informationen und offenen Fragen für die manuelle Prüfung aufbereiten.",
+                    "service": "automatisierung"
+                },
+                {
+                    "problem": "Dokumente und Freigaben werden einzeln nachgehalten.",
+                    "solution": "Eine individuelle Anwendung kann Status, Zuständigkeiten und nächste Schritte übersichtlich abbilden.",
+                    "service": "automatisierung"
+                },
+                {
+                    "problem": "Netzwerke und Arbeitsplätze müssen zum Betrieb passen.",
+                    "solution": "Eine abgestimmte Planung und Konfiguration schafft eine nachvollziehbare technische Grundlage.",
+                    "service": "it-netzwerke"
+                }
+            ],
+            "practiceEyebrow": "Nicht nur erklären – zeigen",
+            "practiceTitle": "Eine Anfrage. Ein strukturierter Überblick.",
+            "practiceDescription": "Der Diovis Anfrageassistent zeigt an fiktiven Fertigungsanfragen, wie KI eine Angebotsvorbereitung unterstützen kann. Fehlende Angaben bleiben sichtbar, die Prüfung bleibt beim Menschen.",
+            "practiceVideo": "Praxisbeispiel im Video ansehen",
+            "practiceDemo": "Demo selbst ausprobieren",
+            "practiceHint": "Mit fiktiven Angaben · ohne Anmeldung · bis zu 5 Analysen pro 24 Stunden",
+            "aboutEyebrow": "Der Mensch hinter Diovis",
+            "aboutTitle": "Ein Ansprechpartner. Ein technischer Blick auf Ihren Betrieb.",
+            "aboutDescription": "Ich bin Dean-Silviu Mitco. Nach meiner IT-Ausbildung an der HTL Steyr sammle ich seit Juli 2025 Berufserfahrung in der Softwareentwicklung. Mit Diovis verbinde ich Software, Automatisierung und IT in einem jungen, inhabergeführten Unternehmen.",
+            "aboutSecond": "Ich lebe in Losenstein. Mein regionaler Schwerpunkt sind Unternehmen in Steyr, Steyr-Land und Umgebung. Wichtig sind mir verständliche Abstimmung und Lösungen, die zu den tatsächlichen Anforderungen passen.",
+            "aboutButton": "Mehr über Diovis erfahren"
+        },
+        "services": {
+            "eyebrow": "Leistungen",
+            "title": "Software und IT, die zu Ihren Abläufen passen.",
+            "description": "Von der Prozessautomatisierung über individuelle Softwareentwicklung bis zur IT-Infrastruktur: Diovis unterstützt Unternehmen mit regionalem Schwerpunkt in Steyr und Steyr-Land. Websites und digitale Sichtbarkeit ergänzen das Angebot.",
+            "jumpLabel": "Leistungsbereiche",
+            "included": "Was dazugehört",
+            "examplesTitle": "So könnte eine Umsetzung aussehen",
+            "examplesHint": "Mögliche Ansätze für Ihren Betrieb.",
+            "demoTitle": "Anfragen aufbereiten: ein Beispiel zum Ausprobieren.",
+            "demoText": "Sehen Sie den Anfrageassistenten im Video oder testen Sie ihn mit fiktiven Angaben selbst.",
+            "demoButton": "Zum Praxisbeispiel",
+            "primaryLabel": "Schwerpunkt Software & Automatisierung"
+        },
+        "about": {
+            "eyebrow": "Über Diovis",
+            "title": "Technik verstehen. Abläufe einfacher machen.",
+            "description": "Diovis ist ein junges, inhabergeführtes Unternehmen für Softwareentwicklung, Prozessautomatisierung und IT. Dahinter stehe ich: Dean-Silviu Mitco.",
+            "role": "Gründer von Diovis · Softwareentwicklung & IT",
+            "bio": [
+                "Meine IT-Ausbildung habe ich an der HTL Steyr abgeschlossen. Seit Juli 2025 sammle ich praktische Berufserfahrung in der Softwareentwicklung. Diesen technischen Hintergrund bringe ich in die Arbeit mit Diovis ein.",
+                "Mit Diovis möchte ich Unternehmen dort unterstützen, wo wiederkehrende Arbeit und technische Fragen den Alltag komplizierter machen. Ich starte bei den Anforderungen und prüfe, welche Lösung angemessen und umsetzbar ist.",
+                "Ich lebe in Losenstein in Oberösterreich. Der regionale Schwerpunkt von Diovis liegt auf Unternehmen in Steyr, Steyr-Land und Umgebung. Hier möchte ich Unternehmen bei ihren digitalen Abläufen und technischen Anforderungen persönlich unterstützen."
+            ],
+            "facts": [
+                {
+                    "label": "Ausbildung",
+                    "value": "HTL Steyr · IT-Bereich abgeschlossen"
+                },
+                {
+                    "label": "Praktische Erfahrung",
+                    "value": "Softwareentwicklung seit Juli 2025"
+                },
+                {
+                    "label": "Persönlicher Wohnort",
+                    "value": "Losenstein, Oberösterreich"
+                }
+            ],
+            "approachEyebrow": "Meine Arbeitsweise",
+            "approachTitle": "Erst verstehen, dann umsetzen.",
+            "principles": [
+                {
+                    "title": "Direkte Abstimmung",
+                    "text": "Sie sprechen mit der Person, die sich mit Ihren Anforderungen und der technischen Umsetzung beschäftigt."
+                },
+                {
+                    "title": "Passende Lösungen",
+                    "text": "Die Technik folgt dem Bedarf. Möglichkeiten, Grenzen und offene Fragen werden verständlich besprochen."
+                },
+                {
+                    "title": "Nachvollziehbare Schritte",
+                    "text": "Umfang und nächste Schritte werden gemeinsam geklärt. Prüfung und Übergabe gehören zur Umsetzung."
+                }
+            ],
+            "workflowTitle": "So kann die Zusammenarbeit beginnen.",
+            "steps": [
+                {
+                    "title": "Ablauf kennenlernen",
+                    "text": "Wir besprechen die Ausgangslage, bestehende Systeme und die Arbeitsschritte, die Sie verändern möchten."
+                },
+                {
+                    "title": "Möglichkeiten eingrenzen",
+                    "text": "Wir klären Anforderungen, Prioritäten und sinnvolle Grenzen einer technischen Lösung."
+                },
+                {
+                    "title": "Umsetzung abstimmen",
+                    "text": "Auf dieser Grundlage werden Umfang und nächste Schritte vereinbart. Danach folgen Entwicklung, Prüfung und Übergabe."
+                }
+            ]
+        },
+        "contact": {
+            "eyebrow": "Kontakt",
+            "title": "Lassen Sie uns über Ihren Ablauf sprechen.",
+            "description": "Sie möchten Routinearbeit vereinfachen, Systeme verbinden oder eine IT-Aufgabe klären? Im kostenlosen Erstgespräch schauen wir gemeinsam auf Ihre Ausgangslage.",
+            "bookingTitle": "30 Minuten für Ihre Fragen.",
+            "bookingDescription": "Ein persönliches Gespräch mit Dean-Silviu Mitco. Gemeinsam klären wir, ob und wo Diovis sinnvoll unterstützen kann.",
+            "formTitle": "Oder schreiben Sie mir direkt.",
+            "formDescription": "Beschreiben Sie kurz, worum es geht. Für den ersten Kontakt sind keine vertraulichen Dokumente oder Zugangsdaten nötig.",
+            "email": "E-Mail",
+            "phone": "Telefon",
+            "area": "Regionales Einzugsgebiet",
+            "areaText": "Steyr, Steyr-Land und Umgebung",
+            "areaHint": "Persönlicher Wohnort des Gründers: Losenstein, Oberösterreich.",
+            "host": "Dean-Silviu Mitco · Diovis"
+        },
+        "form": {
+            "name": "Ihr Name",
+            "email": "E-Mail-Adresse",
+            "phone": "Telefon (optional)",
+            "subject": "Worum geht es? (optional)",
+            "message": "Ihre Nachricht",
+            "subjectPlaceholder": "Thema auswählen",
+            "subjects": [
+                "Prozessautomatisierung",
+                "Individuelle Software",
+                "IT & Netzwerktechnik",
+                "Website & digitale Sichtbarkeit",
+                "Anderes Anliegen"
+            ],
+            "messagePlaceholder": "Welche Aufgabe möchten Sie vereinfachen oder technisch lösen?",
+            "submit": "Nachricht senden",
+            "sending": "Wird gesendet …",
+            "successTitle": "Ihre Nachricht wurde versendet.",
+            "successText": "Vielen Dank für Ihre Anfrage. Ich melde mich über die angegebenen Kontaktdaten bei Ihnen.",
+            "another": "Weitere Nachricht schreiben",
+            "failure": "Die Nachricht konnte nicht bestätigt versendet werden. Bitte versuchen Sie es später erneut oder nutzen Sie die direkte E-Mail-Adresse.",
+            "invalid": "Bitte prüfen Sie die markierten Felder.",
+            "nameError": "Bitte einen Namen mit 2 bis 100 Zeichen eingeben.",
+            "emailError": "Bitte eine gültige E-Mail-Adresse eingeben.",
+            "phoneError": "Bitte die Telefonnummer auf höchstens 60 Zeichen begrenzen.",
+            "subjectError": "Bitte den Betreff auf höchstens 150 Zeichen begrenzen.",
+            "messageError": "Bitte eine Nachricht mit 10 bis 5000 Zeichen eingeben.",
+            "privacy": "Informationen zur Verarbeitung Ihrer Anfrage finden Sie in den",
+            "privacyLink": "Datenschutzhinweisen",
+            "direct": "Direkte E-Mail schreiben",
+            "required": "Name, E-Mail und Nachricht sind Pflichtfelder."
+        },
+        "cta": {
+            "eyebrow": "Der nächste Schritt",
+            "title": "Welche Abläufe kosten Ihr Unternehmen unnötig Zeit?",
+            "description": "Lassen Sie uns gemeinsam herausfinden, wo Software und Automatisierung sinnvoll unterstützen können. Persönlich, verständlich und mit Blick auf Ihren tatsächlichen Bedarf.",
+            "topics": [
+                "Ihren aktuellen Ablauf gemeinsam ansehen",
+                "Möglichkeiten und Grenzen ehrlich besprechen",
+                "Einen passenden nächsten Schritt klären"
+            ],
+            "meeting": "Persönliches Erstgespräch",
+            "duration": "30 Minuten",
+            "host": "Mit Dean-Silviu Mitco · Diovis",
+            "hint": "Calendly öffnet in einem neuen Tab. Diese Website bleibt geöffnet."
+        },
+        "footer": {
+            "description": "Software, Automatisierung & IT für Unternehmen. Persönlich betreut, mit regionalem Schwerpunkt in Steyr und Steyr-Land.",
+            "navigation": "Entdecken",
+            "contact": "Kontakt",
+            "region": "Einzugsgebiet",
+            "regionValue": "Steyr · Steyr-Land · Umgebung",
+            "rights": "Alle Rechte vorbehalten.",
+            "legal": "Impressum",
+            "privacy": "Datenschutz",
+            "terms": "AGB",
+            "cookies": "Cookie-Einstellungen",
+            "top": "Nach oben"
+        },
+        "notFound": {
+            "title": "Diese Seite wurde nicht gefunden.",
+            "text": "Vielleicht hat sich die Adresse geändert. Über die Startseite oder unsere Leistungen finden Sie den passenden Einstieg.",
+            "services": "Leistungen ansehen"
+        }
+    },
+    "serviceCatalog": [
+        {
+            "id": "automatisierung",
+            "title": "Prozessautomatisierung & Softwareentwicklung",
+            "shortTitle": "Software & Automatisierung",
+            "description": "Wenn Informationen mehrfach erfasst werden oder Systeme nicht zusammenspielen, lohnt sich ein genauer Blick auf den Ablauf. Diovis entwickelt Software und Schnittstellen, die zu Ihren Anforderungen passen.",
+            "benefit": "Das Ziel: weniger manuelle Übertragungen, nachvollziehbare Informationen und Abläufe, die im Alltag verständlich bleiben. Was sich sinnvoll umsetzen lässt, klären wir anhand Ihres konkreten Prozesses.",
+            "preview": [
+                "Geschäftsprozesse automatisieren",
+                "Systeme über Schnittstellen verbinden",
+                "Individuelle Web- und Desktop-Anwendungen",
+                "KI-Assistenten für Anfragen und Daten"
+            ],
+            "groups": [
+                {
+                    "title": "Wiederkehrende Büroabläufe",
+                    "items": [
+                        "Automatisierung wiederkehrender Geschäftsprozesse",
+                        "Online-Terminbuchung & Kalender-Synchronisierung",
+                        "Rechnungs- und Dokumentenerstellung automatisieren",
+                        "Interne Verwaltungs- und Freigabeprozesse digitalisieren"
+                    ]
+                },
+                {
+                    "title": "Daten und Systeme verbinden",
+                    "items": [
+                        "Excel-/CSV-Importe, Exporte und Datenaufbereitung",
+                        "API-Entwicklung & Schnittstellenintegration",
+                        "CRM-/ERP-Systeme verbinden und automatisieren",
+                        "Datenmigration zwischen unterschiedlichen Systemen"
+                    ]
+                },
+                {
+                    "title": "Individuelle Anwendungen und KI",
+                    "items": [
+                        "Individuelle Webanwendungen entwickeln",
+                        "Desktop-Anwendungen entwickeln",
+                        "Dashboards, Auswertungen & Kennzahlen",
+                        "KI-Assistenten und intelligente Datenverarbeitung",
+                        "Angebots- und Kundenanfragen automatisiert aufbereiten"
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Kundenanfragen vorbereiten",
+                    "description": "Ein Assistent kann Angaben aus Anfragetexten strukturieren und offene Fragen sichtbar machen. Die fachliche Prüfung bleibt beim Menschen – wie in unserer interaktiven Demo."
+                },
+                {
+                    "title": "Excel-Daten weiterverarbeiten",
+                    "description": "Dateien einlesen, Daten prüfen und für ein anderes System aufbereiten. So kann eine individuelle Lösung wiederkehrende Übertragungen unterstützen."
+                },
+                {
+                    "title": "Dokumente und Freigaben verbinden",
+                    "description": "Vorhandene Daten für Dokumente nutzen und einen nachvollziehbaren Prüfschritt vorsehen, statt dieselben Informationen mehrfach zu erfassen."
+                },
+                {
+                    "title": "Eine passende Anwendung entwickeln",
+                    "description": "Eine interne Web- oder Desktop-Anwendung kann spezielle Anforderungen abbilden, die sich mit dem vorhandenen Standardwerkzeug nicht sinnvoll lösen lassen."
+                }
+            ]
+        },
+        {
+            "id": "it-netzwerke",
+            "title": "IT & Netzwerktechnik",
+            "shortTitle": "IT & Netzwerke",
+            "description": "Digitale Abläufe brauchen eine passende technische Grundlage. Diovis unterstützt bei der Planung, Konfiguration und Betreuung Ihrer IT-Infrastruktur.",
+            "benefit": "Ein übersichtlicher Aufbau und abgestimmte Zugriffe können den Betrieb und die Wartung erleichtern. Bedarf, vorhandene Systeme und Zuständigkeiten werden vor der Umsetzung gemeinsam geklärt.",
+            "preview": [
+                "Firmennetzwerke, WLAN und VLANs",
+                "VPN und sichere Remote-Zugriffe",
+                "Server, NAS und Backup-Konzepte",
+                "Arbeitsplätze und Microsoft 365"
+            ],
+            "groups": [
+                {
+                    "title": "Netzwerke und Zugriffe",
+                    "items": [
+                        "Planung und Konfiguration von Firmennetzwerken",
+                        "Router, Switches und VLANs konfigurieren",
+                        "WLAN-Netzwerke planen und einrichten",
+                        "VPN und sichere Remote-Zugriffe"
+                    ]
+                },
+                {
+                    "title": "Systeme und laufender Betrieb",
+                    "items": [
+                        "Server- und NAS-Einrichtung",
+                        "Datensicherung und Backup-Konzepte",
+                        "Windows-PCs und Arbeitsplätze einrichten",
+                        "Microsoft 365 und Cloud-Dienste konfigurieren",
+                        "Systemüberwachung und Wartung"
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Ein Firmennetzwerk aufbauen",
+                    "description": "Netzwerkbereiche, WLAN und Zugriffswege passend zu Geräten, Arbeitsplätzen und Arbeitsabläufen planen und konfigurieren."
+                },
+                {
+                    "title": "Daten und Arbeitsplätze organisieren",
+                    "description": "Server oder NAS einrichten, ein Backup-Konzept abstimmen und Arbeitsplätze für den vorgesehenen Einsatz konfigurieren."
+                }
+            ]
+        },
+        {
+            "id": "websites",
+            "title": "Websites & digitale Sichtbarkeit",
+            "shortTitle": "Websites & Sichtbarkeit",
+            "description": "Eine Unternehmenswebsite soll Ihr Angebot verständlich machen und den nächsten Schritt erleichtern. Diovis verbindet technische Umsetzung mit klarer Struktur und einer soliden SEO-Grundlage.",
+            "benefit": "Besucher sollen schnell erkennen, was Ihr Unternehmen anbietet und wie sie Kontakt aufnehmen können. Sichtbarkeit und Nutzung lassen sich auf einer technischen Grundlage weiterentwickeln – ohne versprochene Rankings.",
+            "preview": [
+                "Moderne Unternehmenswebsites",
+                "Technische und inhaltliche SEO",
+                "E-Commerce und Online-Shops",
+                "Webanalyse und Conversion-Tracking"
+            ],
+            "groups": [
+                {
+                    "title": "Auftritt, Auffindbarkeit und Auswertung",
+                    "items": [
+                        "Moderne Unternehmenswebsites entwickeln",
+                        "Suchmaschinenoptimierung (SEO)",
+                        "E-Commerce und Online-Shops entwickeln",
+                        "Webanalyse und Conversion-Tracking"
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Ein Angebot verständlich präsentieren",
+                    "description": "Eine responsive Unternehmenswebsite mit klarer Navigation, hilfreichen Leistungsseiten und nachvollziehbaren Kontaktwegen entwickeln."
+                },
+                {
+                    "title": "Die digitale Nutzung besser verstehen",
+                    "description": "Einen Online-Shop aufbauen oder eine passende Webanalyse vorbereiten. Tracking wird nur nach Abstimmung und mit den erforderlichen Einwilligungen eingebunden."
+                }
+            ]
+        }
+    ]
 }

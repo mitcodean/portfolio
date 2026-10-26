@@ -8,6 +8,9 @@ import sitemap from "../src/app/sitemap";
 import robots from "../src/app/robots";
 import { NextRequest } from "next/server";
 import proxy from "../src/proxy";
+import deMessages from "../src/messages/de.json";
+import enMessages from "../src/messages/en.json";
+import { createTranslator } from "use-intl/core";
 
 // The reserved .example domain is a test fixture, never a production default.
 const origin = "https://diovis.example";
@@ -153,4 +156,24 @@ test("founder copy uses the confirmed education, start date and residence", () =
   const copy = JSON.stringify(siteCopy.de.about);
   for (const fact of ["HTL Steyr", "Juli 2025", "Losenstein"]) assert.ok(copy.includes(fact));
   for (const claim of ["jahrzehntelang", "zahlreiche Kundenprojekte", "zertifiziertes Team"]) assert.ok(!copy.includes(claim));
+});
+
+test("restored hero and relaunch content use the existing DE/EN translation dictionaries", () => {
+  const keys = (value: unknown, prefix = ""): string[] => {
+    if (value === null || typeof value !== "object") return [prefix];
+    return Object.entries(value).flatMap(([key, child]) => keys(child, prefix + "." + key)).sort();
+  };
+  assert.deepEqual(keys(deMessages.site), keys(enMessages.site));
+  assert.deepEqual(keys(deMessages.serviceCatalog), keys(enMessages.serviceCatalog));
+  assert.deepEqual(keys(deMessages.hero), keys(enMessages.hero));
+  for (const [locale, messages] of [["de", deMessages], ["en", enMessages]] as const) {
+    const t = createTranslator({ locale, messages });
+    assert.equal(t("site.services.title"), siteCopy[locale].services.title);
+    assert.deepEqual(messages.serviceCatalog, services[locale]);
+    assert.ok(t("hero.mobileSubtitle").length < t("hero.subtitle").length);
+    assert.ok(t("hero.cta").length > 0);
+  }
+  const en = createTranslator({ locale: "en", messages: enMessages });
+  assert.equal(en("hero.headlineStart"), "Discover");
+  assert.equal(en("hero.cta"), "Free introductory call");
 });

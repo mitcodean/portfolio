@@ -27,7 +27,11 @@ export default async function LocaleLayout({ children, params }: {
           <CookieConsentProvider>
             <div id="page-top">
               <a href="#main-content" className="skip-link">{siteCopy[locale].navigation.skip}</a>
-              <Navbar locale={locale} labels={siteCopy[locale].navigation} />
+              <Navbar locale={locale} labels={{
+                ...siteCopy[locale].navigation,
+                current: messages.common.current,
+                newTab: siteCopy[locale].common.newTab,
+              }} />
               <div id="main-content" tabIndex={-1}>{children}</div>
               <Footer locale={locale} />
             </div>

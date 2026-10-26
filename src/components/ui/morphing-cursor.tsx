@@ -3,6 +3,7 @@
 import type React from "react"
 import { useRef, useState, useCallback, useEffect } from "react"
 import { cn } from "@/lib/utils"
+import { useReducedMotion } from "motion/react"
 
 interface MagneticTextProps {
   text: string
@@ -11,9 +12,10 @@ interface MagneticTextProps {
 }
 
 export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", className }: MagneticTextProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const circleRef = useRef<HTMLDivElement>(null)
-  const innerTextRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLSpanElement>(null)
+  const circleRef = useRef<HTMLSpanElement>(null)
+  const innerTextRef = useRef<HTMLSpanElement>(null)
+  const reducedMotion = useReducedMotion()
   const [isHovered, setIsHovered] = useState(false)
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
 
@@ -36,6 +38,7 @@ export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", classNa
   }, [])
 
   useEffect(() => {
+    if (!isHovered || reducedMotion) return
     const lerp = (start: number, end: number, factor: number) => start + (end - start) * factor
 
     const animate = () => {
@@ -59,9 +62,9 @@ export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", classNa
         cancelAnimationFrame(animationFrameRef.current)
   }
 }
-  }, [])
+  }, [isHovered, reducedMotion])
 
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLSpanElement>) => {
     if (!containerRef.current) return
     const rect = containerRef.current.getBoundingClientRect()
     mousePos.current = {
@@ -70,7 +73,7 @@ export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", classNa
     }
   }, [])
 
-  const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLSpanElement>) => {
     if (!containerRef.current) return
     const rect = containerRef.current.getBoundingClientRect()
     const x = e.clientX - rect.left
@@ -85,7 +88,7 @@ export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", classNa
   }, [])
 
   return (
-    <div
+    <span
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
@@ -95,17 +98,18 @@ export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", classNa
       {/* Base text layer - original text */}
       <span className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter text-foreground tracking-wide">{text}</span>
 
-      <div
+      <span
+        aria-hidden="true"
         ref={circleRef}
         className="absolute top-0 left-0 pointer-events-none rounded-full bg-foreground overflow-hidden"
         style={{
-          width: isHovered ? 250 : 0,
-          height: isHovered ? 125 : 0,
+          width: isHovered && !reducedMotion ? 250 : 0,
+          height: isHovered && !reducedMotion ? 125 : 0,
           transition: "width 0.5s cubic-bezier(0.33, 1, 0.68, 1), height 0.5s cubic-bezier(0.33, 1, 0.68, 1)",
           willChange: "transform, width, height",
         }}
       >
-        <div
+        <span
           ref={innerTextRef}
           className="absolute flex items-center justify-center"
           style={{
@@ -119,8 +123,8 @@ export function MagneticText({ text = "CREATIVE", hoverText = "EXPLORE", classNa
           <span className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter text-background whitespace-nowrap tracking-wide">
             {hoverText}
           </span>
-        </div>
-      </div>
-    </div>
+        </span>
+      </span>
+    </span>
   )
 }
