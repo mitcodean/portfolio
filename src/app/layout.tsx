@@ -1,25 +1,15 @@
+import type { Metadata } from "next";
 import "./globals.css";
-import { Allerta, Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { readSiteUrl } from "@/config/site";
+export const metadata: Metadata = {
+  title: "Diovis – Software, Automatisierung & IT",
+  applicationName: "Diovis",
+  icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
+  ...(readSiteUrl() ? { metadataBase: readSiteUrl()! } : {}),
+};
 
-const inter = Inter({
-  subsets:['latin'],
-  variable:'--font-sans'
-});
-
-const allerta = Allerta({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-allerta",
-});
-
-export default function RootLayout({ children }: { children: React.ReactNode; }) 
-{
-  return (
-    <html lang="de" className={cn("font-sans", inter.variable)}>
-          <body className={allerta.variable}>
-            {children}
-          </body>
-    </html>
-  );
+// The locale segment owns html/body for static HTML and client navigation.
+// The root 404 provides its own localized document.
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return children;
 }

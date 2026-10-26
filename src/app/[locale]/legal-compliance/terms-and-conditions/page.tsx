@@ -1,14 +1,20 @@
 // Terms and Conditions, AGB
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { asLocale } from "@/config/site";
+import { pageMetadata } from "@/lib/site-seo";
+type Props={params:Promise<{locale:string}>};
+export async function generateMetadata({params}:Props){return pageMetadata(asLocale((await params).locale),"terms");}
 
-export default function AGBPage() {
-  const t = useTranslations("legal.terms");
-  const tLegal = useTranslations("legal");
+export default async function AGBPage({params}:Props) {
+  const locale=asLocale((await params).locale);
+  setRequestLocale(locale);
+  const t = await getTranslations({locale,namespace:"legal.terms"});
+  const tLegal = await getTranslations({locale,namespace:"legal"});
 
   return (
-    <main className="bg-background min-h-screen pt-32 pb-24">
+    <article className="legal-content bg-background min-h-screen pt-32 pb-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
         <div className="mb-12">
@@ -107,12 +113,12 @@ export default function AGBPage() {
 
           <Section title={t("section14")}>
             <p>{t("section14Desc")}</p>
-            <p className="mt-3">{t("section14Desc2")}</p>
+            {t.has("section14Desc2") && <p className="mt-3">{t("section14Desc2")}</p>}
           </Section>
 
-          <Section title={t("section15")}>
+          {t.has("section15") && t.has("section15Desc") && <Section title={t("section15")}>
             <p>{t("section15Desc")}</p>
-          </Section>
+          </Section>}
 
         </div>
 
@@ -121,7 +127,7 @@ export default function AGBPage() {
           <Link href="/legal-compliance/privacy-policy" className="hover:text-primary transition-colors">→ {tLegal("privacy.title")}</Link>
         </div>
       </div>
-    </main>
+    </article>
   );
 }
 

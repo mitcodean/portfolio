@@ -579,17 +579,17 @@
     }
     },
     "cookieBanner": {
-        "title": "Your privacy choices",
-        "description": "Choose whether this site may load optional external media. You can change your choice at any time in the footer.",
-        "necessaryTitle": "Necessary: consent preference cookie",
-        "necessaryDescription": "The mitcodean_cookie_consent cookie remembers this choice for one year. Always active.",
+        "title": "Your privacy settings",
+        "description": "This website uses necessary cookies for its functions and your preferences. No optional maps or tracking services are currently embedded. Please refer to the notices shown when using the AI demo or appointment booking.",
+        "necessaryTitle": "Necessary functions",
+        "necessaryDescription": "Your choice is stored for one year. The AI demo usage limit uses a separate necessary cookie.",
         "externalTitle": "External media: Google Maps",
         "externalDescription": "Loads the Google map on the contact pages. Google may receive technical data, including your IP address.",
         "acceptAll": "Accept all",
-        "necessaryOnly": "No, necessary only",
+        "necessaryOnly": "Save necessary only",
         "settings": "Settings",
         "save": "Save choices",
-        "changeNote": "You can update or withdraw this choice at any time using Cookie settings in the footer.",
+        "changeNote": "You can open this information at any time using Cookie settings in the footer.",
         "privacyLink": "Privacy policy",
         "mapBlocked": "The map is blocked until you allow optional external media.",
         "enableMap": "Allow Google Maps"

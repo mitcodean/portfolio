@@ -2,7 +2,9 @@
 
 Die interaktive Demo unter `/de/praxisbeispiele/anfrageassistent/` nutzt
 `POST /api/analyze-inquiry/` (auch ohne abschließenden Slash über Next erreichbar).
-Startseite und `/de/praxisbeispiele/` zeigen das Demovideo mit Verlinkung zur interaktiven Demo.
+Die Startseite zeigt eine verlinkte Standbild-Vorschau; `/de/praxisbeispiele/` enthält
+das Demovideo und den Einstieg in die interaktive Demo. Den Relaunch einschließlich
+Domain-/SEO-Konfiguration beschreibt [Diovis_Relaunch.md](Diovis_Relaunch.md).
 Die echte Auswertung läuft ausschließlich auf dem Server über das offizielle OpenAI JavaScript SDK,
 `responses.parse` und `zodTextFormat`. Freigegeben sind ausschließlich `gpt-4.1-nano` und `gpt-5-nano`.
 `OPENAI_MODEL` legt die Vorauswahl fest; der Besucher kann zwischen diesen beiden Modellen wechseln.

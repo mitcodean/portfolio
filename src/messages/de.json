@@ -582,17 +582,17 @@
     }
     },
     "cookieBanner": {
-        "title": "Deine Datenschutzeinstellungen",
-        "description": "Wähle, ob diese Website optionale externe Inhalte laden darf. Du kannst deine Auswahl jederzeit im Footer ändern.",
-        "necessaryTitle": "Notwendig: Cookie zur Speicherung deiner Auswahl",
-        "necessaryDescription": "Das Cookie mitcodean_cookie_consent speichert diese Auswahl ein Jahr lang. Immer aktiv.",
+        "title": "Ihre Datenschutzeinstellungen",
+        "description": "Diese Website nutzt notwendige Cookies für ihre Funktionen und Ihre Auswahl. Optionale Karten oder Tracking-Dienste sind derzeit nicht eingebunden. Für KI-Demo und Terminbuchung beachten Sie die Hinweise beim jeweiligen Aufruf.",
+        "necessaryTitle": "Notwendige Funktionen",
+        "necessaryDescription": "Ihre Auswahl wird für ein Jahr gespeichert. Das Nutzungslimit der KI-Demo verwendet ein eigenes notwendiges Cookie.",
         "externalTitle": "Externe Inhalte: Google Maps",
         "externalDescription": "Lädt die Google-Karte auf den Kontaktseiten. Google kann technische Daten einschließlich deiner IP-Adresse erhalten.",
         "acceptAll": "Alle akzeptieren",
-        "necessaryOnly": "Nein, nur notwendige",
+        "necessaryOnly": "Nur notwendige speichern",
         "settings": "Einstellungen",
         "save": "Auswahl speichern",
-        "changeNote": "Du kannst diese Auswahl jederzeit über Cookie-Einstellungen im Footer ändern oder widerrufen.",
+        "changeNote": "Diese Hinweise können Sie jederzeit über die Cookie-Einstellungen im Footer öffnen.",
         "privacyLink": "Datenschutzerklärung",
         "mapBlocked": "Die Karte ist blockiert, bis du optionale externe Inhalte erlaubst.",
         "enableMap": "Google Maps erlauben"

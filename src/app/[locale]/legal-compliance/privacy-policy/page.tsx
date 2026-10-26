@@ -1,13 +1,19 @@
 // Privacy Policy, Datenschutzerklärung
-import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { asLocale } from "@/config/site";
+import { pageMetadata } from "@/lib/site-seo";
+type Props={params:Promise<{locale:string}>};
+export async function generateMetadata({params}:Props){return pageMetadata(asLocale((await params).locale),"privacy");}
 
-export default function DatenschutzPage() {
-  const t = useTranslations("legal.privacy");
-  const tLegal = useTranslations("legal");
+export default async function DatenschutzPage({params}:Props) {
+  const locale=asLocale((await params).locale);
+  setRequestLocale(locale);
+  const t = await getTranslations({locale,namespace:"legal.privacy"});
+  const tLegal = await getTranslations({locale,namespace:"legal"});
 
   return (
-    <main className="bg-background min-h-screen pt-32 pb-24">
+    <article className="legal-content bg-background min-h-screen pt-32 pb-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
         <div className="mb-12">
@@ -112,7 +118,7 @@ export default function DatenschutzPage() {
           <Link href="/legal-compliance/terms-and-conditions" className="hover:text-primary transition-colors">→ {tLegal("terms.title")}</Link>
         </div>
       </div>
-    </main>
+    </article>
   );
 }
 

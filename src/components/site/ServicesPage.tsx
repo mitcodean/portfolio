@@ -1,0 +1,20 @@
+import { Check, Code2, Network, PanelTop } from "lucide-react";
+import { services, type SiteLocale } from "@/content/services";
+import { siteCopy } from "@/content/site";
+import { BookingLink, ConversationCTA, Eyebrow, PageIntro, PageLink, StructuredData } from "./Primitives";
+
+export default function ServicesPageContent({ locale }: { locale: SiteLocale }) {
+  const c = siteCopy[locale];
+  const icons = [Code2, Network, PanelTop];
+  return <main><StructuredData locale={locale} route="services" /><PageIntro locale={locale} route="services" eyebrow={c.services.eyebrow} title={c.services.title} description={c.services.description} />
+    <nav aria-label={c.services.jumpLabel} className="page-container pb-8"><ul className="flex flex-wrap gap-3">{services[locale].map((service, index) => <li key={service.id}><a href={`#${service.id}`} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border bg-muted/20 px-4 py-2 text-sm leading-6 text-neutral transition-colors hover:border-red-300/50 hover:text-foreground"><span className="font-mono text-xs text-red-300">0{index + 1}</span>{service.shortTitle}</a></li>)}</ul></nav>
+    {services[locale].map((service, index) => {
+      const Icon = icons[index];
+      return <section id={service.id} aria-labelledby={`${service.id}-title`} key={service.id} className="page-container section-space border-t border-border/70">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.4fr] lg:gap-14"><div><div className="mb-5 flex items-center gap-3 text-red-300"><Icon size={25} aria-hidden="true" /><span className="font-mono text-xs">0{index + 1}</span>{index === 0 && <span className="text-xs font-medium">{c.services.primaryLabel}</span>}</div><h2 id={`${service.id}-title`} className="break-words hyphens-auto text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{service.title}</h2><p className="mt-5 text-base leading-8 text-neutral">{service.description}</p><div className="mt-6 rounded-2xl border border-border bg-muted/20 p-5"><p className="text-xs font-semibold uppercase tracking-wider text-red-300">{c.common.benefit}</p><p className="mt-3 text-sm leading-7 text-support">{service.benefit}</p></div><BookingLink locale={locale} className="mt-6 w-full sm:w-auto">{c.common.contact}</BookingLink></div>
+          <div className="space-y-4"><p className="text-sm font-semibold text-neutral">{c.services.included}</p>{service.groups.map(group => <div key={group.title} className="rounded-2xl border border-border bg-muted/20 p-5 sm:p-6"><h3 className="text-lg font-semibold">{group.title}</h3><ul className="mt-4 space-y-3">{group.items.map(item => <li key={item} className="flex gap-3 text-sm leading-7 text-neutral"><Check size={16} aria-hidden="true" className="mt-1.5 shrink-0 text-red-300" />{item}</li>)}</ul></div>)}</div></div>
+        <div className="mt-10 sm:mt-14"><h3 className="text-xl font-semibold tracking-tight">{c.services.examplesTitle}</h3><p className="mt-2 text-sm leading-7 text-support">{c.services.examplesHint}</p><div className="mt-5 grid gap-4 md:grid-cols-2">{service.examples.map(example => <div key={example.title} className="rounded-2xl border border-border bg-background p-5 sm:p-6"><p className="mb-3 text-xs font-medium text-red-300">{c.common.possibleUse}</p><h4 className="text-base font-semibold">{example.title}</h4><p className="mt-3 text-sm leading-7 text-support">{example.description}</p></div>)}</div></div>
+        {index === 0 && <div className="mt-6 flex flex-col gap-5 rounded-2xl border border-red-400/25 bg-primary/5 p-5 sm:p-6 md:flex-row md:items-center md:justify-between"><div className="max-w-xl"><Eyebrow>{c.common.examples}</Eyebrow><h3 className="text-xl font-semibold">{c.services.demoTitle}</h3><p className="mt-2 text-sm leading-7 text-support">{c.services.demoText}</p></div><PageLink locale={locale} route="examples" secondary className="shrink-0">{c.services.demoButton}</PageLink></div>}
+      </section>;
+    })}<ConversationCTA locale={locale} /></main>;
+}

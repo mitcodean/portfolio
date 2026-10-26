@@ -32,6 +32,24 @@ html {
 body {
   background: #0F172A;
   color: #F8FAFC;
-  font-family: "TT-Norms";
+  font-family: var(--font-sans), Arial, sans-serif;
   min-height: 100vh;
+}
+
+@layer components {
+  .page-container { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section-space { @apply py-16 sm:py-20 lg:py-24; }
+}
+
+* { box-sizing: border-box; }
+::selection { background: #b22222; color: #ffffff; }
+:focus-visible { outline: 2px solid #f8fafc; outline-offset: 4px; }
+summary::-webkit-details-marker { display: none; }
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 150; transform: translateY(-200%); border-radius: .75rem; background: #f8fafc; color: #0f172a; padding: .8rem 1rem; font-weight: 600; }
+.skip-link:focus { transform: translateY(0); }
+#main-content:focus { outline: none; }
+.legal-content .text-primary { color: #fca5a5; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

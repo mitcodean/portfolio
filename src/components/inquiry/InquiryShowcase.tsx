@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { ArrowRight, ArrowUpRight, ClipboardCheck, FileText, ListChecks } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { CALENDLY_BOOKING_URL, INQUIRY_DEMO_PATH } from "@/config/diovis";
 import DemoVideo from "./DemoVideo";
@@ -16,7 +17,7 @@ export default async function InquiryShowcase({ standalone = false }: { standalo
   ];
 
   return (
-    <section id="praxisbeispiele" aria-labelledby="inquiry-showcase-title" className="relative bg-background py-20 font-sans sm:py-24">
+    <section id="praxisbeispiele" aria-labelledby="inquiry-showcase-title" className={cn("relative bg-background py-20 font-sans sm:py-24", standalone && "pt-0 sm:pt-2")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="mb-9 max-w-4xl">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-red-400">{t("eyebrow")}</p>
