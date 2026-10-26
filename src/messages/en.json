@@ -37,7 +37,7 @@
             "material": "Material",
             "thickness": "Sheet thickness",
             "delivery": "Requested delivery",
-            "attachment": "Drawing / attachment mentioned"
+            "attachment": "Drawing mentioned in text"
         },
         "attachmentYes": "Yes · only mentioned in text",
         "attachmentNo": "No · not mentioned in text",
@@ -97,7 +97,55 @@
         "ctaNewTab": "opens in a new tab",
         "ctaExternalHint": "Calendly opens in a new tab. This demo stays open."
     },
+    "inquiryShowcase": {
+        "eyebrow": "Diovis · Practical examples",
+        "title": "See what automation could look like in your business.",
+        "description": "Reading inquiries, gathering details, noting follow-up questions: see how the Diovis inquiry assistant can support this preparation.",
+        "pageTitle": "Practical examples · Experience automation | Diovis",
+        "demoPageTitle": "Try the AI inquiry assistant | Diovis",
+        "demoPageDescription": "Try the Diovis inquiry assistant with fictional manufacturing inquiries. See structured details, missing information and a simulated manual review.",
+        "exampleTitle": "Diovis inquiry assistant",
+        "exampleBadge": "Fictional manufacturing example",
+        "videoTitle": "Demo video: the Diovis inquiry assistant in action",
+        "playVideo": "Play demo video, duration 1 minute 16 seconds",
+        "playLabel": "Watch the workflow",
+        "videoDescription": "German-language recording using fictional details: from a customer inquiry to a structured overview and manual review.",
+        "videoUnsupported": "Your browser does not support this video format.",
+        "videoError": "The video cannot be played right now. Open the recording separately or try the interactive demo directly.",
+        "openVideo": "Open video in a new tab",
+        "actionTitle": "See it. Then try it yourself.",
+        "actionDescription": "Load a sample inquiry, edit the text and see how the overview takes shape.",
+        "tryDemo": "Try the demo yourself",
+        "bookMeeting": "Book a free introductory call",
+        "newTab": "opens in a new tab",
+        "demoHint": "In your browser · no sign-up · up to 5 AI analyses in 24 hours. Please use fictional details only.",
+        "benefits": {
+            "input": {
+                "title": "Start with an inquiry",
+                "description": "Free text stays free text. In this example, details do not need to be transferred to a form first."
+            },
+            "overview": {
+                "title": "Details and open questions together",
+                "description": "Quantity, material and delivery wishes are organized. Missing or conflicting details remain visible."
+            },
+            "review": {
+                "title": "You stay in control",
+                "description": "A person reviews the overview. Attachments are not read and no quotation is sent automatically."
+            }
+        },
+        "textAlternative": "Read a text description of the workflow",
+        "workflowText": "A fictional customer inquiry is entered and analyzed. The assistant organizes stated details such as the component, quantity, material, thickness and delivery wish. Missing information and contradictions appear as follow-up questions. A drawing is only marked as mentioned in the text; its contents are not analyzed. Finally, a manual review can be simulated. No prices are invented and no quotations are sent.",
+        "ctaEyebrow": "From this example to your business",
+        "ctaTitle": "Could this workflow fit your business?",
+        "ctaDescription": "Every business works differently. Let’s find out together which recurring tasks in your company could benefit from automation.",
+        "bookingHint": "Calendly opens in a new tab. This page stays open.",
+        "backToExamples": "Back to practical examples"
+    },
     "nav": {
+        "examples": "Practical examples",
+        "menuLabel": "Main navigation",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
         "home": "Home",
         "services": "Services",
         "about": "About",

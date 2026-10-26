@@ -37,7 +37,7 @@
             "material": "Material",
             "thickness": "Blechstärke",
             "delivery": "Lieferwunsch",
-            "attachment": "Zeichnung / Anhang erwähnt"
+            "attachment": "Zeichnung im Text erwähnt"
         },
         "attachmentYes": "Ja · nur im Text erwähnt",
         "attachmentNo": "Nein · nicht im Text erwähnt",
@@ -97,7 +97,55 @@
         "ctaNewTab": "öffnet in einem neuen Tab",
         "ctaExternalHint": "Calendly öffnet in einem neuen Tab. Diese Demo bleibt geöffnet."
     },
+    "inquiryShowcase": {
+        "eyebrow": "Diovis · Praxisbeispiele",
+        "title": "So kann Automatisierung in Ihrem Unternehmen aussehen.",
+        "description": "Kundenanfragen lesen, Angaben zusammensuchen, Rückfragen notieren: Sehen Sie, wie der Diovis Anfrageassistent diese Vorbereitung unterstützen kann.",
+        "pageTitle": "Praxisbeispiele · Automatisierung erleben | Diovis",
+        "demoPageTitle": "KI-Anfrageassistent selbst ausprobieren | Diovis",
+        "demoPageDescription": "Testen Sie den Diovis Anfrageassistenten mit fiktiven Fertigungsanfragen. Angaben strukturieren, offene Fragen erkennen und die manuelle Prüfung erleben.",
+        "exampleTitle": "Diovis Anfrageassistent",
+        "exampleBadge": "Fiktives Beispiel aus der Fertigung",
+        "videoTitle": "Demovideo: Der Diovis Anfrageassistent im Einsatz",
+        "playVideo": "Demovideo abspielen, Dauer 1 Minute 16 Sekunden",
+        "playLabel": "Ablauf im Video ansehen",
+        "videoDescription": "Aufzeichnung mit fiktiven Angaben: von der Kundenanfrage über die strukturierte Übersicht bis zur manuellen Prüfung.",
+        "videoUnsupported": "Ihr Browser unterstützt dieses Videoformat nicht.",
+        "videoError": "Das Video kann gerade nicht abgespielt werden. Sie können die Aufnahme separat öffnen oder die Demo direkt ausprobieren.",
+        "openVideo": "Video in einem neuen Tab öffnen",
+        "actionTitle": "Vom Zusehen zum Ausprobieren.",
+        "actionDescription": "Laden Sie eine Beispielanfrage, verändern Sie den Text und sehen Sie, wie die Übersicht entsteht.",
+        "tryDemo": "Demo selbst ausprobieren",
+        "bookMeeting": "Kostenloses Erstgespräch vereinbaren",
+        "newTab": "öffnet in einem neuen Tab",
+        "demoHint": "Direkt im Browser · ohne Anmeldung · bis zu 5 KI-Analysen in 24 Stunden. Bitte nur fiktive Angaben verwenden.",
+        "benefits": {
+            "input": {
+                "title": "Eine Anfrage als Ausgangspunkt",
+                "description": "Freitext bleibt Freitext. Angaben müssen für das Beispiel nicht zuerst in ein Formular übertragen werden."
+            },
+            "overview": {
+                "title": "Angaben und offene Fragen im Blick",
+                "description": "Menge, Material und Lieferwunsch werden aufbereitet. Fehlende oder widersprüchliche Angaben bleiben sichtbar."
+            },
+            "review": {
+                "title": "Die Entscheidung bleibt bei Ihnen",
+                "description": "Ein Mensch prüft die Übersicht. Anhänge werden nicht gelesen und es wird kein Angebot automatisch versendet."
+            }
+        },
+        "textAlternative": "Den gezeigten Ablauf als Text lesen",
+        "workflowText": "Eine fiktive Kundenanfrage wird eingegeben und analysiert. Der Assistent bereitet die enthaltenen Angaben wie Bauteil, Stückzahl, Material, Stärke und Lieferwunsch auf. Fehlende Informationen und Widersprüche erscheinen als Rückfragen. Eine Zeichnung wird nur als im Text erwähnt gekennzeichnet; ihre Inhalte werden nicht ausgewertet. Zum Schluss kann die manuelle Prüfung simuliert werden. Es werden weder Preise erfunden noch Angebote versendet.",
+        "ctaEyebrow": "Von diesem Beispiel zu Ihrem Betrieb",
+        "ctaTitle": "Passt dieser Ablauf auch zu Ihrem Betrieb?",
+        "ctaDescription": "Jeder Betrieb arbeitet anders. Lassen Sie uns gemeinsam herausfinden, welche wiederkehrenden Aufgaben sich in Ihrem Unternehmen sinnvoll automatisieren lassen.",
+        "bookingHint": "Calendly öffnet in einem neuen Tab. Diese Seite bleibt geöffnet.",
+        "backToExamples": "Zurück zu den Praxisbeispielen"
+    },
     "nav": {
+        "examples": "Praxisbeispiele",
+        "menuLabel": "Hauptnavigation",
+        "openMenu": "Menü öffnen",
+        "closeMenu": "Menü schließen",
         "home": "Startseite",
         "services": "Leistungen",
         "about": "Über uns",

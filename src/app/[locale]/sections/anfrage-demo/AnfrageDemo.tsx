@@ -17,7 +17,7 @@ import {
 
 const focusStyle = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-background";
 
-export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unlimitedLocalTests = false }: { defaultModel?: InquiryModel; unlimitedLocalTests?: boolean }) {
+export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unlimitedLocalTests = false, headingLevel = 2 }: { defaultModel?: InquiryModel; unlimitedLocalTests?: boolean; headingLevel?: 1 | 2 }) {
   const locale = useLocale();
   const t = useTranslations("inquiryDemo");
   const examples = getInquiryExamples(locale);
@@ -34,6 +34,9 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unli
   const selectedExample = findInquiryExample(inquiry, locale);
   const isLoading = status === "loading";
   const rateLimitDisabled = unlimitedLocalTests;
+  const Title = headingLevel === 1 ? "h1" : "h2";
+  const PanelTitle = headingLevel === 1 ? "h2" : "h3";
+  const DetailTitle = headingLevel === 1 ? "h3" : "h4";
 
   useEffect(() => () => {
     controllerRef.current?.abort();
@@ -116,16 +119,16 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unli
     { label: t("fields.material"), value: result.material },
     { label: t("fields.thickness"), value: result.thicknessMm === null ? null : `${result.thicknessMm} mm` },
     { label: t("fields.delivery"), value: result.deliveryWish },
-    { label: t("fields.attachment"), value: result.attachmentMentioned === null ? null : t(result.attachmentMentioned ? "attachmentYes" : "attachmentNo") },
+    { label: t("fields.attachment"), value: t(result.drawingMentioned ? "attachmentYes" : "attachmentNo") },
   ] : [];
 
   return (
-    <section id="anfrageassistent" aria-labelledby="inquiry-demo-title" className="relative bg-background py-20 font-sans sm:py-24">
+    <section id="anfrageassistent" aria-labelledby="inquiry-demo-title" className={cn("relative bg-background py-20 font-sans sm:py-24", headingLevel === 1 && "pt-8 sm:pt-10")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-9 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-red-400">{t("eyebrow")}</p>
-            <h2 id="inquiry-demo-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">{t("title")}</h2>
+            <Title id="inquiry-demo-title" className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">{t("title")}</Title>
             <p className="mt-3 text-xl text-neutral sm:text-2xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>{t("subtitle")}</p>
             <p className="mt-4 max-w-xl text-sm leading-7 text-support">{t("description")}</p>
           </div>
@@ -154,7 +157,7 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unli
             <form onSubmit={analyze} noValidate className="min-w-0 border-b border-border p-5 sm:p-8 lg:border-r lg:border-b-0">
               <div className="mb-5 flex items-center gap-2.5">
                 <FileText size={18} aria-hidden="true" className="text-red-400" />
-                <h3 className="font-semibold text-foreground">{t("inputTitle")}</h3>
+                <PanelTitle className="font-semibold text-foreground">{t("inputTitle")}</PanelTitle>
               </div>
               <p id="inquiry-examples-help" className="mb-3 text-xs leading-5 text-support">{t("examplesHelp")}</p>
               <div role="group" aria-label={t("examplesLabel")} aria-describedby="inquiry-examples-help" className="mb-6 grid gap-2 sm:grid-cols-3">
@@ -193,7 +196,7 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unli
               <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5">
                   <ClipboardCheck size={18} aria-hidden="true" className="text-red-400" />
-                  <h3 ref={resultRef} tabIndex={-1} className="rounded font-semibold text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground">{t("resultTitle")}</h3>
+                  <PanelTitle ref={resultRef} tabIndex={-1} className="rounded font-semibold text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground">{t("resultTitle")}</PanelTitle>
                 </div>
                 {result && <span className={cn("rounded-full border px-2.5 py-1 text-[11px]", status === "reviewed" ? "border-emerald-300/25 text-emerald-200" : "border-amber-300/25 text-amber-200")}>{status === "reviewed" ? t("reviewedBadge") : t("reviewPending")}</span>}
               </div>
@@ -220,15 +223,15 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unli
                   </dl>
                   <div className="flex items-start gap-2 text-xs leading-5 text-support"><Paperclip size={14} aria-hidden="true" className="mt-0.5 shrink-0" /><p>{t("attachmentHint")}</p></div>
                   <div className="rounded-xl border border-border p-4">
-                    <h4 className="mb-2 text-sm font-medium text-neutral">{t("summaryTitle")}</h4>
+                    <DetailTitle className="mb-2 text-sm font-medium text-neutral">{t("summaryTitle")}</DetailTitle>
                     <p className="text-sm leading-6 text-support">{result.summary}</p>
                   </div>
                   <div className="rounded-xl border border-amber-300/20 bg-amber-300/5 p-4">
-                    <h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-amber-200"><CircleAlert size={16} aria-hidden="true" />{t("missingTitle")}</h4>
+                    <DetailTitle className="mb-3 flex items-center gap-2 text-sm font-medium text-amber-200"><CircleAlert size={16} aria-hidden="true" />{t("missingTitle")}</DetailTitle>
                     {result.missingInformation.length ? <ul className="list-disc space-y-1.5 pl-4 text-sm leading-6 text-neutral">{result.missingInformation.map((item, index) => <li key={`${index}-${item}`}>{item}</li>)}</ul> : <p className="text-sm leading-6 text-neutral">{t("noMissingInformation")}</p>}
                   </div>
                   <div className="border-t border-border pt-5">
-                    <h4 className="text-sm font-medium text-neutral">{t("reviewTitle")}</h4>
+                    <DetailTitle className="text-sm font-medium text-neutral">{t("reviewTitle")}</DetailTitle>
                     <p className="mt-2 text-xs leading-5 text-support">{status === "reviewed" ? t("reviewedDescription") : t("reviewDescription")}</p>
                     <button type="button" aria-pressed={status === "reviewed"} onClick={() => setStatus(status === "reviewed" ? "ready" : "reviewed")}
                       className={cn("mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors sm:w-auto", focusStyle, status === "reviewed" ? "border-emerald-300/30 bg-emerald-300/10 text-emerald-200 hover:bg-emerald-300/15" : "border-border text-foreground hover:border-support hover:bg-white/5")}>
@@ -246,7 +249,7 @@ export default function AnfrageDemo({ defaultModel = DEFAULT_INQUIRY_MODEL, unli
           </div>
         </div>
 
-        <InquiryBookingCTA hasResult={result !== null} />
+        <InquiryBookingCTA hasResult={result !== null} headingLevel={headingLevel === 1 ? 2 : 3} />
       </div>
     </section>
   );

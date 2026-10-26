@@ -5,13 +5,14 @@ import { randomUUID } from "node:crypto";
 import path from "node:path";
 import OpenAI from "openai";
 import { Redis } from "@upstash/redis";
-import { analyzeInquiry, groundExtraction, type Extraction } from "../src/lib/inquiry/analyze";
+import { analyzeInquiry } from "../src/lib/inquiry/analyze";
+import { reconcileInquiry } from "../src/lib/inquiry/reconcile";
 import { getInquiryConfig, isUnlimitedLocalTesting } from "../src/lib/inquiry/config";
 import { InquiryError } from "../src/lib/inquiry/errors";
 import { createInquiryHandler } from "../src/lib/inquiry/handler";
 import { checkResponsesAccess } from "../src/lib/inquiry/check-access";
 import { COOLDOWN_MS, FileRateStore, RedisRateStore, WINDOW_MS, getVisitor, reserveAttempt, type RateState, type RateStore } from "../src/lib/inquiry/rate-limit";
-import { INQUIRY_MODELS, inquiryRequestSchema, inquiryResultSchema, inquirySuccessSchema } from "../src/lib/inquiry/schema";
+import { INQUIRY_MODELS, inquiryRequestSchema, inquiryResultSchema, inquirySuccessSchema, type InquiryResult } from "../src/lib/inquiry/schema";
 import { inquiryFixtures } from "./inquiry-fixtures";
 
 const config = () => getInquiryConfig({ OPENAI_API_KEY: "test-key-never-use-for-real-requests", INQUIRY_RATE_LIMIT_SECRET: "a".repeat(64) });
@@ -25,7 +26,7 @@ function request(body: unknown, extra: Record<string, string> = {}) {
     method: "POST", headers: { "content-type": "application/json", origin: "http://localhost:3000", ...extra }, body: JSON.stringify(body),
   });
 }
-const goodResult = () => groundExtraction(inquiryFixtures[0].extraction, inquiryFixtures[0].inquiry, "de");
+const goodResult = () => reconcileInquiry(inquiryFixtures[0].extraction, inquiryFixtures[0].inquiry, "de");
 function wireResponse(extraction: unknown, options: { refusal?: boolean; incomplete?: boolean } = {}) {
   return Response.json({
     id: "resp_test", object: "response", created_at: 1_790_000_000, model: "gpt-5-nano",
@@ -62,30 +63,29 @@ for (const model of INQUIRY_MODELS) {
       assert.equal(result.quantity, fixture.extraction.quantity);
       assert.equal(result.thicknessMm, fixture.extraction.thicknessMm);
       assert.equal(result.deliveryWish, fixture.extraction.deliveryWish);
-      assert.equal(result.attachmentMentioned, fixture.extraction.attachmentMentioned);
+      assert.equal(result.drawingMentioned, fixture.extraction.drawingMentioned);
       assert.equal(result.material, fixture.extraction.material);
       assert.ok(inquiryResultSchema.safeParse(result).success);
       assert.ok(!("evidence" in result));
-      if (index === 1) assert.match(result.unit!, /ungefähr/);
+      if (index === 1) assert.match(result.summary, /ungefähr/);
     });
   }
 }
 
 test("unsupported fields, guessed numbers, invented material, prices and drop-off deadline are not displayed", () => {
   const fixture = inquiryFixtures[2];
-  const extraction: Extraction = {
+  const extraction: InquiryResult = {
     ...fixture.extraction, quantity: 1, material: "Titan", thicknessMm: 99,
     deliveryWish: "nächste Woche vorbeibringen", unit: "999 Euro", summary: "Angebotspreis: 999 Euro. Zeichnung gelesen.",
-    evidence: { ...fixture.extraction.evidence, quantity: "ein beschädigtes Stahlbauteil", material: "Titan", thicknessMm: "99 mm", deliveryWish: "nächste Woche vorbeibringen" },
   };
-  const result = groundExtraction(extraction, fixture.inquiry, "de");
+  const result = reconcileInquiry(extraction, fixture.inquiry, "de");
   assert.equal(result.quantity, null);
   assert.equal(result.unit, null);
-  assert.equal(result.material, null);
+  assert.equal(result.material, "Stahl");
   assert.equal(result.thicknessMm, null);
   assert.equal(result.deliveryWish, null);
   assert.doesNotMatch(result.summary, /999|Preis|gelesen|Titan/);
-  assert.ok(result.missingInformation.some(value => /Liefertermin/.test(value)));
+  assert.ok(result.missingInformation.some(value => /Liefer.*termin/.test(value)));
   assert.equal(inquiryResultSchema.safeParse({ ...goodResult(), price: 999 }).success, false);
 });
 
@@ -122,7 +122,7 @@ test("API returns real analyzer results for all three fixtures, quota metadata a
   let now = start;
   const handler = createInquiryHandler({ config, store: () => store, now: () => now, analyze: async input => {
     const fixture = inquiryFixtures.find(item => item.inquiry === input.inquiry)!;
-    return groundExtraction(fixture.extraction, input.inquiry, input.locale);
+    return reconcileInquiry(fixture.extraction, input.inquiry, input.locale);
   } });
   for (const [index, fixture] of inquiryFixtures.entries()) {
     const response = await handler(request({ inquiry: fixture.inquiry, model: INQUIRY_MODELS[index % 2] }));

@@ -50,15 +50,6 @@ type Card = {
   href: string;
 };
 
-// Triangle brand mark
-function TriangleMark({ size = 40, opacity = 0.08 }: { size?: number; opacity?: number }) {
-  return (
-    <svg width={size} height={size * 1.15} viewBox="0 0 40 46" fill="none" style={{ opacity }} aria-hidden>
-      <polygon points="20,2 38,44 2,44" fill="#B22222" />
-    </svg>
-  );
-}
-
 // Single card
 function ServiceCard({
   card,
@@ -265,13 +256,6 @@ export default function ServicesPreview() {
     <>
       <section ref={ref} id="services" className="bg-background py-24 relative overflow-hidden">
 
-        {/* Background brand triangles */}
-        <div className="absolute top-0 left-0 pointer-events-none">
-          <TriangleMark size={260} opacity={0.025} />
-        </div>
-        <div className="absolute bottom-0 right-0 pointer-events-none rotate-180">
-          <TriangleMark size={180} opacity={0.02} />
-        </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 

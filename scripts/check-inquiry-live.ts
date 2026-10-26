@@ -39,20 +39,21 @@ async function main() {
       assert.match(result.material ?? "", /1\.4301/);
       assert.equal(result.thicknessMm, 3);
       assert.ok(result.deliveryWish && example.inquiry.includes(result.deliveryWish));
-      assert.equal(result.attachmentMentioned, true);
+      assert.equal(result.drawingMentioned, true);
     } else if (example.id === "incomplete") {
       assert.equal(result.quantity, 120);
       assert.match(result.material ?? "", /Aluminium/i);
-      assert.match(result.unit ?? "", /ungefähr/);
+      assert.equal(result.unit, "Stück");
+      assert.match(result.summary, /ungefähr/);
       assert.equal(result.thicknessMm, null);
       assert.equal(result.deliveryWish, null);
-      assert.equal(result.attachmentMentioned, false);
+      assert.equal(result.drawingMentioned, false);
       assert.ok(result.missingInformation.length > 0);
     } else {
       assert.equal(result.quantity, null);
       assert.match(result.material ?? "", /Stahl/i);
       assert.equal(result.deliveryWish, null);
-      assert.equal(result.attachmentMentioned, false);
+      assert.equal(result.drawingMentioned, false);
     }
     assert.doesNotMatch(result.summary, /€|EUR|Angebotspreis|Zeichnung (?:gelesen|analysiert)/i);
   }

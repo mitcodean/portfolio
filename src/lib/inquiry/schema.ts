@@ -14,31 +14,21 @@ export const inquiryRequestSchema = z.object({
 }).strict();
 export type InquiryRequest = z.infer<typeof inquiryRequestSchema>;
 
-// Keep the model schema within Structured Outputs' JSON Schema subset.
-export const inquiryFieldsSchema = z.object({
-  service: z.string().nullable(),
-  quantity: z.number().nonnegative().nullable(),
-  unit: z.string().nullable(),
-  material: z.string().nullable(),
-  thicknessMm: z.number().nonnegative().nullable(),
-  deliveryWish: z.string().nullable(),
-  attachmentMentioned: z.boolean(),
+// The very same strict schema is sent to OpenAI and validates server/browser results.
+const fieldText = z.string().regex(/^\S[\s\S]{0,299}$/);
+export const inquiryResultSchema = z.object({
+  service: fieldText.nullable().describe("Explicit requested service or component; no inferred manufacturing method."),
+  quantity: z.number().int().nonnegative().nullable().describe("Component count, including 50 brackets, 50 Stk., 50 Stück or 50x. Never a thickness, material grade or duration. Null for conflicting counts."),
+  unit: fieldText.nullable().describe("Stück for a clearly stated component count; otherwise the explicitly stated unit or null."),
+  material: fieldText.nullable().describe("Only the named material and explicitly provided grade."),
+  thicknessMm: z.number().nonnegative().nullable().describe("Only a clearly stated material thickness in millimetres; not a length or diameter."),
+  deliveryWish: fieldText.nullable().describe("Short original delivery/completion expression, not a drop-off time. Null if unclear or contradictory."),
+  drawingMentioned: z.boolean().describe("A drawing is mentioned in the text. This never means a file has been read."),
   missingInformation: z.array(z.string().regex(/^\S[\s\S]{0,299}$/))
     .max(15)
     .describe("Up to 15 separate, concise missing details or follow-up questions. Each item starts with a non-whitespace character and contains at most 300 characters."),
-  summary: z.string(),
+  summary: z.string().regex(/^\S[\s\S]{0,1199}$/).describe("Concise factual summary, including any uncertainty; no price or invented facts."),
 }).strict();
-
-export const inquiryResultSchema = inquiryFieldsSchema.superRefine((value, ctx) => {
-  for (const [key, text] of Object.entries(value)) {
-    if (typeof text === "string" && (text.trim().length === 0 || text.length > (key === "summary" ? 1200 : 300))) {
-      ctx.addIssue({ code: "custom", path: [key], message: "Invalid output text length" });
-    }
-  }
-  if (value.missingInformation.length > 15 || value.missingInformation.some(text => !text.trim() || text.length > 300)) {
-    ctx.addIssue({ code: "custom", path: ["missingInformation"], message: "Invalid missing information" });
-  }
-});
 export type InquiryResult = z.infer<typeof inquiryResultSchema>;
 
 export const inquirySuccessSchema = z.object({

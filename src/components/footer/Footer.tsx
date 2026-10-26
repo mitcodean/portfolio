@@ -62,6 +62,7 @@ const pathname = usePathname();
     const navLinks = [
     { label: t("nav.about"), href: `/${locale}/#about` },
     { label: t("nav.services"), href: `/${locale}/#services` },
+    { label: t("nav.examples"), href: `/${locale}/praxisbeispiele` },
     // { label: t("nav.portfolio"), href: `/${locale}/portfolio` },
     { label: t("nav.contact"), href: `/${locale}/contact` },
   ];

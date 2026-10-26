@@ -1,6 +1,8 @@
 # Diovis Anfrageassistent: lokale KI-Demo
 
-Die Homepage nutzt `POST /api/analyze-inquiry/` (auch ohne abschließenden Slash über Next erreichbar).
+Die interaktive Demo unter `/de/praxisbeispiele/anfrageassistent/` nutzt
+`POST /api/analyze-inquiry/` (auch ohne abschließenden Slash über Next erreichbar).
+Startseite und `/de/praxisbeispiele/` zeigen das Demovideo mit Verlinkung zur interaktiven Demo.
 Die echte Auswertung läuft ausschließlich auf dem Server über das offizielle OpenAI JavaScript SDK,
 `responses.parse` und `zodTextFormat`. Freigegeben sind ausschließlich `gpt-4.1-nano` und `gpt-5-nano`.
 `OPENAI_MODEL` legt die Vorauswahl fest; der Besucher kann zwischen diesen beiden Modellen wechseln.
@@ -32,7 +34,7 @@ Beide teilen sich dasselbe Versuchskontingent. Der Freigabeschritt bleibt eine l
    Erst nach erfolgreichem Check die echten Beispiele starten.
 8. `npm run dev -- --hostname 127.0.0.1 --port 3000` starten.
    Nach Änderungen an `.env.local` den Server neu starten.
-9. `http://127.0.0.1:3000/de/#anfrageassistent` öffnen und ausschließlich fiktive Texte verwenden.
+9. `http://127.0.0.1:3000/de/praxisbeispiele/anfrageassistent/` öffnen und ausschließlich fiktive Texte verwenden.
 
 Build: `npm run build`. Für eine lokale Vorschau des Builds funktioniert der vorhandene
 Startbefehl `npm run start -- --hostname 127.0.0.1 --port 3000`; Next weist dabei auf die bereits
@@ -41,8 +43,10 @@ vorhandene Standalone-Konfiguration hin. Deren Deployment-Einstellungen wurden n
 ## Tests
 
 - `npm run test:inquiry`: automatisierte Tests ohne echte API-Aufrufe oder API-Kosten.
-  Prüft alle drei Briefing-Anfragen für beide Modelle durch das echte SDK mit simuliertem
-  HTTP-Upstream, Schemas, Belege, fehlende Daten, Preis-/Anhangsregeln, Fehlerfälle und Limits.
+  Prüft alle drei Briefing-Anfragen und die sechs Mengen-/Konfliktfälle für beide Modelle durch
+  das echte SDK mit simuliertem HTTP-Upstream. Dazu kommen wiederholte identische Anfragen mit
+  unterschiedlichen Modellantworten, bearbeitete Texte, Zahl-/Maßkontexte, Schemas, fehlende Daten,
+  Preis-/Zeichnungsregeln, Fehlerfälle und Limits. Siehe [Prüfbericht](Diovis_Extraction_Review.md).
 - `npm run test:inquiry:live`: separat gestarteten lokalen Server und echten API-Schlüssel erforderlich.
   Ruft die **drei fiktiven Briefing-Anfragen** mit dem konfigurierten Modell auf,
   kostet bis zu drei KI-Versuche und hält die 15-Sekunden-Abstände ein.
@@ -59,9 +63,18 @@ Live-Ergebnisse können variieren und müssen immer fachlich geprüft werden.
   Unbekannte Felder, unbekannte Modelle, leere Texte und überlange Texte werden abgewiesen.
 - Request-Body maximal 8 KiB, Lesezeit maximal 5 Sekunden, KI-Zeitlimit 45 Sekunden,
   maximal 2200 Ausgabe-Tokens einschließlich Reasoning, keine SDK-Wiederholungen.
-- Jede belegte Angabe benötigt ein wörtliches Zitat aus dem Eingabetext. Nicht belegte Felder
-  werden zu `null`; Lieferwünsche bleiben im ursprünglichen Wortlaut. Anlieferung ist kein
-  Fertigstellungstermin. Die sichtbare Zusammenfassung entsteht aus den geprüften Feldern.
+- Das Modell liefert exakt neun Felder: `service`, `quantity`, `unit`, `material`, `thicknessMm`,
+  `deliveryWish`, `drawingMentioned`, `missingInformation`, `summary`. Ein einziges striktes
+  Zod-Schema definiert das OpenAI-JSON-Schema und validiert Server- und Browser-Ergebnisse.
+  Unbekannte Einzelwerte sind `null`; die Fragen sind immer ein Array. Die Oberfläche zeigt
+  fehlende Werte als „Nicht angegeben“. `drawingMentioned` ist immer ein Boolean.
+- Ein Regelabgleich mit dem tatsächlichen Eingabetext sichert klare Mengen, Materialstärken,
+  Materialien und Lieferwünsche ab, ohne zusätzliche Belegzitate vom Modell zu verlangen.
+  „50 Haltewinkel“, „50 Stk.“ und „50x“ werden als Stückzahl erkannt, Maße und Zeiträume nicht.
+  Unterschiedliche Mengen oder getrennte Positionen ergeben keine willkürlich gewählte Gesamtmenge.
+  Unklare Werte bleiben `null` und werden als Rückfrage genannt. Lieferwünsche behalten ihren
+  Wortlaut; Anlieferung ist kein Fertigstellungstermin. Die Zusammenfassung entsteht aus geprüften
+  Feldern; ungefähre Mengen stehen dort als ungefähr, während die Einheit „Stück“ bleibt.
 - Es werden keine Dateien gelesen, keine Preise berechnet, keine Angebote versendet und keine
   Freigaben in Drittsystemen gespeichert. Anfragen/Ausgaben werden hier nicht protokolliert oder gespeichert.
 - **Echte KI:** Beim Klick wird der Text an OpenAI übertragen. `store: false` deaktiviert die
@@ -72,14 +85,11 @@ Live-Ergebnisse können variieren und müssen immer fachlich geprüft werden.
 
 ## Kontingentschutz
 
-Für die aktuelle lokale Fehlersuche ist in `.env.local` vorübergehend
-`INQUIRY_UNLIMITED_LOCAL_TESTS=true` gesetzt. Das schaltet ausschließlich unter
-`next dev` bei `INQUIRY_LOCAL_ONLY=true` die lokalen Versuchszähler einschließlich
-Tageskontingent und Wartezeit aus. Die Oberfläche zeigt den Testmodus an.
-Zum Wiedereinschalten den Wert auf `false` setzen, den Dev-Server neu starten und
-die Seite neu laden. Vorhandene Zähler werden nicht gelöscht. Produktionsbuilds
-verwenden immer die regulären Limits; ein öffentlicher Betrieb mit aktiviertem
-Testschalter wird verweigert.
+Die regulären Limits sind wieder aktiv: `INQUIRY_UNLIMITED_LOCAL_TESTS=false`
+in `.env.local` und `.env.example`. Vorhandene Zähler wurden nicht gelöscht.
+Der optionale lokale Testschalter bleibt ausgeschaltet. Produktionsbuilds verwenden immer die
+regulären Limits; ein öffentlicher Betrieb mit aktiviertem Testschalter wird verweigert.
+Nach einer Umgebungsänderung den Server neu starten.
 
 - **Fünf Versuche pro Besucher UND Netzwerk in einem rollierenden 24-Stunden-Fenster.**
   Die erste Freigabe erfolgt, wenn ein gezählter Versuch aus dem Fenster fällt.

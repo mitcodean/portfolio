@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "jest",
-    "test:inquiry": "node --conditions=react-server --import tsx --test tests/inquiry.test.ts",
+    "test:inquiry": "node --conditions=react-server --import tsx --test tests/inquiry.test.ts tests/inquiry-reliability.test.ts",
     "test:inquiry:live": "node --conditions=react-server --import tsx scripts/check-inquiry-live.ts",
     "check:inquiry:config": "node --conditions=react-server --import tsx scripts/check-inquiry-config.ts"
   },
