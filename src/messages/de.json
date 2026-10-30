@@ -429,167 +429,713 @@
         "subtitle": "Eine Auswahl meiner Arbeiten"
     },
     "legal": {
-    "title": "Rechtliches",
-    "notice": {
+      "title": "Rechtliches",
+      "notice": {
         "title": "Impressum",
-        "updated": "Stand: 2026",
-        "companyInfo": "Informationen gemäß § 5 ECG / § 63 GewO",
-        "companyName": "Unternehmensname",
-        "owner": "Inhaber",
-        "legalForm": "Unternehmensform",
-        "legalFormValue": "Einzelunternehmen (e.U.)",
-        "address": "Adresse",
-        "addressValue": "Eisenstraße 13, 4460 Losenstein, Österreich",
-        "phone": "Telefon",
-        "email": "E-Mail",
-        "website": "Website",
-        "uid": "UID-Nummer",
-        "uidValue": "[wird nach Gewerbeanmeldung ergänzt]",
-        "gisa": "GISA-Nummer",
-        "authority": "Gewerbebehörde",
-        "authorityValue": "Bezirkshauptmannschaft Steyr-Land",
-        "member": "Mitglied bei",
-        "memberValue": "Wirtschaftskammer Österreich (WKO), Sparte Information & Consulting",
-        "authorityAddress": "Bezirkshauptmannschaft Steyr-Land",
-        "authorityStreet": "Spitalskystraße 10a",
-        "authorityCity": "4400 Steyr",
-        "authorityLink": "Website der Behörde",
-        "businessPurpose": "Unternehmensgegenstand",
-        "businessPurposeDesc": "Werbeagentur und IT-Dienstleistungen mit Fokus auf Softwareentwicklung. Gegenstand des Unternehmens ist die Erbringung von Dienstleistungen im Bereich der Informationstechnologie, insbesondere:",
-        "purpose1": "Konzeption, Entwicklung und Wartung von Websites und Webanwendungen",
-        "purpose2": "Entwicklung und Betrieb von Online-Shops (E-Commerce)",
-        "purpose3": "Digitale Marketingdienstleistungen (SEO, Ads, Social Media, E-Mail)",
-        "purpose4": "Softwareentwicklung & Automatisierung von Geschäftsprozessen",
-        "purpose5": "ERP- & Buchungssystem-Integrationen",
-        "purpose6": "Entwicklung mobiler Applikationen",
-        "purpose7": "Beratung zu digitalen Strategien & Branding",
-        "legalBasis": "Anwendbare Rechtsvorschriften",
-        "legalBasisDesc": "Die Tätigkeit unterliegt der österreichischen Gewerbeordnung (GewO 1994) sowie den einschlägigen Bestimmungen des IT-Dienstleistungsgewerbes. Berufsrechtliche Regelungen sind abrufbar unter",
-        "liability": "Haftungsausschluss",
-        "liabilityDesc": "Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Für externe Links wird keine Haftung übernommen.",
-        "copyright": "Urheberrecht",
-        "copyrightDesc": "Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht. Jede Verwertung außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen Zustimmung.",
-        "privacyResponsibility": "Datenschutz & Verantwortung",
-        "responsible": "Verantwortlicher",
-        "contentResponsible": "Inhaltlich verantwortlich",
-        "professionalTitle": "Berufsbezeichnung",
-        "professionalTitleValue": "Software-Entwickler",
-        "countryOfAward": "Verleihungsstaat",
-        "countryOfAwardValue": "Österreich",
-        "editorial": "Blattlinie",
-        "editorialDesc": "Bereitstellung von Informationen, Analysen und Fachbeiträgen zu Individualsoftware, IT-Infrastruktur, IT-Sicherheit und digitalen Geschäftsprozessen. Referenzen und Case Studies dienen als Social Proof.",
-        "imageCredits": "Bildernachweis",
-        "imageCreditsDesc": "Alle Bilder, Fotos und Grafiken sind urheberrechtlich geschützt. Die Bildrechte liegen bei Dean-Silviu Mitco.",
-        "socials": "Weitere Onlineauftritte, wo dieses Impressum gilt.",
-        "backTo": "Zurück zu"
-    },
-    "privacy": {
+        "updated": "Stand: 30.10.2026 · Version 1",
+        "notice": "",
+        "intro": [],
+        "sections": [
+          {
+            "id": "company",
+            "title": "Angaben zum Unternehmen",
+            "blocks": [
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Firma",
+                    "value": "Diovis e.U."
+                  },
+                  {
+                    "label": "Inhaber",
+                    "value": "Dean-Silviu Mitco"
+                  },
+                  {
+                    "label": "Rechtsform",
+                    "value": "Eingetragener Einzelunternehmer (e.U.)"
+                  },
+                  {
+                    "label": "Sitz",
+                    "value": "Losenstein, Österreich"
+                  },
+                  {
+                    "label": "Geschäftsanschrift",
+                    "value": "Eisenstraße 13, 4460 Losenstein, Österreich"
+                  },
+                  {
+                    "label": "Firmenbuchnummer",
+                    "value": "Das ist die FIrmenbuchnummer noch einzutragen"
+                  },
+                  {
+                    "label": "Firmenbuchgericht",
+                    "value": "Landesgericht Steyr"
+                  },
+                  {
+                    "label": "GISA – IT-Dienstleistungen",
+                    "value": "39462992"
+                  },
+                  {
+                    "label": "GISA – Werbeagentur",
+                    "value": "39491251"
+                  },
+                  {
+                    "label": "UID",
+                    "value": "ATU83838778"
+                  },
+                  {
+                    "label": "E-Mail",
+                    "value": "[contact@mitcodean.com](mailto:contact@mitcodean.com)"
+                  },
+                  {
+                    "label": "Telefon",
+                    "value": "[+43 664 9494891](tel:+436649494891)"
+                  },
+                  {
+                    "label": "Website",
+                    "value": "https://mitcodean.com"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trade",
+            "title": "Gewerbeberechtigungen und Aufsicht",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Gewerbeberechtigungen: **Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik** sowie **Werbeagentur**."
+              },
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Gewerbebehörde",
+                    "value": "Bezirkshauptmannschaft Steyr-Land, Spitalskystraße 10a, 4400 Steyr"
+                  },
+                  {
+                    "label": "Website der Gewerbebehörde",
+                    "value": "https://www.bh-steyr-land.gv.at/"
+                  },
+                  {
+                    "label": "Kammerzugehörigkeit",
+                    "value": "Wirtschaftskammer Oberösterreich"
+                  },
+                  {
+                    "label": "Fachgruppen",
+                    "value": "Unternehmensberatung, Buchhaltung und Informationstechnologie; Werbung und Marktkommunikation"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Anwendbare gewerberechtliche Vorschriften: Gewerbeordnung 1994 (GewO), abrufbar im [Rechtsinformationssystem des Bundes](https://www.ris.bka.gv.at/)."
+              }
+            ]
+          },
+          {
+            "id": "activities",
+            "title": "Tätigkeitsbereich",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Diovis bietet individuelle Softwareentwicklung, Prozessautomatisierung, KI-gestützte Datenverarbeitung und IT-Infrastrukturleistungen an. Dazu zählen Web- und Desktop-Anwendungen, API- und ERP-/CRM-Integrationen, die Automatisierung wiederkehrender Abläufe sowie vereinbarte IT-, Netzwerk- und Supportleistungen. Ergänzend werden Websites, E-Commerce und digitale Sichtbarkeit angeboten. Konkrete Leistungen und Verantwortlichkeiten ergeben sich aus dem jeweiligen Auftrag."
+              }
+            ]
+          },
+          {
+            "id": "media",
+            "title": "Medieninhaber und grundlegende Richtung",
+            "blocks": [
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Medieninhaber",
+                    "value": "Diovis e.U., Inhaber Dean-Silviu Mitco"
+                  },
+                  {
+                    "label": "Sitz und Anschrift",
+                    "value": "Losenstein; Eisenstraße 13, 4460 Losenstein, Österreich"
+                  },
+                  {
+                    "label": "Unternehmensgegenstand",
+                    "value": "IT-Dienstleistungen und Werbeagentur"
+                  },
+                  {
+                    "label": "Grundlegende Richtung",
+                    "value": "Informationen über Diovis und seine Leistungen sowie fachliche Beispiele zu Softwareentwicklung, Prozessautomatisierung, IT-Infrastruktur und Digitalisierung von Geschäftsabläufen."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Als fiktiv gekennzeichnete Demos und Praxisbeispiele sind keine Kundenreferenzen."
+              }
+            ]
+          },
+          {
+            "id": "copyright",
+            "title": "Urheberrecht und Quellen",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Die veröffentlichten Texte, Bilder, Videos, Grafiken und sonstigen Inhalte sind nach Maßgabe der geltenden Rechte und jeweiligen Lizenzen geschützt. Rechte an Material Dritter bleiben unberührt. Eine Nutzung außerhalb gesetzlicher Erlaubnisse oder erteilter Lizenzen bedarf der erforderlichen Zustimmung der jeweiligen Rechteinhaber."
+              }
+            ]
+          },
+          {
+            "id": "external-links",
+            "title": "Externe Links",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Diese Website enthält Links zu Seiten Dritter. Für deren Inhalte sind grundsätzlich die jeweiligen Anbieter verantwortlich. Gesetzliche Verantwortlichkeiten bleiben unberührt."
+              }
+            ]
+          },
+          {
+            "id": "privacy",
+            "title": "Datenschutz",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer [Datenschutzerklärung](/legal-compliance/privacy-policy)."
+              }
+            ]
+          }
+        ]
+      },
+      "privacy": {
         "title": "Datenschutzerklärung",
-        "updated": "Stand: 2026 · gemäß DSGVO (EU) 2016/679 und DSG (Österreich)",
-        "section1": "1. Verantwortlicher",
-        "section1Desc": "Verantwortlicher im Sinne der DSGVO für die Verarbeitung personenbezogener Daten auf dieser Website ist:",
-        "company": "Diovis",
-        "section2": "2. Welche Daten wir erheben",
-        "section2Desc": "Wir erheben und verarbeiten folgende Kategorien personenbezogener Daten:",
-        "data1": "Kontaktdaten: Name, E-Mail-Adresse, Telefonnummer (bei Kontaktaufnahme)",
-        "data2": "Kommunikationsdaten: Inhalt von Nachrichten über unser Kontaktformular",
-        "data3": "Technische Daten, die Google beim Laden der eingebetteten Karte verarbeitet",
-        "data4": "Cookie-Auswahl: ob optionale externe Inhalte geladen werden dürfen",
-        "section3": "3. Zwecke und Rechtsgrundlagen der Verarbeitung",
-        "section3Contact": "Kontaktformular & Anfragen",
-        "section3ContactDesc": "Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, verarbeiten wir Ihre Daten zur Bearbeitung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Daten werden nicht an Dritte weitergegeben.",
-        "section3Cookies": "Website-Betrieb (technisch notwendige Cookies)",
-        "section3CookiesDesc": "Die Website speichert Ihre Cookie-Auswahl, damit sie sich merkt, ob externe Inhalte geladen werden dürfen. Die Auswahl wird ein Jahr lang gespeichert.",
-        "section3Analytics": "Eingebettete Google Maps (optional)",
-        "section3AnalyticsDesc": "Google Maps wird erst geladen, wenn Sie externe Inhalte in den Cookie-Einstellungen erlauben. Beim Laden kann Google technische Informationen wie Ihre IP-Adresse und Browserdaten erhalten.",
-        "section4": "4. Speicherdauer",
-        "section4Desc": "Kontaktanfragen werden nach Abschluss der Bearbeitung gelöscht, spätestens nach 3 Jahren, sofern keine gesetzliche Aufbewahrungspflicht besteht. Für steuerrechtlich relevante Unterlagen gilt eine Aufbewahrungspflicht von 7 Jahren gemäß österreichischem Steuerrecht.",
-        "section5": "5. Weitergabe von Daten",
-        "section5Desc": "Eine Weitergabe Ihrer personenbezogenen Daten an Dritte erfolgt nur, wenn:",
-        "section5Item1": "Sie ausdrücklich eingewilligt haben (Art. 6 Abs. 1 lit. a DSGVO)",
-        "section5Item2": "dies zur Vertragserfüllung erforderlich ist (Art. 6 Abs. 1 lit. b DSGVO)",
-        "section5Item3": "eine rechtliche Verpflichtung besteht (Art. 6 Abs. 1 lit. c DSGVO)",
-        "section5Processors": "Hosting-Anbieter: Vercel Inc. Die Google-Maps-Einbettung wird von Google bereitgestellt und erst nach Ihrer Zustimmung zu externen Inhalten geladen.",
-        "section6": "6. Ihre Rechte nach DSGVO",
-        "section6Desc": "Sie haben folgende Rechte gegenüber uns als Verantwortlichem:",
-        "section6Item1": "Auskunftsrecht (Art. 15 DSGVO): Auskunft über gespeicherte Daten",
-        "section6Item2": "Berichtigungsrecht (Art. 16 DSGVO): Korrektur unrichtiger Daten",
-        "section6Item3": "Löschungsrecht (Art. 17 DSGVO): Löschung Ihrer Daten",
-        "section6Item4": "Einschränkungsrecht (Art. 18 DSGVO): Einschränkung der Verarbeitung",
-        "section6Item5": "Widerspruchsrecht (Art. 21 DSGVO): Widerspruch gegen Verarbeitung",
-        "section6Item6": "Datenübertragbarkeit (Art. 20 DSGVO): Erhalt Ihrer Daten in maschinenlesbarem Format",
-        "section6Item7": "Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO): Jederzeit ohne Angabe von Gründen",
-        "section6Contact": "Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:",
-        "section7": "7. Beschwerderecht",
-        "section7Desc": "Sie haben das Recht, sich bei der österreichischen Datenschutzbehörde zu beschweren:",
-        "authorityName": "Österreichische Datenschutzbehörde",
-        "authorityAddress": "Barichgasse 40–42, 1030 Wien",
-        "authorityPhone": "Tel.: +43 1 52 152-0",
-        "section8": "8. Cookies",
-        "section8Desc": "Wir verwenden Cookies und ähnliche Technologien. Details zu eingesetzten Cookies, Zwecken und Ihrer Widerspruchsmöglichkeit entnehmen Sie bitte unserem Cookie-Banner beim ersten Besuch sowie den Cookie-Einstellungen (jederzeit aufrufbar über den Link im Footer).",
-        "cookieTitle": "Eingesetzte Cookies",
-        "cookie1": "Speichert Ihre Cookie-Einstellungen (1 Jahr)",
-        "cookie2": "Die Karte wird erst nach Ihrer Zustimmung zu externen Inhalten geladen; Google kann dann technische Daten verarbeiten.",
-        "section9": "9. Aktualität dieser Erklärung",
-        "section9Desc": "Diese Datenschutzerklärung wird bei Änderungen unserer Verarbeitungstätigkeiten oder bei Änderungen der Rechtslage aktualisiert. Die aktuelle Version ist stets unter www.mitcodean.com/datenschutz abrufbar."
-    },
-    "terms": {
-        "title": "Allgemeine Geschäftsbedingungen",
-        "updated": "Stand: 2026 · Diovis, Dean-Silviu Mitco",
-        "notice": "Diese AGB wurden nach dem Muster der WKO Österreich für IT-Dienstleistungsunternehmen erstellt. Sie ersetzen keine individuelle Rechtsberatung. Bei Fragen stehen wir unter contact@mitcodean.com zur Verfügung.",
-        "section1": "§ 1 Geltungsbereich und Vertragspartner",
-        "section1Desc": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen Diovis, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (nachfolgend \"Auftragnehmer\") und seinen Auftraggebern (nachfolgend \"Auftraggeber\") über IT-Dienstleistungen, Webentwicklung, digitales Marketing und damit verbundene Leistungen.",
-        "section1Desc2": "Abweichende Bedingungen des Auftraggebers werden nicht anerkannt, es sei denn, der Auftragnehmer stimmt ihrer Geltung ausdrücklich schriftlich zu. Individualvereinbarungen gehen diesen AGB vor.",
-        "section2": "§ 2 Vertragsschluss und Angebote",
-        "section2Desc": "Angebote des Auftragnehmers sind freibleibend und unverbindlich. Ein Vertrag kommt erst durch schriftliche Auftragsbestätigung des Auftragnehmers oder durch Beginn der Leistungserbringung zustande. Mündliche Nebenabreden bedürfen zu ihrer Wirksamkeit der schriftlichen Bestätigung.",
-        "section2Desc2": "Kostenvoranschläge werden nach bestem Wissen und Gewissen erstellt. Überschreitungen von bis zu 15 % gelten als vereinbart und werden dem Auftraggeber nicht gesondert mitgeteilt. Bei darüber hinausgehenden Überschreitungen erfolgt unverzüglich Information und Einholung der Zustimmung.",
-        "section3": "§ 3 Leistungsumfang",
-        "section3Desc": "Der Leistungsumfang ergibt sich aus der schriftlichen Auftragsbestätigung sowie allfälligen Leistungsbeschreibungen. Zu den Leistungen des Auftragnehmers gehören insbesondere:",
-        "section3Item1": "Konzeption, Gestaltung und Entwicklung von Websites und Webanwendungen",
-        "section3Item2": "Entwicklung von E-Commerce-Lösungen und Online-Shops",
-        "section3Item3": "Suchmaschinenoptimierung (SEO) und digitales Marketing",
-        "section3Item4": "Softwareentwicklung, Prozessautomatisierung und ERP-Integration",
-        "section3Item5": "Entwicklung mobiler Applikationen",
-        "section3Item6": "Laufende Wartung und technischer Support",
-        "section3Item7": "Beratungsleistungen im Bereich Digitalisierung und Branding",
-        "section3Desc2": "Änderungen oder Erweiterungen des vereinbarten Leistungsumfangs (Change Requests) bedürfen einer schriftlichen Vereinbarung und können zu einer Anpassung von Preis und Lieferzeit führen.",
-        "section4": "§ 4 Pflichten des Auftraggebers",
-        "section4Desc": "Der Auftraggeber verpflichtet sich zur rechtzeitigen Bereitstellung aller für die Leistungserbringung erforderlichen Unterlagen, Zugangsdaten, Inhalte und Informationen. Verzögerungen, die durch verspätete Mitwirkung entstehen, gehen zu Lasten des Auftraggebers und berechtigen den Auftragnehmer zur angemessenen Verlängerung der Lieferfrist.",
-        "section4Desc2": "Der Auftraggeber stellt sicher, dass bereitgestellte Inhalte (Texte, Bilder, Logos) frei von Rechten Dritter sind und deren Nutzung keine gesetzlichen Vorschriften verletzt. Er stellt den Auftragnehmer von allen Ansprüchen Dritter frei, die aus einer Verletzung dieser Pflicht entstehen.",
-        "section5": "§ 5 Preise, Zahlung und Fälligkeit",
-        "section5Desc": "Alle Preise verstehen sich in Euro, netto, zuzüglich der gesetzlichen Umsatzsteuer (20 %), sofern nicht ausdrücklich anders vereinbart.",
-        "section5Item1": "Projektarbeiten: 50 % bei Auftragserteilung, 50 % bei Projektabnahme. Bei Projekten über 2.000 € netto sind 3-Phasen-Zahlungen möglich (nach Vereinbarung).",
-        "section5Item2": "Wartungsverträge: monatliche Abrechnung, fällig jeweils am 1. des Monats.",
-        "section5Item3": "Stundensätze: nach gesonderter Vereinbarung.",
-        "section5Desc2": "Bei Zahlungsverzug werden Verzugszinsen in Höhe von 8 % über dem Basiszinssatz p.a. sowie eine Mahngebühr von 15 € je Mahnung verrechnet. Der Auftragnehmer behält sich vor, bei Zahlungsverzug die weitere Leistungserbringung bis zur vollständigen Zahlung auszusetzen.",
-        "section6": "§ 6 Lieferzeiten und Termine",
-        "section6Desc": "Vereinbarte Lieferzeiten gelten nur dann als verbindlich, wenn sie schriftlich als \"verbindlich\" bezeichnet wurden. Lieferverzögerungen durch höhere Gewalt, Streik oder verspätete Mitwirkung des Auftraggebers entbinden den Auftragnehmer von der Einhaltung vereinbarter Termine.",
-        "section7": "§ 7 Abnahme und Mängelbehebung",
-        "section7Desc": "Nach Fertigstellung wird die Leistung dem Auftraggeber zur Abnahme vorgelegt. Die Abnahme gilt als erteilt, wenn der Auftraggeber nicht innerhalb von 14 Tagen schriftlich begründete Mängel rügt.",
-        "section7Desc2": "Mängel, die auf fehlerhaften oder unvollständigen Angaben des Auftraggebers beruhen, begründen keine Gewährleistungsansprüche. Die Gewährleistungsfrist beträgt 2 Jahre ab Abnahme, eingeschränkt auf unentgeltliche Nachbesserung oder Ersatzlieferung.",
-        "section8": "§ 8 Urheberrecht und Nutzungsrechte",
-        "section8Desc": "Alle im Rahmen des Auftrags erstellten Werke (Code, Designs, Texte, Konzepte) bleiben bis zur vollständigen Bezahlung Eigentum des Auftragnehmers.",
-        "section8Desc2": "Mit vollständiger Bezahlung überträgt der Auftragnehmer dem Auftraggeber ein einfaches, nicht übertragbares Nutzungsrecht für den vereinbarten Verwendungszweck. Eine Weiterveräußerung oder Übertragung an Dritte bedarf der schriftlichen Zustimmung des Auftragnehmers.",
-        "section8Desc3": "Der Auftragnehmer behält das Recht, die erbrachten Arbeiten zu Referenzzwecken (Portfolio, Marketing) zu verwenden, sofern nicht ausdrücklich anders vereinbart.",
-        "section9": "§ 9 Vertraulichkeit",
-        "section9Desc": "Beide Parteien verpflichten sich, alle im Rahmen der Zusammenarbeit erhaltenen vertraulichen Informationen streng geheim zu halten und nicht an Dritte weiterzugeben. Diese Verpflichtung gilt auch nach Beendigung des Vertragsverhältnisses fort.",
-        "section10": "§ 10 Haftungsbeschränkung",
-        "section10Desc": "Der Auftragnehmer haftet für Schäden nur bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit ist die Haftung auf den Auftragswert begrenzt. Eine Haftung für entgangenen Gewinn, mittelbare Schäden und Folgeschäden ist ausgeschlossen, soweit gesetzlich zulässig.",
-        "section10Desc2": "Der Auftragnehmer übernimmt keine Haftung für die Erreichung bestimmter Platzierungen in Suchmaschinen (SEO) oder bestimmter Werbeerfolge (Marketing), da diese von Faktoren abhängen, die außerhalb seines Einflussbereichs liegen.",
-        "section11": "§ 11 Rechtstexte für Kundenprojekte",
-        "section11Desc": "Stellt der Auftragnehmer im Rahmen eines Projekts Entwürfe oder Vorlagen für Impressum, Datenschutzerklärung, AGB, Cookie-Banner oder sonstige Rechtstexte bereit, dienen diese ausschließlich als unverbindliche Muster und stellen keine Rechtsberatung dar. Der Auftragnehmer ist kein Rechtsanwalt und übernimmt keine Gewähr für deren Richtigkeit, Vollständigkeit oder Aktualität.",
-        "section11Desc2": "Der Auftraggeber ist allein dafür verantwortlich, diese Texte vor der Veröffentlichung auf seine individuellen Verhältnisse, seine tatsächlich eingesetzten Dienste und die geltende Rechtslage zu prüfen, bei Bedarf durch einen Rechtsanwalt oder die Wirtschaftskammer, und sie aktuell zu halten. Der Auftragnehmer haftet nicht für Schäden, Abmahnungen oder Strafen, die aus der Verwendung dieser Texte oder aus fehlenden, unvollständigen oder fehlerhaften Rechtstexten entstehen.",
-        "section12": "§ 12 Laufzeit und Kündigung",
-        "section12Desc": "Projektverträge enden mit der Abnahme der vereinbarten Leistung. Wartungsverträge werden auf unbestimmte Zeit geschlossen und können von beiden Seiten mit einer Frist von 4 Wochen zum Monatsende schriftlich gekündigt werden.",
-        "section12Desc2": "Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere bei Zahlungsverzug von mehr als 30 Tagen vor.",
-        "section13": "§ 13 Datenschutz",
-        "section13Desc": "Beide Parteien verpflichten sich zur Einhaltung der datenschutzrechtlichen Bestimmungen, insbesondere der DSGVO (EU) 2016/679 und des österreichischen Datenschutzgesetzes (DSG). Die Datenschutzerklärung des Auftragnehmers ist unter www.mitcodean.com/datenschutz abrufbar.",
-        "section14": "§ 14 Anwendbares Recht und Gerichtsstand",
-        "section14Desc": "Es gilt ausschließlich österreichisches Recht unter Ausschluss der Kollisionsnormen und des UN-Kaufrechts (CISG).",
-        "section14Desc2": "Für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag wird Steyr als Gerichtsstand vereinbart, soweit gesetzlich zulässig. Bei Verbraucherverträgen gelten die gesetzlichen Zuständigkeitsregeln.",
-        "section15": "§ 15 Salvatorische Klausel",
-        "section15Desc": "Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, so bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung möglichst nahekommt."
-    }
+        "updated": "Stand: 30.10.2026 · Version 1",
+        "notice": "Hinweis: Einige individuelle Provider-, Speicher- und Vertragsangaben sind noch nicht abschließend bestätigt. Öffentliche Anbieterstandards werden ausdrücklich von unseren nachgewiesenen Kontoeinstellungen unterschieden.",
+        "intro": [],
+        "sections": [
+          {
+            "id": "controller",
+            "title": "1. Verantwortlicher",
+            "blocks": [
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Verantwortlicher",
+                    "value": "Diovis e.U., Inhaber Dean-Silviu Mitco"
+                  },
+                  {
+                    "label": "Geschäftsanschrift",
+                    "value": "Eisenstraße 13, 4460 Losenstein, Österreich"
+                  },
+                  {
+                    "label": "E-Mail",
+                    "value": "[contact@mitcodean.com](mailto:contact@mitcodean.com)"
+                  },
+                  {
+                    "label": "Telefon",
+                    "value": "[+43 664 9494891](tel:+436649494891)"
+                  },
+                  {
+                    "label": "Website",
+                    "value": "https://mitcodean.com"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "general",
+            "title": "2. Allgemeines",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Wir verarbeiten personenbezogene Daten für den Betrieb der Website, die Bearbeitung von Anfragen, ausdrücklich genutzte Demo-Funktionen, die Terminorganisation und den Schutz unserer Systeme. Maßgeblich sind die tatsächlich genutzten Funktionen und die mitgeteilten Daten."
+              },
+              {
+                "type": "paragraph",
+                "text": "Unser Aufbewahrungsgrundsatz lautet: Daten werden für den jeweiligen Zweck genutzt und nach dessen Wegfall gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten oder sonstigen zulässigen Aufbewahrungsgründe entgegenstehen. Die Regeln externer Anbieter und ihrer technischen Protokolle sind davon zu unterscheiden."
+              }
+            ]
+          },
+          {
+            "id": "hosting",
+            "title": "3. Aufruf der Website und Hosting",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Die Website wird bei **Hostinger** betrieben. Beim Aufruf können IP-Adresse, Zeitpunkt, aufgerufene URL, Browser-/Geräteinformationen sowie sicherheits- und fehlerbezogene Protokolldaten verarbeitet werden. Dies dient Bereitstellung, Fehleranalyse und Missbrauchsschutz. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, unser berechtigtes Interesse an einem sicheren, funktionsfähigen Internetauftritt."
+              },
+              {
+                "type": "paragraph",
+                "text": "Hostingers öffentliche DPA sieht grundsätzlich Löschung von Kundendaten 30 Tage nach Vertragsende vor, vorbehaltlich dienstspezifischer Bedingungen. Dies ist keine allgemeine Frist für laufende Serverlogs. Die konkrete Vertragsgesellschaft, Serverregion sowie Log- und Backupregelung unseres Kontos sind noch nicht abschließend bestätigt."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Hostinger Datenverarbeitungsvereinbarung](https://www.hostinger.com/legal/dpa)"
+              }
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "4. Kontaktaufnahme und Kontaktformular",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Das Kontaktformular benötigt Name, E-Mail-Adresse und Nachricht. Telefonnummer und Betreff sind optional. Ein eigenes Firmenfeld besteht nicht; freiwillige Firmenangaben können im Nachrichtentext stehen. Wir nutzen die Angaben zur Beantwortung und gegebenenfalls Vorbereitung eines Auftrags. Je nach konkreter Anfrage beruht dies auf Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen Maßnahmen mit der betroffenen Person oder auf Art. 6 Abs. 1 lit. f DSGVO bei berechtigter geschäftlicher Kommunikation."
+              },
+              {
+                "type": "paragraph",
+                "text": "Der Server versendet Formularnachrichten über **Resend** an contact@mitcodean.com; die angegebene Besucheradresse wird als Antwortadresse verwendet. Unser Geschäftspostfach wird bei **Hostinger E-Mail** geführt. Die Anwendung prüft Eingaben und Anfrageherkunft und verwendet ein verborgenes Feld zur Erkennung automatisierter Einsendungen. Im Versandpfad ist keine eigene Kontaktdatenbank vorgesehen."
+              },
+              {
+                "type": "paragraph",
+                "text": "Resend veröffentlicht für Free/Pro/Scale eine Speicherung von E-Mail-Inhalten und Logs für 30 Tage, Backups für sieben Tage und Löschung verbleibender Kundendaten innerhalb von 90 Tagen nach Kontobeendigung. Enterprise-Regeln können abweichen. Nach Anbieterangabe erfolgt Speicherung in den USA; eine EU-Versandregion ändert dies nicht. Unser konkreter Tarif sowie Tracking-/Webhook-Einstellungen sind noch zu bestätigen."
+              },
+              {
+                "type": "paragraph",
+                "text": "Anfrage- und Postfachdaten werden nach Zweckfortfall nach unserem Aufbewahrungsgrundsatz gelöscht. Konkrete Postfach-, Archiv-, Weiterleitungs- und Backupregeln sind noch nicht abschließend dokumentiert."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Resend Datenschutzinformationen](https://resend.com/security/gdpr) · [Resend DPA](https://resend.com/legal/dpa)"
+              }
+            ]
+          },
+          {
+            "id": "ai-demo",
+            "title": "5. Interaktive KI-Demo",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Die Demo verarbeitet den aktuell eingegebenen Text, das ausgewählte Modell und die Spracheinstellung. Der eigene Server übermittelt den Text mit den für die Auswertung notwendigen Anweisungen an die **OpenAI API**. Auswählbar sind gpt-4.1-nano und gpt-5-nano. Ergebnisse werden im Zustand der geöffneten Demo angezeigt. Zeichnungen und Anhänge werden nicht hochgeladen oder analysiert; die dargestellte manuelle Freigabe ist eine Simulation."
+              },
+              {
+                "type": "paragraph",
+                "text": "Bitte geben Sie keine vertraulichen Informationen, personenbezogenen Daten Dritter oder besonderen Kategorien personenbezogener Daten ein. KI-Ergebnisse können fehlerhaft oder unvollständig sein und müssen vor geschäftlicher Verwendung geprüft werden."
+              },
+              {
+                "type": "paragraph",
+                "text": "Die Anwendung verwendet `store=false`. Laut öffentlicher OpenAI-Dokumentation werden API-Daten grundsätzlich nicht ohne Opt-in für Modelltraining verwendet; Abuse-Monitoring-Logs können standardmäßig bis zu 30 Tage gespeichert werden, vorbehaltlich dokumentierter Ausnahmen, etwa gesetzlicher oder notwendiger Schutzgründe. `store=false` bedeutet keine vollständige Speicherfreiheit."
+              },
+              {
+                "type": "paragraph",
+                "text": "Die konkrete Vertrags-/Projektzuordnung, Datenfreigabe- und Retention-Einstellungen, API-Region und Transferbedingungen unseres Kontos sind noch zu bestätigen. Die freiwillige Demo dient der Darstellung unserer Leistungen; die abschließende dokumentbezogene Zuordnung ihrer datenschutzrechtlichen Grundlage ist noch offen."
+              },
+              {
+                "type": "paragraph",
+                "text": "[OpenAI API-Datenkontrollen](https://developers.openai.com/api/docs/guides/your-data)"
+              }
+            ]
+          },
+          {
+            "id": "abuse-prevention",
+            "title": "6. Missbrauchsschutz und Nutzungslimits",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Geschützte Demo-Aufrufe sind auf fünf Versuche innerhalb eines rollierenden 24-Stunden-Fensters je Besucher- und Netzwerkkennung begrenzt. Zusätzlich bestehen ein Mindestabstand sowie globale und gleichzeitige Nutzungslimits. Zweck ist der Schutz von Verfügbarkeit und API-Kontingent; zugrunde liegt das berechtigte Interesse am Missbrauchsschutz nach Art. 6 Abs. 1 lit. f DSGVO."
+              },
+              {
+                "type": "paragraph",
+                "text": "Verarbeitet werden eine signierte Besucherkennung, mittels HMAC pseudonymisierte Besucher-/Netzwerkkennungen, Versuchszeitpunkte und technische Reservierungen. Dies ist keine vollständige Anonymisierung; mehrere Nutzer eines Netzanschlusses können eine Netzwerkgrenze teilen. Der Limiter speichert keine Roh-Anfragetexte."
+              },
+              {
+                "type": "paragraph",
+                "text": "Die Anwendung unterstützt lokalen Dateispeicher und **Upstash Redis**; öffentlicher Betrieb setzt im Code einen gemeinsamen Redis-Speicher und eine verifizierte IP-Header-Konfiguration voraus. Ob und in welcher Region Upstash produktiv eingesetzt wird, ist noch nicht abschließend bestätigt."
+              },
+              {
+                "type": "paragraph",
+                "text": "Die Zählung betrachtet 24 Stunden. Die Redis-TTL von rund 24 Stunden wird bei Schreibvorgängen erneuert; sie garantiert keine Löschung sämtlicher Datensätze, Logs und Backups nach exakt 24 Stunden. Konkrete Anbieter-/Backupfristen bleiben zu bestätigen."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Upstash Datenschutz-/Vertragsinformationen](https://upstash.com/trust/dpa.pdf)"
+              }
+            ]
+          },
+          {
+            "id": "booking",
+            "title": "7. Terminbuchung über Calendly",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Unser [Terminbuchungslink](https://calendly.com/mitco-deansilviu/30min) öffnet **Calendly** in einem neuen Tab. Im geprüften Website-Code ist kein Calendly-Widget eingebettet. Beim Besuch der externen Seite verarbeitet Calendly die dort angegebenen Daten; Diovis nutzt die erhaltenen Buchungsangaben für die Terminorganisation."
+              },
+              {
+                "type": "paragraph",
+                "text": "Calendly beschreibt US-Rechenzentren und Standardvertragsklauseln im DPA als Transferinstrument. Aktive Buchungsfelder, Kalender-/Meetingverknüpfungen, Kontovertragsstand und konkrete Aufbewahrung sind noch zu bestätigen. Die rechtliche Grundlage richtet sich nach dem konkreten Buchungszweck, insbesondere vorvertraglichen Maßnahmen oder dem berechtigten Interesse an geschäftlicher Kommunikation. Alternativ erreichen Sie uns direkt per E-Mail oder Telefon."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Calendly Speicherorte und Transfers](https://calendly.com/help/data-storage-and-international-data-transfers) · [Calendly Löschfunktionen](https://calendly.com/help/how-to-delete-personal-data-in-calendly)"
+              }
+            ]
+          },
+          {
+            "id": "cookies",
+            "title": "8. Cookies und ähnliche Technologien",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Die Anwendung nutzt Cookie- und Spracheinstellungen sowie Demo-Sicherheitskennungen. Für unbedingt erforderliche Endgerätezugriffe kann eine Einwilligung nach §165 Abs. 3 TKG 2021 entbehrlich sein; nicht erforderliche Cookies oder eingebettete Dienste benötigen gegebenenfalls vorherige Einwilligung."
+              },
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "mitcodean_cookie_consent",
+                    "value": "Speichert die Auswahl nach Betätigung der Cookie-Einstellungen: ein Jahr, Path=/, SameSite=Lax."
+                  },
+                  {
+                    "label": "diovis_inquiry_visitor",
+                    "value": "Signierte Kennung bei geschützten Demo-Anfragen: 24 Stunden, Path=/api/analyze-inquiry, HttpOnly, SameSite=Strict; Secure bei serverseitig erkannter HTTPS-URL."
+                  },
+                  {
+                    "label": "NEXT_LOCALE",
+                    "value": "Sprachcookie von next-intl, abhängig von Spracheinstellung und vorhandenen Cookies; Sitzungscookie nach aktueller Konfiguration, SameSite=Lax."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Eigene Local-/Session-Storage-Aufrufe und aktive Google-Maps-/Analytics-Skripte wurden im geprüften Seitenbaum nicht gefunden. Alte Quelldateien allein bedeuten keine aktive Einbindung. Das vollständige produktive Browser-/Hostinginventar ist noch nicht bestätigt. Cookie-Einstellungen können über den Footer erneut geöffnet werden."
+              }
+            ]
+          },
+          {
+            "id": "recipients",
+            "title": "9. Empfänger und internationale Übermittlungen",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Relevante Dienste sind Hostinger für Website und Geschäftspostfach, Resend für Formular-E-Mails, OpenAI bei Demo-Nutzung, Calendly bei Terminbuchung und Upstash nur bei tatsächlichem Redis-Betrieb. Weitere Empfänger können aus tatsächlich aktivierten Postfach-, Kalender-, Meeting- oder Webhookverknüpfungen folgen; diese sind noch vollständig zuzuordnen."
+              },
+              {
+                "type": "paragraph",
+                "text": "Öffentliche Anbieterunterlagen sehen je Dienst Standardvertragsklauseln oder weitere geeignete Transfermechanismen vor. Daraus folgt weder eine Zusicherung „nur EU“ noch ein Nachweis aller individuellen Vertrags- und Kontoeinstellungen. Die konkreten juristischen Einheiten, Rollen, Unterauftragnehmer und Übermittlungsgrundlagen unserer Konten sind noch nicht vollständig bestätigt."
+              }
+            ]
+          },
+          {
+            "id": "retention",
+            "title": "10. Speicherdauer und Löschung",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Personenbezogene Daten werden für den jeweiligen Zweck verarbeitet und nach dessen Wegfall gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten oder sonstigen zulässigen Aufbewahrungsgründe, etwa zur Wahrung von Rechtsansprüchen, entgegenstehen. Dieser Grundsatz gilt für unsere eigenen Anfrage-, Kommunikations- und Buchungsdaten."
+              },
+              {
+                "type": "paragraph",
+                "text": "Providerprotokolle, Backups und Archive unterliegen gesonderten Bedingungen. Die oben genannten Anbieterstandards sind keine pauschalen Diovis-Fristen. Die konkreten kontoabhängigen Log-, Postfach-, Archiv-, Backup- und Löschabläufe sind noch nicht abschließend dokumentiert. Ein Cookieablauf oder Zählfenster löst nicht automatisch die Löschung aller zugehörigen Daten aus."
+              }
+            ]
+          },
+          {
+            "id": "rights",
+            "title": "11. Rechte betroffener Personen",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Unter den gesetzlichen Voraussetzungen und Ausnahmen bestehen insbesondere folgende Rechte:"
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  "Auskunft (Art. 15 DSGVO)",
+                  "Berichtigung (Art. 16 DSGVO)",
+                  "Löschung (Art. 17 DSGVO)",
+                  "Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+                  "Datenübertragbarkeit (Art. 20 DSGVO)",
+                  "Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21 DSGVO)",
+                  "Widerruf einer erteilten Einwilligung für die Zukunft (Art. 7 Abs. 3 DSGVO)"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Datenschutzanfragen richten Sie bitte an [contact@mitcodean.com](mailto:contact@mitcodean.com)."
+              }
+            ]
+          },
+          {
+            "id": "complaints",
+            "title": "12. Beschwerderecht",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Sie können Beschwerde bei der Österreichischen Datenschutzbehörde, Barichgasse 40–42, 1030 Wien, Österreich, erheben."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Österreichische Datenschutzbehörde](https://www.dsb.gv.at/)"
+              }
+            ]
+          },
+          {
+            "id": "updates",
+            "title": "13. Aktualisierung",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Diese Erklärung wird an Änderungen der tatsächlichen Verarbeitungen oder rechtlichen Anforderungen angepasst. Die veröffentlichte Fassung finden Sie unter der [Datenschutzerklärung dieser Website](/legal-compliance/privacy-policy)."
+              }
+            ]
+          }
+        ]
+      },
+      "terms": {
+        "title": "Allgemeine Geschäftsbedingungen – B2B IT-Dienstleistungen",
+        "updated": "Stand: 30.10.2026 · Version 1",
+        "notice": "",
+        "intro": [
+          "**Vertragspartner:** Diovis e.U., Inhaber Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein, Österreich. Firmenbuchgericht: Landesgericht Steyr. Firmenbuchnummer: Das ist die FIrmenbuchnummer noch einzutragen."
+        ],
+        "sections": [
+          {
+            "id": "scope",
+            "title": "§ 1 Geltungsbereich und Vertragsrangfolge",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Diese AGB gelten ausschließlich gegenüber **Unternehmern (B2B)** für die vereinbarten IT-, Software-, Automatisierungs-, Netzwerk-, Wartungs- sowie ergänzenden Website- und Agenturleistungen von Diovis. Verbraucherverträge sind von dieser Fassung nicht erfasst.",
+                  "Die konkreten Leistungen, Vergütungen und Termine ergeben sich aus dem jeweiligen schriftlich dokumentierten Angebot, der Leistungsbeschreibung und dem Projekt- oder Wartungsvertrag. **Individuell vereinbarte Regelungen gehen diesen AGB vor.**",
+                  "Abweichende Bedingungen des Auftraggebers gelten nur, soweit sie ausdrücklich vereinbart wurden. Diese AGB sind dem Auftraggeber **vor Vertragsschluss** zur Kenntnis zu bringen und ausdrücklich einzubeziehen."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "offers",
+            "title": "§ 2 Angebote und Vertragsschluss",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Ein konkretes Angebot beschreibt Umfang, Ergebnisse, Ausschlüsse, Preis, Zahlungsplan, Laufzeit beziehungsweise Termine und Mitwirkungspflichten. Die Verbindlichkeit und Gültigkeitsdauer ergeben sich aus dem jeweiligen Angebot.",
+                  "Ein Auftrag kommt durch die dokumentierte Annahme eines Angebots beziehungsweise eine gesonderte Vereinbarung zustande.",
+                  "Kostenschätzungen sind ausdrücklich als solche zu kennzeichnen. Eine automatische kostenpflichtige Überschreitung von Paketpreisen ist nicht vereinbart. Zusatzleistungen und Mehrkosten werden vor Umsetzung im Rahmen eines **Change Requests** freigegeben."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cooperation",
+            "title": "§ 3 Leistungsumfang und Mitwirkung",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Gegenstand sind ausschließlich die individuell vereinbarten Leistungen. Dies können insbesondere Prozessautomatisierungen, individuelle Web-/Desktop-Anwendungen, Schnittstellen, KI-Integrationen, Datenaufbereitung und IT-Infrastrukturleistungen sein; weitere Leistungen werden im jeweiligen Auftrag beschrieben.",
+                  "Nicht ausdrücklich enthaltene Leistungen (zum Beispiel laufende Lizenzgebühren, Hosting, Wartung, neue Funktionen oder externe Facharbeiten) sind nicht automatisch Bestandteil des Projektpreises.",
+                  "Der Auftraggeber stellt vereinbarte Informationen, Ansprechpartner, Zugänge und Freigaben rechtzeitig zur Verfügung und ist für deren sachliche Richtigkeit sowie die Berechtigung zur Bereitstellung von Daten und Inhalten verantwortlich.",
+                  "Zugangsdaten werden nur über vereinbarte sichere Kanäle ausgetauscht. Erforderliche Rechte werden nach Ende des Auftrags entsprechend der Vereinbarung zurückgegeben, eingeschränkt oder entzogen."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "third-party",
+            "title": "§ 4 Drittanbieter, Cloud und externe Fachleistungen",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Hosting, Domains, OpenAI-/Anthropic-API-Konten, Cloud-Software und andere laufende Drittleistungen werden **grundsätzlich vom Auftraggeber auf eigenen Accounts beauftragt und bezahlt**, sofern nicht im Einzelfall anders vereinbart.",
+                  "Verfügbarkeit, Preise, Nutzungsbedingungen und Rechte an Drittsoftware richten sich nach den jeweiligen Anbieterbedingungen. Diovis übernimmt keine pauschale Garantie für deren unveränderte Leistungen.",
+                  "Elektro- oder Kabelinstallationen, die eine gesonderte Berechtigung verlangen, sind **nicht Teil der von Diovis selbst ausgeführten Leistungen**. Soweit erforderlich, wird nach vorheriger Vereinbarung ein hierfür befugtes Fachunternehmen herangezogen; Vertragsbeziehung, Beauftragung und Kosten werden vorab geklärt.",
+                  "Unterauftragsverarbeiter werden bei personenbezogener Datenverarbeitung nur entsprechend einer gegebenenfalls erforderlichen AVV eingesetzt."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fees",
+            "title": "§ 5 Preise und Zahlungsbedingungen",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Die Höhe des Entgelts ergibt sich aus dem Angebot. Diovis verwendet insbesondere Paket- beziehungsweise Fixpreise für klar beschriebene Projekte und nach Vereinbarung Stundensätze für Zusatzleistungen und Support.",
+                  "Standard-Zahlungsplan, wenn im Auftrag ausdrücklich vereinbart: **50 % bei Beauftragung, 50 % nach Inbetriebnahme**. Für größere Projekte kann individuell ein **50 % / 30 % / 20 %**-Meilensteinplan vereinbart werden. Die dazugehörigen Meilensteine und Fälligkeiten werden im konkreten Auftrag festgelegt; maßgeblich ist stets diese individuelle Vereinbarung.",
+                  "Soweit im Angebot nicht anders festgelegt, beträgt das Zahlungsziel **14 Tage ab Rechnungsdatum**.",
+                  "Diovis wendet derzeit die österreichische Kleinunternehmerbefreiung an. Von dieser Befreiung erfasste Leistungen werden **ohne Ausweis österreichischer Umsatzsteuer** verrechnet (§ 6 Abs. 1 Z 27 UStG). Bei grenzüberschreitenden Leistungen oder abweichendem Umsatzsteuerstatus richtet sich die Rechnung nach den jeweils anwendbaren steuerrechtlichen Regeln.",
+                  "Kostenpflichtige Mehrleistungen und Änderungen werden vor ihrer Umsetzung dokumentiert und freigegeben."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "timelines",
+            "title": "§ 6 Termine, Prüfungen und Änderungen",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Verbindliche Termine und Meilensteine sind ausdrücklich im Auftrag festzuhalten. Verzögerungen durch nicht rechtzeitig erbrachte Mitwirkung können eine dokumentierte Anpassung des Zeitplans erforderlich machen.",
+                  "Änderungen des vereinbarten Leistungsumfangs, der technischen Voraussetzungen oder der Abnahmekriterien sind gesondert zu vereinbaren (Change Request). Preis- und Terminauswirkungen werden vor der Umsetzung mitgeteilt."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "acceptance",
+            "title": "§ 7 Bereitstellung, Inbetriebnahme und Abnahme",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Bei abnahmefähigen Werkleistungen werden Liefergegenstände und vereinbarte Abnahmekriterien im Auftrag festgehalten. Der Kunde erhält Gelegenheit, die vereinbarten Kriterien zu überprüfen; das Ergebnis wird in einem Abnahmeprotokoll dokumentiert.",
+                  "Inbetriebnahme und Abnahme können unterschiedliche Ereignisse sein. Etwaige Vergütungsmeilensteine richten sich nach dem jeweiligen Vertrag.",
+                  "Bei festgestellten Abweichungen werden die Punkte dokumentiert und im Rahmen der rechtlichen und vertraglichen Pflichten behandelt."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "introduction",
+            "title": "§ 8 Begleitete Einführungsphase",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Im vereinbarten Projektpaket ist eine **begleitete Einführungsphase von 14 Kalendertagen ab der vereinbarten Inbetriebnahme** enthalten. Gegenstand sind die im Projekt vereinbarten Funktionen und deren Bedienung.",
+                  "Die Einführung umfasst Rückfragen zur **Bedienung und zu den vereinbarten Funktionen** sowie angemessene Unterstützung bei der ersten Nutzung. Eine feste Zahl von Fragen oder Einweisungsstunden wird hierfür nicht zugesagt oder begrenzt; die Leistung bleibt ihrem sachlichen Gegenstand nach auf die Einführung beschränkt.",
+                  "Neue Funktionen, zusätzliche Integrationen, inhaltlich neue Anforderungen oder eigenständige Weiterentwicklungen sind nicht eingeschlossen und bedürfen einer gesonderten Beauftragung. Gesetzliche Gewährleistungsrechte werden dadurch nicht berührt.",
+                  "Die Einführung begründet keine ununterbrochene Erreichbarkeit und keine eigene, von einem gesonderten SLA unabhängige Reaktionsfrist. Konkrete Supportzeiten, Reaktionszusagen, Tarife und ein etwaiger Nacht-Notdienst werden ausschließlich in der gesonderten Kundenvereinbarung festgelegt."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "software-rights",
+            "title": "§ 9 Urheberrecht, Software-Nutzungsrechte und Quellcode",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Soweit nicht anders vereinbart, behält Diovis die Rechte an eigenen, vorbestehenden und wiederverwendbaren Komponenten sowie am nicht ausdrücklich überlassenen Quellcode; Rechte Dritter und Open-Source-Lizenzen bleiben unberührt.",
+                  "Nach vollständiger Zahlung erhält der Auftraggeber für die vereinbarungsgemäß überlassene Software grundsätzlich ein **einfaches, zeitlich unbefristetes Nutzungsrecht für den ausdrücklich vereinbarten betrieblichen Zweck**. Räumlicher, sachlicher und organisatorischer Umfang sind erforderlichenfalls im Projektvertrag zu bestimmen.",
+                  "Die **Herausgabe des Quellcodes**, exklusive Verwertungsrechte, gesonderte Bearbeitungsrechte oder Rechte zur Weiterveräußerung sind **nicht automatisch enthalten**. Eine solche Überlassung kann individuell gegen gesondert vereinbartes Entgelt erfolgen.",
+                  "Soweit gesetzlich zwingende Rechte des rechtmäßigen Nutzers an Computerprogrammen bestehen, bleiben diese unberührt; insbesondere werden gesetzliche Nutzungs- und Interoperabilitätsrechte nicht pauschal ausgeschlossen.",
+                  "Die Verwendung von Kundennamen, Logos, Projektdetails oder Ergebnissen als Referenz erfolgt **ausschließlich nach vorheriger ausdrücklicher Zustimmung** des betreffenden Kunden."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "support",
+            "title": "§ 10 Wartung und Support",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "**Laufende Wartung, Bereitschaft, Überwachung und Reaktionsgarantien entstehen nur aufgrund einer gesonderten, ausdrücklich vereinbarten Wartungs-/Supportvereinbarung einschließlich SLA.** Der Abschluss eines Softwareprojekts begründet allein keinen Anspruch auf einen 24/7-Notdienst.",
+                  "Konkrete Servicefenster, Meldekanäle, Störungsklassen, Reaktionsfristen, Vertretung bei Abwesenheit und Stundensätze – einschließlich eines eventuell gebuchten kritischen Nacht-Notdienstes – werden im jeweiligen Wartungsvertrag festgelegt.",
+                  "Eine zugesagte Reaktionszeit bezieht sich ausschließlich auf die **erste qualifizierte Rückmeldung**, nicht auf eine garantierte Behebung innerhalb derselben Frist."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "security-ai",
+            "title": "§ 11 Sicherheit, KI-Dienste und Vertraulichkeit",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Beide Parteien behandeln vertrauliche Projektinformationen und Zugangsdaten entsprechend ihrer Schutzbedürftigkeit vertraulich. Offenlegung an berechtigte Personen oder Dienstleister erfolgt nur soweit erforderlich und rechtlich zulässig.",
+                  "Bei KI-Integrationen werden zugelassene Datenarten, die Anbieter, die erforderliche menschliche Kontrolle, technische Grenzen und Zuständigkeiten im Auftrag festgelegt. KI-generierte Ergebnisse sind nicht von vornherein fehlerfrei; geschuldete Eigenschaften und Prüfpflichten bestimmen sich nach der konkreten Vereinbarung.",
+                  "Tatsächlich zugesagte Sicherheitsmaßnahmen werden gegebenenfalls in einer TOM-Anlage dokumentiert. Unbestätigte Sicherheitsmaßnahmen gelten nicht allein durch diese AGB als implementiert."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "privacy",
+            "title": "§ 12 Datenschutz",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Die Parteien beachten die auf ihre jeweilige Tätigkeit anwendbaren Datenschutzvorschriften. Falls Diovis personenbezogene Daten **im Auftrag** des Kunden verarbeitet, ist vor Beginn der entsprechenden Verarbeitung eine nach Art. 28 DSGVO erforderliche **Auftragsverarbeitungsvereinbarung einschließlich passender TOMs und Unterauftragsverarbeiterregelungen** abzuschließen.",
+                  "Die **Website-Datenschutzerklärung** informiert über die Datenverarbeitung beim Besuch von Diovis-Onlineangeboten; sie ersetzt weder eine projektspezifische AVV noch ein Datenschutzkonzept für Kundensysteme."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "liability",
+            "title": "§ 13 Gewährleistung und Haftung",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Die Rechte und Pflichten bei Mängeln richten sich nach den anwendbaren gesetzlichen Bestimmungen und wirksamen Individualvereinbarungen. Konkrete Beschaffenheiten, Prüfverfahren und gegebenenfalls Servicelevels ergeben sich aus dem Auftrag.",
+                  "Für Schäden gelten die gesetzlichen Haftungsregeln und etwaige **rechtlich geprüfte, wirksam vereinbarte** Einschränkungen."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "late-payment",
+            "title": "§ 14 Zahlungsverzug",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Bei Zahlungsverzug gelten die anwendbaren gesetzlichen Bestimmungen, insbesondere zu Verzugszinsen und zulässigen Betreibungskosten im Unternehmergeschäft.",
+                  "Eine etwaige Aussetzung weiterer Leistungen ist nur nach Maßgabe des Gesetzes und der wirksamen vertraglichen Vereinbarungen zulässig."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "termination",
+            "title": "§ 15 Laufzeit und Beendigung",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Einmalige Projektleistungen werden nach dem jeweiligen Leistungs- und Abnahmemodell abgeschlossen. Laufzeiten, Kündigungsfristen und Kündigungsfolgen laufender Wartungsleistungen sind im jeweiligen Wartungsvertrag festzulegen.",
+                  "Regelungen zur Übergabe, Datenrückgabe, Zugangsentzug, Dokumentation und gegebenenfalls weiteren Nutzungsrechten werden im konkreten Vertrag und in einer gegebenenfalls erforderlichen AVV festgehalten."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "law-languages",
+            "title": "§ 16 Recht, Gerichtsstand und Sprachfassungen",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Für B2B-Verträge soll österreichisches Recht gelten, soweit wirksam vereinbar und keine zwingenden Regelungen entgegenstehen.",
+                  "Es gelten die gesetzlichen Zuständigkeitsregeln.",
+                  "Diese AGB werden auf Deutsch und Englisch zur Verfügung gestellt. **Im Fall von Abweichungen soll die deutsche Fassung maßgeblich sein**, sofern diese Regelung wirksam in den jeweiligen Vertrag einbezogen wurde und zwingendes Recht nicht entgegensteht."
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     "cookieBanner": {
         "title": "Ihre Datenschutzeinstellungen",

@@ -429,164 +429,713 @@
         "subtitle": "A selection of my work"
     },
     "legal": {
-    "title": "Legal",
-    "notice": {
+      "title": "Legal",
+      "notice": {
         "title": "Legal Notice",
-        "updated": "Last updated: 2026",
-        "companyInfo": "Company Information according to § 5 ECG / § 63 GewO",
-        "companyName": "Company Name",
-        "owner": "Owner",
-        "legalForm": "Legal Form",
-        "legalFormValue": "Sole Proprietorship (e.U.)",
-        "address": "Address",
-        "addressValue": "Eisenstraße 13, 4460 Losenstein, Austria",
-        "phone": "Phone",
-        "email": "Email",
-        "website": "Website",
-        "uid": "VAT ID",
-        "uidValue": "[to be added after business registration]",
-        "gisa": "GISA Number",
-        "authority": "Trade Authority",
-        "authorityValue": "District Commission Steyr-Land",
-        "member": "Member of",
-        "memberValue": "Austrian Chamber of Commerce (WKO), Information & Consulting",
-        "authorityAddress": "District Commission Steyr-Land",
-        "authorityStreet": "Spitalskystraße 10a",
-        "authorityCity": "4400 Steyr",
-        "authorityLink": "Authority Website",
-        "businessPurpose": "Business Purpose",
-        "businessPurposeDesc": "Advertising agency and IT services with a focus on software development. The company provides services in the field of information technology, in particular:",
-        "purpose1": "Concept, development and maintenance of websites and web applications",
-        "purpose2": "Development and operation of online shops (E-Commerce)",
-        "purpose3": "Digital marketing services (SEO, Ads, Social Media, Email)",
-        "purpose4": "Software development & business process automation",
-        "purpose5": "ERP & booking system integrations",
-        "purpose6": "Mobile application development",
-        "purpose7": "Consulting on digital strategies & branding",
-        "legalBasis": "Applicable Legal Provisions",
-        "legalBasisDesc": "The activity is subject to the Austrian Trade Regulations (GewO 1994) and the relevant provisions of the IT services sector. Professional regulations can be accessed at",
-        "liability": "Liability Disclaimer",
-        "liabilityDesc": "The contents of this website have been created with the greatest possible care. No guarantee is given for accuracy, completeness or timeliness. No liability is accepted for external links.",
-        "copyright": "Copyright",
-        "copyrightDesc": "Content and works on this website are subject to Austrian copyright law. Any use beyond the limits of copyright requires written permission.",
-        "privacyResponsibility": "Privacy & Responsibility",
-        "responsible": "Responsible Person",
-        "contentResponsible": "Content Responsible",
-        "professionalTitle": "Professional Title",
-        "professionalTitleValue": "Software Developer",
-        "countryOfAward": "Country of Award",
-        "countryOfAwardValue": "Austria",
-        "editorial": "Editorial Policy",
-        "editorialDesc": "Provision of information, analyses and expert articles on custom software, IT infrastructure, IT security and digital business processes. References and case studies serve as social proof.",
-        "imageCredits": "Image Credits",
-        "imageCreditsDesc": "All images, photos and graphics are copyrighted. The image rights belong to Dean-Silviu Mitco.",
-        "socials": "Other online presences where this legal notice applies.",
-        "backTo": "Back to"
-    },
-    "privacy": {
+        "updated": "Last updated: 30 October 2026 · Version 1",
+        "notice": "",
+        "intro": [],
+        "sections": [
+          {
+            "id": "company",
+            "title": "Business details",
+            "blocks": [
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Registered business name",
+                    "value": "Diovis e.U."
+                  },
+                  {
+                    "label": "Proprietor",
+                    "value": "Dean-Silviu Mitco"
+                  },
+                  {
+                    "label": "Legal form",
+                    "value": "Registered sole proprietor (e.U.), Austria"
+                  },
+                  {
+                    "label": "Registered office",
+                    "value": "Losenstein, Austria"
+                  },
+                  {
+                    "label": "Business address",
+                    "value": "Eisenstraße 13, 4460 Losenstein, Austria"
+                  },
+                  {
+                    "label": "Companies Register number",
+                    "value": "Das ist die FIrmenbuchnummer noch einzutragen"
+                  },
+                  {
+                    "label": "Companies Register court",
+                    "value": "Landesgericht Steyr"
+                  },
+                  {
+                    "label": "GISA – IT services",
+                    "value": "39462992"
+                  },
+                  {
+                    "label": "GISA – advertising agency",
+                    "value": "39491251"
+                  },
+                  {
+                    "label": "VAT identification number",
+                    "value": "ATU83838778"
+                  },
+                  {
+                    "label": "Email",
+                    "value": "[contact@mitcodean.com](mailto:contact@mitcodean.com)"
+                  },
+                  {
+                    "label": "Phone",
+                    "value": "[+43 664 9494891](tel:+436649494891)"
+                  },
+                  {
+                    "label": "Website",
+                    "value": "https://mitcodean.com"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trade",
+            "title": "Trade authorisations and supervision",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Registered trades: **Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik** (automatic data processing and information technology services) and **Werbeagentur** (advertising agency)."
+              },
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Trade authority",
+                    "value": "Bezirkshauptmannschaft Steyr-Land, Spitalskystraße 10a, 4400 Steyr, Austria"
+                  },
+                  {
+                    "label": "Trade authority website",
+                    "value": "https://www.bh-steyr-land.gv.at/"
+                  },
+                  {
+                    "label": "Chamber membership",
+                    "value": "Wirtschaftskammer Oberösterreich (Upper Austrian Economic Chamber)"
+                  },
+                  {
+                    "label": "Professional groups",
+                    "value": "Unternehmensberatung, Buchhaltung und Informationstechnologie; Werbung und Marktkommunikation"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Applicable trade legislation: Austrian Trade Regulation Act 1994 (GewO), available through the [Austrian Legal Information System](https://www.ris.bka.gv.at/)."
+              }
+            ]
+          },
+          {
+            "id": "activities",
+            "title": "Business activities",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Diovis provides custom software development, business process automation, AI-supported data processing and IT infrastructure services. These include web and desktop applications, API and ERP/CRM integration, automation of recurring workflows and specifically agreed IT, network and support services. Website development, e-commerce and digital visibility services are also offered. The individual engagement defines the scope and responsibilities."
+              }
+            ]
+          },
+          {
+            "id": "media",
+            "title": "Media owner and editorial direction",
+            "blocks": [
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Media owner",
+                    "value": "Diovis e.U., proprietor Dean-Silviu Mitco"
+                  },
+                  {
+                    "label": "Registered office and address",
+                    "value": "Losenstein; Eisenstraße 13, 4460 Losenstein, Austria"
+                  },
+                  {
+                    "label": "Business purpose",
+                    "value": "IT services and advertising agency"
+                  },
+                  {
+                    "label": "Editorial direction",
+                    "value": "Information about Diovis and its services, and practical examples concerning software development, process automation, IT infrastructure and digital business processes."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Demos and practical examples labelled fictional are not customer references."
+              }
+            ]
+          },
+          {
+            "id": "copyright",
+            "title": "Copyright and credits",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Published texts, images, videos, graphics and other content are protected to the extent provided by applicable law and their respective licences. Third-party rights remain unaffected. Use outside statutory permissions or granted licences requires the necessary permission from the relevant rights holders."
+              }
+            ]
+          },
+          {
+            "id": "external-links",
+            "title": "External links",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "This website contains links to third-party websites. The respective providers are generally responsible for their content. Mandatory legal responsibilities remain unaffected."
+              }
+            ]
+          },
+          {
+            "id": "privacy",
+            "title": "Privacy",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Information about personal data processing is available in our [Privacy Policy](/legal-compliance/privacy-policy)."
+              }
+            ]
+          }
+        ]
+      },
+      "privacy": {
         "title": "Privacy Policy",
-        "updated": "Last updated: 2026 · in accordance with GDPR (EU) 2016/679 and Austrian Data Protection Act",
-        "section1": "1. Responsible Party",
-        "section1Desc": "The responsible party within the meaning of the GDPR for the processing of personal data on this website is:",
-        "company": "Diovis",
-        "section2": "2. What data we collect",
-        "section2Desc": "We collect and process the following categories of personal data:",
-        "data1": "Contact details: Name, email address, phone number (when contacting us)",
-        "data2": "Communication data: Content of messages via our contact form",
-        "data3": "Technical data processed by Google when you choose to load the embedded map",
-        "data4": "Cookie preference: whether optional external media is allowed",
-        "section3": "3. Purposes and legal bases of processing",
-        "section3Contact": "Contact form & inquiries",
-        "section3ContactDesc": "If you contact us via the contact form or by email, we process your data to handle your inquiry on the basis of Art. 6 para. 1 lit. b GDPR (contract initiation) or Art. 6 para. 1 lit. f GDPR (legitimate interest in responding to inquiries). Data is not passed on to third parties.",
-        "section3Cookies": "Website operation (technically necessary cookies)",
-        "section3CookiesDesc": "The site stores your cookie preference so it can remember whether external media is allowed. The preference is stored for one year.",
-        "section3Analytics": "Embedded Google Maps (optional)",
-        "section3AnalyticsDesc": "Google Maps is loaded only after you allow external media in the cookie settings. When loaded, Google may receive technical information such as your IP address and browser data.",
-        "section4": "4. Storage duration",
-        "section4Desc": "Contact inquiries are deleted after completion of processing, at the latest after 3 years, unless there is a legal retention obligation. For tax-relevant documents, a retention period of 7 years applies according to Austrian tax law.",
-        "section5": "5. Transfer of data",
-        "section5Desc": "Your personal data will only be passed on to third parties if:",
-        "section5Item1": "you have given your explicit consent (Art. 6 para. 1 lit. a GDPR)",
-        "section5Item2": "this is necessary for the performance of a contract (Art. 6 para. 1 lit. b GDPR)",
-        "section5Item3": "there is a legal obligation (Art. 6 para. 1 lit. c GDPR)",
-        "section5Processors": "Hosting provider: Vercel Inc. The Google Maps embed is provided by Google and is loaded only after your consent to external media.",
-        "section6": "6. Your rights under the GDPR",
-        "section6Desc": "You have the following rights against us as the responsible party:",
-        "section6Item1": "Right of access (Art. 15 GDPR): Information about stored data",
-        "section6Item2": "Right to rectification (Art. 16 GDPR): Correction of incorrect data",
-        "section6Item3": "Right to erasure (Art. 17 GDPR): Deletion of your data",
-        "section6Item4": "Right to restriction (Art. 18 GDPR): Restriction of processing",
-        "section6Item5": "Right to object (Art. 21 GDPR): Objection to processing",
-        "section6Item6": "Right to data portability (Art. 20 GDPR): Receive your data in a machine-readable format",
-        "section6Item7": "Right to withdraw consent (Art. 7 para. 3 GDPR): At any time without giving reasons",
-        "section6Contact": "To exercise your rights, please contact:",
-        "section7": "7. Right to lodge a complaint",
-        "section7Desc": "You have the right to lodge a complaint with the Austrian Data Protection Authority:",
-        "authorityName": "Austrian Data Protection Authority",
-        "authorityAddress": "Barichgasse 40–42, 1030 Vienna",
-        "authorityPhone": "Tel.: +43 1 52 152-0",
-        "section8": "8. Cookies",
-        "section8Desc": "We use cookies and similar technologies. Details on the cookies used, purposes and your opt-out options can be found in our cookie banner on the first visit and in the cookie settings (accessible at any time via the link in the footer).",
-        "cookieTitle": "Cookies used",
-        "cookie1": "Stores your cookie settings (1 year)",
-        "cookie2": "The map is loaded only after you allow external media; Google may then process technical data.",
-        "section9": "9. Timeliness of this declaration",
-        "section9Desc": "This privacy policy is updated when our processing activities change or when the legal situation changes. The current version is always available at www.mitcodean.com/privacy."
-    },
-    "terms": {
-        "title": "Terms & Conditions",
-        "updated": "Last updated: 2026 · Diovis, Dean-Silviu Mitco",
-        "notice": "These T&C were created based on the template of the Austrian Chamber of Commerce for IT service companies. They do not replace individual legal advice. For questions, please contact us at contact@mitcodean.com.",
-        "section1": "§ 1 Scope and Contractual Partners",
-        "section1Desc": "These General Terms and Conditions (T&C) apply to all contracts between Diovis, Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein (hereinafter \"Contractor\") and its clients (hereinafter \"Client\") regarding IT services, web development, digital marketing and related services.",
-        "section1Desc2": "Deviationg terms of the Client are not recognized unless the Contractor expressly agrees to their validity in writing. Individual agreements take precedence over these T&C.",
-        "section2": "§ 2 Conclusion of Contract and Offers",
-        "section2Desc": "Offers from the Contractor are non-binding and subject to change. A contract is only concluded upon written order confirmation from the Contractor or upon commencement of service provision. Oral side agreements require written confirmation to be valid.",
-        "section2Desc2": "Cost estimates are prepared to the best of knowledge and belief. Exceedances of up to 15 % are deemed agreed and will not be communicated separately to the Client. For exceedances beyond this, immediate information and consent will be obtained.",
-        "section3": "§ 3 Scope of Services",
-        "section3Desc": "The scope of services is based on the written order confirmation and any service descriptions. The Contractor's services include in particular:",
-        "section3Item1": "Concept, design and development of websites and web applications",
-        "section3Item2": "Development of E-Commerce solutions and online shops",
-        "section3Item3": "Search engine optimization (SEO) and digital marketing",
-        "section3Item4": "Software development, process automation and ERP integration",
-        "section3Item5": "Mobile application development",
-        "section3Item6": "Ongoing maintenance and technical support",
-        "section3Item7": "Consulting services in the area of digitalization and branding",
-        "section3Desc2": "Changes or extensions to the agreed scope of services (Change Requests) require a written agreement and may lead to an adjustment of price and delivery time.",
-        "section4": "§ 4 Client's Obligations",
-        "section4Desc": "The Client undertakes to provide all documents, access data, content and information required for the provision of services in a timely manner. Delays caused by late cooperation are at the Client's expense and entitle the Contractor to an appropriate extension of the delivery deadline.",
-        "section4Desc2": "The Client ensures that provided content (texts, images, logos) is free of third-party rights and that their use does not violate any legal provisions. The Client indemnifies the Contractor from all claims by third parties arising from a violation of this obligation.",
-        "section5": "§ 5 Prices, Payment and Due Date",
-        "section5Desc": "All prices are in Euro, net, plus statutory VAT (20 %), unless expressly agreed otherwise.",
-        "section5Item1": "Project work: 50 % upon order placement, 50 % upon project acceptance. For projects over €2,000 net, 3-phase payments are possible (by agreement).",
-        "section5Item2": "Maintenance contracts: monthly billing, due on the 1st of each month.",
-        "section5Item3": "Hourly rates: by separate agreement.",
-        "section5Desc2": "In case of default, default interest of 8 % above the base rate p.a. and a reminder fee of €15 per reminder will be charged. The Contractor reserves the right to suspend further service provision until full payment is made in case of default.",
-        "section6": "§ 6 Delivery Times and Deadlines",
-        "section6Desc": "Agreed delivery times are only binding if they have been designated as \"binding\" in writing. Delivery delays due to force majeure, strike or delayed cooperation by the Client release the Contractor from compliance with agreed deadlines.",
-        "section7": "§ 7 Acceptance and Defect Remediation",
-        "section7Desc": "After completion, the service is presented to the Client for acceptance. Acceptance is deemed to have been granted if the Client does not notify substantiated defects in writing within 14 days.",
-        "section7Desc2": "Defects based on incorrect or incomplete information provided by the Client do not justify warranty claims. The warranty period is 2 years from acceptance, limited to free rectification or replacement delivery.",
-        "section8": "§ 8 Copyright and Usage Rights",
-        "section8Desc": "All works created as part of the order (code, designs, texts, concepts) remain the property of the Contractor until full payment.",
-        "section8Desc2": "Upon full payment, the Contractor grants the Client a simple, non-transferable usage right for the agreed purpose. Resale or transfer to third parties requires the written consent of the Contractor.",
-        "section8Desc3": "The Contractor reserves the right to use the work performed for reference purposes (portfolio, marketing), unless expressly agreed otherwise.",
-        "section9": "§ 9 Confidentiality",
-        "section9Desc": "Both parties undertake to keep all confidential information received during the collaboration strictly confidential and not to disclose it to third parties. This obligation continues after the termination of the contractual relationship.",
-        "section10": "§ 10 Limitation of Liability",
-        "section10Desc": "The Contractor is only liable for damages in cases of intent and gross negligence. In cases of slight negligence, liability is limited to the contract value. Liability for lost profits, indirect damages and consequential damages is excluded to the extent permitted by law.",
-        "section10Desc2": "The Contractor assumes no liability for achieving specific placements in search engines (SEO) or specific advertising results (marketing), as these depend on factors beyond its control.",
-        "section11": "§ 11 Legal texts for client projects",
-        "section11Desc": "If the contractor provides drafts or templates for legal notices, privacy policies, terms and conditions, cookie banners, or other legal texts as part of a project, these serve solely as non-binding samples and do not constitute legal advice. The contractor is not a lawyer and assumes no liability for their accuracy, completeness, or currency.",
-        "section11Desc2": "The client is solely responsible for reviewing these texts prior to publication—consulting a lawyer or the Chamber of Commerce if necessary—to ensure they align with their specific circumstances, the services actually used, and the applicable legal situation, as well as for keeping them up to date. The contractor is not liable for damages, formal warnings, or penalties arising from the use of these texts or from missing, incomplete, or incorrect legal texts.",
-        "section12": "§ 12 Term and Termination",
-        "section12Desc": "Project contracts end with the acceptance of the agreed service. Maintenance contracts are concluded for an indefinite period and can be terminated by either party in writing with a notice period of 4 weeks to the end of the month.",
-        "section12Desc2": "The right to extraordinary termination for good cause remains unaffected. Good cause exists in particular in the event of default of payment of more than 30 days.",
-        "section13": "§ 13 Data Protection",
-        "section13Desc": "Both parties undertake to comply with data protection regulations, in particular the GDPR (EU) 2016/679 and the Austrian Data Protection Act (DSG). The Contractor's privacy policy is available at www.mitcodean.com/privacy.",
-        "section14": "§ 14 Severability Clause",
-        "section14Desc": "Should individual provisions of these T&C be ineffective or unenforceable, the effectiveness of the remaining provisions remains unaffected. The ineffective provision is to be replaced by an effective provision that comes as close as possible to the economic purpose of the ineffective provision."
-    }
+        "updated": "Last updated: 30 October 2026 · Version 1",
+        "notice": "Notice: Some individual provider, storage and contract details have not yet been conclusively confirmed. Public provider standards are expressly distinguished from verified settings of our own accounts.",
+        "intro": [],
+        "sections": [
+          {
+            "id": "controller",
+            "title": "1. Controller",
+            "blocks": [
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "Controller",
+                    "value": "Diovis e.U., proprietor Dean-Silviu Mitco"
+                  },
+                  {
+                    "label": "Business address",
+                    "value": "Eisenstraße 13, 4460 Losenstein, Austria"
+                  },
+                  {
+                    "label": "Email",
+                    "value": "[contact@mitcodean.com](mailto:contact@mitcodean.com)"
+                  },
+                  {
+                    "label": "Phone",
+                    "value": "[+43 664 9494891](tel:+436649494891)"
+                  },
+                  {
+                    "label": "Website",
+                    "value": "https://mitcodean.com"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "general",
+            "title": "2. General information",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "We process personal data to operate the website, handle enquiries, provide demo features expressly used, organise appointments and protect our systems. The relevant processing depends on the features actually used and the data supplied."
+              },
+              {
+                "type": "paragraph",
+                "text": "Our retention principle is to use data for its purpose and delete it once that purpose ends, unless legal retention duties or other lawful retention grounds apply. External providers and their technical logs have separate rules."
+              }
+            ]
+          },
+          {
+            "id": "hosting",
+            "title": "3. Website access and hosting",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "The website is hosted by **Hostinger**. Access may involve an IP address, time, requested URL, browser/device information and security or error logs. This supports delivery, troubleshooting and abuse prevention. The legal basis is Article 6(1)(f) GDPR, our legitimate interest in a secure and functioning website."
+              },
+              {
+                "type": "paragraph",
+                "text": "Hostinger’s public DPA generally provides for deletion of customer data 30 days after termination, subject to service-specific terms. This is not a general lifetime for active server logs. The specific contracting entity, server region and log/backup arrangements for our account have not yet been conclusively confirmed."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Hostinger Data Processing Addendum](https://www.hostinger.com/legal/dpa)"
+              }
+            ]
+          },
+          {
+            "id": "contact",
+            "title": "4. Contact and contact form",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "The form requires a name, email address and message. Phone number and subject are optional. There is no separate company field; company information may be included voluntarily in the message. We use these details to respond and, where relevant, prepare an engagement. Depending on the enquiry, this relies on Article 6(1)(b) GDPR for pre-contractual steps involving the data subject, or Article 6(1)(f) GDPR for legitimate business correspondence."
+              },
+              {
+                "type": "paragraph",
+                "text": "Our server sends form messages through **Resend** to contact@mitcodean.com; the visitor’s submitted address is used as the reply address. Our business mailbox is provided by **Hostinger Email**. The application validates input and origin and uses a hidden field to help identify automated submissions. The delivery path does not provide a separate contact database."
+              },
+              {
+                "type": "paragraph",
+                "text": "Resend publishes 30-day email-content/log retention for Free/Pro/Scale, seven-day backups and deletion of remaining customer data within 90 days of account termination. Enterprise terms may differ. It states that storage is in the United States; selecting an EU sending region does not change this. Our actual plan and tracking/webhook settings remain to be confirmed."
+              },
+              {
+                "type": "paragraph",
+                "text": "Enquiry and mailbox data are deleted when their purpose ends under our retention principle. Specific mailbox, archive, forwarding and backup arrangements have not yet been fully documented."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Resend privacy information](https://resend.com/security/gdpr) · [Resend DPA](https://resend.com/legal/dpa)"
+              }
+            ]
+          },
+          {
+            "id": "ai-demo",
+            "title": "5. Interactive AI demo",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "The demo processes the currently entered text, selected model and language. Our server sends the text and necessary analysis instructions to the **OpenAI API**. The available models are gpt-4.1-nano and gpt-5-nano. Results are held in the open demo’s state. Drawings and attachments are not uploaded or analysed; the displayed manual approval is a simulation."
+              },
+              {
+                "type": "paragraph",
+                "text": "Do not enter confidential information, third-party personal data or special categories of personal data. AI results may be incorrect or incomplete and require human review before business use."
+              },
+              {
+                "type": "paragraph",
+                "text": "The application uses `store=false`. OpenAI’s public documentation states that API data is generally not used for model training without opt-in, and abuse-monitoring logs may normally be retained for up to 30 days, subject to documented exceptions such as legal or necessary protection grounds. `store=false` does not mean no storage."
+              },
+              {
+                "type": "paragraph",
+                "text": "Our specific contracting/project assignment, data-sharing and retention settings, API region and transfer arrangements remain to be confirmed. The voluntary demo illustrates our services; the final document-specific assignment of its data protection basis remains open."
+              },
+              {
+                "type": "paragraph",
+                "text": "[OpenAI API data controls](https://developers.openai.com/api/docs/guides/your-data)"
+              }
+            ]
+          },
+          {
+            "id": "abuse-prevention",
+            "title": "6. Abuse prevention and usage limits",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Protected demo calls are limited to five attempts within a rolling 24-hour window per visitor and network identifier. A minimum interval and global/concurrent-use limits also apply. These protect availability and API budget; the basis is the legitimate interest in preventing abuse under Article 6(1)(f) GDPR."
+              },
+              {
+                "type": "paragraph",
+                "text": "Processing includes a signed visitor identifier, HMAC-pseudonymised visitor/network identifiers, attempt timestamps and technical reservations. This is not complete anonymisation; several users sharing a network connection may share a limit. The limiter does not store raw enquiry text."
+              },
+              {
+                "type": "paragraph",
+                "text": "The application supports local file storage and **Upstash Redis**; its code requires shared Redis storage and a verified IP-header configuration for public operation. Whether and in which region Upstash is used in production has not yet been conclusively confirmed."
+              },
+              {
+                "type": "paragraph",
+                "text": "The counting window is 24 hours. The roughly 24-hour Redis TTL is refreshed on writes and does not guarantee deletion of every record, log or backup after exactly 24 hours. Actual provider/backup periods remain to be confirmed."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Upstash data processing terms](https://upstash.com/trust/dpa.pdf)"
+              }
+            ]
+          },
+          {
+            "id": "booking",
+            "title": "7. Appointments through Calendly",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Our [booking link](https://calendly.com/mitco-deansilviu/30min) opens **Calendly** in a new tab. No Calendly widget is embedded in the reviewed website code. When you visit the external page, Calendly processes information supplied there; Diovis uses the booking details it receives to organise the appointment."
+              },
+              {
+                "type": "paragraph",
+                "text": "Calendly describes US data centres and standard contractual clauses in its DPA as a transfer mechanism. Active booking fields, calendar/meeting connections, account terms and actual retention remain to be confirmed. The legal basis depends on the booking purpose, particularly pre-contractual steps or the legitimate interest in business communication. You can alternatively contact us directly by email or phone."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Calendly storage and transfers](https://calendly.com/help/data-storage-and-international-data-transfers) · [Calendly deletion functions](https://calendly.com/help/how-to-delete-personal-data-in-calendly)"
+              }
+            ]
+          },
+          {
+            "id": "cookies",
+            "title": "8. Cookies and similar technologies",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "The application uses cookie/language preferences and demo security identifiers. Consent may not be necessary for strictly necessary terminal access under section 165(3) Austrian TKG 2021; non-essential cookies or embedded services may require prior consent."
+              },
+              {
+                "type": "details",
+                "rows": [
+                  {
+                    "label": "mitcodean_cookie_consent",
+                    "value": "Stores the selection after using cookie preferences: one year, Path=/, SameSite=Lax."
+                  },
+                  {
+                    "label": "diovis_inquiry_visitor",
+                    "value": "Signed identifier for protected demo calls: 24 hours, Path=/api/analyze-inquiry, HttpOnly, SameSite=Strict; Secure where the server sees an HTTPS URL."
+                  },
+                  {
+                    "label": "NEXT_LOCALE",
+                    "value": "next-intl language cookie, depending on language selection and existing cookies; session cookie under current configuration, SameSite=Lax."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "No application-owned Local/Session Storage calls or active Google Maps/analytics scripts were found in the reviewed page tree. Old source files do not establish active integration. The full production browser/hosting inventory is not yet confirmed. Cookie preferences can be reopened through the footer."
+              }
+            ]
+          },
+          {
+            "id": "recipients",
+            "title": "9. Recipients and international transfers",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Relevant services include Hostinger for the website and business mailbox, Resend for form emails, OpenAI when using the demo, Calendly for appointments, and Upstash only where Redis is actually used. Additional recipients may arise from active mailbox, calendar, meeting or webhook connections; these remain to be fully assigned."
+              },
+              {
+                "type": "paragraph",
+                "text": "Public provider terms describe standard contractual clauses or other suitable transfer mechanisms depending on the service. This establishes neither an “EU only” guarantee nor proof of all individual account/contract settings. The specific legal entities, roles, sub-processors and transfer arrangements for our accounts are not yet fully confirmed."
+              }
+            ]
+          },
+          {
+            "id": "retention",
+            "title": "10. Retention and deletion",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Personal data is processed for its purpose and deleted when that purpose ends, unless legal retention duties or other lawful grounds, such as establishing or defending legal claims, apply. This principle covers our own enquiry, correspondence and appointment data."
+              },
+              {
+                "type": "paragraph",
+                "text": "Provider logs, backups and archives have separate terms. The provider standards above are not blanket Diovis retention periods. Account-specific log, mailbox, archive, backup and deletion procedures have not yet been fully documented. Cookie expiry or a counting window does not automatically delete all related data."
+              }
+            ]
+          },
+          {
+            "id": "rights",
+            "title": "11. Your rights",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Subject to applicable legal conditions and exceptions, your rights include:"
+              },
+              {
+                "type": "list",
+                "ordered": false,
+                "items": [
+                  "Access (Article 15 GDPR)",
+                  "Rectification (Article 16 GDPR)",
+                  "Erasure (Article 17 GDPR)",
+                  "Restriction of processing (Article 18 GDPR)",
+                  "Data portability (Article 20 GDPR)",
+                  "Objection to processing based on legitimate interests (Article 21 GDPR)",
+                  "Withdrawal of consent for the future (Article 7(3) GDPR)"
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "For privacy requests, contact [contact@mitcodean.com](mailto:contact@mitcodean.com)."
+              }
+            ]
+          },
+          {
+            "id": "complaints",
+            "title": "12. Complaints",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "You may lodge a complaint with the Austrian Data Protection Authority, Barichgasse 40–42, 1030 Vienna, Austria."
+              },
+              {
+                "type": "paragraph",
+                "text": "[Austrian Data Protection Authority](https://www.dsb.gv.at/)"
+              }
+            ]
+          },
+          {
+            "id": "updates",
+            "title": "13. Updates",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "This policy is adjusted when actual processing or legal requirements change. The published version is available in this website’s [Privacy Policy](/legal-compliance/privacy-policy)."
+              }
+            ]
+          }
+        ]
+      },
+      "terms": {
+        "title": "Terms and Conditions – B2B IT Services",
+        "updated": "Last updated: 30 October 2026 · Version 1",
+        "notice": "",
+        "intro": [
+          "**Contracting party:** Diovis e.U., proprietor Dean-Silviu Mitco, Eisenstraße 13, 4460 Losenstein, Austria. Companies Register court: Landesgericht Steyr. Companies Register number: Das ist die FIrmenbuchnummer noch einzutragen."
+        ],
+        "sections": [
+          {
+            "id": "scope",
+            "title": "Section 1 – Scope and order of precedence",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "These T&C apply exclusively to **business customers (B2B)** in respect of IT, software, automation, network and maintenance services and supplementary website and agency services provided by Diovis. Consumer contracts are not covered by this version.",
+                  "The specific services, fees and dates are defined by the relevant written offer, statement of work and project or maintenance agreement. **Individually agreed terms take precedence over these T&C.**",
+                  "The customer's deviating terms apply only if expressly agreed. These T&C must be brought to the customer's attention **before the agreement is concluded** and expressly incorporated into that agreement."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "offers",
+            "title": "Section 2 – Offers and conclusion of agreements",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "A specific offer describes the scope, deliverables, exclusions, fee, payment schedule, term or deadlines and cooperation obligations. Whether it is binding and how long it remains valid are stated in the offer.",
+                  "An engagement is formed by documented acceptance of an offer or a separate agreement.",
+                  "Cost estimates must be clearly labelled. There is no automatic agreement to charge for exceeding package prices. Additional services and costs are approved through a documented **change request** before work starts."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cooperation",
+            "title": "Section 3 – Scope of services and customer cooperation",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Only the services individually agreed are owed. They may include business process automation, custom web and desktop applications, interfaces, AI integrations, data preparation and IT infrastructure work. Other services must be stated in the relevant engagement.",
+                  "Services not expressly included (such as ongoing licence fees, hosting, maintenance, new features or external specialist works) are not automatically included in the project fee.",
+                  "The customer provides agreed information, contact persons, access and approvals on time and is responsible for the factual correctness of materials and the authority to provide the relevant data and content.",
+                  "Credentials must be exchanged only through agreed secure channels. Required permissions are returned, restricted or revoked at the end of the engagement as agreed."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "third-party",
+            "title": "Section 4 – Third-party providers, cloud services and specialist works",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "As a general rule, the customer orders and pays for **hosting, domains, OpenAI/Anthropic API accounts, cloud software and other recurring third-party services in its own accounts**, unless otherwise agreed for an individual project.",
+                  "Third-party availability, pricing, terms and intellectual property are governed by their respective providers. Diovis does not give a general guarantee that such services will remain unchanged.",
+                  "Electrical or cabling works requiring a separate trade authorisation are **not performed by Diovis itself**. If needed, an appropriately authorised specialist company may be engaged by prior arrangement; the contractual relationship, appointment and cost allocation will be established in advance.",
+                  "Where personal data are processed, sub-processors will be engaged only in compliance with any required data processing agreement."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fees",
+            "title": "Section 5 – Fees and payment",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Fees are determined by the offer. Diovis typically offers packages or fixed fees for clearly defined projects and, where agreed, hourly rates for additional work and support.",
+                  "Where expressly agreed in the engagement, the standard payment schedule is **50% upon order acceptance and 50% after go-live**. For larger projects, a **50% / 30% / 20%** milestone schedule may be individually agreed. The corresponding milestones and payment triggers are defined in the specific engagement; that individual agreement prevails.",
+                  "Unless otherwise stated in the offer, the payment term is **14 days from the invoice date**.",
+                  "Diovis currently applies the Austrian small business VAT exemption. Supplies covered by that exemption are invoiced **without Austrian VAT being charged** (section 6(1)(27) Austrian VAT Act). Cross-border supplies and any change in VAT status are invoiced in accordance with the applicable tax law.",
+                  "Chargeable additional services and changes must be documented and approved before implementation."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "timelines",
+            "title": "Section 6 – Timelines, review and changes",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Binding deadlines and milestones must be expressly stated in the engagement. Delays caused by insufficient or late customer cooperation may require a documented change of schedule.",
+                  "Changes to the agreed scope, technical prerequisites or acceptance criteria require a separate agreement (change request). Any price and schedule implications must be communicated before implementation."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "acceptance",
+            "title": "Section 7 – Delivery, go-live and acceptance",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "For work capable of acceptance, deliverables and acceptance criteria are defined in the engagement. The customer is given the opportunity to check the agreed criteria, and the results are documented in an acceptance record.",
+                  "Go-live and acceptance can be separate events. Fee milestones are governed by the relevant agreement.",
+                  "Deviations are documented and handled in accordance with the applicable legal and contractual obligations."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "introduction",
+            "title": "Section 8 – Accompanied introduction period",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "The agreed project package includes an **accompanied introduction period of 14 calendar days from the agreed go-live date**, covering the functions agreed in the project and their use.",
+                  "This covers questions concerning the **use and agreed functions** and reasonable assistance with initial use. No fixed number of questions or training hours is promised or capped; the service remains limited to the purpose of introducing the agreed deliverable.",
+                  "New functionality, additional integrations, materially new requirements or separate further development are not included and require a new engagement. Mandatory statutory defect rights remain unaffected.",
+                  "The introduction does not establish uninterrupted availability or a response commitment independent of a separate SLA. Specific support windows, response commitments, rates and any night emergency service are defined exclusively in the separate customer agreement."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "software-rights",
+            "title": "Section 9 – Copyright, software licence and source code",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Unless otherwise agreed, Diovis retains its rights in its own pre-existing and reusable components and any source code not expressly supplied. Third-party rights and open-source licences remain unaffected.",
+                  "After full payment, the customer is generally granted a **non-exclusive, perpetual right to use the delivered software for the expressly agreed business purpose**. Territorial, functional and organisational scope must be specified in the project agreement where necessary.",
+                  "**Source code delivery**, exclusive exploitation rights, separately negotiated modification rights and resale rights are **not automatically included**. Such rights can be expressly agreed for an additional fee.",
+                  "Mandatory rights of lawful software users remain unaffected; in particular, statutory use and interoperability rights are not excluded wholesale.",
+                  "Customer names, logos, project details or results may be used as references **only after the customer's prior express approval**."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "support",
+            "title": "Section 10 – Maintenance and support",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "**Ongoing maintenance, on-call services, monitoring and response guarantees arise only under a separately and expressly agreed maintenance/support contract with a service level agreement (SLA).** Completion of a software project alone does not provide any right to a 24/7 emergency service.",
+                  "Service windows, reporting channels, incident classes, response commitments, absence cover and hourly rates (including an optional critical night service) are defined in the particular maintenance agreement.",
+                  "An agreed response time concerns only the **first qualified response**, not a guarantee that the issue will be resolved in the same period."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "security-ai",
+            "title": "Section 11 – Security, AI services and confidentiality",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Each party treats confidential project information and credentials confidentially according to their sensitivity. Disclosure to authorised staff or service providers is limited to what is necessary and lawful.",
+                  "For AI integrations, permitted data types, providers, human review requirements, technical limitations and responsibilities are defined in the engagement. AI-generated content is not inherently error-free; agreed performance obligations and review duties depend on the specific contract.",
+                  "Any security measures actually promised are documented, where appropriate, in a technical and organisational measures (TOM) annex. Unverified measures do not become implemented merely because these T&C mention them."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "privacy",
+            "title": "Section 12 – Data protection",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Each party complies with the data protection rules applicable to its role. If Diovis processes personal data **on behalf of** the customer, an appropriate **Article 28 GDPR data processing agreement**, with suitable TOMs and sub-processor arrangements, must be in place before processing begins.",
+                  "The **website privacy policy** describes processing in connection with visiting Diovis online services; it does not replace a project-specific data processing agreement or privacy arrangements for customer systems."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "liability",
+            "title": "Section 13 – Defect rights and liability",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Rights and obligations relating to defects are governed by applicable law and valid individual agreements. Specific characteristics, testing procedures and any service levels are defined in the engagement.",
+                  "Liability is governed by applicable law and any **legally reviewed and effectively agreed** restrictions."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "late-payment",
+            "title": "Section 14 – Late payment",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Late payment is governed by the applicable law, including statutory interest and recoverable debt collection costs in business transactions.",
+                  "Any suspension of further services is permitted only where lawful and validly agreed."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "termination",
+            "title": "Section 15 – Term and termination",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "One-off projects are completed according to the specific delivery and acceptance model. The duration, notice periods and consequences of terminating ongoing maintenance are set out in the relevant maintenance contract.",
+                  "Handover, data return, revocation of access rights, documentation and ongoing software use rights are governed by the specific engagement and any required data processing agreement."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "law-languages",
+            "title": "Section 16 – Governing law, jurisdiction and languages",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Austrian law is intended to apply to B2B contracts insofar as effectively agreed and not contrary to mandatory law.",
+                  "Statutory jurisdiction rules apply.",
+                  "These T&C are available in German and English. **In the event of inconsistencies, the German version is intended to prevail**, provided that this rule has been validly incorporated into the individual agreement and does not conflict with mandatory law."
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     "cookieBanner": {
         "title": "Your privacy settings",

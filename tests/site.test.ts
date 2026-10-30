@@ -11,6 +11,7 @@ import proxy from "../src/proxy";
 import deMessages from "../src/messages/de.json";
 import enMessages from "../src/messages/en.json";
 import { createTranslator } from "use-intl/core";
+import "./legal-content.test";
 
 // The reserved .example domain is a test fixture, never a production default.
 const origin = "https://diovis.example";

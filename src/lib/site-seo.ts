@@ -11,9 +11,9 @@ const text: Record<SiteLocale, Record<PublicRoute, { title: string; description:
     contact: { title: "Kontakt & kostenloses Erstgespräch | Diovis", description: "Besprechen Sie Software, Prozessautomatisierung oder Ihre IT mit Dean-Silviu Mitco. Kostenloses Erstgespräch, E-Mail und Kontaktformular bei Diovis." },
     examples: { title: "Praxisbeispiele: Automatisierung im Video erleben | Diovis", description: "Sehen Sie den Diovis KI-Anfrageassistenten im Video. Fiktive Fertigungsanfragen strukturieren, offene Angaben erkennen und die Demo selbst ausprobieren." },
     demo: { title: "KI-Anfrageassistent selbst ausprobieren | Diovis", description: "Testen Sie die bestehende KI-Demo mit fiktiven Anfragen. Strukturierte Angaben, offene Fragen und manuelle Prüfung mit serverseitigem Nutzungslimit." },
-    legal: { title: "Impressum | Diovis", description: "Bestehende Anbieter- und Kontaktinformationen zu Diovis sowie rechtliche Hinweise." },
-    privacy: { title: "Datenschutzerklärung | Diovis", description: "Bestehende Datenschutzhinweise von Diovis und Informationen zur Verarbeitung personenbezogener Daten." },
-    terms: { title: "Allgemeine Geschäftsbedingungen | Diovis", description: "Die bestehenden Allgemeinen Geschäftsbedingungen von Diovis im Überblick." },
+    legal: { title: "Impressum | Diovis e.U.", description: "Unternehmens-, Register- und Kontaktangaben von Diovis e.U. in Losenstein sowie Hinweise zu Gewerbe, Medien und Datenschutz." },
+    privacy: { title: "Datenschutzerklärung | Diovis e.U.", description: "Informationen zu Website, Kontaktformular, KI-Demo, Terminbuchung, Cookies und personenbezogenen Daten bei Diovis." },
+    terms: { title: "AGB für B2B IT-Dienstleistungen | Diovis", description: "B2B-Vertragsbedingungen von Diovis für Software, Automatisierung und IT: Leistungen, Zahlung, Nutzungsrechte und Support." },
   },
   en: {
     home: { title: "Software, automation & IT for the Steyr region | Diovis", description: "Diovis supports businesses in Steyr and Steyr-Land with process automation, custom software development and IT. Personal support around your requirements." },
@@ -22,9 +22,9 @@ const text: Record<SiteLocale, Record<PublicRoute, { title: string; description:
     contact: { title: "Contact & free introductory call | Diovis", description: "Discuss software, process automation or your IT with Dean-Silviu Mitco. Book a free introductory call or contact Diovis by email or form." },
     examples: { title: "Practical examples: see automation in action | Diovis", description: "Watch the Diovis AI inquiry assistant prepare fictional manufacturing inquiries, highlight missing details and support a manual review. Try the demo yourself." },
     demo: { title: "Try the AI inquiry assistant | Diovis", description: "Test the existing AI demo with fictional inquiries. Structured details, open questions and manual review with a server-enforced usage limit." },
-    legal: { title: "Legal notice | Diovis", description: "Existing provider and contact information for Diovis and legal notices." },
-    privacy: { title: "Privacy notice | Diovis", description: "The existing Diovis privacy notice and information about the processing of personal data." },
-    terms: { title: "Terms and conditions | Diovis", description: "The existing terms and conditions of Diovis." },
+    legal: { title: "Legal notice | Diovis e.U.", description: "Business, register and contact details for Diovis e.U. in Losenstein, with trade, media and privacy information." },
+    privacy: { title: "Privacy policy | Diovis e.U.", description: "Information about the website, contact form, AI demo, appointments, cookies and personal data processing at Diovis." },
+    terms: { title: "B2B IT services terms | Diovis", description: "Diovis B2B terms for software, automation and IT: services, payment, software rights and individually agreed support." },
   },
 };
 

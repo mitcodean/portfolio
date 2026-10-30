@@ -49,6 +49,8 @@ summary::-webkit-details-marker { display: none; }
 .skip-link:focus { transform: translateY(0); }
 #main-content:focus { outline: none; }
 .legal-content .text-primary { color: #fca5a5; }
+.legal-content { overflow-wrap: anywhere; hyphens: auto; }
+.legal-content a { text-decoration: underline; text-underline-offset: .2em; }
 @media (prefers-reduced-motion: reduce) {
   .diovis-hero-video { display: none; }
   html { scroll-behavior: auto; }
