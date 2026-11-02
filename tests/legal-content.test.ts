@@ -29,10 +29,10 @@ test("missing or reordered legal sections fail instead of being silently hidden"
   assert.throws(() => parseLegalDocument(document, "terms"));
 });
 
-test("confirmed business information and the exact requested register placeholder are preserved", () => {
+test("confirmed business information and the confirmed register number are preserved", () => {
   for (const locale of ["de", "en"] as const) {
     const notice = flatten(parseLegalDocument(messages[locale].legal.notice, "notice"));
-    for (const expected of ["Diovis e.U.", "Dean-Silviu Mitco", "Landesgericht Steyr", "Bezirkshauptmannschaft Steyr-Land", "39462992", "39491251", "ATU83838778", "+43 664 9494891", "https://mitcodean.com", "Das ist die FIrmenbuchnummer noch einzutragen"]) assert.ok(notice.includes(expected), expected);
+    for (const expected of ["Diovis e.U.", "Dean-Silviu Mitco", "Landesgericht Steyr", "Bezirkshauptmannschaft Steyr-Land", "39462992", "39491251", "ATU83838778", "+43 664 9494891", "https://mitcodean.com", "FN 691692w"]) assert.ok(notice.includes(expected), expected);
     assert.ok(!notice.includes("mitcodea.com"));
     assert.ok(!notice.includes("mitcoean.com"));
   }
