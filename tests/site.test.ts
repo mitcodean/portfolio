@@ -91,7 +91,7 @@ test("a domain is never guessed; only a clean HTTPS origin enables absolute SEO 
     assert.equal(pageMetadata("de", "home").alternates, undefined);
     assert.equal(pageStructuredData("de", "home"), null);
     assert.deepEqual(sitemap(), []);
-    assert.deepEqual(robots().rules, { userAgent: "*", disallow: "/" });
+    assert.deepEqual(robots().rules, [{ userAgent: "*", disallow: "/" }, { userAgent: "OAI-SearchBot", disallow: "/" }]);
   });
 });
 
@@ -105,9 +105,20 @@ test("all public pages have unique metadata, canonical and DE/EN language altern
       descriptions.add(metadata.description);
       assert.equal(metadata.alternates?.canonical, `${origin}${routeHref(route, locale)}`);
       assert.deepEqual(metadata.alternates?.languages, { de: `${origin}${routeHref(route, "de")}`, en: `${origin}${routeHref(route, "en")}`, "x-default": `${origin}${routeHref(route, "de")}` });
-      assert.deepEqual(metadata.robots, { index: route !== "demo", follow: true });
+      assert.deepEqual(metadata.robots, {
+        index: route !== "demo",
+        follow: true,
+        googleBot: { index: route !== "demo", follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+      });
       assert.ok(metadata.twitter && "card" in metadata.twitter);
       assert.equal(metadata.twitter.card, "summary_large_image");
+      const shareImagePath = locale === "de" ? "/images/diovis-social.png" : "/images/diovis-social-en.png";
+      const openGraphImages = metadata.openGraph && "images" in metadata.openGraph ? metadata.openGraph.images : undefined;
+      const openGraphImage = Array.isArray(openGraphImages) ? openGraphImages[0] : openGraphImages;
+      assert.equal(openGraphImage && typeof openGraphImage === "object" && "url" in openGraphImage ? String(openGraphImage.url) : undefined, `${origin}${shareImagePath}`);
+      const twitterImages = metadata.twitter && "images" in metadata.twitter ? metadata.twitter.images : undefined;
+      const twitterImage = Array.isArray(twitterImages) ? twitterImages[0] : twitterImages;
+      assert.equal(twitterImage && typeof twitterImage === "object" && "alt" in twitterImage ? twitterImage.alt : undefined, locale === "de" ? "Diovis – Software, Automatisierung & IT" : "Diovis – software, automation and IT for businesses");
     }
   }
   assert.equal(titles.size, 18);
@@ -119,7 +130,7 @@ test("the index gate remains closed unless explicitly enabled with a domain", ()
   withSite({ index: "true" }, () => assert.equal(siteIndexable(), false));
   withSite({ url: origin, index: "true" }, () => {
     assert.equal(siteIndexable(), true);
-    assert.deepEqual(robots().rules, { userAgent: "*", allow: "/", disallow: "/api/" });
+    assert.deepEqual(robots().rules, [{ userAgent: "*", allow: "/", disallow: "/api/" }, { userAgent: "OAI-SearchBot", allow: "/", disallow: "/api/" }]);
     assert.equal(robots().sitemap, `${origin}/sitemap.xml`);
   });
 });

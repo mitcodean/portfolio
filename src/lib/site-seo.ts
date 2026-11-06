@@ -32,13 +32,25 @@ export function pageMetadata(locale: SiteLocale, route: PublicRoute): Metadata {
   const entry = text[locale][route];
   const origin = readSiteUrl();
   const canonical = origin ? new URL(routeHref(route, locale), origin).href : undefined;
-  const image = origin ? { url: new URL("/images/diovis-social.png", origin).href, width: 1200, height: 630, alt: "Diovis – Software, Automatisierung & IT" } : undefined;
+  const image = origin ? {
+    url: new URL(locale === "de" ? "/images/diovis-social.png" : "/images/diovis-social-en.png", origin).href,
+    secureUrl: new URL(locale === "de" ? "/images/diovis-social.png" : "/images/diovis-social-en.png", origin).href,
+    type: "image/png",
+    width: 1200,
+    height: 630,
+    alt: locale === "de" ? "Diovis – Software, Automatisierung & IT" : "Diovis – software, automation and IT for businesses",
+  } : undefined;
+  const index = siteIndexable() && route !== "demo";
   return {
     title: { absolute: entry.title }, description: entry.description,
     ...(origin ? { metadataBase: origin, alternates: { canonical, languages: { de: new URL(routeHref(route, "de"), origin).href, en: new URL(routeHref(route, "en"), origin).href, "x-default": new URL(routeHref(route, "de"), origin).href } } } : {}),
-    robots: { index: siteIndexable() && route !== "demo", follow: true },
+    robots: {
+      index,
+      follow: true,
+      googleBot: { index, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+    },
     openGraph: { type: "website", siteName: "Diovis", title: entry.title, description: entry.description, locale: locale === "de" ? "de_AT" : "en_GB", alternateLocale: locale === "de" ? ["en_GB"] : ["de_AT"], ...(canonical ? { url: canonical } : {}), ...(image ? { images: [image] } : {}) },
-    twitter: { card: "summary_large_image", title: entry.title, description: entry.description, ...(image ? { images: [image.url] } : {}) },
+    twitter: { card: "summary_large_image", title: entry.title, description: entry.description, ...(image ? { images: [image] } : {}) },
   };
 }
 
